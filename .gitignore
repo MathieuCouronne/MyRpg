@@ -1,0 +1,12 @@
+main
+a.out
+my_rpg
+
+unit_tests*
+*.gcda
+*.gcno
+*.o
+*.a
+
+.idea
+.vscode

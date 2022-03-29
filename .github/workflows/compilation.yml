@@ -1,0 +1,19 @@
+name: Check compilation
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  compilation:
+    runs-on: ubuntu-20.04
+    container: epitechcontent/epitest-docker:devel
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build
+        run: make
+
+      - name: Check binary
+        run: ls my_rpg

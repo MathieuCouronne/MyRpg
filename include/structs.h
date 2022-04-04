@@ -16,7 +16,13 @@ typedef struct scenes_s {
 
 typedef struct game_s {
     sfRenderWindow *window;
+    sfView *view;
     scenes_t *scenes;
 } game_t;
+
+typedef struct event_controller_s {
+    sfEventType type;
+    void (*fn) (game_t *game, sfEvent *event);
+} event_controller_t;
 
 #endif

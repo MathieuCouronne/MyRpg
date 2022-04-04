@@ -13,4 +13,12 @@
 // Initialization
 game_t *init_game(void);
 
+// Destroy
+void destroy_game(game_t *game);
+
+// Events
+void handle_events(game_t *game, sfEvent *event);
+void handle_arrow_keys(game_t *game, sfEvent *event);
+void handle_mouse_wheel(game_t *game, sfEvent *event);
+
 #endif

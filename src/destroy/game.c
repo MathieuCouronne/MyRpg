@@ -11,6 +11,8 @@
 // TODO: destroy game scenes
 void destroy_game(game_t *game)
 {
+    if (!game)
+        return;
     sfRenderWindow_destroy(game->window);
     free(game);
 }

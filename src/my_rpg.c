@@ -15,7 +15,7 @@ int main(void)
     sfTexture *texture = sfTexture_createFromFile("assets/images/map.png", NULL);
     sfSprite *sprite = sfSprite_create();
     game_asset_t *menu = init_menu_background();
-    buttons_t *button = init_buttons();
+    menu_buttons_t *button = init_buttons();
 
     sfSprite_setTextureRect(sprite, (sfIntRect) {0, 0, 1288, 968});
     sfSprite_setTexture(sprite, texture, sfTrue);
@@ -32,10 +32,12 @@ int main(void)
         sfRenderWindow_drawSprite(game->window, menu->sprite, NULL);
         sfRenderWindow_drawSprite(game->window, button->play->asset->sprite, NULL);
         sfRenderWindow_drawText(game->window, button->play->text, NULL);
+        sfRenderWindow_drawSprite(game->window, button->settings->asset->sprite, NULL);
+        sfRenderWindow_drawText(game->window, button->settings->text, NULL);
         //sfRenderWindow_drawSprite(game->window, sprite, NULL);
         sfRenderWindow_display(game->window);
     }
-    destroy_buttons(button);
+    menu_destroy_buttons(button);
     destroy_menu(menu);
     destroy_game(game);
 }

@@ -31,10 +31,13 @@ button_t *init_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
     return button;
 }
 
-buttons_t *init_buttons(void)
+menu_buttons_t *init_buttons(void)
 {
-    buttons_t *button = malloc(sizeof(buttons_t));
+    menu_buttons_t *button = malloc(sizeof(menu_buttons_t));
 
-    button->play = init_button("Play", (sfVector2f){920,530},(sfVector2f){800,500});
+    button->play = init_button("Play", (sfVector2f){920,530},
+                        (sfVector2f){800,500});
+    button->settings = init_button("Settings",(sfVector2f){885,680},
+                        (sfVector2f){800,650});
     return button;
 }

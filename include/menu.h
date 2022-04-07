@@ -20,11 +20,13 @@ typedef struct button_s {
     sfFont *font;
 } button_t;
 
-typedef struct buttons_s {
+typedef struct menu_buttons_s {
     button_t *play;
-}buttons_t;
+    button_t *settings;
+    button_t *quit;
+} menu_buttons_t;
 
 game_asset_t *init_menu_background(void);
-buttons_t *init_buttons(void);
+menu_buttons_t *init_buttons(void);
 
 #endif //RPG_MENU_H

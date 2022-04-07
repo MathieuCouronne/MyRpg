@@ -19,7 +19,7 @@ void destroy_button(button_t *button)
     free(button);
 }
 
-void destroy_buttons(buttons_t *button)
+void menu_destroy_buttons(menu_buttons_t *button)
 {
     if (!button)
         return;

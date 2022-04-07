@@ -24,7 +24,10 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/menu.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
-				$(SRC_DIR)destroy/menu.c
+				$(SRC_DIR)destroy/menu.c \
+				$(SRC_DIR)destroy/button.c
+
+SRC			+=	$(SRC_DIR)menu/create_button.c
 
 OBJ			= $(SRC:.c=.o)
 

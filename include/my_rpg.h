@@ -15,6 +15,7 @@ game_t *init_game(void);
 
 // Destroy
 void destroy_game(game_t *game);
+void destroy_menu(game_asset_t *menu);
 
 // Events
 void handle_events(game_t *game, sfEvent *event);

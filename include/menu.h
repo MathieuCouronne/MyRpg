@@ -15,8 +15,10 @@
 
 typedef struct button_s {
     game_asset_t *asset;
-    sfText text;
+    sfText *text;
     button_state state;
 } button_t;
+
+game_asset_t *init_menu_background(void);
 
 #endif //RPG_MENU_H

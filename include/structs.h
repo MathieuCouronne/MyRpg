@@ -24,7 +24,7 @@ typedef struct game_s {
 typedef struct game_asset_s {
     sfSprite *sprite;
     sfTexture *texture;
-    sfRectangleShape rect;
+    sfRectangleShape *rect;
     sfVector2f *pos;
     float scaling;
 } game_asset_t;

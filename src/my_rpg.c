@@ -6,14 +6,15 @@
 */
 
 #include "my_rpg.h"
+#include "menu.h"
 
 int main(void)
 {
     game_t *game = init_game();
     sfEvent event = {};
-
     sfTexture *texture = sfTexture_createFromFile("assets/images/map.png", NULL);
     sfSprite *sprite = sfSprite_create();
+    game_asset_t *menu = init_menu_background();
 
     sfSprite_setTextureRect(sprite, (sfIntRect) {0, 0, 1288, 968});
     sfSprite_setTexture(sprite, texture, sfTrue);
@@ -21,14 +22,16 @@ int main(void)
     if (!game)
         return 84;
     game->view = sfView_createFromRect((sfFloatRect) {0, 0, 1920, 1080});
-    sfView_setCenter(game->view, (sfVector2f) {500, 500});
+    //sfView_setCenter(game->view, (sfVector2f) {500, 500});
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
         while (sfRenderWindow_pollEvent(game->window, &event))
             handle_events(game, &event);
         sfRenderWindow_setView(game->window, game->view);
-        sfRenderWindow_drawSprite(game->window, sprite, NULL);
+        sfRenderWindow_drawSprite(game->window, menu->sprite, NULL);
+        //sfRenderWindow_drawSprite(game->window, sprite, NULL);
         sfRenderWindow_display(game->window);
     }
+    destroy_menu(menu);
     destroy_game(game);
 }

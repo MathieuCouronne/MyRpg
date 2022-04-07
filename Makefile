@@ -20,9 +20,11 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
 				$(SRC_DIR)events/mouse/wheel.c
 
-SRC			+=	$(SRC_DIR)init/game.c
+SRC			+=	$(SRC_DIR)init/game.c \
+				$(SRC_DIR)init/menu.c
 
-SRC			+=	$(SRC_DIR)destroy/game.c
+SRC			+=	$(SRC_DIR)destroy/game.c \
+				$(SRC_DIR)destroy/menu.c
 
 OBJ			= $(SRC:.c=.o)
 

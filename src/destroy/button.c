@@ -6,12 +6,14 @@
 */
 
 #include "menu.h"
+#include "my_rpg.h"
 #include <stdlib.h>
 
 void destroy_button(button_t *button)
 {
     if (!button)
         return;
+    destroy_menu(button->asset);
     sfFont_destroy(button->font);
     sfText_destroy(button->text);
     free(button);
@@ -21,5 +23,6 @@ void destroy_buttons(buttons_t *button)
 {
     if (!button)
         return;
+    destroy_button(button->play);
     free(button);
 }

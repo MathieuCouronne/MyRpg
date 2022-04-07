@@ -30,10 +30,12 @@ int main(void)
             handle_events(game, &event);
         sfRenderWindow_setView(game->window, game->view);
         sfRenderWindow_drawSprite(game->window, menu->sprite, NULL);
+        sfRenderWindow_drawSprite(game->window, button->play->asset->sprite, NULL);
         sfRenderWindow_drawText(game->window, button->play->text, NULL);
         //sfRenderWindow_drawSprite(game->window, sprite, NULL);
         sfRenderWindow_display(game->window);
     }
+    destroy_buttons(button);
     destroy_menu(menu);
     destroy_game(game);
 }

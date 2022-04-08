@@ -14,8 +14,8 @@
 button_t *create_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
 {
     button_t *button = malloc(sizeof(button_t));
-    button->asset = malloc(sizeof(game_asset_t));
 
+    button->asset = malloc(sizeof(game_asset_t));
     button->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
     button->text = sfText_create();
     button->asset->sprite = sfSprite_create();

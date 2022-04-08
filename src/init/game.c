@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
+#include "scenes.h"
 
 static sfRenderWindow *init_window(void)
 {
@@ -24,7 +25,7 @@ scenes_t *init_scenes(void)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
-    scenes->main_menu = NULL;
+    scenes->main_menu = init_main_menu();
     return scenes;
 }
 

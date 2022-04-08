@@ -11,7 +11,7 @@
 #include "menu.h"
 #include "structs.h"
 
-button_t *init_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
+button_t *create_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
 {
     button_t *button = malloc(sizeof(button_t));
     button->asset = malloc(sizeof(game_asset_t));
@@ -28,16 +28,5 @@ button_t *init_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
     sfText_setCharacterSize(button->text, 60);
     sfText_setColor(button->text, sfBlack);
     sfText_setPosition(button->text, pos);
-    return button;
-}
-
-menu_buttons_t *init_buttons(void)
-{
-    menu_buttons_t *button = malloc(sizeof(menu_buttons_t));
-
-    button->play = init_button("Play", (sfVector2f){920,530},
-                        (sfVector2f){800,500});
-    button->settings = init_button("Settings",(sfVector2f){885,680},
-                        (sfVector2f){800,650});
     return button;
 }

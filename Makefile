@@ -21,7 +21,8 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/mouse/wheel.c
 
 SRC			+=	$(SRC_DIR)init/game.c \
-				$(SRC_DIR)init/menu.c
+				$(SRC_DIR)init/menu.c \
+				$(SRC_DIR)init/init_menu_button.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \

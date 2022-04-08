@@ -10,6 +10,7 @@
 #include <SFML/Window.h>
 #include "menu.h"
 #include "structs.h"
+#include "scenes.h"
 
 game_asset_t *init_menu_background(void)
 {
@@ -22,4 +23,15 @@ game_asset_t *init_menu_background(void)
         ("./assets/images/connexion.jpg", NULL);
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
+}
+
+main_menu_scenes_t *init_main_menu(void)
+{
+    main_menu_scenes_t *scene = malloc(sizeof(main_menu_scenes_t));
+
+    if (!scene)
+        return NULL;
+    scene->background = init_menu_background();
+    scene->buttons = init_buttons();
+    return scene;
 }

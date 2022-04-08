@@ -10,15 +10,16 @@
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
-typedef struct scenes_s {
-
-} scenes_t;
-
 typedef struct game_s {
     sfRenderWindow *window;
     sfView *view;
-    scenes_t *scenes;
+    struct scenes_s *scenes;
 } game_t;
+
+typedef struct scenes_s {
+    void (*main_menu) (game_t *game);
+    // TODO: add buttons
+} scenes_t;
 
 typedef struct event_controller_s {
     sfEventType type;

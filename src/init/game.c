@@ -20,12 +20,21 @@ static sfRenderWindow *init_window(void)
     return window;
 }
 
+scenes_t *init_scenes(void)
+{
+    scenes_t *scenes = malloc(sizeof(scenes_t));
+
+    scenes->main_menu = NULL;
+    return scenes;
+}
+
 game_t *init_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
 
     game->window = init_window();
-    if (!game->window)
+    game->scenes = init_scenes();
+    if (!game->window || !game->scenes)
         return NULL;
     return game;
 }

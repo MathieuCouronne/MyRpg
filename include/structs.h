@@ -7,28 +7,26 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
+#include "menu.h"
+#include "idk.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
+typedef struct main_menu_scenes_s {
+    game_asset_t *background;
+    menu_buttons_t *buttons;
+} main_menu_scenes_t;
+
+typedef struct scenes_s {
+    main_menu_scenes_t *main_menu;
+} scenes_t;
+
 typedef struct game_s {
     sfRenderWindow *window;
     sfView *view;
-    struct scenes_s *scenes;
+    scenes_t *scenes;
 } game_t;
-
-typedef struct scenes_s {
-    void (*main_menu) (game_t *game);
-    // TODO: add buttons
-} scenes_t;
-
-typedef struct game_asset_s {
-    sfSprite *sprite;
-    sfTexture *texture;
-    sfRectangleShape *rect;
-    sfVector2f pos;
-    float scaling;
-} game_asset_t;
 
 typedef struct event_controller_s {
     sfEventType type;

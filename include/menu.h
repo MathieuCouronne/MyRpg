@@ -7,7 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
-#include "structs.h"
+#include "idk.h"
 #include "enum.h"
 
 #ifndef RPG_MENU_H

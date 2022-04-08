@@ -6,6 +6,7 @@
 */
 
 #include "structs.h"
+#include "menu.h"
 
 #ifndef MY_RPG_H_
     #define MY_RPG_H_
@@ -15,6 +16,8 @@ game_t *init_game(void);
 
 // Destroy
 void destroy_game(game_t *game);
+void destroy_menu(game_asset_t *menu);
+void menu_destroy_buttons(menu_buttons_t *button);
 
 // Events
 void handle_events(game_t *game, sfEvent *event);

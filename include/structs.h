@@ -6,6 +6,7 @@
 */
 
 #include <SFML/Graphics.h>
+#include <SFML/Window.h>
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
@@ -20,6 +21,14 @@ typedef struct scenes_s {
     void (*main_menu) (game_t *game);
     // TODO: add buttons
 } scenes_t;
+
+typedef struct game_asset_s {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfRectangleShape *rect;
+    sfVector2f pos;
+    float scaling;
+} game_asset_t;
 
 typedef struct event_controller_s {
     sfEventType type;

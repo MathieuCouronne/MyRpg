@@ -29,6 +29,8 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 
 SRC			+=	$(SRC_DIR)menu/create_button.c
 
+SRC			+=	$(SRC_DIR)scenes/menus/main.c
+
 OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf

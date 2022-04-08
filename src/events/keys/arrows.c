@@ -9,9 +9,9 @@
 
 void handle_arrow_keys(game_t *game, sfEvent *event)
 {
-    if (event->key.code == sfKeyLeft) {
+    if (event->key.code == sfKeyLeft && game->view) {
         sfView_move(game->view, (sfVector2f) {-1, 0});
-    } else if (event->key.code == sfKeyRight) {
+    } else if (event->key.code == sfKeyRight && game->view) {
         sfView_move(game->view, (sfVector2f) {1, 0});
     }
 }

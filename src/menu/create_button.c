@@ -11,9 +11,20 @@
 #include "menu.h"
 #include "structs.h"
 
-button_t *create_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
+sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite)
+{
+    sfVector2f pos;
+    sfFloatRect rect = sfText_getGlobalBounds(text);
+
+    pos.x = (x / 2) + pos_sprite.x - (rect.width / 2);
+    pos.y = pos_sprite.y + (y / 2) - 40;
+    return pos;
+}
+
+button_t *create_button(char *str, sfVector2f pos_sprite)
 {
     button_t *button = malloc(sizeof(button_t));
+    sfVector2f pos;
 
     button->asset = malloc(sizeof(game_asset_t));
     button->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
@@ -27,6 +38,7 @@ button_t *create_button(char *str, sfVector2f pos, sfVector2f pos_sprite)
     sfText_setString(button->text, str);
     sfText_setCharacterSize(button->text, 60);
     sfText_setColor(button->text, sfBlack);
+    pos = center_text(350, 140, button->text, pos_sprite);
     sfText_setPosition(button->text, pos);
     return button;
 }

@@ -23,6 +23,7 @@ void menu_destroy_buttons(menu_buttons_t *button)
 {
     if (!button)
         return;
+    destroy_button(button->settings);
     destroy_button(button->play);
     free(button);
 }

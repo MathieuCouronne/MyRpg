@@ -28,6 +28,7 @@ typedef struct menu_buttons_s {
 
 game_asset_t *init_menu_background(void);
 menu_buttons_t *init_buttons(void);
-button_t *create_button(char *str, sfVector2f pos, sfVector2f pos_sprite);
+button_t *create_button(char *str, sfVector2f pos_sprite);
+sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite);
 
 #endif //RPG_MENU_H

@@ -18,7 +18,8 @@ SRC			=	$(SRC_DIR)my_rpg.c
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
-				$(SRC_DIR)events/mouse/wheel.c
+				$(SRC_DIR)events/mouse/wheel.c \
+				$(SRC_DIR)events/mouse/menu_button.c
 
 SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/menu.c \

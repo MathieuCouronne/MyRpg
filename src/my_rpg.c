@@ -18,8 +18,10 @@ int main(void)
         return 84;
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
-        while (sfRenderWindow_pollEvent(game->window, &event))
+        while (sfRenderWindow_pollEvent(game->window, &event)) {
+            handle_menu_events(game->scenes->main_menu->buttons, event);
             handle_events(game, &event);
+        }
         display_main_menu(game);
         sfRenderWindow_display(game->window);
     }

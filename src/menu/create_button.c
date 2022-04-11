@@ -33,7 +33,9 @@ button_t *create_button(char *str, sfVector2f pos_sprite)
     button->asset->texture = sfTexture_createFromFile
         ("./assets/images/button_asset.png", NULL);
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
-    sfSprite_setPosition(button->asset->sprite, pos_sprite);
+    button->asset->pos.x = pos_sprite.x;
+    button->asset->pos.y = pos_sprite.y;
+    sfSprite_setPosition(button->asset->sprite, button->asset->pos);
     sfText_setFont(button->text, button->font);
     sfText_setString(button->text, str);
     sfText_setCharacterSize(button->text, 60);

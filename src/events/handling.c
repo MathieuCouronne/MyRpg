@@ -22,3 +22,9 @@ void handle_events(game_t *game, sfEvent *event)
             EVENT_TYPES[i].fn(game, event);
     }
 }
+
+void handle_menu_events(menu_buttons_t *buttons, sfEvent event)
+{
+    if (event.type == sfEvtMouseButtonPressed)
+        click_play_menu(buttons->play, event);
+}

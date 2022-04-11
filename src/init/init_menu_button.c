@@ -19,5 +19,6 @@ menu_buttons_t *init_buttons(void)
                             (sfVector2f){960 - 350 / 2,500});
     button->settings = create_button("Settings",
                             (sfVector2f){960 - 350 / 2 ,650});
+    button->title = title_menu("Cyber_Coc");
     return button;
 }

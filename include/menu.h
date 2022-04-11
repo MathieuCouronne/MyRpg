@@ -23,6 +23,7 @@ typedef struct button_s {
 typedef struct menu_buttons_s {
     button_t *play;
     button_t *settings;
+    button_t *title;
     button_t *quit;
 } menu_buttons_t;
 
@@ -32,5 +33,6 @@ button_t *create_button(char *str, sfVector2f pos_sprite);
 sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite);
 void click_play_menu(button_t *button, sfEvent event);
 void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
+button_t *title_menu(char *str);
 
 #endif //RPG_MENU_H

@@ -26,5 +26,10 @@ void handle_events(game_t *game, sfEvent *event)
 void handle_menu_events(menu_buttons_t *buttons, sfEvent event)
 {
     if (event.type == sfEvtMouseButtonPressed)
-        click_play_menu(buttons->play, event);
+        if (click_play_menu(buttons->play, event) == true) {
+            // TODO add function
+        }
+        if (click_play_menu(buttons->settings, event) == true) {
+            // TODO add function
+        }
 }

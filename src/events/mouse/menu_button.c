@@ -7,8 +7,9 @@
 
 #include "my_rpg.h"
 #include "menu.h"
+#include <stdbool.h>
 
-void click_play_menu(button_t *button, sfEvent event)
+bool click_play_menu(button_t *button, sfEvent event)
 {
     sfVector2i pos;
 
@@ -19,7 +20,8 @@ void click_play_menu(button_t *button, sfEvent event)
             && pos.x >= button->asset->pos.x
             && pos.y <= button->asset->pos.y + 140
             && pos.y >= button->asset->pos.y) {
-            //TODO add change of
+            return true;
         }
     }
+    return false;
 }

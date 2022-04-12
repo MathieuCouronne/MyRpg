@@ -34,6 +34,7 @@ game_t *init_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
 
+    game->player = character_sprite();
     game->view = sfView_create();
     game->window = init_window();
     game->scenes = init_scenes(game);

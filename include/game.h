@@ -15,7 +15,13 @@ typedef struct game_scene_s {
     sfView *view;
 } game_scene_t;
 
-bool display_main_game(game_t *game);
-void destroy_map(main_game_t *map);
+typedef struct player_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+} player_t;
+
+player_t *character_sprite(void);
 
 #endif //RPG_GAME_H

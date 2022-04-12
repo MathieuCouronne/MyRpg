@@ -10,6 +10,7 @@
 #include <SFML/Audio.h>
 #include "menu.h"
 #include "idk.h"
+#include "game.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
@@ -37,11 +38,15 @@ typedef struct game_s {
     sfView *view;
     scenes_t *scenes;
     sound_t *sound;
+    player_t *player;
 } game_t;
 
 typedef struct event_controller_s {
     sfEventType type;
     void (*fn) (game_t *game, sfEvent *event);
 } event_controller_t;
+
+bool display_main_game(game_t *game);
+void destroy_map(main_game_t *map);
 
 #endif

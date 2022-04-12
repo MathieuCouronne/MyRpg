@@ -29,5 +29,6 @@ int main(void)
     }
     // menu_destroy_buttons(button);
     // destroy_menu(menu);
+    // destroy_map(game->scenes->game_scene);
     destroy_game(game);
 }

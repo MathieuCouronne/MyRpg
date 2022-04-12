@@ -12,8 +12,10 @@
 
 typedef struct game_scene_s {
     game_asset_t *map;
+    sfView *view;
 } game_scene_t;
 
 bool display_main_game(game_t *game);
+void destroy_map(main_game_t *map);
 
 #endif //RPG_GAME_H

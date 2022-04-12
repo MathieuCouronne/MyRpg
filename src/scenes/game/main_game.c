@@ -22,6 +22,7 @@ bool display_main_game(game_t *game)
         return false;
     window = game->window;
     main_game = game->scenes->game_scene;
+    sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
     return true;
 }

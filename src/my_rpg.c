@@ -17,6 +17,7 @@ int main(void)
 
     if (!game)
         return 84;
+    menu_music(game->sound);
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
         while (sfRenderWindow_pollEvent(game->window, &event)) {
@@ -30,5 +31,6 @@ int main(void)
     // menu_destroy_buttons(button);
     // destroy_menu(menu);
     // destroy_map(game->scenes->game_scene);
+    destroy_sound(game->sound);
     destroy_game(game);
 }

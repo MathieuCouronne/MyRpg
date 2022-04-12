@@ -23,12 +23,14 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 
 SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/menu.c \
+				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/init_menu_button.c \
 				$(SRC_DIR)init/map_game.c \
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \
 				$(SRC_DIR)destroy/button.c \
+				$(SRC_DIR)destroy/music.c \
 				$(SRC_DIR)destroy/map.c
 
 SRC			+=	$(SRC_DIR)menu/create_button.c \

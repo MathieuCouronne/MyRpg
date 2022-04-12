@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
+#include <SFML/Audio.h>
 #include "menu.h"
 #include "idk.h"
 
@@ -27,10 +28,15 @@ typedef struct scenes_s {
     main_game_t *game_scene;
 } scenes_t;
 
+typedef struct sound_s {
+    sfMusic *music;
+} sound_t;
+
 typedef struct game_s {
     sfRenderWindow *window;
     sfView *view;
     scenes_t *scenes;
+    sound_t *sound;
 } game_t;
 
 typedef struct event_controller_s {

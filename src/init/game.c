@@ -26,6 +26,7 @@ scenes_t *init_scenes(void)
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
     scenes->main_menu = init_main_menu();
+    scenes->game_scene = init_main_game();
     return scenes;
 }
 

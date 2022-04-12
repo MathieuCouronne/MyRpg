@@ -8,6 +8,7 @@
 #include "my_rpg.h"
 #include "menu.h"
 #include "display.h"
+#include "game.h"
 
 int main(void)
 {
@@ -22,7 +23,8 @@ int main(void)
             handle_menu_events(game->scenes->main_menu->buttons, event);
             handle_events(game, &event);
         }
-        display_main_menu(game);
+        //display_main_menu(game);
+        display_main_game(game);
         sfRenderWindow_display(game->window);
     }
     // menu_destroy_buttons(button);

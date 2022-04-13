@@ -19,7 +19,8 @@ SRC			=	$(SRC_DIR)my_rpg.c
 SRC			+=	$(SRC_DIR)player/move_down.c \
 				$(SRC_DIR)player/move_left.c \
 				$(SRC_DIR)player/move_right.c \
-				$(SRC_DIR)player/move_up.c
+				$(SRC_DIR)player/move_up.c \
+				$(SRC_DIR)player/clock.c
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \

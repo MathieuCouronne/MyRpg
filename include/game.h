@@ -24,5 +24,6 @@ typedef struct player_s {
 } player_t;
 
 player_t *character_sprite(void);
+int clock_time(sfClock *clock, float time_offset);
 
 #endif //RPG_GAME_H

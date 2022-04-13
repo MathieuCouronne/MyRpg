@@ -12,18 +12,6 @@
 #include <SFML/System/Types.h>
 #include <SFML/Graphics.h>
 
-static int clock_time(sfClock *clock, float time_offset)
-{
-    float seconds;
-    sfTime time = sfClock_getElapsedTime(clock);
-
-    seconds = time.microseconds / 1000000.0;
-    if (seconds >= time_offset) {
-        return 1;
-    }
-    return 0;
-}
-
 void move_right(game_t *game)
 {
     if (game->player->rect->left > 148) {

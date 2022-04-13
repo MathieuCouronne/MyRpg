@@ -31,6 +31,7 @@ int main(void)
     // menu_destroy_buttons(button);
     // destroy_menu(menu);
     // destroy_map(game->scenes->game_scene);
+    //destroy_player(game->player);
     destroy_sound(game->sound);
     destroy_game(game);
 }

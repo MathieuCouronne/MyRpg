@@ -20,6 +20,7 @@ void handle_arrow_keys(game_t *game, sfEvent *event)
         sfSprite_setPosition(game->player->sprite, game->player->position);
     } else if (event->key.code == sfKeyUp && game->view) {
         sfView_move(game->view, (sfVector2f) {0, -20});
+        clock_player_up(game->player->clock, game);
         game->player->position.y -= 20;
         sfSprite_setPosition(game->player->sprite, game->player->position);
     } else if (event->key.code == sfKeyDown && game->view) {

@@ -18,7 +18,7 @@ sfIntRect *rect_player(void)
 
     rect->top = 0;
     rect->left = 0;
-    rect->width = 55;
+    rect->width = 74;
     rect->height = 50;
     return rect;
 }
@@ -36,5 +36,6 @@ player_t *character_sprite(void)
     sfSprite_setScale(player->sprite, (sfVector2f) {2, 2});
     sfSprite_setPosition(player->sprite, player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
+    player->clock = sfClock_create();
     return player;
 }

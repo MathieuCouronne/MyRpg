@@ -20,6 +20,7 @@ typedef struct player_s {
     sfIntRect *rect;
     sfVector2f position;
     sfTexture *texture;
+    sfClock *clock;
 } player_t;
 
 player_t *character_sprite(void);

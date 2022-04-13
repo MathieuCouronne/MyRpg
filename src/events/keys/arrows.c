@@ -25,5 +25,6 @@ void handle_arrow_keys(game_t *game, sfEvent *event)
         sfView_move(game->view, (sfVector2f) {0, 20});
         game->player->position.y += 20;
         sfSprite_setPosition(game->player->sprite, game->player->position);
+        
     }
 }

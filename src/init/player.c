@@ -18,7 +18,7 @@ sfIntRect *rect_player(void)
 
     rect->top = 0;
     rect->left = 0;
-    rect->width = 100;
+    rect->width = 55;
     rect->height = 50;
     return rect;
 }

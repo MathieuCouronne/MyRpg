@@ -13,4 +13,5 @@
 void destroy_sound(sound_t *music)
 {
     sfMusic_destroy(music->music);
+    free(music);
 }

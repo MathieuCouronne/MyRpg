@@ -29,7 +29,8 @@ player_t *character_sprite(void)
 
     player->sprite = sfSprite_create();
     player->rect = rect_player();
-    player->texture = sfTexture_createFromFile("./assets/images/character.png", NULL);
+    player->texture = sfTexture_createFromFile(
+        "./assets/images/character.png", NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     player->position.x = 2220;
     player->position.y = 2200;

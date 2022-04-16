@@ -26,7 +26,7 @@ void handle_arrow_keys(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
 
 //sounds
-sound_t *menu_music(sound_t *music);
+sound_t *menu_music();
 void destroy_sound(sound_t *music);
 
 #endif

@@ -10,12 +10,13 @@
 #include <SFML/Audio.h>
 #include "my_rpg.h"
 
-sound_t *menu_music(sound_t *music)
+sound_t *menu_music()
 {
-    music->music = sfMusic_createFromFile("./assets/sound/Hearthstone.ogg");
+    sound_t *music = malloc(sizeof(sound_t));
 
-    if (!music->music)
+    if (!music)
         return NULL;
+    music->music = sfMusic_createFromFile("./assets/sound/Hearthstone.ogg");
     sfMusic_play(music->music);
     return music;
 }

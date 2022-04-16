@@ -38,7 +38,7 @@ game_t *init_game(void)
     game->view = sfView_create();
     game->window = init_window();
     game->scenes = init_scenes(game);
-    game->sound = malloc(sizeof(sound_t));
+    game->sound = menu_music();
     if (!game->window || !game->scenes)
         return NULL;
     return game;

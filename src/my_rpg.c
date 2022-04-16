@@ -28,10 +28,5 @@ int main(void)
         display_main_game(game);
         sfRenderWindow_display(game->window);
     }
-    // menu_destroy_buttons(button);
-    // destroy_menu(menu);
-    // destroy_map(game->scenes->game_scene);
-    //destroy_player(game->player);
-    destroy_sound(game->sound);
-    destroy_game(game);
+    destroy_all(game);
 }

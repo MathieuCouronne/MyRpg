@@ -17,4 +17,3 @@ void destroy_map(main_game_t *map)
     sfTexture_destroy(map->map->texture);
     free(map);
 }
-

@@ -39,7 +39,8 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/button.c \
 				$(SRC_DIR)destroy/music.c \
 				$(SRC_DIR)destroy/map.c \
-				$(SRC_DIR)destroy/player.c
+				$(SRC_DIR)destroy/player.c \
+				$(SRC_DIR)destroy/destroy_all.c
 
 SRC			+=	$(SRC_DIR)menu/create_button.c \
 				$(SRC_DIR)menu/title.c

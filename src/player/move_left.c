@@ -34,4 +34,3 @@ void clock_player_down(sfClock *clock, game_t *game)
     }
 }
 */
-

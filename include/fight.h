@@ -13,6 +13,5 @@
 
 fight_t *init_fight(void);
 bool display_fight(game_t *game);
-sfIntRect *rect_player(void);
 
 #endif //RPG_FIGHT_H

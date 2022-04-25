@@ -27,6 +27,17 @@ game_asset_t *init_fight_background(void)
     return background;
 }
 
+static sfIntRect *rect_player(void)
+{
+    sfIntRect *rect = malloc(sizeof(sfIntRect));
+
+    rect->top = 0;
+    rect->left = 74;
+    rect->width = 74;
+    rect->height = 50;
+    return rect;
+}
+
 player_t *player_fight(void)
 {
 
@@ -37,9 +48,9 @@ player_t *player_fight(void)
     player->texture = sfTexture_createFromFile(
             "./assets/images/character.png", NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
-    player->position.x = 0;
-    player->position.y = 0;
-    sfSprite_setScale(player->sprite, (sfVector2f) {5, 5});
+    player->position.x = 200;
+    player->position.y = 670;
+    sfSprite_setScale(player->sprite, (sfVector2f) {10, 10});
     sfSprite_setPosition(player->sprite, player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
     player->clock = sfClock_create();

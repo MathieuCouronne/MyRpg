@@ -10,6 +10,7 @@
 #include "display.h"
 #include "game.h"
 #include "fight.h"
+#include "inventory.h"
 
 int main(void)
 {

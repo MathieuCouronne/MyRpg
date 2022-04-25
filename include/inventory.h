@@ -22,7 +22,9 @@ typedef struct slot_s {
 typedef struct inventory_s {
     unsigned int height;
     unsigned int width;
-    slot_t **content;
+    slot_t ***content;
 } inventory_t;
+
+inventory_t *create_inventory(void);
 
 #endif

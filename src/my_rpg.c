@@ -26,9 +26,9 @@ int main(void)
             handle_events(game, &event);
         }
         //display_main_menu(game);
-        //display_fight(game);
-        display_main_game(game);
+        display_fight(game);
+        //display_main_game(game);
         sfRenderWindow_display(game->window);
     }
-    destroy_all(game);
+    //destroy_all(game);
 }

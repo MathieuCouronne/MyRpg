@@ -16,6 +16,6 @@ void destroy_all(game_t *game)
     destroy_map(game->scenes->game_scene);
     destroy_player(game->player);
     destroy_sound(game->sound);
-    destroy_fight(game->scenes->fight);gs
+    destroy_fight(game->scenes->fight);
     destroy_game(game);
 }

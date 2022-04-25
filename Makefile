@@ -52,7 +52,7 @@ SRC			+=	$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/fight/main_fight.c
 
 
-SRC			+=	$(SRC_DIR)inventory.create_inventory.c \
+SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 
 OBJ			= $(SRC:.c=.o)
 

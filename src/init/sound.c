@@ -5,9 +5,10 @@
 ** my_rpg header file
 */
 
+#include <SFML/Audio.h>
+#include <stdlib.h>
 #include "structs.h"
 #include "menu.h"
-#include <SFML/Audio.h>
 #include "my_rpg.h"
 
 sound_t *menu_music()

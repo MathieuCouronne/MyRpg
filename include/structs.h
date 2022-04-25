@@ -17,6 +17,7 @@
 
 typedef struct fight_s {
     game_asset_t *background_fight;
+    player_t *player;
 } fight_t;
 
 typedef struct main_game_s {

@@ -7,6 +7,7 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
+#include "fight.h"
 
 void destroy_all(game_t *game)
 {
@@ -15,5 +16,6 @@ void destroy_all(game_t *game)
     destroy_map(game->scenes->game_scene);
     destroy_player(game->player);
     destroy_sound(game->sound);
+    destroy_fight(game->scenes->fight);gs
     destroy_game(game);
 }

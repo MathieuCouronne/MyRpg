@@ -32,7 +32,8 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/init_menu_button.c \
 				$(SRC_DIR)init/map_game.c \
-				$(SRC_DIR)init/player.c
+				$(SRC_DIR)init/player.c \
+				$(SRC_DIR)init/fight.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \
@@ -47,6 +48,7 @@ SRC			+=	$(SRC_DIR)menu/create_button.c \
 
 SRC			+=	$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/main_game.c \
+				$(SRC_DIR)scenes/fight/main_fight.c
 
 OBJ			= $(SRC:.c=.o)
 

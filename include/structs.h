@@ -15,6 +15,10 @@
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
+typedef struct fight_s {
+    game_asset_t *background_fight;
+} fight_t;
+
 typedef struct main_game_s {
     game_asset_t *map;
 } main_game_t;
@@ -27,6 +31,7 @@ typedef struct main_menu_scenes_s {
 typedef struct scenes_s {
     main_menu_scenes_t *main_menu;
     main_game_t *game_scene;
+    fight_t *fight;
 } scenes_t;
 
 typedef struct sound_s {

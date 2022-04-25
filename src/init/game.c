@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "my_rpg.h"
 #include "scenes.h"
+#include "fight.h"
 
 static sfRenderWindow *init_window(void)
 {
@@ -39,6 +40,7 @@ game_t *init_game(void)
     game->window = init_window();
     game->scenes = init_scenes(game);
     game->sound = menu_music();
+    game->scenes->fight = init_fight();
     if (!game->window || !game->scenes)
         return NULL;
     return game;

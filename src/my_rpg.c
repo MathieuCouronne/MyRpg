@@ -9,6 +9,7 @@
 #include "menu.h"
 #include "display.h"
 #include "game.h"
+#include "fight.h"
 
 int main(void)
 {
@@ -25,6 +26,7 @@ int main(void)
             handle_events(game, &event);
         }
         //display_main_menu(game);
+        //display_fight(game);
         display_main_game(game);
         sfRenderWindow_display(game->window);
     }

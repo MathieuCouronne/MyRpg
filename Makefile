@@ -58,14 +58,12 @@ OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf
 
-$(NAME): build_libs $(OBJ)
+$(NAME): $(OBJ)
+	make -C lib/my
+	make -C lib/my_printf
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS)
 
 all:		$(NAME)
-
-build_libs:
-	make -C lib/my
-	make -C lib/my_printf
 
 clean:
 	$(RM) $(OBJ)

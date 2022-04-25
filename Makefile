@@ -50,6 +50,9 @@ SRC			+=	$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/main_game.c \
 				$(SRC_DIR)scenes/fight/main_fight.c
 
+
+SRC			+=	$(SRC_DIR)inventory.create_inventory.c \
+
 OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf

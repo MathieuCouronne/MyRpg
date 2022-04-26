@@ -11,32 +11,11 @@
 #include "menu.h"
 #include "idk.h"
 #include "game.h"
+#include "fight.h"
+#include "scenes.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
-
-typedef struct fight_s {
-    game_asset_t *background_fight;
-    game_asset_t *text_bar;
-    game_asset_t *hp_bar;
-    player_t *player;
-    enemy_t *ennemy;
-} fight_t;
-
-typedef struct main_game_s {
-    game_asset_t *map;
-} main_game_t;
-
-typedef struct main_menu_scenes_s {
-    game_asset_t *background;
-    menu_buttons_t *buttons;
-} main_menu_scenes_t;
-
-typedef struct scenes_s {
-    main_menu_scenes_t *main_menu;
-    main_game_t *game_scene;
-    fight_t *fight;
-} scenes_t;
 
 typedef struct sound_s {
     sfMusic *music;

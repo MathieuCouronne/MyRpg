@@ -28,4 +28,9 @@ typedef struct menu_buttons_s {
     button_t *quit;
 } menu_buttons_t;
 
+typedef struct main_menu_scenes_s {
+    game_asset_t *background;
+    menu_buttons_t *buttons;
+} main_menu_scenes_t;
+
 #endif //RPG_MENU_H

@@ -15,6 +15,10 @@ typedef struct game_scene_s {
     sfView *view;
 } game_scene_t;
 
+typedef struct main_game_s {
+    game_asset_t *map;
+} main_game_t;
+
 typedef struct player_s {
     sfSprite *sprite;
     sfIntRect *rect;
@@ -22,15 +26,5 @@ typedef struct player_s {
     sfTexture *texture;
     sfClock *clock;
 } player_t;
-
-typedef struct enemy_s {
-    sfSprite *sprite;
-    sfIntRect *rect;
-    sfVector2f position;
-    sfTexture *texture;
-    char *name;
-    unsigned int dps;
-    unsigned int hp;
-} enemy_t;
 
 #endif //RPG_GAME_H

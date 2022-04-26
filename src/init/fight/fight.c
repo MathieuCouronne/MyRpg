@@ -37,6 +37,7 @@ game_asset_t *init_text_bar(void)
     background->texture = sfTexture_createFromFile
             ("./assets/images/text_bar.png", NULL);
     sfSprite_setPosition(background->sprite, (sfVector2f) {0, 800});
+    sfSprite_setScale(background->sprite, (sfVector2f) {8.05, 6});
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }

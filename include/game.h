@@ -23,6 +23,16 @@ typedef struct player_s {
     sfClock *clock;
 } player_t;
 
+typedef struct enemy_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+    char *name;
+    unsigned int dps;
+    unsigned int hp;
+} enemy_t;
+
 player_t *character_sprite(void);
 int clock_time(sfClock *clock, float time_offset);
 

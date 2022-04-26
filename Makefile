@@ -33,7 +33,8 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/init_menu_button.c \
 				$(SRC_DIR)init/map_game.c \
 				$(SRC_DIR)init/player.c \
-				$(SRC_DIR)init/fight.c
+				$(SRC_DIR)init/fight/fight.c \
+				$(SRC_DIR)init/fight/ogre.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \

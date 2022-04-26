@@ -79,5 +79,6 @@ fight_t *init_fight(void)
     fight->background_fight = init_fight_background();
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
+    fight->ennemy = init_ogre();
     return fight;
 }

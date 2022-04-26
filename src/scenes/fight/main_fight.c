@@ -21,6 +21,7 @@ bool display_fight(game_t *game)
     window = game->window;
     fight = game->scenes->fight;
     sfRenderWindow_drawSprite(window, fight->background_fight->sprite, NULL);
+    sfRenderWindow_drawSprite(window, fight->ennemy->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
     return true;

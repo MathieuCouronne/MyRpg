@@ -56,11 +56,4 @@ typedef struct event_controller_s {
     void (*fn) (game_t *game, sfEvent *event);
 } event_controller_t;
 
-bool display_main_game(game_t *game);
-void clock_player_down(sfClock *clock, game_t *game);
-void clock_player_up(sfClock *clock, game_t *game);
-void destroy_map(main_game_t *map);
-void destroy_all(game_t *game);
-void clock_player_right(sfClock *clock, game_t *game);
-
 #endif

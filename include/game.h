@@ -33,7 +33,4 @@ typedef struct enemy_s {
     unsigned int hp;
 } enemy_t;
 
-player_t *character_sprite(void);
-int clock_time(sfClock *clock, float time_offset);
-
 #endif //RPG_GAME_H

@@ -25,6 +25,4 @@ typedef struct inventory_s {
     slot_t ***content;
 } inventory_t;
 
-inventory_t *create_inventory(void);
-
 #endif

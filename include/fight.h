@@ -11,8 +11,4 @@
 #ifndef RPG_FIGHT_H
     #define RPG_FIGHT_H
 
-fight_t *init_fight(void);
-bool display_fight(game_t *game);
-enemy_t *init_ogre(void);
-
 #endif //RPG_FIGHT_H

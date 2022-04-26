@@ -7,6 +7,7 @@
 
 #include "structs.h"
 #include "menu.h"
+#include "inventory.h"
 
 #ifndef MY_RPG_H_
     #define MY_RPG_H_
@@ -14,22 +15,45 @@
 // Initialization
 game_t *init_game(void);
 game_asset_t *init_hp_bar(void);
+game_asset_t *init_menu_background(void);
+menu_buttons_t *init_buttons(void);
+fight_t *init_fight(void);
+enemy_t *init_ogre(void);
+player_t *character_sprite(void);
+button_t *create_button(char *str, sfVector2f pos_sprite);
+int clock_time(sfClock *clock, float time_offset);
+inventory_t *create_inventory(void);
+button_t *title_menu(char *str);
+main_menu_scenes_t *init_main_menu(void);
+main_game_t *init_main_game(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);
 void destroy_menu(game_asset_t *menu);
 void menu_destroy_buttons(menu_buttons_t *button);
 void destroy_player(player_t *player);
-void destroy_ennemy(enemy_t *ennemy);
 void destroy_fight(fight_t *fight);
+void destroy_all(game_t *game);
+void destroy_map(main_game_t *map);
 
 // Events
 void handle_events(game_t *game, sfEvent *event);
 void handle_arrow_keys(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
+void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
+bool click_play_menu(button_t *button, sfEvent event);
 
 //sounds
 sound_t *menu_music();
 void destroy_sound(sound_t *music);
+
+//display
+bool display_main_menu(game_t *game);
+bool display_fight(game_t *game);
+
+//movement
+void clock_player_down(sfClock *clock, game_t *game);
+void clock_player_up(sfClock *clock, game_t *game);
+void clock_player_right(sfClock *clock, game_t *game);
 
 #endif

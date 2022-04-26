@@ -11,6 +11,5 @@
 #ifndef DISPLAY_H
     #define DISPLAY_H
 
-bool display_main_menu(game_t *game);
 
 #endif

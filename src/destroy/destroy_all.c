@@ -17,5 +17,6 @@ void destroy_all(game_t *game)
     destroy_player(game->player);
     destroy_sound(game->sound);
     destroy_fight(game->scenes->fight);
+    destroy_ennemy(game->ennemy);
     destroy_game(game);
 }

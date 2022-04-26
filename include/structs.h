@@ -48,6 +48,7 @@ typedef struct game_s {
     scenes_t *scenes;
     sound_t *sound;
     player_t *player;
+    enemy_t *ennemy;
 } game_t;
 
 typedef struct event_controller_s {

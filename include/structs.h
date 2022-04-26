@@ -18,6 +18,7 @@
 typedef struct fight_s {
     game_asset_t *background_fight;
     game_asset_t *text_bar;
+    game_asset_t *hp_bar;
     player_t *player;
     enemy_t *ennemy;
 } fight_t;

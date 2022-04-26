@@ -12,6 +12,7 @@
 #include "structs.h"
 #include "scenes.h"
 #include "fight.h"
+#include "my_rpg.h"
 
 game_asset_t *init_fight_background(void)
 {
@@ -80,5 +81,6 @@ fight_t *init_fight(void)
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
     fight->ennemy = init_ogre();
+    fight->hp_bar = init_hp_bar();
     return fight;
 }

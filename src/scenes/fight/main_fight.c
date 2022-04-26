@@ -24,5 +24,6 @@ bool display_fight(game_t *game)
     sfRenderWindow_drawSprite(window, fight->ennemy->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
+    sfRenderWindow_drawSprite(window, fight->hp_bar->sprite, NULL);
     return true;
 }

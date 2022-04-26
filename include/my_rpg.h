@@ -13,6 +13,7 @@
 
 // Initialization
 game_t *init_game(void);
+game_asset_t *init_hp_bar(void);
 
 // Destroy
 void destroy_game(game_t *game);

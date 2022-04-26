@@ -8,7 +8,7 @@
 #include "my_rpg.h"
 
 static const event_controller_t EVENT_TYPES[] = {
-    {sfEvtKeyPressed, &handle_arrow_keys},
+    // {sfEvtKeyPressed, &handle_arrow_keys},
     {sfEvtMouseWheelScrolled, &handle_mouse_wheel},
     {0, NULL}
 };

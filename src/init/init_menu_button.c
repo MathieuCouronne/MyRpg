@@ -6,10 +6,10 @@
 */
 
 #include <stdlib.h>
-#include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include "menu.h"
 #include "structs.h"
+#include "my_rpg.h"
 
 menu_buttons_t *init_buttons(void)
 {

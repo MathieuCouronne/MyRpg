@@ -32,23 +32,12 @@ static stats_t **init_war_stats(void)
     return stats;
 }
 
-static char **init_classes(void)
-{
-    char **classes = malloc(sizeof(char *) * NB_CLASSES + 1);
-
-    classes[NB_CLASSES] = NULL;
-    classes[0] = "Warrior";
-    classes[1] = "Mage";
-    return classes;
-}
-
 character_t *create_character(void)
 {
     character_t *character = malloc(sizeof(character_t *));
 
-    character->name = malloc(sizeof(char) * 30);
     character->name = "Enter a name";
-    character->class_name = init_classes()[0];
+    character->class_name = "Warrior";
     character->unspent = 20;
     character->stats = init_war_stats();
     character->level = 1;

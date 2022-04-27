@@ -13,8 +13,8 @@
 
 static sfRenderWindow *init_window(void)
 {
-    sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, 32};
-    sfRenderWindow *window = sfRenderWindow_create(mode, "MyRPG",
+    sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
+    sfRenderWindow *window = sfRenderWindow_create(mode, WINDOW_NAME,
     sfFullscreen, NULL);
 
     if (!window)

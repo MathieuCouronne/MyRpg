@@ -8,8 +8,10 @@
 #ifndef RPG_MACROS_H
     #define RPG_MACROS_H
 
+    #define WINDOW_NAME "MyRPG"
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
+    #define WINDOW_BITS 32
     #define MAP_WIDTH 3168
     #define MAP_HEIGHT 3200
 

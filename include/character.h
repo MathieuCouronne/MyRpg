@@ -35,6 +35,11 @@ typedef struct character_s {
     stats_t **stats;
     unsigned int level;
     unsigned int exp;
+    unsigned int hp;
+    unsigned int max_hp;
+    unsigned int mp;
+    unsigned int max_mp;
+    inventory_t *inventory;
 } character_t;
 
 #endif

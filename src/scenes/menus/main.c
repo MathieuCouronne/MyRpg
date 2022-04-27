@@ -24,6 +24,8 @@ bool display_main_menu(game_t *game)
     sfRenderWindow_drawSprite(window, menu->background->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons->play->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons->play->text, NULL);
+    sfRenderWindow_drawSprite(window, buttons->quit->asset->sprite, NULL);
+    sfRenderWindow_drawText(window, buttons->quit->text, NULL);
     sfRenderWindow_drawSprite(window, buttons->settings->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons->settings->text, NULL);
     sfRenderWindow_drawText(window, buttons->title->text, NULL);

@@ -19,7 +19,7 @@ sfIntRect *rect_chest(void)
     rect->top = 0;
     rect->left = 0;
     rect->width = 47;
-    rect->height = 184;
+    rect->height = 40;
     return rect;
 }
 

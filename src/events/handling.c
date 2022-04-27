@@ -32,4 +32,8 @@ void handle_menu_events(menu_buttons_t *buttons, sfEvent event, game_t *game)
         if (click_play_menu(buttons->settings, event) == true) {
             // TODO add function
         }
+        if (click_play_menu(buttons->quit, event) == true) {
+            sfRenderWindow_close(game->window);
+            // TODO add function
+        }
 }

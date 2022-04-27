@@ -22,5 +22,6 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
     tmp = inventory->content[pos1.x][pos1.y];
     inventory->content[pos1.x][pos1.y] = inventory->content[pos2.x][pos2.y];
     inventory->content[pos2.x][pos2.y] = tmp;
+    free(tmp);
     return inventory;
 }

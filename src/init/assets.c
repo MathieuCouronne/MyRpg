@@ -72,6 +72,6 @@ bool download_assets(void)
     if (!sfFtpResponse_isOk(res))
         return display_status("Fail to download assets\n", false);
     download_folder(ftp, "images");
-    download_folder(ftp, "sounds");
+    download_folder(ftp, "sound");
     return true;
 }

@@ -28,4 +28,13 @@ typedef struct player_s {
     sfClock *clock;
 } player_t;
 
+typedef struct chest_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+    sfClock *clock;
+} chest_t;
+
+
 #endif //RPG_GAME_H

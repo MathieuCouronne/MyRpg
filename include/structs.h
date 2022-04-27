@@ -29,6 +29,7 @@ typedef struct game_s {
     sounds_t *sounds;
     player_t *player;
     enemy_t *enemy;
+    chest_t *chest;
 } game_t;
 
 typedef struct event_controller_s {

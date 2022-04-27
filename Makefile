@@ -51,7 +51,8 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 SRC			+=	$(SRC_DIR)menu/create_button.c \
 				$(SRC_DIR)menu/title.c
 
-SRC			+=	$(SRC_DIR)scenes/menus/main.c \
+SRC			+=	$(SRC_DIR)scenes/manager.c \
+				$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/main_game.c \
 				$(SRC_DIR)scenes/fight/main_fight.c
 

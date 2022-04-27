@@ -26,10 +26,8 @@ int main(void)
             handle_menu_events(game->scenes->main_menu->buttons, event);
             handle_events(game, &event);
         }
-        // display_main_menu(game);
-        display_fight(game);
         handle_arrow_keys(game);
-        //display_main_game(game);
+        scene_manager(game);
         sfRenderWindow_display(game->window);
     }
     //destroy_all(game);

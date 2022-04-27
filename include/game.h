@@ -20,6 +20,7 @@ typedef struct main_game_s {
 } main_game_t;
 
 typedef struct player_s {
+    char *name;
     sfSprite *sprite;
     sfIntRect *rect;
     sfVector2f position;

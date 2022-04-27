@@ -64,4 +64,8 @@ inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
     unsigned int quantity);
 inventory_t *remove_from_inventory(inventory_t *inventory, char const *name);
 
+//fight
+char *string_info(fight_t *fight);
+char *string_info_enemy(fight_t *fight);
+
 #endif

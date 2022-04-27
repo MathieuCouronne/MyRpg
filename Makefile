@@ -60,6 +60,8 @@ SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 				$(SRC_DIR)inventory/add_to_inventory.c \
 				$(SRC_DIR)inventory/remove_from_inventory.c \
 
+SRC			+=	$(SRC_DIR)fight/text_info.c
+
 OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf

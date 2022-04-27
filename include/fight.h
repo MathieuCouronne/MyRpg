@@ -27,10 +27,6 @@ typedef struct enemy_s {
 } enemy_t;
 
 typedef struct fight_s {
-    text_t *text_info_enemy;
-    text_t *text_info;
-    text_t *text_attack;
-    text_t *text_dps;
     game_asset_t *background_fight;
     game_asset_t *text_bar;
     game_asset_t *hp_bar;

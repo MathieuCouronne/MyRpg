@@ -81,7 +81,7 @@ fight_t *init_fight(void)
     fight->background_fight = init_fight_background();
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
-    fight->ennemy = init_ogre();
+    fight->enemy = init_ogre();
     fight->hp_bar = init_hp_bar();
     fight->player->name = malloc(sizeof(char) * 9);
     fight->player->name = "Cyber_coc";

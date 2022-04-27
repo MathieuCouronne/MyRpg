@@ -17,16 +17,16 @@
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
-typedef struct sound_s {
-    sfMusic *music;
-} sound_t;
+typedef struct sounds_s {
+    sfMusic *main_theme;
+} sounds_t;
 
 typedef struct game_s {
     sfRenderWindow *window;
     sfImage *collisions;
     sfView *view;
     scenes_t *scenes;
-    sound_t *sound;
+    sounds_t *sounds;
     player_t *player;
     enemy_t *enemy;
 } game_t;

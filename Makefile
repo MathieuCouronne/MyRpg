@@ -10,7 +10,7 @@ NAME		= my_rpg
 CFLAGS		= -Wall -Wextra -I include
 
 LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
-				-l csfml-audio -L ./lib -l my
+				-l csfml-audio -l csfml-network -L lib -l my -L lib -l my_printf
 
 SRC_DIR 	= src/
 
@@ -36,7 +36,8 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/fight/fight.c \
 				$(SRC_DIR)init/fight/ogre.c \
 				$(SRC_DIR)init/fight/hp_bar.c \
-				$(SRC_DIR)init/fight/text.c
+				$(SRC_DIR)init/fight/text.c \
+				$(SRC_DIR)init/assets.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \
@@ -51,7 +52,8 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 SRC			+=	$(SRC_DIR)menu/create_button.c \
 				$(SRC_DIR)menu/title.c
 
-SRC			+=	$(SRC_DIR)scenes/menus/main.c \
+SRC			+=	$(SRC_DIR)scenes/manager.c \
+				$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/main_game.c \
 				$(SRC_DIR)scenes/fight/main_fight.c
 

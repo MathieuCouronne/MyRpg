@@ -12,4 +12,8 @@ typedef enum {
     ACTIVE, INACTIVE, HOVER
 } button_state;
 
+typedef enum {
+    LOADING, MAIN_MENU, MAIN_GAME, FIGHT
+} scenes;
+
 #endif //RPG_ENUM_H

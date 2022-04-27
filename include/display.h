@@ -11,4 +11,6 @@
 #ifndef DISPLAY_H
     #define DISPLAY_H
 
+void scene_manager(game_t *game);
+
 #endif

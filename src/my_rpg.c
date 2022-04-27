@@ -12,6 +12,15 @@
 #include "fight.h"
 #include "inventory.h"
 
+static void event_handling(game_t *game, sfEvent *event)
+{
+    handle_arrow_keys(game);
+    while (sfRenderWindow_pollEvent(game->window, event)) {
+        handle_menu_events(game->scenes->main_menu->buttons, *event);
+        handle_events(game, event);
+    }
+}
+
 int main(void)
 {
     game_t *game = init_game();
@@ -19,18 +28,11 @@ int main(void)
 
     if (!game)
         return 84;
-    menu_music(game->sound);
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
-        while (sfRenderWindow_pollEvent(game->window, &event)) {
-            handle_menu_events(game->scenes->main_menu->buttons, event);
-            handle_events(game, &event);
-        }
-        // display_main_menu(game);
-        display_fight(game);
-        handle_arrow_keys(game);
-        //display_main_game(game);
+        event_handling(game, &event);
+        scene_manager(game);
         sfRenderWindow_display(game->window);
     }
-    //destroy_all(game);
+    // destroy_all(game);
 }

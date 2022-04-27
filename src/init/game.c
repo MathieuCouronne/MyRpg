@@ -13,8 +13,8 @@
 
 static sfRenderWindow *init_window(void)
 {
-    sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, 32};
-    sfRenderWindow *window = sfRenderWindow_create(mode, "MyRPG",
+    sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
+    sfRenderWindow *window = sfRenderWindow_create(mode, WINDOW_NAME,
     sfFullscreen, NULL);
 
     if (!window)
@@ -27,6 +27,7 @@ scenes_t *init_scenes(game_t *game)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
+    scenes->current = MAIN_MENU;
     scenes->main_menu = init_main_menu();
     scenes->game_scene = init_main_game(game);
     return scenes;
@@ -46,11 +47,11 @@ game_t *init_game(void)
     game_t *game = malloc(sizeof(game_t));
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
-    game->player = character_sprite();
+    game->player = init_player();
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
     game->scenes = init_scenes(game);
-    game->sound = menu_music();
+    game->sounds = menu_music();
     game->scenes->fight = init_fight();
     game->collisions = init_collision_img();
     if (!game->window || !game->scenes)

@@ -12,6 +12,8 @@
 #ifndef MY_RPG_H_
     #define MY_RPG_H_
 
+void my_printf(char *str, ...);
+
 // Initialization
 game_t *init_game(void);
 game_asset_t *init_hp_bar(void);
@@ -19,7 +21,7 @@ game_asset_t *init_menu_background(void);
 menu_buttons_t *init_buttons(void);
 fight_t *init_fight(void);
 enemy_t *init_ogre(void);
-player_t *character_sprite(void);
+player_t *init_player(void);
 button_t *create_button(char *str, sfVector2f pos_sprite);
 int clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);
@@ -44,9 +46,9 @@ void handle_mouse_wheel(game_t *game, sfEvent *event);
 void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
 bool click_play_menu(button_t *button, sfEvent event);
 
-//sounds
-sound_t *menu_music();
-void destroy_sound(sound_t *music);
+// Sounds
+sounds_t *menu_music(void);
+void destroy_sound(sounds_t *music);
 
 //display
 bool display_main_menu(game_t *game);

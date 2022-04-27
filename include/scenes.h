@@ -13,6 +13,7 @@
     #define SCENES_H_
 
 typedef struct scenes_s {
+    scenes current;
     main_menu_scenes_t *main_menu;
     main_game_t *game_scene;
     fight_t *fight;

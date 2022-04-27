@@ -18,6 +18,8 @@ typedef struct character_s {
     char *class_name;
     unsigned int unspent;
     stats_t **stats;
+    unsigned int level;
+    unsigned int exp;
 } character_t;
 
 #endif

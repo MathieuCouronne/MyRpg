@@ -46,7 +46,7 @@ void destroy_map(main_game_t *map);
 void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
-void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
+void handle_menu_events(menu_buttons_t *buttons, sfEvent event, game_t *game);
 bool click_play_menu(button_t *button, sfEvent event);
 
 // Sounds

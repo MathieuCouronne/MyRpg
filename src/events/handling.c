@@ -23,11 +23,11 @@ void handle_events(game_t *game, sfEvent *event)
     }
 }
 
-void handle_menu_events(menu_buttons_t *buttons, sfEvent event)
+void handle_menu_events(menu_buttons_t *buttons, sfEvent event, game_t *game)
 {
     if (event.type == sfEvtMouseButtonPressed)
         if (click_play_menu(buttons->play, event) == true) {
-            // TODO add function
+            game->scenes->current = MAIN_GAME;
         }
         if (click_play_menu(buttons->settings, event) == true) {
             // TODO add function

@@ -45,7 +45,7 @@ void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
 bool click_play_menu(button_t *button, sfEvent event);
 
 //sounds
-sound_t *menu_music();
+sound_t *menu_music(void);
 void destroy_sound(sound_t *music);
 
 //display

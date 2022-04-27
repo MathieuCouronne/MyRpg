@@ -18,7 +18,7 @@
     #define STRUCTS_H_
 
 typedef struct sound_s {
-    sfMusic *music;
+    sfMusic *main_theme;
 } sound_t;
 
 typedef struct game_s {

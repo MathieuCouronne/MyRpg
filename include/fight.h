@@ -5,8 +5,16 @@
 ** my_rpg enum
 */
 
+#include "idk.h"
+#include "game.h"
+
 #ifndef RPG_FIGHT_H
     #define RPG_FIGHT_H
+
+typedef struct text_s {
+    sfText *text;
+    sfFont *font;
+} text_t;
 
 typedef struct enemy_s {
     sfSprite *sprite;
@@ -19,6 +27,7 @@ typedef struct enemy_s {
 } enemy_t;
 
 typedef struct fight_s {
+    text_t *text;
     game_asset_t *background_fight;
     game_asset_t *text_bar;
     game_asset_t *hp_bar;

@@ -83,5 +83,6 @@ fight_t *init_fight(void)
     fight->player = player_fight();
     fight->ennemy = init_ogre();
     fight->hp_bar = init_hp_bar();
+    fight->text = init_text("je sais pas\n");
     return fight;
 }

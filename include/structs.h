@@ -26,7 +26,7 @@ typedef struct game_s {
     sfImage *collisions;
     sfView *view;
     scenes_t *scenes;
-    sound_t *sound;
+    sound_t *sounds;
     player_t *player;
     enemy_t *enemy;
 } game_t;

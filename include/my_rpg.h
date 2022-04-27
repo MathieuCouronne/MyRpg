@@ -12,6 +12,8 @@
 #ifndef MY_RPG_H_
     #define MY_RPG_H_
 
+void my_printf(char *str, ...);
+
 // Initialization
 game_t *init_game(void);
 game_asset_t *init_hp_bar(void);

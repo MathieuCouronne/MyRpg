@@ -51,7 +51,7 @@ game_t *init_game(void)
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
     game->scenes = init_scenes(game);
-    game->sound = menu_music();
+    game->sounds = menu_music();
     game->scenes->fight = init_fight();
     game->collisions = init_collision_img();
     if (!game->window || !game->scenes)

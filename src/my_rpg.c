@@ -28,7 +28,6 @@ int main(void)
 
     if (!game)
         return 84;
-    menu_music(game->sound);
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
         event_handling(game, &event);

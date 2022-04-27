@@ -10,6 +10,7 @@
 #include <SFML/Audio.h>
 #include "my_rpg.h"
 #include "game.h"
+#include "macros.h"
 #include <stdlib.h>
 
 sfIntRect *rect_player(void)
@@ -23,20 +24,22 @@ sfIntRect *rect_player(void)
     return rect;
 }
 
-player_t *character_sprite(void)
+player_t *init_player(void)
 {
     player_t *player = malloc(sizeof(player_t));
+    sfVector2f player_scale = {PLAYER_SCALE, PLAYER_SCALE};
 
+    player->clock = sfClock_create();
     player->sprite = sfSprite_create();
     player->rect = rect_player();
-    player->texture = sfTexture_createFromFile(
-        "./assets/images/character.png", NULL);
-    sfSprite_setTexture(player->sprite, player->texture, sfTrue);
+    player->texture = sfTexture_createFromFile(PLAYER_SPRITE_PATH, NULL);
+    if (!player->sprite || !player->rect || !player->texture)
+        return NULL;
     player->position.x = 2220;
     player->position.y = 2200;
-    sfSprite_setScale(player->sprite, (sfVector2f) {2, 2});
+    sfSprite_setTexture(player->sprite, player->texture, sfTrue);
+    sfSprite_setScale(player->sprite, player_scale);
     sfSprite_setPosition(player->sprite, player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
-    player->clock = sfClock_create();
     return player;
 }

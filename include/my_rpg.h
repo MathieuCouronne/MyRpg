@@ -19,7 +19,7 @@ game_asset_t *init_menu_background(void);
 menu_buttons_t *init_buttons(void);
 fight_t *init_fight(void);
 enemy_t *init_ogre(void);
-player_t *character_sprite(void);
+player_t *init_player(void);
 button_t *create_button(char *str, sfVector2f pos_sprite);
 int clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);

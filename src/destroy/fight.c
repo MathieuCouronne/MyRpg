@@ -16,7 +16,7 @@ void destroy_fight(fight_t *fight)
         return;
     sfSprite_destroy(fight->background_fight->sprite);
     sfSprite_destroy(fight->player->sprite);
-    sfSprite_destroy(fight->ennemy->sprite);
+    sfSprite_destroy(fight->enemy->sprite);
     sfSprite_destroy(fight->hp_bar->sprite);
     sfSprite_destroy(fight->text_bar->sprite);
     free(fight);

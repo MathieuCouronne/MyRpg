@@ -34,5 +34,5 @@ int main(void)
         scene_manager(game);
         sfRenderWindow_display(game->window);
     }
-    // destroy_all(game);
+    destroy_all(game);
 }

@@ -11,14 +11,14 @@
 #include "menu.h"
 #include "my_rpg.h"
 
-static void play_musics(sound_t *sounds)
+static void play_musics(sounds_t *sounds)
 {
     sfMusic_play(sounds->main_theme);
 }
 
-sound_t *menu_music(void)
+sounds_t *menu_music(void)
 {
-    sound_t *sounds = malloc(sizeof(sound_t));
+    sounds_t *sounds = malloc(sizeof(sounds_t));
 
     if (!sounds)
         return NULL;

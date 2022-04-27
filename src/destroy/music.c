@@ -10,8 +10,8 @@
 #include "menu.h"
 #include <SFML/Audio.h>
 
-void destroy_sound(sound_t *music)
+void destroy_sound(sounds_t *sounds)
 {
-    sfMusic_destroy(music->music);
-    free(music);
+    sfMusic_destroy(sounds->main_theme);
+    free(sounds);
 }

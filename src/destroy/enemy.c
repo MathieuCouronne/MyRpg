@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** ennemy.c
+** enemy.c
 ** File description:
-** ennemy destroyer
+** enemy destroyer
 */
 
 #include <stdlib.h>

@@ -74,4 +74,7 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
 
+//character
+character_t *create_character(void);
+
 #endif

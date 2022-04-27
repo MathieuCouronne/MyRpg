@@ -64,6 +64,9 @@ void clock_player_right(sfClock *clock, game_t *game);
 inventory_t *create_inventory(void);
 inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
     unsigned int quantity);
+inventory_t *remove_from_inventory(inventory_t *inventory, char const *name);
+inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
+    sfVector2u pos2);
 
 //fight
 char *string_info(fight_t *fight);

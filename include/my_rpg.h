@@ -46,9 +46,9 @@ void handle_mouse_wheel(game_t *game, sfEvent *event);
 void handle_menu_events(menu_buttons_t *buttons, sfEvent event);
 bool click_play_menu(button_t *button, sfEvent event);
 
-//sounds
-sound_t *menu_music(void);
-void destroy_sound(sound_t *music);
+// Sounds
+sounds_t *menu_music(void);
+void destroy_sound(sounds_t *music);
 
 //display
 bool display_main_menu(game_t *game);

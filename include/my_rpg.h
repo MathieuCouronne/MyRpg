@@ -29,6 +29,7 @@ button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);
 text_t *init_text(char *str);
+bool download_assets(void);
 
 // Destroy
 void destroy_game(game_t *game);

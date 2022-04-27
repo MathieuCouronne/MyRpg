@@ -12,6 +12,8 @@
 
 void destroy_sound(sounds_t *sounds)
 {
-    sfMusic_destroy(sounds->main_theme);
+    if (!sounds->menu)
+        return;
+    sfMusic_destroy(sounds->menu);
     free(sounds);
 }

@@ -78,4 +78,7 @@ char *string_info_enemy(fight_t *fight);
 // Character
 character_t *create_character(void);
 
+//Music
+void play_music(sfMusic *sounds);
+
 #endif

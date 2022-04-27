@@ -11,9 +11,9 @@
 #include "menu.h"
 #include "my_rpg.h"
 
-static void play_musics(sounds_t *sounds)
+void play_music(sfMusic *sounds)
 {
-    sfMusic_play(sounds->main_theme);
+    sfMusic_play(sounds);
 }
 
 sounds_t *menu_music(void)
@@ -22,9 +22,8 @@ sounds_t *menu_music(void)
 
     if (!sounds)
         return NULL;
-    sounds->main_theme = sfMusic_createFromFile("./assets/sound/Hearthstone.ogg");
-    if (!sounds->main_theme)
+    sounds->menu = sfMusic_createFromFile("./assets/sound/Hearthstone.ogg");
+    if (!sounds->menu)
         return NULL;
-    play_musics(sounds);
     return sounds;
 }

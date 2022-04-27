@@ -18,6 +18,7 @@
     #define STRUCTS_H_
 
 typedef struct sounds_s {
+    sfMusic *menu;
     sfMusic *main_theme;
 } sounds_t;
 

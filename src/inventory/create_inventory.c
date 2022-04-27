@@ -13,9 +13,6 @@
 #include "my_rpg.h"
 #include "inventory.h"
 
-#define BREAD 1
-#define BREAD_PNG "1.png"
-
 static slot_t ***fill_inventory(void)
 {
     slot_t ***content = malloc(sizeof(slot_t **) * (INVENTORY_HEIGHT + 1));

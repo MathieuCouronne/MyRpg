@@ -22,7 +22,6 @@ enemy_t *init_ogre(void);
 player_t *character_sprite(void);
 button_t *create_button(char *str, sfVector2f pos_sprite);
 int clock_time(sfClock *clock, float time_offset);
-inventory_t *create_inventory(void);
 button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);
@@ -58,5 +57,10 @@ bool display_main_game(game_t *game);
 void clock_player_down(sfClock *clock, game_t *game);
 void clock_player_up(sfClock *clock, game_t *game);
 void clock_player_right(sfClock *clock, game_t *game);
+
+//inventory
+inventory_t *create_inventory(void);
+inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
+    unsigned int quantity);
 
 #endif

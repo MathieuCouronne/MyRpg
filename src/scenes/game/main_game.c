@@ -25,5 +25,6 @@ bool display_main_game(game_t *game)
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
+    sfRenderWindow_drawSprite(window, game->chest->sprite, NULL);
     return true;
 }

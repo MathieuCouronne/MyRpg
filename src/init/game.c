@@ -48,6 +48,7 @@ game_t *init_game(void)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     game->player = init_player();
+    game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
     game->scenes = init_scenes(game);

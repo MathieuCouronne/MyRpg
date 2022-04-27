@@ -35,7 +35,7 @@ typedef struct fight_s {
     game_asset_t *text_bar;
     game_asset_t *hp_bar;
     player_t *player;
-    enemy_t *ennemy;
+    enemy_t *enemy;
 } fight_t;
 
 #endif //RPG_FIGHT_H

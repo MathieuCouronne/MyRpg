@@ -13,7 +13,6 @@ void destroy_button(button_t *button)
 {
     if (!button)
         return;
-    destroy_menu(button->asset);
     sfFont_destroy(button->font);
     sfText_destroy(button->text);
     free(button);

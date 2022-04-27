@@ -2,6 +2,11 @@ main
 a.out
 my_rpg
 
+assets/images/*
+!assets/images/.gitkeep
+assets/sound/*
+!assets/sound/.gitkeep
+
 unit_tests*
 *.gcda
 *.gcno

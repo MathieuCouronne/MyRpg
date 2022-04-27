@@ -11,11 +11,11 @@
 #include <SFML/Audio.h>
 #include "game.h"
 
-void destroy_ennemy(enemy_t *ennemy)
+void destroy_enemy(enemy_t *enemy)
 {
-    if (!ennemy)
+    if (!enemy)
         return;
-    sfSprite_destroy(ennemy->sprite);
-    sfTexture_destroy(ennemy->texture);
-    free(ennemy);
+    sfSprite_destroy(enemy->sprite);
+    sfTexture_destroy(enemy->texture);
+    free(enemy);
 }

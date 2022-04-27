@@ -10,7 +10,7 @@ NAME		= my_rpg
 CFLAGS		= -Wall -Wextra -I include
 
 LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
-				-l csfml-audio
+				-l csfml-audio -L ./lib -l my
 
 SRC_DIR 	= src/
 

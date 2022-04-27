@@ -63,4 +63,8 @@ inventory_t *create_inventory(void);
 inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
     unsigned int quantity);
 
+//fight
+char *string_info(fight_t *fight);
+char *string_info_enemy(fight_t *fight);
+
 #endif

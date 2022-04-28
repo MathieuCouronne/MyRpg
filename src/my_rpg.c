@@ -9,13 +9,6 @@
 #include "display.h"
 #include "inventory.h"
 
-static void event_handling(game_t *game)
-{
-    while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        handle_events(game, &game->event);
-    }
-}
-
 int main(void)
 {
     game_t *game = init_game();
@@ -24,7 +17,6 @@ int main(void)
         return 84;
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
-        event_handling(game);
         scene_manager(game);
         sfRenderWindow_display(game->window);
     }

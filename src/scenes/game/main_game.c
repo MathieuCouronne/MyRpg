@@ -14,7 +14,8 @@ static void event_handling(game_t *game)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-
+        if (game->event.type == sfEvtClosed)
+            sfRenderWindow_close(game->window);
     }
 }
 

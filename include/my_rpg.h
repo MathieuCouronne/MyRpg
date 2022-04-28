@@ -25,7 +25,7 @@ enemy_t *init_ogre(void);
 player_t *init_player(void);
 chest_t *chest_sprite(void);
 button_t *create_button(char *str, sfVector2f pos_sprite,
-void (*fn) (game_t *game));
+void (*on_click) (game_t *game));
 int clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);

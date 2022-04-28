@@ -50,7 +50,7 @@ static bool download_folder(sfFtp *ftp, char *folder)
     for (size_t i = 0; i < size; i++) {
         char const *name = sfFtpListingResponse_getName(list, i);
         if (!name)
-            return display_status("Downloading failed.\n", 0);
+            return display_status("Download failed.\n", 0);
         dest_path = concat(folder);
         res = sfFtp_download(ftp, name, dest_path, sfFtpBinary);
         if (!sfFtpResponse_isOk(res))
@@ -71,7 +71,7 @@ bool download_assets(void)
     res = sfFtp_login(ftp, "rpg", "rpg_password");
     if (!sfFtpResponse_isOk(res))
         return display_status("Fail to download assets\n", false);
-    download_folder(ftp, "old_images");
+    download_folder(ftp, "images");
     download_folder(ftp, "sounds");
     return true;
 }

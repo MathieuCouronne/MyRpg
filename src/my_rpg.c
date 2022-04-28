@@ -12,7 +12,6 @@
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        handle_menu_events(game->scenes->main_menu->buttons, game->event, game);
         handle_events(game, &game->event);
     }
 }

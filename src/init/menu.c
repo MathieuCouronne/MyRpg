@@ -20,7 +20,7 @@ game_asset_t *init_menu_background(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile
-        ("./assets/images/connexion.jpg", NULL);
+        ("./assets/images/background.png", NULL);
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }

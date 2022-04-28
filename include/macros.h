@@ -20,7 +20,7 @@
 
     // Sprites Pathes
     #define PLAYER_SPRITE_PATH "./assets/images/character.png"
-    #define BUTTON_SPRITE_PATH "./assets/images/button_asset.png"
+    #define BUTTON_SPRITE_PATH "./assets/images/foreground.png"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

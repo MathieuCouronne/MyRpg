@@ -9,19 +9,15 @@
 #include "menu.h"
 #include <stdbool.h>
 
-bool click_play_menu(button_t *button, sfEvent event)
+bool is_button_clicked(game_t *game, button_t *button)
 {
-    sfVector2i pos;
+    sfVector2i pos = {game->event.mouseButton.x, game->event.mouseButton.y};
+    sfVector2f button_pos = button->asset->pos;
+    sfFloatRect rect = sfSprite_getGlobalBounds(button->asset->sprite);
 
-    pos.x = event.mouseButton.x;
-    pos.y = event.mouseButton.y;
-    if (event.type == sfEvtMouseButtonPressed) {
-        if (pos.x <= button->asset->pos.x + 350
-            && pos.x >= button->asset->pos.x
-            && pos.y <= button->asset->pos.y + 140
-            && pos.y >= button->asset->pos.y) {
-            return true;
-        }
-    }
+    if (((float) pos.x >= button_pos.x && (float) pos.y >= button_pos.y) ||
+    (((float) pos.x <= button_pos.x + rect.width) &&
+    ((float) pos.y <= button_pos.y + rect.height)))
+        return true;
     return false;
 }

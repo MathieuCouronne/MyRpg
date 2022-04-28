@@ -27,6 +27,7 @@ void (*on_click) (game_t *game))
 {
     button_t *button = malloc(sizeof(button_t));
     sfVector2f pos = {pos_sprite.x, pos_sprite.y};
+    sfFloatRect rect_button;
 
     button->asset = malloc(sizeof(game_asset_t));
     button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
@@ -40,7 +41,8 @@ void (*on_click) (game_t *game))
     sfText_setString(button->text, str);
     sfText_setCharacterSize(button->text, 60);
     sfText_setColor(button->text, sfBlack);
-    pos = center_text(350, 140, button->text, pos_sprite);
+    rect_button = sfSprite_getGlobalBounds(button->asset->sprite);
+    pos = center_text(rect_button.width, rect_button.height, button->text, pos_sprite);
     sfText_setPosition(button->text, pos);
     return button;
 }

@@ -7,7 +7,6 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
-#include "menu.h"
 
 void destroy_menu(game_asset_t *menu)
 {

@@ -5,10 +5,9 @@
 ** menu destroyer
 */
 
+#include <SFML/Audio.h>
 #include <stdlib.h>
 #include "my_rpg.h"
-#include "menu.h"
-#include <SFML/Audio.h>
 
 void destroy_sound(sounds_t *sounds)
 {

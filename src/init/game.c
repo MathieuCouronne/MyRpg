@@ -7,8 +7,6 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
-#include "scenes.h"
-#include "fight.h"
 #include "macros.h"
 
 static sfRenderWindow *init_window(void)

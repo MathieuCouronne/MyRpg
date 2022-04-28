@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
-#include "fight.h"
+#include "structs.h"
 
 text_t *init_text(char *str)
 {

@@ -6,10 +6,7 @@
 */
 
 #include "my_rpg.h"
-#include "menu.h"
 #include "display.h"
-#include "game.h"
-#include "fight.h"
 #include "inventory.h"
 
 static void event_handling(game_t *game, sfEvent *event)

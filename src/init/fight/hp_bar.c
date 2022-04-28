@@ -9,7 +9,6 @@
 #include "menu.h"
 #include <SFML/Audio.h>
 #include "my_rpg.h"
-#include "game.h"
 #include <stdlib.h>
 
 game_asset_t *init_hp_bar(void)

@@ -7,7 +7,6 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
-#include "fight.h"
 
 void destroy_all(game_t *game)
 {

@@ -10,8 +10,6 @@
 #include <SFML/Window.h>
 #include "menu.h"
 #include "structs.h"
-#include "scenes.h"
-#include "fight.h"
 #include "my_rpg.h"
 
 game_asset_t *init_fight_background(void)

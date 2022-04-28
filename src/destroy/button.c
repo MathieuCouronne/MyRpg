@@ -5,7 +5,6 @@
 ** button destroyer
 */
 
-#include "menu.h"
 #include "my_rpg.h"
 #include <stdlib.h>
 
@@ -18,12 +17,13 @@ void destroy_button(button_t *button)
     free(button);
 }
 
-void menu_destroy_buttons(menu_buttons_t *button)
+void menu_destroy_buttons(button_t **buttons)
 {
-    if (!button)
+    if (!buttons)
         return;
-    destroy_button(button->settings);
-    destroy_button(button->play);
-    destroy_button(button->title);
-    free(button);
+    for (unsigned short i = 0; buttons[i]; i++) {
+        if (buttons[i])
+            destroy_button(buttons[i]);
+    }
+    free(buttons);
 }

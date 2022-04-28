@@ -10,6 +10,7 @@
 #include <SFML/Window.h>
 #include "menu.h"
 #include "structs.h"
+#include "macros.h"
 
 sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite)
 {
@@ -21,20 +22,17 @@ sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite)
     return pos;
 }
 
-button_t *create_button(char *str, sfVector2f pos_sprite)
+button_t *create_button(char *str, sfVector2f pos_sprite, void (*fn) (game_t *game))
 {
     button_t *button = malloc(sizeof(button_t));
-    sfVector2f pos;
+    sfVector2f pos = {pos_sprite.x, pos_sprite.y};
 
     button->asset = malloc(sizeof(game_asset_t));
     button->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
     button->text = sfText_create();
     button->asset->sprite = sfSprite_create();
-    button->asset->texture = sfTexture_createFromFile
-        ("./assets/images/button_asset.png", NULL);
+    button->asset->texture = sfTexture_createFromFile(BUTTON_SPRITE_PATH, NULL);
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
-    button->asset->pos.x = pos_sprite.x;
-    button->asset->pos.y = pos_sprite.y;
     sfSprite_setPosition(button->asset->sprite, button->asset->pos);
     sfText_setFont(button->text, button->font);
     sfText_setString(button->text, str);

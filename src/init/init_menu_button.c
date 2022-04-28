@@ -7,19 +7,18 @@
 
 #include <stdlib.h>
 #include <SFML/Window.h>
-#include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
 
-menu_buttons_t *init_buttons(void)
+// buttons->title = title_menu("Cyber_Coc");
+button_t **init_buttons(void)
 {
-    menu_buttons_t *button = malloc(sizeof(menu_buttons_t));
+    button_t **buttons = malloc(sizeof(button_t *) * 4);
+    float pos_x = 960 - 350 / 2;
 
-    button->play = create_button("Play",
-                            (sfVector2f){960 - 350 / 2,500});
-    button->settings = create_button("Settings",
-                            (sfVector2f){960 - 350 / 2 ,650});
-    button->quit = create_button("Quit", (sfVector2f){960 - 350 / 2 ,800});
-    button->title = title_menu("Cyber_Coc");
-    return button;
+    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500});
+    buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650});
+    buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800});
+    buttons[3] = NULL;
+    return buttons;
 }

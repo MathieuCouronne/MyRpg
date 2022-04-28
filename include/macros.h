@@ -20,5 +20,6 @@
 
     // Sprites Pathes
     #define PLAYER_SPRITE_PATH "./assets/images/character.png"
+    #define BUTTON_SPRITE_PATH "./assets/images/button_asset.png"
 
 #endif //RPG_MACROS_H

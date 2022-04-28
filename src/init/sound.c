@@ -8,7 +8,6 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include "structs.h"
-#include "menu.h"
 #include "my_rpg.h"
 
 void play_music(sfMusic *sounds)

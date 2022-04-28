@@ -10,7 +10,6 @@
 #include <stdlib.h>
 #include "menu.h"
 #include "structs.h"
-#include "scenes.h"
 #include "my_rpg.h"
 
 game_asset_t *init_menu_background(void)

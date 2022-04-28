@@ -19,7 +19,7 @@ void my_printf(char *str, ...);
 game_t *init_game(void);
 game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
-menu_buttons_t *init_buttons(void);
+button_t **init_buttons(void);
 fight_t *init_fight(void);
 enemy_t *init_ogre(void);
 player_t *init_player(void);
@@ -35,7 +35,7 @@ bool download_assets(void);
 // Destroy
 void destroy_game(game_t *game);
 void destroy_menu(game_asset_t *menu);
-void menu_destroy_buttons(menu_buttons_t *button);
+void menu_destroy_buttons(button_t **button);
 void destroy_player(player_t *player);
 void destroy_enemy(enemy_t *enemy);
 void destroy_fight(fight_t *fight);
@@ -46,7 +46,7 @@ void destroy_map(main_game_t *map);
 void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
-void handle_menu_events(menu_buttons_t *buttons, sfEvent event, game_t *game);
+void handle_menu_events(button_t **buttons, sfEvent event, game_t *game);
 bool click_play_menu(button_t *button, sfEvent event);
 
 // Sounds

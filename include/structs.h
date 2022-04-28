@@ -9,20 +9,34 @@
 #include <SFML/Window.h>
 #include <SFML/Audio.h>
 #include "menu.h"
-#include "idk.h"
-#include "game.h"
-#include "fight.h"
-#include "scenes.h"
+#include "enum.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
-typedef struct sounds_s {
+typedef struct scenes_s scenes_t;
+typedef struct sounds_s sounds_t;
+typedef struct game_s game_t;
+typedef struct game_asset_s game_asset_t;
+typedef struct event_controller_s event_controller_t;
+typedef struct button_s button_t;
+typedef struct main_menu_scenes_s main_menu_scenes_t;
+typedef struct chest_s chest_t;
+typedef struct player_s player_t;
+typedef struct game_scene_s game_scene_t;
+typedef struct main_game_s main_game_t;
+typedef struct menu_creation_s menu_creation_t;
+typedef struct main_creation_scenes_s main_creation_scenes_t;
+typedef struct fight_s fight_t;
+typedef struct enemy_s enemy_t;
+typedef struct text_s text_t;
+
+struct sounds_s {
     sfMusic *menu;
     sfMusic *main_theme;
-} sounds_t;
+};
 
-typedef struct game_s {
+struct game_s {
     sfRenderWindow *window;
     sfEvent *event;
     sfImage *collisions;
@@ -32,11 +46,97 @@ typedef struct game_s {
     player_t *player;
     enemy_t *enemy;
     chest_t *chest;
-} game_t;
+};
 
-typedef struct event_controller_s {
+struct game_asset_s {
+    sfSprite *sprite;
+    sfTexture *texture;
+    sfRectangleShape *rect;
+    sfVector2f pos;
+    float scaling;
+};
+
+struct button_s {
+    game_asset_t *asset;
+    sfText *text;
+    button_state state;
+    sfFont *font;
+    void (*on_click) (game_t *game);
+};
+
+struct main_menu_scenes_s {
+    game_asset_t *background;
+    button_t **buttons;
+};
+
+struct event_controller_s {
     sfEventType type;
     void (*fn) (game_t *game, sfEvent *event);
-} event_controller_t;
+};
+
+struct scenes_s {
+    scenes current;
+    main_menu_scenes_t *main_menu;
+    main_game_t *game_scene;
+    main_creation_scenes_t *creation_menu;
+    fight_t *fight;
+};
+
+struct game_scene_s {
+    game_asset_t *map;
+    sfView *view;
+};
+
+struct main_game_s {
+    game_asset_t *map;
+};
+
+struct player_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+    sfClock *clock;
+};
+
+struct chest_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+    sfClock *clock;
+};
+
+struct menu_creation_s {
+    button_t *confirm;
+};
+
+struct main_creation_scenes_s {
+    game_asset_t *background;
+    menu_creation_t *buttons;
+};
+
+struct text_s {
+    sfText *text;
+    sfFont *font;
+};
+
+struct enemy_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfTexture *texture;
+    char *name;
+    unsigned int dps;
+    unsigned int hp;
+};
+
+struct fight_s {
+    game_asset_t *background_fight;
+    game_asset_t *text_bar;
+    game_asset_t *hp_bar;
+    player_t *player;
+    enemy_t *enemy;
+};
 
 #endif

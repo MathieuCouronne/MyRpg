@@ -7,7 +7,6 @@
 
 #include "my_rpg.h"
 #include "structs.h"
-#include "game.h"
 #include <SFML/System/Time.h>
 #include <SFML/System/Types.h>
 #include <SFML/Graphics.h>

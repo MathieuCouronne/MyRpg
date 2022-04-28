@@ -7,7 +7,6 @@
 
 #include <stdlib.h>
 #include "my_rpg.h"
-#include "scenes.h"
 
 void destroy_map(main_game_t *map)
 {

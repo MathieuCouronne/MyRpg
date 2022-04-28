@@ -11,9 +11,6 @@
 #ifndef INVENTORY_H_
     #define INVENTORY_H_
 
-    #define INVENTORY_HEIGHT 4
-    #define INVENTORY_WIDTH 9
-
 typedef struct slot_s {
     char *name;
     sfVector2f pos;

@@ -24,7 +24,8 @@ fight_t *init_fight(void);
 enemy_t *init_ogre(void);
 player_t *init_player(void);
 chest_t *chest_sprite(void);
-button_t *create_button(char *str, sfVector2f pos_sprite);
+button_t *create_button(char *str, sfVector2f pos_sprite,
+void (*fn) (game_t *game));
 int clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
@@ -46,8 +47,8 @@ void destroy_map(main_game_t *map);
 void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
-void handle_menu_events(button_t **buttons, sfEvent event, game_t *game);
-bool click_play_menu(button_t *button, sfEvent event);
+void handle_buttons_clicks(game_t *game, button_t **buttons);
+bool is_button_clicked(game_t *game, button_t *button);
 
 // Sounds
 sounds_t *menu_music(void);

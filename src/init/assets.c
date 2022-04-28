@@ -13,6 +13,11 @@
 #include "menu.h"
 #include "display.h"
 
+static char *directories[] = {
+    "fonts", "sounds", "images/characters", "images/fight",
+    "images/main_menu", "images/maps", "sounds/misc", NULL
+};
+
 static int display_status(char *str, int status)
 {
     my_putstr(str);
@@ -71,7 +76,7 @@ bool download_assets(void)
     res = sfFtp_login(ftp, "rpg", "rpg_password");
     if (!sfFtpResponse_isOk(res))
         return display_status("Fail to download assets\n", false);
-    download_folder(ftp, "images");
-    download_folder(ftp, "sounds");
+    for (unsigned short i = 0; directories[i]; i++)
+        download_folder(ftp, directories[i]);
     return true;
 }

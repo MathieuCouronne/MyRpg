@@ -33,7 +33,7 @@ button_t *create_button(char *str, sfVector2f pos_sprite, void (*fn) (game_t *ga
     button->asset->sprite = sfSprite_create();
     button->asset->texture = sfTexture_createFromFile(BUTTON_SPRITE_PATH, NULL);
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
-    sfSprite_setPosition(button->asset->sprite, button->asset->pos);
+    sfSprite_setPosition(button->asset->sprite, pos);
     sfText_setFont(button->text, button->font);
     sfText_setString(button->text, str);
     sfText_setCharacterSize(button->text, 60);

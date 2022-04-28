@@ -38,7 +38,7 @@ struct sounds_s {
 
 struct game_s {
     sfRenderWindow *window;
-    sfEvent *event;
+    sfEvent event;
     sfImage *collisions;
     sfView *view;
     scenes_t *scenes;

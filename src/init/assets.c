@@ -23,7 +23,7 @@ static char *concat(char *str2)
 {
     char *str1 = "assets/";
     size_t len = my_strlen(str1) + my_strlen(str2);
-    char *new = malloc(sizeof(char) * len);
+    char *new = malloc(sizeof(char) * (len + 1));
     size_t pos = 0;
 
     if (!new)

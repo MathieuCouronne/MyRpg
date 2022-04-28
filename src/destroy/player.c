@@ -9,7 +9,6 @@
 #include "my_rpg.h"
 #include "menu.h"
 #include <SFML/Audio.h>
-#include "game.h"
 
 void destroy_player(player_t *player)
 {

@@ -8,13 +8,12 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 #include "structs.h"
-#include "game.h"
 #include <stdlib.h>
 
 static void event_handling(game_t *game)
 {
     handle_arrow_keys(game);
-    while (sfRenderWindow_pollEvent(game->window, game->event)) {
+    while (sfRenderWindow_pollEvent(game->window, &game->event)) {
 
     }
 }
@@ -23,7 +22,7 @@ bool display_main_game(game_t *game)
 {
     sfRenderWindow *window = NULL;
     main_game_t *main_game = NULL;
-    menu_buttons_t *buttons = NULL;
+    button_t **buttons = NULL;
 
     if (!game || !game->window || !game->scenes || !game->scenes->main_menu ||
         !game->scenes->main_menu->buttons)

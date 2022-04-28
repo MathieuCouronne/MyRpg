@@ -8,7 +8,6 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 #include "structs.h"
-#include "game.h"
 #include <stdlib.h>
 
 bool display_fight(game_t *game)

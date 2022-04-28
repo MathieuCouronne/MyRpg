@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include "structs.h"
 #include "my_rpg.h"
+#include "macros.h"
 
 void play_music(sfMusic *sounds)
 {
@@ -21,7 +22,7 @@ sounds_t *menu_music(void)
 
     if (!sounds)
         return NULL;
-    sounds->menu = sfMusic_createFromFile("./assets/sound/hearthstone.ogg");
+    sounds->menu = sfMusic_createFromFile(MAIN_THEME_PATH);
     if (!sounds->menu)
         return NULL;
     return sounds;

@@ -29,10 +29,10 @@ void (*on_click) (game_t *game))
     sfVector2f pos = {pos_sprite.x, pos_sprite.y};
 
     button->asset = malloc(sizeof(game_asset_t));
-    button->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
+    button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     button->text = sfText_create();
     button->asset->sprite = sfSprite_create();
-    button->asset->texture = sfTexture_createFromFile(BUTTON_SPRITE_PATH, NULL);
+    button->asset->texture = sfTexture_createFromFile(BUTTON_PATH, NULL);
     button->on_click = on_click;
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos);

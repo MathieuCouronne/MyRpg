@@ -31,7 +31,7 @@ player_t *init_player(void)
     player->clock = sfClock_create();
     player->sprite = sfSprite_create();
     player->rect = rect_player();
-    player->texture = sfTexture_createFromFile(PLAYER_SPRITE_PATH, NULL);
+    player->texture = sfTexture_createFromFile(WARRIOR_PATH, NULL);
     if (!player->sprite || !player->rect || !player->texture)
         return NULL;
     player->position.x = 2220;

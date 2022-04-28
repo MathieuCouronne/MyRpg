@@ -11,6 +11,7 @@
 #include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
+#include "macros.h"
 
 game_asset_t *init_menu_background(void)
 {
@@ -19,8 +20,7 @@ game_asset_t *init_menu_background(void)
     if (!background)
         return NULL;
     background->sprite = sfSprite_create();
-    background->texture = sfTexture_createFromFile
-        ("./assets/images/connexion.jpg", NULL);
+    background->texture = sfTexture_createFromFile(MAIN_MENU_BG_PATH, NULL);
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }

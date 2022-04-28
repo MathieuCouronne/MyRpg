@@ -19,10 +19,22 @@
     #define PLAYER_SCALE 2
 
     // Sprites Pathes
-    #define PLAYER_SPRITE_PATH "./assets/images/character.png"
-    #define BUTTON_SPRITE_PATH "./assets/images/button_asset.png"
+    #define WARRIOR_PATH "./assets/images/characters/warrior.png"
+    #define ENEMY_PATH "./assets/images/characters/enemy.png"
+    #define BUTTON_PATH "./assets/images/main_menu/button.png"
+    #define CHEST_PATH "./assets/images/misc/chest.png"
+    #define FIGHT_BG_PATH "./assets/images/fight/background.png"
+    #define FIGHT_TOOLTIP_PATH "./assets/images/fight/tooltip.png"
+    #define FIGHT_HP_BAR_PATH "./assets/images/fight/hp_bar.png"
+    #define AREAS_PATH "./assets/images/maps/areas.jpg"
+    #define MAP_PATH "./assets/images/maps/map.png"
+    #define MAIN_MENU_BG_PATH "./assets/images/main_menu/background.jpg"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"
+
+    // Fonts Pathes
+
+    #define ARIAL_FONT_PATH "./assets/fonts/arial_black.ttf"
 
 #endif //RPG_MACROS_H

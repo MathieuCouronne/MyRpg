@@ -9,6 +9,13 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+static void event_handling(game_t *game)
+{
+    while (sfRenderWindow_pollEvent(game->window, &game->event)) {
+        handle_buttons_clicks(game, game->scenes->main_menu->buttons);
+    }
+}
+
 bool display_main_menu(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -18,6 +25,7 @@ bool display_main_menu(game_t *game)
     if (!game || !game->window || !game->scenes || !game->scenes->main_menu ||
     !game->scenes->main_menu->buttons)
         return false;
+    event_handling(game);
     window = game->window;
     menu = game->scenes->main_menu;
     buttons = menu->buttons;

@@ -64,7 +64,7 @@ void clock_player_up(sfClock *clock, game_t *game);
 void clock_player_right(sfClock *clock, game_t *game);
 
 // Inventory
-inventory_t *create_inventory(void);
+inventory_t *create_inventory(unsigned int height, unsigned int width);
 inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
     unsigned int quantity);
 inventory_t *remove_from_inventory(inventory_t *inventory, char const *name);

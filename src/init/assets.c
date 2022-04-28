@@ -71,7 +71,7 @@ bool download_assets(void)
     res = sfFtp_login(ftp, "rpg", "rpg_password");
     if (!sfFtpResponse_isOk(res))
         return display_status("Fail to download assets\n", false);
-    download_folder(ftp, "images");
-    download_folder(ftp, "sound");
+    download_folder(ftp, "old_images");
+    download_folder(ftp, "sounds");
     return true;
 }

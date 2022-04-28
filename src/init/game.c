@@ -30,6 +30,7 @@ scenes_t *init_scenes(game_t *game)
     scenes->current = MAIN_MENU;
     scenes->main_menu = init_main_menu();
     scenes->game_scene = init_main_game(game);
+    scenes->fight = init_fight();
     return scenes;
 }
 
@@ -55,7 +56,6 @@ game_t *init_game(void)
     game->window = init_window();
     game->scenes = init_scenes(game);
     game->sounds = menu_music();
-    game->scenes->fight = init_fight();
     game->collisions = init_collision_img();
     if (!game->window || !game->scenes)
         return NULL;

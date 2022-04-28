@@ -24,6 +24,7 @@ typedef struct sounds_s {
 
 typedef struct game_s {
     sfRenderWindow *window;
+    sfEvent *event;
     sfImage *collisions;
     sfView *view;
     scenes_t *scenes;

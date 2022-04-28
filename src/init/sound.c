@@ -22,7 +22,7 @@ sounds_t *menu_music(void)
 
     if (!sounds)
         return NULL;
-    sounds->menu = sfMusic_createFromFile("./assets/sound/Hearthstone.ogg");
+    sounds->menu = sfMusic_createFromFile("./assets/sound/hearthstone.ogg");
     if (!sounds->menu)
         return NULL;
     return sounds;

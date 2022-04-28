@@ -9,6 +9,7 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include "structs.h"
+#include "macros.h"
 
 text_t *init_text(char *str)
 {
@@ -16,7 +17,7 @@ text_t *init_text(char *str)
     sfVector2f pos;
     sfFloatRect rect;
 
-    text->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
+    text->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     text->text = sfText_create();
     sfText_setFont(text->text, text->font);
     sfText_setString(text->text, str);

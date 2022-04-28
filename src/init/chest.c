@@ -5,11 +5,12 @@
 ** init_chest
 */
 
+#include <SFML/Audio.h>
+#include <stdlib.h>
 #include "structs.h"
 #include "menu.h"
-#include <SFML/Audio.h>
 #include "my_rpg.h"
-#include <stdlib.h>
+#include "macros.h"
 
 sfIntRect *rect_chest(void)
 {
@@ -28,8 +29,7 @@ chest_t *chest_sprite(void)
 
     chest->sprite = sfSprite_create();
     chest->rect = rect_chest();
-    chest->texture = sfTexture_createFromFile(
-        "./assets/images/Chest.png", NULL);
+    chest->texture = sfTexture_createFromFile(CHEST_PATH, NULL);
     sfSprite_setTexture(chest->sprite, chest->texture, sfTrue);
     chest->position.x = 2300;
     chest->position.y = 2400;

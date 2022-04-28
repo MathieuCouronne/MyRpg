@@ -34,7 +34,7 @@ scenes_t *init_scenes(game_t *game)
 
 sfImage *init_collision_img(void)
 {
-    sfImage *image = sfImage_createFromFile("./assets/images/collisions.jpg");
+    sfImage *image = sfImage_createFromFile(AREAS_PATH);
 
     if (!image)
         return NULL;
@@ -46,8 +46,8 @@ game_t *init_game(void)
     game_t *game = malloc(sizeof(game_t));
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
-    // if (!download_assets())
-        // return NULL;
+    if (!download_assets())
+        return NULL;
     game->player = init_player();
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);

@@ -10,6 +10,7 @@
 #include <SFML/Window.h>
 #include "menu.h"
 #include "structs.h"
+#include "macros.h"
 
 button_t *title_menu(char *str)
 {
@@ -18,7 +19,7 @@ button_t *title_menu(char *str)
     sfFloatRect rect;
 
     button->asset = malloc(sizeof(game_asset_t));
-    button->font = sfFont_createFromFile("./font/LifeCraft_Font.ttf");
+    button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     button->text = sfText_create();
     sfText_setFont(button->text, button->font);
     sfText_setString(button->text, str);

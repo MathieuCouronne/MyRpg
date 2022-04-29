@@ -11,11 +11,15 @@
 
 void move_player_left(game_t *game, sfColor color)
 {
-    sfVector2f pos = *game->player->position;
+    sfIntRect *rect = game->player->rect;
+    sfVector2f top_left = *game->player->position;
+    sfVector2f bottom_left = *game->player->position;
 
-    pos.x -= PLAYER_MOVEMENT;
-    // pos.y += game->player->rect->height / 2;
-    if (color_cmp(get_pixel_at_pos(game, pos), color))
+    top_left.x -= 1;
+    bottom_left.x -= 1;
+    bottom_left.y += (float) rect->height * (float) PLAYER_SCALE;
+    if (color_cmp(get_pixel_at_pos(game, top_left), color) ||
+    color_cmp(get_pixel_at_pos(game, bottom_left), color))
         return;
     sfView_move(game->view, (sfVector2f) {-PLAYER_MOVEMENT, 0});
     game->player->position->x -= PLAYER_MOVEMENT;
@@ -23,11 +27,15 @@ void move_player_left(game_t *game, sfColor color)
 
 void move_player_right(game_t *game, sfColor color)
 {
-    sfVector2f pos = *game->player->position;
+    sfIntRect *rect = game->player->rect;
+    sfVector2f top_right = *game->player->position;
+    sfVector2f bottom_right = *game->player->position;
 
-    pos.x += PLAYER_MOVEMENT;
-    // pos.y += game->player->rect->height / 2;
-    if (color_cmp(get_pixel_at_pos(game, pos), color))
+    top_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
+    bottom_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
+    bottom_right.y += (float) rect->height * (float) PLAYER_SCALE;
+    if (color_cmp(get_pixel_at_pos(game, top_right), color) ||
+    color_cmp(get_pixel_at_pos(game, bottom_right), color))
         return;
     sfView_move(game->view, (sfVector2f) {PLAYER_MOVEMENT, 0});
     game->player->position->x += PLAYER_MOVEMENT;
@@ -35,11 +43,15 @@ void move_player_right(game_t *game, sfColor color)
 
 void move_player_top(game_t *game, sfColor color)
 {
-    sfVector2f pos = *game->player->position;
+    sfIntRect *rect = game->player->rect;
+    sfVector2f top_left = *game->player->position;
+    sfVector2f top_right = *game->player->position;
 
-    pos.y -= PLAYER_MOVEMENT;
-    // pos.y += game->player->rect->height / 2;
-    if (color_cmp(get_pixel_at_pos(game, pos), color))
+    top_left.y -= 1;
+    top_right.y -= 1;
+    top_right.x += (float) rect->width * (float) PLAYER_SCALE;
+    if (color_cmp(get_pixel_at_pos(game, top_left), color) ||
+    color_cmp(get_pixel_at_pos(game, top_right), color))
         return;
     sfView_move(game->view, (sfVector2f) {0, -PLAYER_MOVEMENT});
     game->player->position->y -= PLAYER_MOVEMENT;
@@ -47,11 +59,15 @@ void move_player_top(game_t *game, sfColor color)
 
 void move_player_bottom(game_t *game, sfColor color)
 {
-    sfVector2f pos = *game->player->position;
+    sfIntRect *rect = game->player->rect;
+    sfVector2f bottom_left = *game->player->position;
+    sfVector2f bottom_right = *game->player->position;
 
-    pos.y += PLAYER_MOVEMENT;
-    // pos.y += game->player->rect->height / 2;
-    if (color_cmp(get_pixel_at_pos(game, pos), color))
+    bottom_left.x += (float) rect->width * (float) PLAYER_SCALE;
+    bottom_left.y += (float) rect->height * (float) PLAYER_SCALE;
+    bottom_right.y += (float) rect->height * (float) PLAYER_SCALE;
+    if (color_cmp(get_pixel_at_pos(game, bottom_left), color) ||
+    color_cmp(get_pixel_at_pos(game, bottom_right), color))
         return;
     sfView_move(game->view, (sfVector2f) {0, PLAYER_MOVEMENT});
     game->player->position->y += PLAYER_MOVEMENT;
@@ -65,18 +81,9 @@ void handle_arrow_keys(game_t *game)
         move_player_left(game, collision);
     if (sfKeyboard_isKeyPressed(sfKeyRight))
         move_player_right(game, collision);
-        // sfView_move(game->view, (sfVector2f) {PLAYER_MOVEMENT, 0});
-        // clock_player_right(game->player->clock, game);
-        // game->player->position.x += PLAYER_MOVEMENT;
     if (sfKeyboard_isKeyPressed(sfKeyUp))
         move_player_top(game, collision);
-        // sfView_move(game->view, (sfVector2f) {0, -PLAYER_MOVEMENT});
-        // clock_player_up(game->player->clock, game);
-        // game->player->position.y -= PLAYER_MOVEMENT;
     if (sfKeyboard_isKeyPressed(sfKeyDown))
         move_player_bottom(game, collision);
-        // sfView_move(game->view, (sfVector2f) {0, PLAYER_MOVEMENT});
-        // clock_player_down(game->player->clock, game);
-        // game->player->position.y += PLAYER_MOVEMENT;
     sfSprite_setPosition(game->player->sprite, *game->player->position);
 }

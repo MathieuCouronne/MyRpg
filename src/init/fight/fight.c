@@ -57,7 +57,7 @@ player_t *player_fight(void)
 
     player->sprite = sfSprite_create();
     player->rect = rect_player();
-    player->texture = sfTexture_createFromFile(WARRIOR_PATH, NULL);
+    player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     player->position.x = 200;
     player->position.y = 330;

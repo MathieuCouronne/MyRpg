@@ -16,10 +16,10 @@
     #define MAP_HEIGHT 3200
 
     // Misc
-    #define PLAYER_SCALE 2
+    #define PLAYER_SCALE 1.5
 
     // Sprites Pathes
-    #define WARRIOR_PATH "./assets/images/characters/warrior.png"
+    #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ENEMY_PATH "./assets/images/characters/enemy.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"

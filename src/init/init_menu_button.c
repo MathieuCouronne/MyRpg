@@ -17,6 +17,7 @@ void go_to_game(game_t *game)
 
 void go_to_settings(game_t *game)
 {
+    game->scenes->current = SETTINGS;
 }
 
 void quit_game(game_t *game)
@@ -27,7 +28,7 @@ void quit_game(game_t *game)
 button_t **init_buttons(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 4);
-    float pos_x = 960 - 350 / 2;
+    float pos_x = 960 - 390 / 2;
 
     buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_game);
     buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650}, go_to_settings);

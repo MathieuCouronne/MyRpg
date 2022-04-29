@@ -32,6 +32,8 @@ typedef struct main_creation_scenes_s main_creation_scenes_t;
 typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
 typedef struct text_s text_t;
+typedef struct settings_s settings_t;
+
 
 struct sounds_s {
     sfMusic *menu;
@@ -82,7 +84,8 @@ struct main_menu_scenes_s {
 };
 
 struct event_controller_s {
-    sfEventType type;
+    sfEventType type;    game_asset_t *background;
+    button_t **buttons;
     void (*fn) (game_t *game, sfEvent *event);
 };
 
@@ -91,6 +94,7 @@ struct scenes_s {
     main_menu_scenes_t *main_menu;
     main_game_t *game_scene;
     main_creation_scenes_t *creation_menu;
+    settings_t *settings;
     fight_t *fight;
 };
 
@@ -151,4 +155,9 @@ struct fight_s {
     enemy_t *enemy;
 };
 
+struct settings_s {
+    game_asset_t *background;
+    game_asset_t *settings;
+    button_t **buttons;
+};
 #endif

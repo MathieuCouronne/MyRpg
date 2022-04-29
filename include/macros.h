@@ -17,7 +17,7 @@
 
     // Misc
     #define PLAYER_SCALE 1.25
-    #define PLAYER_MOVEMENT 5
+    #define PLAYER_MOVEMENT 2.5
 
     // Sprites Pathes
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"

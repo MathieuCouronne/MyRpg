@@ -169,4 +169,5 @@ struct key_controller_s {
     sfKeyCode *up;
     sfKeyCode *down;
 };
+
 #endif

@@ -85,7 +85,7 @@ struct main_menu_scenes_s {
 
 struct event_controller_s {
     sfEventType type;
-    ggame_asset_t *background;
+    game_asset_t *background;
     button_t **buttons;
     void (*fn) (game_t *game, sfEvent *event);
 };

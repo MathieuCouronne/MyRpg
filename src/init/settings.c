@@ -32,7 +32,7 @@ void go_to_prev(game_t *game)
 
 button_t **init_buttons_settings(void)
 {
-    button_t **buttons = malloc(sizeof(button_t *) * 2);
+    button_t **buttons = malloc(sizeof(button_t *) * 6);
     float pos_x = 960 - 390 / 2;
     float icons = 960 - 41 / 2;
 

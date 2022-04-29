@@ -12,6 +12,8 @@ assets/images/maps/*
 !assets/images/maps/.gitkeep
 assets/images/misc/*
 !assets/images/misc/.gitkeep
+assets/images/settings/*
+!assets/images/settings/.gitkeep
 
 assets/sounds/*
 !assets/sounds/.gitkeep

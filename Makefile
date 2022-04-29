@@ -69,6 +69,10 @@ SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
 
+SRC			+=	$(SRC_DIR)map/get_pixel_at_pos.c \
+
+SRC			+=	$(SRC_DIR)utils/color_cmp.c \
+
 OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf

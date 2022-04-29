@@ -40,6 +40,7 @@ char *my_strcat(char *dest, char const *src);
 char *my_strncat(char *dest, char const *src, int nb);
 char **my_str_to_word_array(char const *str, char const *separators);
 char *my_strdup(char const *src);
+char *my_strndup(char const *src, unsigned int size);
 int is_anum(char const str);
 
 #endif

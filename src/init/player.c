@@ -34,11 +34,11 @@ player_t *init_player(void)
     player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
     if (!player->sprite || !player->rect || !player->texture)
         return NULL;
-    player->position.x = 2220;
-    player->position.y = 2200;
+    player->position->x = 2220;
+    player->position->y = 2200;
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     sfSprite_setScale(player->sprite, player_scale);
-    sfSprite_setPosition(player->sprite, player->position);
+    sfSprite_setPosition(player->sprite, *player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
     return player;
 }

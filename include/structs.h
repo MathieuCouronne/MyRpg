@@ -106,7 +106,7 @@ struct main_game_s {
 struct player_s {
     sfSprite *sprite;
     sfIntRect *rect;
-    sfVector2f position;
+    sfVector2f *position;
     sfTexture *texture;
     sfClock *clock;
 };

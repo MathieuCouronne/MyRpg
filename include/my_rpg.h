@@ -82,7 +82,13 @@ char *string_info_enemy(fight_t *fight);
 // Character
 character_t *create_character(void);
 
-//Music
+// Music
 void play_music(sfMusic *sounds);
+
+// Map
+sfColor get_pixel_at_pos(game_t *game, sfVector2f shift);
+
+// Utils
+bool color_cmp(sfColor color1, sfColor color2);
 
 #endif

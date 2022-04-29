@@ -16,10 +16,10 @@ sfIntRect *rect_player(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
-    rect->top = 0;
-    rect->left = 0;
-    rect->width = 77;
-    rect->height = 77;
+    rect->top = 16;
+    rect->left = 14;
+    rect->width = 43;
+    rect->height = 61;
     return rect;
 }
 
@@ -32,10 +32,12 @@ player_t *init_player(void)
     player->sprite = sfSprite_create();
     player->rect = rect_player();
     player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
-    if (!player->sprite || !player->rect || !player->texture)
+    player->position = malloc(sizeof(sfVector2f));
+    if (!player->sprite || !player->rect || !player->texture ||
+    !player->position)
         return NULL;
-    player->position->x = 2220;
-    player->position->y = 2200;
+    player->position->x = (float) MAP_WIDTH / 2;
+    player->position->y = (float) MAP_HEIGHT / 2;
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     sfSprite_setScale(player->sprite, player_scale);
     sfSprite_setPosition(player->sprite, *player->position);

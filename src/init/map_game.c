@@ -19,8 +19,8 @@ game_asset_t *init_map(game_t *game)
         return NULL;
     map->sprite = sfSprite_create();
     map->texture = sfTexture_createFromFile(MAP_PATH, NULL);
-    sfSprite_setScale(map->sprite, (sfVector2f) {1.3, 1.3});
-    sfView_setCenter(game->view, (sfVector2f) {2290, 2300});
+    sfView_setCenter(game->view, (sfVector2f) {MAP_WIDTH / 2, MAP_HEIGHT / 2});
+    sfView_zoom(game->view, .75f);
     sfSprite_setTexture(map->sprite, map->texture, sfTrue);
     return map;
 }

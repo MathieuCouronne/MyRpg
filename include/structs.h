@@ -34,6 +34,7 @@ typedef struct enemy_s enemy_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
+typedef struct pause_s pause_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -107,6 +108,7 @@ struct game_scene_s {
 
 struct main_game_s {
     game_asset_t *map;
+    pause_t *pause;
 };
 
 struct player_s {
@@ -159,7 +161,11 @@ struct fight_s {
 
 struct settings_s {
     game_asset_t *background;
-    game_asset_t *settings;
+    button_t **buttons;
+};
+
+struct pause_s {
+    game_asset_t *background;
     button_t **buttons;
 };
 

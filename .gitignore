@@ -2,19 +2,8 @@ main
 a.out
 my_rpg
 
-assets/images/characters/*
-!assets/images/characters/.gitkeep
-assets/images/fight/*
-!assets/images/fight/.gitkeep
-assets/images/main_menu/*
-!assets/images/main_menu/.gitkeep
-assets/images/maps/*
-!assets/images/maps/.gitkeep
-assets/images/misc/*
-!assets/images/misc/.gitkeep
-assets/images/settings/*
-!assets/images/settings/.gitkeep
-
+assets/images/**/*
+!assets/images/**/.gitkeep
 assets/sounds/*
 !assets/sounds/.gitkeep
 assets/fonts/*

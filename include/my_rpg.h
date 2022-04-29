@@ -38,6 +38,7 @@ config_t *parse_config(void);
 settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
+pause_t *init_pause(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -65,6 +66,7 @@ bool display_main_menu(game_t *game);
 bool display_fight(game_t *game);
 bool display_main_game(game_t *game);
 bool display_settings(game_t *game);
+bool display_pause(game_t *game, sfRenderWindow *window);
 
 // Movement
 void clock_player_down(sfClock *clock, game_t *game);
@@ -94,5 +96,8 @@ sfColor get_pixel_at_pos(game_t *game, sfVector2f shift);
 
 // Utils
 bool color_cmp(sfColor color1, sfColor color2);
+void go_to_game(game_t *game);
+void go_to_settings(game_t *game);
+void quit_game(game_t *game);
 
 #endif

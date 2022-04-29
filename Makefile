@@ -43,7 +43,8 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/config/parse_config.c \
 				$(SRC_DIR)init/config/write_file.c \
 				$(SRC_DIR)init/settings.c \
-				$(SRC_DIR)init/create_icons.c
+				$(SRC_DIR)init/create_icons.c \
+				$(SRC_DIR)init/pause.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \
@@ -62,7 +63,8 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/main_game.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
-				$(SRC_DIR)scenes/settings/main_settings.c
+				$(SRC_DIR)scenes/settings/main_settings.c \
+				$(SRC_DIR)scenes/pause/main_pause.c
 
 SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 				$(SRC_DIR)inventory/add_to_inventory.c \

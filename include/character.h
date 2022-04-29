@@ -34,7 +34,8 @@ typedef struct character_s {
     unsigned int unspent;
     stats_t **stats;
     unsigned int level;
-    unsigned int exp;
+    unsigned int current_exp;
+    unsigned int exp_required;
     unsigned int hp;
     unsigned int max_hp;
     unsigned int mp;

@@ -18,6 +18,11 @@ static stats_t **init_war_stats(void)
 {
     stats_t **stats = malloc(sizeof(stats_t *) * NB_STATS + 1);
 
+    for (unsigned int i = 0; i < NB_STATS; i++) {
+        stats[i] = malloc(sizeof(stats_t));
+        if (!stats[i])
+            return NULL;
+    }
     stats[NB_STATS] = NULL;
     stats[0]->name = "STR";
     stats[0]->amount = BASE_WAR_STR;
@@ -36,11 +41,15 @@ character_t *create_character(void)
 {
     character_t *character = malloc(sizeof(character_t *));
 
+    if (!character)
+        return NULL;
     character->name = "Enter a name";
     character->class_name = "Warrior";
     character->unspent = 20;
-    character->stats = init_war_stats();
+    if ((character->stats = init_war_stats()) == NULL)
+        return NULL;
     character->level = 1;
-    character->exp = 0;
+    character->current_exp = 0;
+    character->exp_required = 100;
     return character;
 }

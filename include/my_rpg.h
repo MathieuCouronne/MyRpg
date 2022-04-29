@@ -84,6 +84,7 @@ char *string_info_enemy(fight_t *fight);
 
 // Character
 character_t *create_character(void);
+void add_experience(character_t *character, unsigned int exp);
 
 // Music
 void play_music(sfMusic *sounds);

@@ -70,6 +70,7 @@ SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 				$(SRC_DIR)inventory/swap_slots.c \
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
+				$(SRC_DIR)character/experience/add_experience.c \
 
 SRC			+=	$(SRC_DIR)map/get_pixel_at_pos.c \
 

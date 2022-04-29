@@ -37,6 +37,7 @@ bool write_file(char const *filename, config_t *config);
 config_t *parse_config(void);
 settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
+int chest(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);

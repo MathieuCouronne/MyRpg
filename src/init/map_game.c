@@ -5,7 +5,6 @@
 ** create_map main game
 */
 
-#include <stdbool.h>
 #include <stdlib.h>
 #include "my_rpg.h"
 #include "structs.h"

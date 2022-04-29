@@ -12,11 +12,11 @@
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
     #define WINDOW_BITS 32
-    #define MAP_WIDTH 3168
+    #define MAP_WIDTH 3200
     #define MAP_HEIGHT 3200
 
     // Misc
-    #define PLAYER_SCALE 1.5
+    #define PLAYER_SCALE 1.25
     #define PLAYER_MOVEMENT 5
 
     // Sprites Pathes

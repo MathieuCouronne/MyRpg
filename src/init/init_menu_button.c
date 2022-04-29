@@ -17,6 +17,7 @@ void go_to_game(game_t *game)
 
 void go_to_settings(game_t *game)
 {
+    game->scenes->current = SETTINGS;
 }
 
 void quit_game(game_t *game)

@@ -51,7 +51,7 @@ void destroy_map(main_game_t *map);
 void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
-void handle_buttons_clicks(game_t *game, button_t **buttons);
+bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
 
 // Sounds
@@ -62,6 +62,7 @@ void destroy_sound(sounds_t *music);
 bool display_main_menu(game_t *game);
 bool display_fight(game_t *game);
 bool display_main_game(game_t *game);
+bool display_settings(game_t *game);
 
 // Movement
 void clock_player_down(sfClock *clock, game_t *game);

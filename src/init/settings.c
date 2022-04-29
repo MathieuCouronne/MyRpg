@@ -32,6 +32,7 @@ settings_t *init_settings(void)
     if (!scene)
         return NULL;
     scene->background = init_settings_background();
-    //scene->buttons = init_buttons();
+    // scene->buttons = init_buttons();
+    scene->buttons = NULL;
     return scene;
 }

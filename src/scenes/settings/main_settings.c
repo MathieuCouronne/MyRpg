@@ -9,18 +9,26 @@
 #include "my_rpg.h"
 #include "structs.h"
 
-bool display_main_settings(game_t *game)
+static void event_handling(game_t *game)
+{
+    while (sfRenderWindow_pollEvent(game->window, &game->event)) {
+        if (game->event.type == sfEvtClosed)
+            sfRenderWindow_close(game->window);
+    }
+}
+
+bool display_settings(game_t *game)
 {
     sfRenderWindow *window = NULL;
     settings_t *settings = NULL;
     button_t **buttons = NULL;
 
-    if (!game || !game->window || !game->scenes || !game->scenes->settings ||
-        !game->scenes->settings->buttons)
+    if (!game || !game->window || !game->scenes || !game->scenes->settings)
         return false;
+    event_handling(game);
     window = game->window;
     settings = game->scenes->settings;
-    buttons = settings->buttons;
+    // buttons = settings->buttons;
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
     return true;
 }

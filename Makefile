@@ -64,7 +64,6 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c
 
-
 SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 				$(SRC_DIR)inventory/add_to_inventory.c \
 				$(SRC_DIR)inventory/remove_from_inventory.c \

@@ -58,8 +58,10 @@ static bool download_folder(sfFtp *ftp, char *folder)
             return display_status("Download failed.\n", 0);
         dest_path = concat(folder);
         res = sfFtp_download(ftp, name, dest_path, sfFtpBinary);
-        if (!sfFtpResponse_isOk(res))
-            return display_status("Downloading failed.\n", 0);
+        if (!sfFtpResponse_isOk(res)) {
+            printf("Error here: %s", sfFtpResponse_getMessage(res));
+            return display_status("Download failed.\n", 0);
+        }
         my_printf("\tAssets '%s' downloaded.\n", name);
     }
     return display_status("Download successfull.\n", 1);

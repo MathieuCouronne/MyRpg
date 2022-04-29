@@ -36,4 +36,7 @@
     // Fonts Pathes
     #define ARIAL_FONT_PATH "./assets/fonts/arial_black.ttf"
 
+    // Config files
+    #define CONFIG_FILE_PATH "./config/game.config"
+
 #endif // RPG_MACROS_H

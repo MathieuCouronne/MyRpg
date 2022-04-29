@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include "my_rpg.h"
 #include "macros.h"
+#include "my.h"
 
 static sfRenderWindow *init_window(void)
 {
@@ -21,7 +22,7 @@ static sfRenderWindow *init_window(void)
     return window;
 }
 
-scenes_t *init_scenes(game_t *game)
+static scenes_t *init_scenes(game_t *game)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
@@ -32,7 +33,7 @@ scenes_t *init_scenes(game_t *game)
     return scenes;
 }
 
-sfImage *init_collision_img(void)
+static sfImage *init_collision_img(void)
 {
     sfImage *image = sfImage_createFromFile(AREAS_PATH);
 
@@ -41,12 +42,28 @@ sfImage *init_collision_img(void)
     return image;
 }
 
+static bool load_assets(game_t *game)
+{
+    bool assets_fails = false;
+
+    game->config = parse_config();
+    if (!game->config)
+        return false;
+    if (my_strcmp(game->config->assets_loaded->value, "true") != 0) {
+        if (!download_assets())
+            return false;
+    }
+    game->config->assets_loaded->value = "true";
+    write_file(CONFIG_FILE_PATH, game->config);
+    return true;
+}
+
 game_t *init_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
-    if (!download_assets())
+    if (!load_assets(game))
         return NULL;
     game->player = init_player();
     game->chest = chest_sprite();

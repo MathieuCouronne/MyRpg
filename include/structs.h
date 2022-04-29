@@ -14,6 +14,8 @@
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
+typedef struct config_value_s config_value_t;
+typedef struct config_s config_t;
 typedef struct scenes_s scenes_t;
 typedef struct sounds_s sounds_t;
 typedef struct game_s game_t;
@@ -36,6 +38,15 @@ struct sounds_s {
     sfMusic *main_theme;
 };
 
+struct config_value_s {
+    char *key;
+    char *value;
+};
+
+struct config_s {
+    config_value_t *assets_loaded;
+};
+
 struct game_s {
     sfRenderWindow *window;
     sfEvent event;
@@ -46,6 +57,7 @@ struct game_s {
     player_t *player;
     enemy_t *enemy;
     chest_t *chest;
+    config_t *config;
 };
 
 struct game_asset_s {

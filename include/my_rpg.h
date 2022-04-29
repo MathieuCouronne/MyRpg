@@ -32,6 +32,9 @@ main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);
 text_t *init_text(char *str);
 bool download_assets(void);
+char **read_file(char const *filename);
+bool write_file(char const *filename, config_t *config);
+config_t *parse_config(void);
 
 // Destroy
 void destroy_game(game_t *game);

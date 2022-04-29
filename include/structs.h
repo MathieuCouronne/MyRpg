@@ -33,8 +33,7 @@ typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
-struct key_controller_s key_controller_t;
-
+typedef struct key_controller_s key_controller_t;
 
 struct sounds_s {
     sfMusic *menu;

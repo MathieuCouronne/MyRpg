@@ -12,8 +12,8 @@
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        if (game->event.type == sfEvtClosed)
-            sfRenderWindow_close(game->window);
+        if (handle_buttons_clicks(game, game->scenes->settings->buttons))
+            return;
     }
 }
 
@@ -28,7 +28,13 @@ bool display_settings(game_t *game)
     event_handling(game);
     window = game->window;
     settings = game->scenes->settings;
-    // buttons = settings->buttons;
+    buttons = settings->buttons;
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
+    sfRenderWindow_drawText(window, buttons[0]->text, NULL);
+    sfRenderWindow_drawSprite(window, buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[4]->asset->sprite, NULL);
     return true;
 }

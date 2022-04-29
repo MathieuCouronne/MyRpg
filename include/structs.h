@@ -91,6 +91,7 @@ struct event_controller_s {
 
 struct scenes_s {
     scenes current;
+    scenes prev;
     main_menu_scenes_t *main_menu;
     main_game_t *game_scene;
     main_creation_scenes_t *creation_menu;

@@ -18,7 +18,7 @@ sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite)
     sfFloatRect rect = sfText_getGlobalBounds(text);
 
     pos.x = (x / 2) + pos_sprite.x - (rect.width / 2);
-    pos.y = pos_sprite.y + (y / 2) - 40;
+    pos.y = pos_sprite.y + (y / 2) - (rect.height / 2 + 10);
     return pos;
 }
 
@@ -39,7 +39,7 @@ void (*on_click) (game_t *game))
     sfSprite_setPosition(button->asset->sprite, pos);
     sfText_setFont(button->text, button->font);
     sfText_setString(button->text, str);
-    sfText_setCharacterSize(button->text, 60);
+    sfText_setCharacterSize(button->text, 40);
     sfText_setColor(button->text, sfBlack);
     rect_button = sfSprite_getGlobalBounds(button->asset->sprite);
     pos = center_text(rect_button.width, rect_button.height, button->text, pos_sprite);

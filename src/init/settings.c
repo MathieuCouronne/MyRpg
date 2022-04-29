@@ -25,14 +25,28 @@ game_asset_t *init_settings_background(void)
     return background;
 }
 
+void oui()
+{
+
+}
+
+button_t **init_buttons_settings(void)
+{
+    button_t **buttons = malloc(sizeof(button_t *) * 2);
+    float pos_x = 960 - 390 / 2;
+
+    buttons[0] = create_button("Validate", (sfVector2f) {pos_x ,870}, oui);
+    buttons[1] = NULL;
+    return buttons;
+}
+
 settings_t *init_settings(void)
 {
-    settings_t *scene = malloc(sizeof(main_menu_scenes_t));
+    settings_t *scene = malloc(sizeof(settings_t));
 
     if (!scene)
         return NULL;
     scene->background = init_settings_background();
-    // scene->buttons = init_buttons();
-    scene->buttons = NULL;
+    scene->buttons = init_buttons_settings();
     return scene;
 }

@@ -28,7 +28,9 @@ bool display_settings(game_t *game)
     event_handling(game);
     window = game->window;
     settings = game->scenes->settings;
-    // buttons = settings->buttons;
+    buttons = settings->buttons;
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
+    sfRenderWindow_drawText(window, buttons[0]->text, NULL);
     return true;
 }

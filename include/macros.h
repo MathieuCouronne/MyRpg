@@ -29,6 +29,7 @@
     #define AREAS_PATH "./assets/images/maps/areas.jpg"
     #define MAP_PATH "./assets/images/maps/map.png"
     #define MAIN_MENU_BG_PATH "./assets/images/main_menu/background.png"
+    #define SETTINGS_BG_PATH "./assets/images/settings/background.jpg"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

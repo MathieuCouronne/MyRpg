@@ -14,6 +14,7 @@ void destroy_all(game_t *game)
     destroy_menu(game->scenes->main_menu->background);
     destroy_map(game->scenes->game_scene);
     destroy_player(game->player);
+    destroy_chest(game->chest);
     destroy_sound(game->sounds);
     destroy_fight(game->scenes->fight);
     destroy_enemy(game->enemy);

@@ -49,6 +49,7 @@ void destroy_enemy(enemy_t *enemy);
 void destroy_fight(fight_t *fight);
 void destroy_all(game_t *game);
 void destroy_map(main_game_t *map);
+void destroy_chest(chest_t *chest);
 
 // Events
 void handle_arrow_keys(game_t *game);

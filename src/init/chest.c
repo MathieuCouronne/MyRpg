@@ -27,15 +27,36 @@ chest_t *chest_sprite(void)
 {
     chest_t *chest = malloc(sizeof(chest_t));
 
+    chest->clock = sfClock_create();
     chest->sprite = sfSprite_create();
     chest->rect = rect_chest();
     chest->texture = sfTexture_createFromFile(CHEST_PATH, NULL);
     sfSprite_setTexture(chest->sprite, chest->texture, sfTrue);
-    chest->position.x = 2300;
-    chest->position.y = 2400;
-    sfSprite_setScale(chest->sprite, (sfVector2f) {2, 2});
+    chest->position.x = 1500;
+    chest->position.y = 1500;
+    sfSprite_setScale(chest->sprite, (sfVector2f) {1.1, 1.1});
     sfSprite_setPosition(chest->sprite, chest->position);
     sfSprite_setTextureRect(chest->sprite, *chest->rect);
-    chest->clock = sfClock_create();
     return chest;
+}
+
+void move_rect(sfIntRect *rect, int offset, int max_value)
+{
+    rect->top += offset;
+    if (rect->top == max_value)
+        rect->top = 0;
+}
+
+int chest(game_t *game)
+{
+    sfTime time = sfClock_getElapsedTime(game->chest->clock);
+    sfInt32 milliseconds = sfTime_asMilliseconds(time);
+
+    if (milliseconds > 800) {
+        move_rect(game->chest->rect, 48, 180);
+        sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
+        sfClock_restart(game->chest->clock);
+    }
+    sfRenderWindow_drawSprite(game->window, game->chest->sprite, NULL);
+    return 0;
 }

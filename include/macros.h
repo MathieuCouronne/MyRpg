@@ -32,6 +32,7 @@
     #define MAIN_MENU_BG_PATH "./assets/images/main_menu/background.png"
     #define SETTINGS_BG_PATH "./assets/images/settings/background.jpg"
     #define BUTTON_SETTINGS_PATH "./assets/images/settings/empty_icon.png"
+    #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

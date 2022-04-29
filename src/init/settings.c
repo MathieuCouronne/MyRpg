@@ -34,9 +34,14 @@ button_t **init_buttons_settings(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 2);
     float pos_x = 960 - 390 / 2;
+    float icons = 960 - 41 / 2;
 
     buttons[0] = create_button("Validate", (sfVector2f) {pos_x ,870}, oui);
-    buttons[1] = NULL;
+    buttons[1] = create_icon((sfVector2f) {icons ,640}, BUTTON_SETTINGS_PATH);
+    buttons[2] = create_icon((sfVector2f) {icons ,700}, BUTTON_SETTINGS_PATH);
+    buttons[3] = create_icon((sfVector2f) {icons ,760}, BUTTON_SETTINGS_PATH);
+    buttons[4] = create_icon((sfVector2f) {icons ,820}, BUTTON_SETTINGS_PATH);
+    buttons[5] = NULL;
     return buttons;
 }
 

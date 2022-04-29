@@ -32,5 +32,9 @@ bool display_settings(game_t *game)
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[0]->text, NULL);
+    sfRenderWindow_drawSprite(window, buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[4]->asset->sprite, NULL);
     return true;
 }

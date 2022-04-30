@@ -113,6 +113,7 @@ struct player_s {
     sfSprite *sprite;
     sfIntRect *rect;
     sfVector2f *position;
+    sfVector2f *relative_pos;
     sfTexture *texture;
     sfClock *clock;
 };

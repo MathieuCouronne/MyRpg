@@ -90,6 +90,10 @@ void play_music(sfMusic *sounds);
 
 // Map
 sfColor get_pixel_at_pos(game_t *game, sfVector2f shift);
+void move_left(game_t *game, sfColor color);
+void move_right(game_t *game, sfColor color);
+void move_top(game_t *game, sfColor color);
+void move_bottom(game_t *game, sfColor color);
 
 // Utils
 bool color_cmp(sfColor color1, sfColor color2);

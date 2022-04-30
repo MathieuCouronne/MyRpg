@@ -11,6 +11,7 @@
 #include <SFML/System/Types.h>
 #include <SFML/Graphics.h>
 
+/*
 void move_right(game_t *game)
 {
     if (game->player->rect->left > 148) {
@@ -34,3 +35,4 @@ void clock_player_right(sfClock *clock, game_t *game)
             sfClock_restart(clock);
     }
 }
+*/

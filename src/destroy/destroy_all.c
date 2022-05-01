@@ -11,6 +11,9 @@
 void destroy_all(game_t *game)
 {
     menu_destroy_buttons(game->scenes->main_menu->buttons);
+    destroy_settings(game->scenes->settings->background);
+    menu_destroy_buttons(game->scenes->settings->buttons);
+    settings_destroy_icons(game->scenes->settings->icons);
     destroy_menu(game->scenes->main_menu->background);
     destroy_map(game->scenes->game_scene);
     destroy_player(game->player);

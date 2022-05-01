@@ -49,6 +49,9 @@ void destroy_fight(fight_t *fight);
 void destroy_all(game_t *game);
 void destroy_map(main_game_t *map);
 void destroy_chest(chest_t *chest);
+void destroy_settings(game_asset_t *settings);
+void settings_destroy_icons(button_t **buttons);
+void settings_destroy_buttons(button_t **buttons);
 
 // Events
 void handle_arrow_keys(game_t *game);
@@ -77,7 +80,8 @@ void clock_player_right(sfClock *clock, game_t *game);
 inventory_t *create_inventory(unsigned int height, unsigned int width);
 inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
     unsigned int quantity);
-inventory_t *remove_from_inventory(inventory_t *inventory, char const *name);
+inventory_t *remove_from_inventory(inventory_t *inventory, char const *name,
+    unsigned int quantity);
 inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
     sfVector2u pos2);
 

@@ -30,7 +30,7 @@ void move_top(game_t *game, sfColor color)
 {
     float distance = WINDOW_HEIGHT / 2 - WINDOW_PADDING;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     if ((game->player->relative_pos->y) > -distance) {
         move_player_top(game, color, speed);

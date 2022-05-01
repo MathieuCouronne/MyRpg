@@ -31,7 +31,7 @@ void move_bottom(game_t *game, sfColor color)
     float height = sfSprite_getGlobalBounds(game->player->sprite).height;
     float distance = WINDOW_HEIGHT / 2 - WINDOW_PADDING;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     if ((game->player->relative_pos->y + height) < distance) {
         move_player_bottom(game, color, speed);

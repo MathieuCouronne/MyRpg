@@ -18,5 +18,6 @@ vgcore.*
 
 .idea
 .vscode
+.DS_Store
 
 new_assets/

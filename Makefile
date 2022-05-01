@@ -62,15 +62,14 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 				$(SRC_DIR)scenes/pause/main_pause.c
 
-SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
-				$(SRC_DIR)inventory/add_to_inventory.c \
-				$(SRC_DIR)inventory/remove_from_inventory.c \
-				$(SRC_DIR)inventory/swap_slots.c \
-
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \
 				$(SRC_DIR)controllers/camera/move_bottom.c \
+				$(SRC_DIR)controllers/inventory/create_inventory.c \
+				$(SRC_DIR)controllers/inventory/add_to_inventory.c \
+				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
+				$(SRC_DIR)controllers/inventory/swap_slots.c
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \

@@ -17,12 +17,6 @@ SRC_DIR 	= src/
 
 SRC			=	$(SRC_DIR)my_rpg.c
 
-SRC			+=	$(SRC_DIR)player/move_down.c \
-				$(SRC_DIR)player/move_left.c \
-				$(SRC_DIR)player/move_right.c \
-				$(SRC_DIR)player/move_up.c \
-				$(SRC_DIR)player/clock.c
-
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
 				$(SRC_DIR)events/mouse/wheel.c \
@@ -80,9 +74,8 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \
 
-SRC			+=	$(SRC_DIR)map/get_pixel_at_pos.c \
-
 SRC			+=	$(SRC_DIR)utils/color_cmp.c \
+				$(SRC_DIR)utils/map/get_pixel_at_pos.c
 
 OBJ			= $(SRC:.c=.o)
 

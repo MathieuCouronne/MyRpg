@@ -23,15 +23,8 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/mouse/menu_button.c
 
 SRC			+=	$(SRC_DIR)init/game.c \
-				$(SRC_DIR)init/menu.c \
 				$(SRC_DIR)init/sound.c \
-				$(SRC_DIR)init/init_menu_button.c \
-				$(SRC_DIR)init/map_game.c \
 				$(SRC_DIR)init/player.c \
-				$(SRC_DIR)init/fight/fight.c \
-				$(SRC_DIR)init/fight/ogre.c \
-				$(SRC_DIR)init/fight/hp_bar.c \
-				$(SRC_DIR)init/fight/text.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/config/read_file.c \
@@ -39,7 +32,17 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/config/write_file.c \
 				$(SRC_DIR)init/settings.c \
 				$(SRC_DIR)init/create_icons.c \
-				$(SRC_DIR)init/pause.c
+
+SRC			+=	$(SRC_DIR)init/scenes/menu.c \
+				$(SRC_DIR)init/scenes/menu/create_button.c \
+				$(SRC_DIR)init/scenes/menu/title.c \
+				$(SRC_DIR)init/scenes/init_buttons.c \
+				$(SRC_DIR)init/scenes/fight/fight.c \
+				$(SRC_DIR)init/scenes/fight/ogre.c \
+				$(SRC_DIR)init/scenes/fight/hp_bar.c \
+				$(SRC_DIR)init/scenes/fight/text.c \
+				$(SRC_DIR)init/scenes/pause.c \
+				$(SRC_DIR)init/scenes/game.c \
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \
@@ -51,9 +54,6 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/fight.c \
 				$(SRC_DIR)destroy/chest.c \
 				$(SRC_DIR)destroy/settings.c
-
-SRC			+=	$(SRC_DIR)menu/create_button.c \
-				$(SRC_DIR)menu/title.c
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \

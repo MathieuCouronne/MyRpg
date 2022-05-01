@@ -20,7 +20,7 @@
     #define MAP_HEIGHT 3200
 
     // Misc
-    #define PLAYER_SCALE 1.25
+    #define PLAYER_SCALE 1.15
     #define PLAYER_MOVEMENT 2.5
 
     // Sprites Pathes

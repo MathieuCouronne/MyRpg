@@ -8,6 +8,7 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <SFML/Audio.h>
+#include <stdlib.h>
 #include "menu.h"
 #include "enum.h"
 

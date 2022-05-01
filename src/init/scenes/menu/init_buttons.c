@@ -27,6 +27,12 @@ void quit_game(game_t *game)
     sfRenderWindow_close(game->window);
 }
 
+void go_to_saves(game_t *game)
+{
+    game->scenes->prev = game->scenes->current;
+    game->scenes->current = SAVES;
+}
+
 button_t **init_buttons(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 4);

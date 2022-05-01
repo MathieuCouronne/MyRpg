@@ -18,3 +18,19 @@ static void event_handling(game_t *game)
             return;
     }
 }
+
+bool display_saves(game_t *game)
+{
+    sfRenderWindow *window = NULL;
+    scene_saves_t *saves = NULL;
+    button_t **buttons = NULL;
+
+    if (!game || !game->window || !game->scenes || !game->scenes->main_menu ||
+        !game->scenes->main_menu->buttons)
+        return false;
+    event_handling(game);
+    window = game->window;
+    saves = game->scenes->saves;
+    sfRenderWindow_drawSprite(window, saves->background->sprite, NULL);
+    return true;
+}

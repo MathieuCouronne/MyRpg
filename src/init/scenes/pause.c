@@ -55,4 +55,3 @@ pause_t *init_pause(void)
     scene->buttons = init_buttons_pause();
     return scene;
 }
-

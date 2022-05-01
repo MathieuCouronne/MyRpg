@@ -39,6 +39,7 @@ settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
 pause_t *init_pause(void);
+scene_saves_t *init_saves(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -70,6 +71,7 @@ bool display_fight(game_t *game);
 bool display_main_game(game_t *game);
 bool display_settings(game_t *game);
 bool display_pause(game_t *game, sfRenderWindow *window);
+bool display_saves(game_t *game);
 
 // Movement
 void clock_player_down(sfClock *clock, game_t *game);

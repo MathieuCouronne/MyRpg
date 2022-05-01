@@ -182,7 +182,7 @@ struct key_controller_s {
 };
 
 struct scene_saves_s {
-    game_asset_t *background;
+    game_asset_t **background;
     button_t **buttons;
     button_t **icons;
 };

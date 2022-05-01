@@ -38,7 +38,9 @@ button_t **init_buttons(void)
     button_t **buttons = malloc(sizeof(button_t *) * 4);
     float pos_x = 960 - 390 / 2;
 
-    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_game);
+    if (!buttons)
+        return NULL;
+    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_saves);
     buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650},
     go_to_settings);
     buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800}, quit_game);

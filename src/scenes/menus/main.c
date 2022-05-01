@@ -39,6 +39,5 @@ bool display_main_menu(game_t *game)
     sfRenderWindow_drawText(window, buttons[1]->text, NULL);
     sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[2]->text, NULL);
-    play_music(game->sounds->menu);
     return true;
 }

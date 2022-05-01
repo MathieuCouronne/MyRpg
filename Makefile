@@ -71,7 +71,7 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
 				$(SRC_DIR)controllers/inventory/swap_slots.c
 
-SRC			+=	$(SRC_DIR)scene_saves.c
+SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \

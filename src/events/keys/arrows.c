@@ -15,7 +15,7 @@ void move_player_left(game_t *game, sfColor color)
     sfVector2f top_left = *game->player->position;
     sfVector2f bottom_left = *game->player->position;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     top_left.x -= 1;
     bottom_left.x -= 1;
@@ -33,7 +33,7 @@ void move_player_right(game_t *game, sfColor color)
     sfVector2f top_right = *game->player->position;
     sfVector2f bottom_right = *game->player->position;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     top_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
     bottom_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
@@ -51,7 +51,7 @@ void move_player_top(game_t *game, sfColor color)
     sfVector2f top_left = *game->player->position;
     sfVector2f top_right = *game->player->position;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     top_left.y -= 1;
     top_right.y -= 1;
@@ -69,7 +69,7 @@ void move_player_bottom(game_t *game, sfColor color)
     sfVector2f bottom_left = *game->player->position;
     sfVector2f bottom_right = *game->player->position;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     bottom_left.x += (float) rect->width * (float) PLAYER_SCALE;
     bottom_left.y += (float) rect->height * (float) PLAYER_SCALE;

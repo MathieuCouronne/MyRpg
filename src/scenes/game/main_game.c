@@ -34,8 +34,8 @@ bool display_main_game(game_t *game)
     main_game = game->scenes->game_scene;
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     chest(game);
+    sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     event_handling(game, window);
     return true;
 }

@@ -25,6 +25,7 @@
 
     // Sprites Pathes
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
+    #define PNJ_PATH "./assets/images/pnj.png"
     #define ENEMY_PATH "./assets/images/characters/enemy.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"

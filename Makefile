@@ -10,7 +10,8 @@ NAME		= my_rpg
 CFLAGS		= -Wall -Wextra -I include
 
 LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
-				-l csfml-audio -l csfml-network -L lib -l my -L lib -l my_printf
+				-l csfml-audio -l csfml-network -L lib -l my \
+				-L lib -l my_printf -l m
 
 SRC_DIR 	= src/
 
@@ -71,6 +72,11 @@ SRC			+=	$(SRC_DIR)inventory/create_inventory.c \
 				$(SRC_DIR)inventory/add_to_inventory.c \
 				$(SRC_DIR)inventory/remove_from_inventory.c \
 				$(SRC_DIR)inventory/swap_slots.c \
+
+SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
+				$(SRC_DIR)controllers/camera/move_right.c \
+				$(SRC_DIR)controllers/camera/move_top.c \
+				$(SRC_DIR)controllers/camera/move_bottom.c \
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \

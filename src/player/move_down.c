@@ -11,6 +11,7 @@
 #include <SFML/System/Types.h>
 #include <SFML/Graphics.h>
 
+/*
 void move_down(game_t *game)
 {
         if (game->player->rect->left > 222)
@@ -31,3 +32,4 @@ void clock_player_down(sfClock *clock, game_t *game)
         }
     }
 }
+*/

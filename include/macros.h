@@ -8,10 +8,14 @@
 #ifndef RPG_MACROS_H
     #define RPG_MACROS_H
 
+    // Functions
+    #define ABS(x) (x < 0) ? -x : x
+
     #define WINDOW_NAME "MyRPG"
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
     #define WINDOW_BITS 32
+    #define WINDOW_PADDING 350
     #define MAP_WIDTH 3200
     #define MAP_HEIGHT 3200
 

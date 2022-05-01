@@ -11,7 +11,6 @@
 #include <unistd.h>
 #include "my.h"
 
-// "config/game.config"
 char **read_file(char const *filename)
 {
     int fd = open(filename, O_RDONLY);

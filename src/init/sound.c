@@ -25,5 +25,6 @@ sounds_t *menu_music(void)
     sounds->menu = sfMusic_createFromFile(MAIN_THEME_PATH);
     if (!sounds->menu)
         return NULL;
+    sfMusic_play(sounds->menu);
     return sounds;
 }

@@ -31,7 +31,7 @@ void move_right(game_t *game, sfColor color)
     float width = sfSprite_getGlobalBounds(game->player->sprite).width;
     float distance = WINDOW_WIDTH / 2 - WINDOW_PADDING;
     float speed = PLAYER_MOVEMENT *
-    (sfKeyboard_isKeyPressed(sfKeyLAlt) ? 2 : 1);
+    (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
     if ((game->player->relative_pos->x + width) < distance) {
         move_player_right(game, color, speed);

@@ -8,7 +8,6 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 
-// TODO: remove this function when we'll have the loading scene
 static bool empty(game_t *game)
 {
     (void) game;

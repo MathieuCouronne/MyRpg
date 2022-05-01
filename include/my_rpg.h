@@ -49,6 +49,9 @@ void destroy_fight(fight_t *fight);
 void destroy_all(game_t *game);
 void destroy_map(main_game_t *map);
 void destroy_chest(chest_t *chest);
+void destroy_settings(game_asset_t *settings);
+void settings_destroy_icons(button_t **buttons);
+void settings_destroy_buttons(button_t **buttons);
 
 // Events
 void handle_arrow_keys(game_t *game);

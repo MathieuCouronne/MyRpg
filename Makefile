@@ -13,7 +13,7 @@ LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
 				-l csfml-audio -l csfml-network -L lib -l my \
 				-L lib -l my_printf -l m
 
-SRC_DIR 	= src/
+SRC_DIR 	= 	src/
 
 SRC			=	$(SRC_DIR)my_rpg.c
 
@@ -70,6 +70,8 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
 				$(SRC_DIR)controllers/inventory/swap_slots.c
+
+SRC			+=	$(SRC_DIR)scene_saves.c
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \

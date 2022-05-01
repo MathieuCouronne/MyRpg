@@ -32,17 +32,25 @@ void go_to_prev(game_t *game)
 
 button_t **init_buttons_settings(void)
 {
-    button_t **buttons = malloc(sizeof(button_t *) * 6);
+    button_t **buttons = malloc(sizeof(button_t *) * 2);
     float pos_x = 960 - 390 / 2;
-    float icons = 960 - 41 / 2;
 
     buttons[0] = create_button("Validate", (sfVector2f) {pos_x ,870}, go_to_prev);
-    buttons[1] = create_icon((sfVector2f) {icons ,640}, BUTTON_SETTINGS_PATH);
-    buttons[2] = create_icon((sfVector2f) {icons ,700}, BUTTON_SETTINGS_PATH);
-    buttons[3] = create_icon((sfVector2f) {icons ,760}, BUTTON_SETTINGS_PATH);
-    buttons[4] = create_icon((sfVector2f) {icons ,820}, BUTTON_SETTINGS_PATH);
-    buttons[5] = NULL;
+    buttons[2] = NULL;
     return buttons;
+}
+
+button_t **init_icons_settings(void)
+{
+    float icons_pos = 960 - 41 / 2;
+    button_t **icons = malloc(sizeof(button_t *) * 4);
+
+    icons[0] = create_icon((sfVector2f) {icons_pos ,640}, BUTTON_SETTINGS_PATH);
+    icons[1] = create_icon((sfVector2f) {icons_pos ,700}, BUTTON_SETTINGS_PATH);
+    icons[2] = create_icon((sfVector2f) {icons_pos ,760}, BUTTON_SETTINGS_PATH);
+    icons[3] = create_icon((sfVector2f) {icons_pos ,820}, BUTTON_SETTINGS_PATH);
+    icons[4] = NULL;
+    return icons;
 }
 
 settings_t *init_settings(void)
@@ -53,5 +61,6 @@ settings_t *init_settings(void)
         return NULL;
     scene->background = init_settings_background();
     scene->buttons = init_buttons_settings();
+    scene->icons = init_icons_settings();
     return scene;
 }

@@ -45,8 +45,6 @@ static sfImage *init_collision_img(void)
 
 static bool load_assets(game_t *game)
 {
-    bool assets_fails = false;
-
     game->config = parse_config();
     if (!game->config)
         return false;

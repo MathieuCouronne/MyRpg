@@ -6,12 +6,12 @@
 */
 
 #include <SFML/Network.h>
-#include <stdio.h>
 #include <stdlib.h>
 #include "my_rpg.h"
 #include "my.h"
 #include "menu.h"
 #include "display.h"
+#include "messages.h"
 
 static char *directories[] = {
     "fonts", "sounds", "images/characters", "images/fight",
@@ -49,23 +49,21 @@ static bool download_folder(sfFtp *ftp, char *folder)
     size_t size = 0;
     char *dest_path = NULL;
 
-    my_printf("Starts downloading assets from folder '%s'.\n", folder);
+    my_printf(FTP_STARTS_DOWNLOAD, folder);
     if (!sfFtpListingResponse_isOk(list))
-        return display_status("", 0);
+        return display_status(FTP_WRONG_IDS, 0);
     size = sfFtpListingResponse_getCount(list);
     for (size_t i = 0; i < size; i++) {
         char const *name = sfFtpListingResponse_getName(list, i);
         if (!name)
-            return display_status("Download failed.\n", 0);
+            return display_status(FTP_DOWNLOAD_FAILED, 0);
         dest_path = concat(folder);
         res = sfFtp_download(ftp, name, dest_path, sfFtpBinary);
-        if (!sfFtpResponse_isOk(res)) {
-            printf("Error here: %s", sfFtpResponse_getMessage(res));
-            return display_status("Download failed.\n", 0);
-        }
-        my_printf("\tAssets '%s' downloaded.\n", name);
+        if (!sfFtpResponse_isOk(res))
+            return display_status(FTP_DOWNLOAD_FAILED, 0);
+        my_printf(FTP_FILE_DOWNLOADED, name);
     }
-    return display_status("Download successfull.\n", 1);
+    return display_status(FTP_DOWNLOAD_SUCCESSFUL, 1);
 }
 
 bool download_assets(void)
@@ -75,10 +73,10 @@ bool download_assets(void)
     sfFtpResponse *res = sfFtp_connect(ftp, ip, 21, sfSeconds(5));
 
     if (!sfFtpResponse_isOk(res))
-        return display_status("Server connection failed.\n", false);
+        return display_status(FTP_NO_CONNECTION, false);
     res = sfFtp_login(ftp, "rpg", "rpg_password");
     if (!sfFtpResponse_isOk(res))
-        return display_status("Fail to download assets\n", false);
+        return display_status(FTP_WRONG_IDS, false);
     for (unsigned short i = 0; directories[i]; i++)
         download_folder(ftp, directories[i]);
     return true;

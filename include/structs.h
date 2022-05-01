@@ -163,6 +163,7 @@ struct fight_s {
 struct settings_s {
     game_asset_t *background;
     button_t **buttons;
+    button_t **icons;
 };
 
 struct pause_s {

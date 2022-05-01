@@ -14,6 +14,52 @@
 #include "inventory.h"
 #include "character.h"
 
+static stats_t **init_dog_stats(void)
+{
+    stats_t **stats = malloc(sizeof(stats_t *) * NB_STATS + 1);
+
+    for (unsigned int i = 0; i < NB_STATS; i++) {
+        stats[i] = malloc(sizeof(stats_t));
+        if (!stats[i])
+            return NULL;
+    }
+    stats[NB_STATS] = NULL;
+    stats[0]->name = "STR";
+    stats[0]->amount = BASE_DOG_STR;
+    stats[1]->name = "DEF";
+    stats[1]->amount = BASE_DOG_DEF;
+    stats[2]->name = "VIT";
+    stats[2]->amount = BASE_DOG_VIT;
+    stats[3]->name = "SPD";
+    stats[3]->amount = BASE_DOG_SPD;
+    stats[4]->name = "DEX";
+    stats[4]->amount = BASE_DOG_DEX;
+    return stats;
+}
+
+static stats_t **init_mage_stats(void)
+{
+    stats_t **stats = malloc(sizeof(stats_t *) * NB_STATS + 1);
+
+    for (unsigned int i = 0; i < NB_STATS; i++) {
+        stats[i] = malloc(sizeof(stats_t));
+        if (!stats[i])
+            return NULL;
+    }
+    stats[NB_STATS] = NULL;
+    stats[0]->name = "STR";
+    stats[0]->amount = BASE_MAGE_STR;
+    stats[1]->name = "DEF";
+    stats[1]->amount = BASE_MAGE_DEF;
+    stats[2]->name = "VIT";
+    stats[2]->amount = BASE_MAGE_VIT;
+    stats[3]->name = "SPD";
+    stats[3]->amount = BASE_MAGE_SPD;
+    stats[4]->name = "DEX";
+    stats[4]->amount = BASE_MAGE_DEX;
+    return stats;
+}
+
 static stats_t **init_war_stats(void)
 {
     stats_t **stats = malloc(sizeof(stats_t *) * NB_STATS + 1);

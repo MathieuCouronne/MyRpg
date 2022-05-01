@@ -9,7 +9,7 @@
     #define CHARACTER_H_
 
     #define NB_STATS 5
-    #define NB_CLASSES 2
+    #define NB_CLASSES 3
 
     #define BASE_WAR_STR 10
     #define BASE_WAR_DEF 5
@@ -20,8 +20,14 @@
     #define BASE_MAGE_STR 5
     #define BASE_MAGE_DEF 3
     #define BASE_MAGE_VIT 75
-    #define BASE_MAGE_DEX 10
     #define BASE_MAGE_SPD 100
+    #define BASE_MAGE_DEX 10
+
+    #define BASE_DOG_STR 7
+    #define BASE_DOG_DEF 0
+    #define BASE_DOG_VIT 50
+    #define BASE_DOG_SPD 200
+    #define BASE_DOG_DEX 50
 
 typedef struct stats_s {
     char *name;

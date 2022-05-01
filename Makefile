@@ -30,19 +30,19 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/config/read_file.c \
 				$(SRC_DIR)init/config/parse_config.c \
 				$(SRC_DIR)init/config/write_file.c \
-				$(SRC_DIR)init/settings.c \
 				$(SRC_DIR)init/create_icons.c \
 
-SRC			+=	$(SRC_DIR)init/scenes/menu.c \
+SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \
 				$(SRC_DIR)init/scenes/menu/title.c \
-				$(SRC_DIR)init/scenes/init_buttons.c \
+				$(SRC_DIR)init/scenes/menu/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight.c \
 				$(SRC_DIR)init/scenes/fight/ogre.c \
 				$(SRC_DIR)init/scenes/fight/hp_bar.c \
 				$(SRC_DIR)init/scenes/fight/text.c \
 				$(SRC_DIR)init/scenes/pause.c \
 				$(SRC_DIR)init/scenes/game.c \
+				$(SRC_DIR)init/scenes/settings.c \
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \

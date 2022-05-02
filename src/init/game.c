@@ -70,6 +70,7 @@ game_t *init_game(void)
     game->window = init_window();
     game->scenes = init_scenes(game);
     game->sounds = menu_music();
+    game->pnj = init_pnj();
     game->collisions = init_collision_img();
     if (!game->window || !game->scenes)
         return NULL;

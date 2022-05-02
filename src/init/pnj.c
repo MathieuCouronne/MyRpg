@@ -39,7 +39,7 @@ pnj_t *init_pnj(void)
 
     pnj->sprite = sfSprite_create();
     pnj->rect = rect_pnj();
-    pnj->texture = sfTexture_createFromFile(PNJ_PATH, NULL);
+    pnj->texture = sfTexture_createFromFile(ALBERT_PATH, NULL);
     pnj->relative_pos = malloc(sizeof(sfVector2f));
     if (!pnj->sprite || !pnj->rect || !pnj->texture ||
     !pnj->relative_pos)

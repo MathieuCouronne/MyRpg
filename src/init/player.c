@@ -50,6 +50,7 @@ player_t *init_player(void)
     player->position->y = (float) MAP_HEIGHT / 2;
     player->relative_pos->x = 0;
     player->relative_pos->y = 0;
+    player->clock = sfClock_create();
     transform_player(player);
     return player;
 }

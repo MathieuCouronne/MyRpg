@@ -15,7 +15,8 @@ LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
 
 SRC_DIR 	= 	src/
 
-SRC			=	$(SRC_DIR)my_rpg.c
+SRC			=	$(SRC_DIR)my_rpg.c \
+				$(SRC_DIR)constants.c
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \

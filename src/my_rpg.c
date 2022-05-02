@@ -6,7 +6,6 @@
 */
 
 #include "my_rpg.h"
-#include "display.h"
 #include "inventory.h"
 
 int main(void)

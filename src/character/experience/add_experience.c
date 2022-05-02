@@ -5,13 +5,7 @@
 ** Download assets from FTP
 */
 
-#include <SFML/Network.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "my_rpg.h"
-#include "my.h"
-#include "menu.h"
-#include "display.h"
 
 void add_experience(character_t *character, unsigned int exp)
 {

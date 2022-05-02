@@ -5,12 +5,12 @@
 ** init_player
 */
 
+#include <SFML/Audio.h>
+#include <stdlib.h>
 #include "structs.h"
 #include "menu.h"
-#include <SFML/Audio.h>
 #include "my_rpg.h"
 #include "macros.h"
-#include <stdlib.h>
 
 sfIntRect *rect_player(void)
 {

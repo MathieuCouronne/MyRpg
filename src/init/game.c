@@ -8,13 +8,12 @@
 #include <stdlib.h>
 #include "my_rpg.h"
 #include "macros.h"
-#include "my.h"
 
 static sfRenderWindow *init_window(void)
 {
     sfVideoMode mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
     sfRenderWindow *window = sfRenderWindow_create(mode, WINDOW_NAME,
-    sfFullscreen, NULL);
+    sfDefaultStyle, NULL);
 
     if (!window)
         return NULL;
@@ -35,36 +34,13 @@ static scenes_t *init_scenes(game_t *game)
     return scenes;
 }
 
-static sfImage *init_collision_img(void)
-{
-    sfImage *image = sfImage_createFromFile(AREAS_PATH);
-
-    if (!image)
-        return NULL;
-    return image;
-}
-
-static bool load_assets(game_t *game)
-{
-    game->config = parse_config();
-    if (!game->config)
-        return false;
-    if (my_strcmp(game->config->assets_loaded->value, "true") != 0) {
-        if (!download_assets())
-            return false;
-    }
-    game->config->assets_loaded->value = "true";
-    write_file(CONFIG_FILE_PATH, game->config);
-    return true;
-}
-
+// TODO: add download assets
 game_t *init_game(void)
 {
     game_t *game = malloc(sizeof(game_t));
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
-    if (!load_assets(game))
-        return NULL;
+    game->config = parse_config();
     game->player = init_player();
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);
@@ -72,7 +48,7 @@ game_t *init_game(void)
     game->scenes = init_scenes(game);
     game->sounds = menu_music();
     game->albert = init_albert();
-    game->collisions = init_collision_img();
+    game->collisions = sfImage_createFromFile(AREAS_PATH);
     if (!game->window || !game->scenes)
         return NULL;
     return game;

@@ -15,7 +15,8 @@ LDFLAGS		= 	-l csfml-window -l csfml-graphics -l csfml-system \
 
 SRC_DIR 	= 	src/
 
-SRC			=	$(SRC_DIR)my_rpg.c
+SRC			=	$(SRC_DIR)my_rpg.c \
+				$(SRC_DIR)constants.c
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
@@ -28,10 +29,8 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/albert.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
-				$(SRC_DIR)init/config/read_file.c \
-				$(SRC_DIR)init/config/parse_config.c \
-				$(SRC_DIR)init/config/write_file.c \
 				$(SRC_DIR)init/create_icons.c \
+				$(SRC_DIR)init/config.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \
@@ -70,10 +69,18 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \
 				$(SRC_DIR)controllers/camera/move_bottom.c \
-				$(SRC_DIR)controllers/inventory/create_inventory.c \
+
+SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
-				$(SRC_DIR)controllers/inventory/swap_slots.c
+				$(SRC_DIR)controllers/inventory/swap_slots.c \
+
+SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
+				$(SRC_DIR)controllers/parsing/character/get_data.c \
+				$(SRC_DIR)controllers/parsing/character/get_inventory.c \
+				$(SRC_DIR)controllers/parsing/character/get_stats.c \
+				$(SRC_DIR)controllers/parsing/config/read.c \
+				$(SRC_DIR)controllers/parsing/config/get_options.c \
 
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 
@@ -81,7 +88,8 @@ SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \
 
 SRC			+=	$(SRC_DIR)utils/color_cmp.c \
-				$(SRC_DIR)utils/map/get_pixel_at_pos.c
+				$(SRC_DIR)utils/map/get_pixel_at_pos.c \
+				$(SRC_DIR)utils/array/get_2d_array_length.c \
 
 OBJ			= $(SRC:.c=.o)
 

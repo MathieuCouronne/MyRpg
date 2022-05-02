@@ -5,6 +5,8 @@
 ** my_rpg header file
 */
 
+#include "inventory.h"
+
 #ifndef CHARACTER_H_
     #define CHARACTER_H_
 
@@ -29,16 +31,24 @@
     #define BASE_DOG_SPD 200
     #define BASE_DOG_DEX 50
 
+typedef enum {
+    WARRIOR, MAGE, DOGGY
+} character_classes;
+
 typedef struct stats_s {
-    char *name;
-    unsigned int amount;
+    unsigned int strength;
+    unsigned int defense;
+    unsigned int vitality;
+    unsigned int speed;
+    unsigned int dexterity;
 } stats_t;
 
 typedef struct character_s {
     char *name;
-    char *class_name;
+    character_classes class;
+    stats_t *stats;
+    inventory_t *inventory;
     unsigned int unspent;
-    stats_t **stats;
     unsigned int level;
     unsigned int current_exp;
     unsigned int exp_required;
@@ -46,7 +56,11 @@ typedef struct character_s {
     unsigned int max_hp;
     unsigned int mp;
     unsigned int max_mp;
-    inventory_t *inventory;
 } character_t;
+
+typedef struct data_parsing_match_s {
+    char *key;
+    unsigned int *value;
+} data_parsing_match_t;
 
 #endif

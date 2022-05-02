@@ -7,13 +7,15 @@
 
 #include <SFML/Graphics.h>
 
-
 #ifndef INVENTORY_H_
     #define INVENTORY_H_
 
+    #define INVENTORY_WIDTH 9
+    #define INVENTORY_HEIGHT 4
+
 typedef struct slot_s {
-    char *name;
-    sfVector2f pos;
+    unsigned int id;
+    sfVector2u pos;
     unsigned int quantity;
 } slot_t;
 

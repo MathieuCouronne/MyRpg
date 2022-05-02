@@ -57,9 +57,9 @@ void move_right(game_t *game, sfColor color)
     float speed = PLAYER_MOVEMENT *
     (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
-    if ((game->player->relative_pos->x + width) < distance) {
-        move_player_right(game, color, speed);
+    if ((game->player->relative_pos->x + width) < distance &&
+    move_player_right(game, color, speed))
         game->player->relative_pos->x += speed * 2;
-    } else if (move_player_right(game, color, speed))
+    else if (move_player_right(game, color, speed))
         sfView_move(game->view, (sfVector2f) {speed, 0});
 }

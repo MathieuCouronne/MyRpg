@@ -56,9 +56,9 @@ void move_top(game_t *game, sfColor color)
     float speed = PLAYER_MOVEMENT *
     (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 
-    if ((game->player->relative_pos->y) > -distance) {
-        move_player_top(game, color, speed);
+    if ((game->player->relative_pos->y) > -distance &&
+    move_player_top(game, color, speed))
         game->player->relative_pos->y -= speed * 2;
-    } else if (move_player_top(game, color, speed))
+    else if (move_player_top(game, color, speed))
         sfView_move(game->view, (sfVector2f) {0, -speed});
 }

@@ -8,6 +8,11 @@ assets/sounds/*
 !assets/sounds/.gitkeep
 assets/fonts/*
 !assets/fonts/.gitkeep
+assets/saves/*
+!assets/saves/.gitkeep
+assets/settings/*
+!assets/settings/.gitkeep
+
 
 unit_tests*
 *.gcda

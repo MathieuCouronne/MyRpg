@@ -5,6 +5,8 @@
 ** my_rpg header file
 */
 
+#include "inventory.h"
+
 #ifndef CHARACTER_H_
     #define CHARACTER_H_
 
@@ -56,9 +58,9 @@ typedef struct character_s {
     unsigned int max_mp;
 } character_t;
 
-typedef struct character_data_parsing_matching_s {
+typedef struct data_parsing_match_s {
     char *key;
     unsigned int *value;
-} character_data_parsing_matching_t;
+} data_parsing_match_t;
 
 #endif

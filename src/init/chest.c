@@ -40,10 +40,9 @@ chest_t *chest_sprite(void)
     return chest;
 }
 
-bool move_rect(sfIntRect *rect, int offset, int max_value)
+void move_rect(sfIntRect *rect, int offset, int max_value)
 {
-    if (offset <= max_value)
-        rect->top += offset;
+    rect->top += offset;
     if (rect->top == max_value)
         rect->top = 0;
 }
@@ -54,13 +53,14 @@ int chest(game_t *game)
     sfInt32 milliseconds = sfTime_asMilliseconds(time);
     static bool isopen = false;
 
-    if (milliseconds > 400 && isopen == false) {
-        move_rect(game->chest->rect, 46, 184);
-        sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
-        sfClock_restart(game->chest->clock);
-        if (game->chest->rect->top == 138)
-            isopen = true;
+    while (isopen != true) {
+        if (milliseconds > 400 && isopen == false) {
+            move_rect(game->chest->rect, 46, 184);
+            sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
+            sfClock_restart(game->chest->clock);
+            if (game->chest->rect->top == 138)
+                isopen = true;
+        }
     }
-    sfRenderWindow_drawSprite(game->window, game->chest->sprite, NULL);
     return 0;
 }

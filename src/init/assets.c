@@ -10,7 +10,6 @@
 #include "my_rpg.h"
 #include "my.h"
 #include "menu.h"
-#include "display.h"
 #include "messages.h"
 
 static char *directories[] = {

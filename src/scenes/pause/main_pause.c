@@ -25,7 +25,10 @@ bool display_pause(game_t *game)
     sfRenderWindow_drawSprite(game->window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(game->window, buttons[0]->text, NULL);
     sfRenderWindow_drawSprite(game->window, buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, buttons[1]->text, NULL);
     sfRenderWindow_drawSprite(game->window, buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, buttons[2]->text, NULL);
     sfRenderWindow_drawSprite(game->window, buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, buttons[3]->text, NULL);
     return true;
 }

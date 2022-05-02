@@ -39,6 +39,7 @@ settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
 pause_t *init_pause(void);
+config_t *init_config(void);
 
 // Destroy
 void destroy_game(game_t *game);

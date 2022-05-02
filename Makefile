@@ -29,6 +29,7 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/create_icons.c \
+				$(SRC_DIR)init/config.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \

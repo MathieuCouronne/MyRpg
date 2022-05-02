@@ -108,5 +108,6 @@ bool color_cmp(sfColor color1, sfColor color2);
 void go_to_game(game_t *game);
 void go_to_settings(game_t *game);
 void quit_game(game_t *game);
+unsigned int get_2d_array_length(char **array);
 
 #endif

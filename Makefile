@@ -43,7 +43,8 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/pause.c \
 				$(SRC_DIR)init/scenes/game.c \
 				$(SRC_DIR)init/scenes/settings.c \
-				$(SRC_DIR)init/scenes/saves.c
+				$(SRC_DIR)init/scenes/saves/saves.c \
+				$(SRC_DIR)init/scenes/saves/init_buttons.c \
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \

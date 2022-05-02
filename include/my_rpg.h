@@ -40,6 +40,9 @@ button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
 pause_t *init_pause(void);
 scene_saves_t *init_saves(void);
+button_t **init_button_saves(void);
+button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
+void (*on_click) (game_t *game));
 
 // Destroy
 void destroy_game(game_t *game);

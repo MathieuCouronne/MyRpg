@@ -63,5 +63,6 @@ scene_saves_t *init_saves(void)
     if (!scene)
         return NULL;
     scene->background = init_save();
+    scene->buttons = init_button_saves();
     return scene;
 }

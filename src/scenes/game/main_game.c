@@ -10,12 +10,23 @@
 #include "structs.h"
 #include <stdlib.h>
 
+static void pause_game(game_t *game)
+{
+    pause_t *pause = game->scenes->game_scene->pause;
+    sfVector2i top_left = {0, 0};
+    sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window,
+        top_left, game->view);
+
+    pause->active = !pause->active;
+    sfSprite_setPosition(pause->background->sprite, pos);
+}
+
 static void event_handling(game_t *game, sfRenderWindow *window)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         if (game->event.type == sfEvtKeyPressed && game->event.key.code == sfKeyEscape)
-            game->scenes->game_scene->pause->active = !game->scenes->game_scene->pause->active;
+            pause_game(game);
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
     }

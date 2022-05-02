@@ -11,7 +11,7 @@
 #include "my_rpg.h"
 #include "my.h"
 
-static void update_match(data_parsing_match_t matches[],
+static void update_match(data_parsing_match_t *matches,
 char **array)
 {
     for (unsigned int i = 0; matches[i].key; i++) {
@@ -28,6 +28,7 @@ static void update_config(config_t *config, char **array)
     data_parsing_match_t matches[] = {
         {"ASSETS_LOADED", &config->assets_loaded},
         {"VOLUME", &config->volume},
+        {NULL, NULL}
     };
 
     update_match(matches, array);

@@ -62,5 +62,7 @@ character_t *create_character(void)
     character->level = 1;
     character->current_exp = 0;
     character->exp_required = 100;
+    character->hp = 13;
+    character->inventory = create_inventory(INVENTORY_WIDTH, INVENTORY_HEIGHT);
     return character;
 }

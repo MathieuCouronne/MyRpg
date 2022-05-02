@@ -43,7 +43,7 @@ scene_saves_t *init_saves(void);
 button_t **init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
-albert_t *init_albert(void);
+pnj_t *init_albert(void);
 
 // Destroy
 void destroy_game(game_t *game);

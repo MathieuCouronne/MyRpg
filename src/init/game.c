@@ -41,6 +41,8 @@ game_t *init_game(void)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     game->config = parse_config();
+    if (game->config->assets_loaded != 1 && !download_assets())
+        return NULL;
     game->player = init_player();
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);

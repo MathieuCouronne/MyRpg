@@ -49,7 +49,7 @@ button_t **init_buttons_pause(void)
 
 pause_t *init_pause(void)
 {
-    pause_t *scene = malloc(sizeof(main_menu_scenes_t));
+    pause_t *scene = malloc(sizeof(pause_t));
 
     if (!scene)
         return NULL;

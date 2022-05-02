@@ -23,6 +23,7 @@ void add_experience(character_t *character, unsigned int exp)
         character->current_exp = exp;
         character->level++;
         character->exp_required *= 2;
+        character->unspent += 5;
     }
     character->current_exp += exp;
 }

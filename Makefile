@@ -78,7 +78,8 @@ SRC			+=	$(SRC_DIR)character/create_character.c \
 				$(SRC_DIR)character/experience/add_experience.c \
 
 SRC			+=	$(SRC_DIR)utils/color_cmp.c \
-				$(SRC_DIR)utils/map/get_pixel_at_pos.c
+				$(SRC_DIR)utils/map/get_pixel_at_pos.c \
+				$(SRC_DIR)utils/array/get_2d_array_length.c \
 
 OBJ			= $(SRC:.c=.o)
 

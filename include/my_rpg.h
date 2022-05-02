@@ -65,6 +65,7 @@ sounds_t *menu_music(void);
 void destroy_sound(sounds_t *music);
 
 // Display
+void scene_manager(game_t *game);
 bool display_main_menu(game_t *game);
 bool display_fight(game_t *game);
 bool display_main_game(game_t *game);
@@ -78,10 +79,10 @@ void clock_player_right(sfClock *clock, game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
-inventory_t *add_to_inventory(inventory_t *inventory, char const *name,
-    unsigned int quantity);
-inventory_t *remove_from_inventory(inventory_t *inventory, char const *name,
-    unsigned int quantity);
+inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
+unsigned int quantity);
+inventory_t *remove_from_inventory(inventory_t *inventory, unsigned int id,
+unsigned int quantity);
 inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
     sfVector2u pos2);
 
@@ -109,5 +110,14 @@ void go_to_game(game_t *game);
 void go_to_settings(game_t *game);
 void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
+
+// Parsing
+void update_character(data_parsing_match_t matches[],
+char **array);
+void get_player_data(character_t *character, FILE *file, char **line);
+void get_player_stats(character_t *character, FILE *file, char **line);
+void get_player_inventory(character_t *character, FILE *file, char **line);
+void get_config_data(config_t *config, FILE *file, char **line);
+config_t *get_config(char const *filename);
 
 #endif

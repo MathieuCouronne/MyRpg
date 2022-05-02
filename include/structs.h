@@ -187,7 +187,6 @@ struct key_controller_s {
 };
 
 struct config_s {
-    // bool assets_loaded;
     unsigned int assets_loaded;
     unsigned int volume;
     key_controller_t *keys;

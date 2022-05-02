@@ -25,7 +25,7 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/player.c \
-				$(SRC_DIR)init/pnj.c \
+				$(SRC_DIR)init/albert.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/config/read_file.c \

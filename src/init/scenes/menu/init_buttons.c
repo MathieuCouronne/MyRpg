@@ -40,7 +40,7 @@ button_t **init_buttons(void)
 
     if (!buttons)
         return NULL;
-    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_saves);
+    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_game);
     buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650},
     go_to_settings);
     buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800}, quit_game);

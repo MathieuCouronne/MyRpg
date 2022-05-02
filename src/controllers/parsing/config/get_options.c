@@ -42,6 +42,7 @@ void get_config_data(config_t *config, FILE *file, char **line)
     char **array = NULL;
 
     while (getline(line, &size, file) != -1) {
+        clear_str(*line, '\n');
         array = my_str_to_word_array(*line, " ");
         if (get_2d_array_length(array) != 2)
             continue;

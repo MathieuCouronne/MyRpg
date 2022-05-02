@@ -23,7 +23,7 @@ sfIntRect *rect_albert(void)
     return rect;
 }
 
-static void transform_albert(pnj_t *albert)
+static void transform_albert(npc_t *albert)
 {
     sfVector2f albert_scale = {PLAYER_SCALE, PLAYER_SCALE};
 
@@ -33,10 +33,9 @@ static void transform_albert(pnj_t *albert)
     sfSprite_setTextureRect(albert->sprite, *albert->rect);
 }
 
-pnj_t *init_albert(void)
+npc_t *init_albert(void)
 {
-    pnj_t *albert = malloc(sizeof(pnj_t));
-
+    npc_t *albert = malloc(sizeof(npc_t));
     albert->sprite = sfSprite_create();
     albert->rect = rect_albert();
     albert->texture = sfTexture_createFromFile(ALBERT_PATH, NULL);

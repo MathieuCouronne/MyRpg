@@ -43,7 +43,7 @@ scene_saves_t *init_saves(void);
 button_t **init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
-pnj_t *init_albert(void);
+npc_t *init_albert(void);
 config_t *init_config(void);
 
 // Destroy
@@ -117,6 +117,7 @@ void go_to_game(game_t *game);
 void go_to_settings(game_t *game);
 void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
+bool clear_str(char *str, char c);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],

@@ -19,6 +19,12 @@ static void pause_game(game_t *game)
 
     pause->active = !pause->active;
     sfSprite_setPosition(pause->background->sprite, pos);
+    for (int i = 0; i != 3; i++) {
+        pause->buttons[i]->asset->pos.x += pos.x;
+        pause->buttons[i]->asset->pos.y += pos.y;
+        sfSprite_setScale(pause->buttons[i]->asset->sprite, (sfVector2f) {.5f, .5f});
+        sfSprite_setPosition(pause->buttons[i]->asset->sprite, pos);
+    }
 }
 
 static void event_handling(game_t *game, sfRenderWindow *window)

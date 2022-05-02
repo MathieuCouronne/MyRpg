@@ -10,24 +10,26 @@
 #include "structs.h"
 #include "macros.h"
 
-bool display_pause(game_t *game, sfRenderWindow *window)
+bool display_pause(game_t *game)
 {
+    scenes_t *scenes = game->scenes;
     pause_t *pause = NULL;
     button_t **buttons = NULL;
     sfVector2f pos;
 
-    if (!game || !game->window || !game->scenes || !game->scenes->game_scene->pause)
+    if (!game || !game->window || !scenes || !scenes->game_scene->pause
+    || !scenes->game_scene->pause->active)
         return false;
     pause = game->scenes->game_scene->pause;
     buttons = pause->buttons;
     pos.x = game->player->position->x - WINDOW_HEIGHT / 2;
     pos.y = game->player->position->y - WINDOW_HEIGHT / 2;
-    sfRenderWindow_drawSprite(window, pause->background->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, pause->background->sprite, NULL);
     sfSprite_setPosition(pause->background->sprite, pos);
-    sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[0]->text, NULL);
-    sfRenderWindow_drawSprite(window, buttons[1]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, buttons[0]->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, buttons[0]->text, NULL);
+    sfRenderWindow_drawSprite(game->window, buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, buttons[3]->asset->sprite, NULL);
     return true;
 }

@@ -52,11 +52,14 @@ int chest(game_t *game)
 {
     sfTime time = sfClock_getElapsedTime(game->chest->clock);
     sfInt32 milliseconds = sfTime_asMilliseconds(time);
+    static bool isopen = false;
 
-    if (milliseconds > 700) {
+    if (milliseconds > 400 && isopen == false) {
         move_rect(game->chest->rect, 46, 184);
         sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
         sfClock_restart(game->chest->clock);
+        if (game->chest->rect->top == 138)
+            isopen = true;
     }
     sfRenderWindow_drawSprite(game->window, game->chest->sprite, NULL);
     return 0;

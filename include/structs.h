@@ -32,6 +32,7 @@ typedef struct menu_creation_s menu_creation_t;
 typedef struct main_creation_scenes_s main_creation_scenes_t;
 typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
+typedef struct albert_s albert_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
@@ -61,6 +62,7 @@ struct game_s {
     sounds_t *sounds;
     player_t *player;
     enemy_t *enemy;
+    albert_t *albert;
     chest_t *chest;
     config_t *config;
 };
@@ -155,6 +157,14 @@ struct enemy_s {
     unsigned int hp;
 };
 
+struct albert_s {
+    sfSprite *sprite;
+    sfIntRect *rect;
+    sfVector2f position;
+    sfVector2f *relative_pos;
+    sfTexture *texture;
+};
+
 struct fight_s {
     game_asset_t *background_fight;
     game_asset_t *text_bar;
@@ -172,6 +182,7 @@ struct settings_s {
 struct pause_s {
     game_asset_t *background;
     button_t **buttons;
+    bool active;
 };
 
 struct key_controller_s {

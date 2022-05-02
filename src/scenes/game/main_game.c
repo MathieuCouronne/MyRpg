@@ -14,8 +14,8 @@ static void event_handling(game_t *game, sfRenderWindow *window)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        if (sfKeyboard_isKeyPressed(sfKeyEscape))
-            display_pause(game, window);
+        if (game->event.type == sfEvtKeyPressed && game->event.key.code == sfKeyEscape)
+            game->scenes->game_scene->pause->active = !game->scenes->game_scene->pause->active;
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
     }
@@ -35,7 +35,9 @@ bool display_main_game(game_t *game)
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
     chest(game);
+    sfRenderWindow_drawSprite(window, game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     event_handling(game, window);
+    display_pause(game);
     return true;
 }

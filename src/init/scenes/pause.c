@@ -53,5 +53,6 @@ pause_t *init_pause(void)
         return NULL;
     scene->background = init_pause_background();
     scene->buttons = init_buttons_pause();
+    scene->active = false;
     return scene;
 }

@@ -43,6 +43,7 @@ scene_saves_t *init_saves(void);
 button_t **init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
+albert_t *init_albert(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -73,7 +74,7 @@ bool display_main_menu(game_t *game);
 bool display_fight(game_t *game);
 bool display_main_game(game_t *game);
 bool display_settings(game_t *game);
-bool display_pause(game_t *game, sfRenderWindow *window);
+bool display_pause(game_t *game);
 bool display_saves(game_t *game);
 
 // Movement

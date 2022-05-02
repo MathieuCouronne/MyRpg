@@ -43,15 +43,6 @@ struct sounds_s {
     sfMusic *main_theme;
 };
 
-struct config_value_s {
-    char *key;
-    char *value;
-};
-
-struct config_s {
-    config_value_t *assets_loaded;
-};
-
 struct game_s {
     sfRenderWindow *window;
     sfEvent event;
@@ -175,10 +166,19 @@ struct pause_s {
 };
 
 struct key_controller_s {
-    sfKeyCode *left;
-    sfKeyCode *right;
-    sfKeyCode *up;
-    sfKeyCode *down;
+    sfKeyCode left;
+    sfKeyCode right;
+    sfKeyCode up;
+    sfKeyCode down;
+    sfKeyCode inventory;
+    sfKeyCode pause;
+    sfKeyCode interact;
+};
+
+struct config_s {
+    bool assets_loaded;
+    unsigned int volume;
+    key_controller_t *keys;
 };
 
 struct scene_saves_s {

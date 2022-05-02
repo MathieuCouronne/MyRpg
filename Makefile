@@ -28,9 +28,6 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/player.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
-				$(SRC_DIR)init/config/read_file.c \
-				$(SRC_DIR)init/config/parse_config.c \
-				$(SRC_DIR)init/config/write_file.c \
 				$(SRC_DIR)init/create_icons.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
@@ -67,10 +64,18 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \
 				$(SRC_DIR)controllers/camera/move_bottom.c \
-				$(SRC_DIR)controllers/inventory/create_inventory.c \
+
+SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
-				$(SRC_DIR)controllers/inventory/swap_slots.c
+				$(SRC_DIR)controllers/inventory/swap_slots.c \
+
+SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
+				$(SRC_DIR)controllers/parsing/character/get_data.c \
+				$(SRC_DIR)controllers/parsing/character/get_inventory.c \
+				$(SRC_DIR)controllers/parsing/character/get_stats.c \
+				$(SRC_DIR)controllers/parsing/config/read.c \
+				$(SRC_DIR)controllers/parsing/config/get_options.c \
 
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 

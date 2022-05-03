@@ -24,7 +24,7 @@ enemy_t *create_ogre(void)
     sfSprite_setTexture(troll->sprite, troll->texture, sfTrue);
     sfSprite_setTextureRect(troll->sprite, troll->rect);
     sfSprite_setPosition(troll->sprite, troll->position);
-    troll->name = "OGRE";
+    troll->name = "Ogre";
     troll->dps = 10;
     troll->hp = 150;
     troll->max_hp = 150;

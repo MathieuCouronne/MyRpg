@@ -151,6 +151,7 @@ struct enemy_s {
     char *name;
     unsigned int dps;
     unsigned int hp;
+    unsigned int max_hp;
 };
 
 struct pnj_s {

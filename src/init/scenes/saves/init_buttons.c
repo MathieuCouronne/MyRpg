@@ -39,7 +39,7 @@ button_t *init_empty_button(void)
     return buttons;
 }
 
-button_t **init_slot(character_t **saves)
+button_t **init_slots(character_t **saves)
 {
     button_t **buttons = malloc(sizeof(button_t) * 5);
 

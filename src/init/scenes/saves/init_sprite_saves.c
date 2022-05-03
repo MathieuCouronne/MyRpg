@@ -56,16 +56,16 @@ void set_pos_character(game_asset_t **character)
     if (character[0] != NULL) {
         rect = sfSprite_getGlobalBounds(character[0]->sprite);
         sfSprite_setPosition(character[0]->sprite, (sfVector2f)
-        {WINDOW_WIDTH/ 5 - rect.height / 2 + 30, character[0]->pos.y});
+        {WINDOW_WIDTH / 5 - rect.height / 2 + 30, character[0]->pos.y});
     }
     if (character[1] != NULL) {
         rect = sfSprite_getGlobalBounds(character[1]->sprite);
         sfSprite_setPosition(character[1]->sprite, (sfVector2f)
-        {WINDOW_WIDTH/ 2 - rect.height / 2 + 30, character[1]->pos.y});
+        {WINDOW_WIDTH / 2 - rect.height / 2 + 30, character[1]->pos.y});
     }
     if (character[1] != NULL && character[2] != NULL) {
         rect = sfSprite_getGlobalBounds(character[2]->sprite);
         sfSprite_setPosition(character[2]->sprite, (sfVector2f)
-        {WINDOW_WIDTH/ 1.25 - rect.height / 2 + 30, character[2]->pos.y});
+        {WINDOW_WIDTH / 1.25 - rect.height / 2 + 30, character[2]->pos.y});
     }
 }

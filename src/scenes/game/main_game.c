@@ -10,29 +10,15 @@
 #include "structs.h"
 #include <stdlib.h>
 
-static void pause_game(game_t *game)
-{
-    pause_t *pause = game->scenes->game_scene->pause;
-    sfVector2i top_left = {0, 0};
-    sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window,
-        top_left, game->view);
-
-    pause->active = !pause->active;
-    sfSprite_setPosition(pause->background->sprite, pos);
-    for (int i = 0; i != 3; i++) {
-        pause->buttons[i]->asset->pos.x += pos.x;
-        pause->buttons[i]->asset->pos.y += pos.y;
-        sfSprite_setScale(pause->buttons[i]->asset->sprite, (sfVector2f) {.5f, .5f});
-        sfSprite_setPosition(pause->buttons[i]->asset->sprite, pos);
-    }
-}
-
 static void event_handling(game_t *game, sfRenderWindow *window)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        if (game->event.type == sfEvtKeyPressed && game->event.key.code == sfKeyEscape)
-            pause_game(game);
+        if (game->event.type == sfEvtKeyPressed
+        && game->event.key.code == sfKeyEscape) {
+            game->scenes->prev = game->scenes->current;
+            game->scenes->current = PAUSE;
+        }
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
     }
@@ -55,6 +41,5 @@ bool display_main_game(game_t *game)
     sfRenderWindow_drawSprite(window, game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     event_handling(game, window);
-    display_pause(game);
     return true;
 }

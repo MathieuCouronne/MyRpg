@@ -95,6 +95,7 @@ struct scenes_s {
     settings_t *settings;
     scene_saves_t *saves;
     fight_t *fight;
+    pause_t *pause;
 };
 
 struct game_scene_s {
@@ -104,7 +105,6 @@ struct game_scene_s {
 
 struct main_game_s {
     game_asset_t *map;
-    pause_t *pause;
 };
 
 struct player_s {
@@ -173,7 +173,7 @@ struct settings_s {
 struct pause_s {
     game_asset_t *background;
     button_t **buttons;
-    bool active;
+    sfView *view;
 };
 
 struct key_controller_s {

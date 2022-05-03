@@ -36,6 +36,7 @@ static bool move_player_left(game_t *game, sfColor color, float speed)
     sfVector2f bottom_left = *game->player->position;
 
     top_left.x -= 1;
+    top_left.y += (float) rect->height / 2;
     bottom_left.x -= 1;
     bottom_left.y += (float) rect->height * (float) PLAYER_SCALE;
     if (color_cmp(get_pixel_at_pos(game, top_left), color) ||

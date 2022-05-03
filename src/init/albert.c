@@ -16,10 +16,10 @@ sfIntRect *rect_albert(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
-    rect->top = 16;
-    rect->left = 14;
-    rect->width = 43;
-    rect->height = 60;
+    rect->top = 0;
+    rect->left = 0;
+    rect->width = 70;
+    rect->height = 80;
     return rect;
 }
 
@@ -43,7 +43,7 @@ npc_t *init_albert(void)
     if (!albert->sprite || !albert->rect || !albert->texture ||
     !albert->relative_pos)
         return NULL;
-    albert->position.x = 1730;
+    albert->position.x = 1720;
     albert->position.y = 1600;
     transform_albert(albert);
     return albert;

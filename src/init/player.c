@@ -46,8 +46,8 @@ player_t *init_player(void)
     if (!player->sprite || !player->rect || !player->texture ||
     !player->position || !player->relative_pos)
         return NULL;
-    player->position->x = (float) MAP_WIDTH / 2;
-    player->position->y = (float) MAP_HEIGHT / 2;
+    player->position->x = (float) 1730;
+    player->position->y = (float) 1700;
     player->relative_pos->x = 0;
     player->relative_pos->y = 0;
     player->clock = sfClock_create();

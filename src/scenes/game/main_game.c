@@ -6,9 +6,9 @@
 */
 
 #include <stdbool.h>
+#include <stdlib.h>
 #include "my_rpg.h"
 #include "structs.h"
-#include <stdlib.h>
 
 static void event_handling(game_t *game)
 {

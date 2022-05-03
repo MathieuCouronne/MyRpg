@@ -16,11 +16,13 @@ config_t *parse_config(void)
     FILE *file = fopen(CONFIG_FILE_PATH, "r");
     config_t *config = init_config();
 
-    if (!file || !config) {
+    if (!config) {
         if (file)
             fclose(file);
         return NULL;
     }
+    if (!file)
+        return config;
     get_config_data(config, file, &line);
     fclose(file);
     return config;

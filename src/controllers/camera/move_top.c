@@ -35,8 +35,8 @@ static bool move_player_top(game_t *game, sfColor color, float speed)
     sfVector2f top_left = *game->player->position;
     sfVector2f top_right = *game->player->position;
 
-    top_left.y -= 1;
-    top_right.y -= 1;
+    top_left.y += (float) rect->height / 2;
+    top_right.y += (float) rect->height / 2;
     top_right.x += (float) rect->width * (float) PLAYER_SCALE;
     if (color_cmp(get_pixel_at_pos(game, top_left), color) ||
         color_cmp(get_pixel_at_pos(game, top_right), color))

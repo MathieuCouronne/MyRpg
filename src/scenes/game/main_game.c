@@ -41,9 +41,6 @@ bool display_main_game(game_t *game)
     sfRenderWindow_drawSprite(game->window, game->chest->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
-    sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window, (sfVector2i) {0, 0}, game->view);
-    sfSprite_setPosition(game->inventory->sprite, (sfVector2f) {pos.x, pos.y});
-    sfRenderWindow_drawSprite(window, game->inventory->sprite, NULL);
     event_handling(game);
     return true;
 }

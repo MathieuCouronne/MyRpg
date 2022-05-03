@@ -46,6 +46,7 @@ void (*on_click) (game_t *game));
 npc_t *init_albert(void);
 config_t *init_config(void);
 game_asset_t *init_inventory(game_t *game);
+void display_inventory(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);

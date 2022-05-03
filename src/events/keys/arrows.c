@@ -23,5 +23,7 @@ void handle_arrow_keys(game_t *game)
         move_bottom(game, collision);
     if (sfKeyboard_isKeyPressed(sfKeyE))
         chest(game);
+    if (sfKeyboard_isKeyPressed(sfKeyI))
+        display_inventory(game);
     sfSprite_setPosition(game->player->sprite, *game->player->position);
 }

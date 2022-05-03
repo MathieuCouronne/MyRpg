@@ -33,10 +33,9 @@ bool display_saves(game_t *game)
     saves = game->scenes->saves;
     buttons = saves->buttons;
     sfRenderWindow_drawSprite(window, saves->background[0]->sprite, NULL);
-    sfRenderWindow_drawSprite(window, saves->background[1]->sprite, NULL);
-    sfRenderWindow_drawSprite(window, saves->background[2]->sprite, NULL);
-    sfRenderWindow_drawSprite(window, saves->background[3]->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[0]->text, NULL);
+    sfRenderWindow_drawSprite(window, buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, buttons[3]->asset->sprite, NULL);
     return true;
 }

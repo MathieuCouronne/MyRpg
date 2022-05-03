@@ -1,17 +1,15 @@
 /*
 ** EPITECH PROJECT, 2021
-** wheel.c
+** is_pos_in_button.c
 ** File description:
-** Game wheel events handling
+** Is a position inside a button
 */
 
 #include "my_rpg.h"
-#include "menu.h"
 #include <stdbool.h>
 
-bool is_button_clicked(game_t *game, button_t *button)
+bool is_pos_in_button(button_t *button, sfVector2i pos)
 {
-    sfVector2i pos = {game->event.mouseButton.x, game->event.mouseButton.y};
     sfVector2f button_pos = sfSprite_getPosition(button->asset->sprite);
     sfFloatRect rect = sfSprite_getGlobalBounds(button->asset->sprite);
 

@@ -28,6 +28,7 @@
     #define MAGE_PATH "./assets/images/characters/mage.png"
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ALBERT_PATH "./assets/images/characters/albert.png"
+    #define CHIEF_PATH "./assets/images/characters/chief.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define INVENTORY_PATH "./assets/images/inventory/inventory.png"
     #define ENEMY_PATH "./assets/images/characters/enemy.png"

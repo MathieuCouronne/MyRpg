@@ -39,6 +39,7 @@ typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
 typedef struct scene_saves_s scene_saves_t;
+typedef struct attack_s attack_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -56,6 +57,7 @@ struct game_s {
     player_t *player;
     enemy_t *enemy;
     npc_t *albert;
+    npc_t *chief;
     chest_t *chest;
     config_t *config;
     character_t **saves;
@@ -75,6 +77,7 @@ struct button_s {
     button_state state;
     sfFont *font;
     void (*on_click) (game_t *game);
+    bool hover;
 };
 
 struct main_menu_scenes_s {
@@ -149,6 +152,7 @@ struct enemy_s {
     char *name;
     unsigned int dps;
     unsigned int hp;
+    unsigned int max_hp;
 };
 
 struct pnj_s {
@@ -200,6 +204,11 @@ struct scene_saves_s {
     button_t **buttons;
     game_asset_t **character;
     button_t **icons;
+};
+
+struct attack_s {
+    char const *name;
+    unsigned int dmg;
 };
 
 #endif

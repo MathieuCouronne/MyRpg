@@ -8,20 +8,16 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 #include "structs.h"
-#include "macros.h"
 
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
+        default_event_handling(game, game->scenes->pause->buttons);
         if (game->event.type == sfEvtKeyPressed
         && game->event.key.code == sfKeyEscape) {
             game->scenes->prev = game->scenes->current;
             game->scenes->current = MAIN_GAME;
         }
-        if (game->event.type == sfEvtClosed)
-            sfRenderWindow_close(game->window);
-        if (handle_buttons_clicks(game, game->scenes->pause->buttons))
-            return;
     }
 }
 main_game_t *copy_game(game_t *game)

@@ -118,6 +118,7 @@ void go_to_settings(game_t *game);
 void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
+char *itoa(unsigned int value);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],
@@ -127,5 +128,11 @@ void get_player_stats(character_t *character, FILE *file, char **line);
 void get_player_inventory(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
 config_t *get_config(char const *filename);
+
+// Storage
+bool write_config(config_t *config);
+void write_value(FILE *file, data_parsing_match_t match);
+void save_infos(FILE *file, config_t *config);
+void save_keys(FILE *file, config_t *config);
 
 #endif

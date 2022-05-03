@@ -15,7 +15,8 @@
 static char *directories[] = {
     "fonts", "sounds", "images/characters", "images/fight",
     "images/main_menu", "images/maps", "images/misc",
-    "images/settings", "images/pause", "images/saves", NULL
+    "images/settings", "images/pause", "images/saves",
+    "images/inventory", NULL
 };
 
 static int display_status(char *str, int status)

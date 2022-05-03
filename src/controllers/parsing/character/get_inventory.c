@@ -41,6 +41,7 @@ void get_player_inventory(character_t *character, FILE *file, char **line)
     char **array = NULL;
 
     while (getline(line, &size, file) != -1) {
+        clear_str(*line, '\n');
         array = my_str_to_word_array(*line, " ");
         if (get_2d_array_length(array) != 4)
             continue;

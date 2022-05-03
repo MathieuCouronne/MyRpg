@@ -31,6 +31,5 @@ main_game_t *init_main_game(game_t *game)
     if (!game)
         return NULL;
     main_game->map = init_map(game);
-    main_game->pause = init_pause();
     return main_game;
 }

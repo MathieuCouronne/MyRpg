@@ -83,6 +83,10 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/config/read.c \
 				$(SRC_DIR)controllers/parsing/config/get_options.c \
 
+SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
+				$(SRC_DIR)controllers/storage/config/save_infos.c \
+				$(SRC_DIR)controllers/storage/config/save_keys.c \
+
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 
 SRC			+=	$(SRC_DIR)character/create_character.c \
@@ -91,6 +95,8 @@ SRC			+=	$(SRC_DIR)character/create_character.c \
 SRC			+=	$(SRC_DIR)utils/color_cmp.c \
 				$(SRC_DIR)utils/map/get_pixel_at_pos.c \
 				$(SRC_DIR)utils/array/get_2d_array_length.c \
+				$(SRC_DIR)utils/array/itoa.c \
+				$(SRC_DIR)utils/string/clear_str.c \
 
 OBJ			= $(SRC:.c=.o)
 

@@ -25,7 +25,7 @@ enemy_t *init_ogre(void);
 player_t *init_player(void);
 chest_t *chest_sprite(void);
 button_t *create_button(char *str, sfVector2f pos_sprite,
-void (*on_click) (game_t *game));
+void (*on_click) (game_t *game), sfVector2f scale);
 int clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
@@ -38,12 +38,12 @@ config_t *parse_config(void);
 settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
-pause_t *init_pause(void);
+pause_t *init_pause(game_t *game);
 scene_saves_t *init_saves(void);
 button_t **init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
-pnj_t *init_albert(void);
+npc_t *init_albert(void);
 config_t *init_config(void);
 game_asset_t *init_inventory(game_t *game);
 
@@ -118,6 +118,8 @@ void go_to_game(game_t *game);
 void go_to_settings(game_t *game);
 void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
+bool clear_str(char *str, char c);
+char *itoa(unsigned int value);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],
@@ -127,5 +129,12 @@ void get_player_stats(character_t *character, FILE *file, char **line);
 void get_player_inventory(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
 config_t *get_config(char const *filename);
+character_t *get_character_save(char const *filename);
+
+// Storage
+bool write_config(config_t *config);
+void write_value(FILE *file, data_parsing_match_t match);
+void save_infos(FILE *file, config_t *config);
+void save_keys(FILE *file, config_t *config);
 
 #endif

@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "menu.h"
 #include "enum.h"
+#include "character.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
@@ -32,7 +33,7 @@ typedef struct menu_creation_s menu_creation_t;
 typedef struct main_creation_scenes_s main_creation_scenes_t;
 typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
-typedef struct pnj_s pnj_t;
+typedef struct pnj_s npc_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
@@ -54,9 +55,10 @@ struct game_s {
     sounds_t *sounds;
     player_t *player;
     enemy_t *enemy;
-    pnj_t *albert;
+    npc_t *albert;
     chest_t *chest;
     config_t *config;
+    character_t **saves;
 };
 
 struct game_asset_s {
@@ -96,6 +98,7 @@ struct scenes_s {
     settings_t *settings;
     scene_saves_t *saves;
     fight_t *fight;
+    pause_t *pause;
 };
 
 struct game_scene_s {
@@ -105,7 +108,6 @@ struct game_scene_s {
 
 struct main_game_s {
     game_asset_t *map;
-    pause_t *pause;
 };
 
 struct player_s {
@@ -174,7 +176,7 @@ struct settings_s {
 struct pause_s {
     game_asset_t *background;
     button_t **buttons;
-    bool active;
+    sfView *view;
 };
 
 struct key_controller_s {
@@ -188,7 +190,6 @@ struct key_controller_s {
 };
 
 struct config_s {
-    // bool assets_loaded;
     unsigned int assets_loaded;
     unsigned int volume;
     key_controller_t *keys;

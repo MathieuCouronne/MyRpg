@@ -43,7 +43,7 @@ game_asset_t **init_character(character_t **saves)
         sfSprite_setTextureRect(character[i]->sprite, *character[i]->rect);
         sfSprite_setScale(character[i]->sprite, (sfVector2f) {5.f, 5.f});
         rect = sfSprite_getGlobalBounds(character[i]->sprite);
-        character[i]->pos.y = WINDOW_HEIGHT / 2 - rect.height + 100;
+        character[i]->pos.y = WINDOW_HEIGHT / 2 - rect.height + 120;
     }
     character[count_saves(saves)] = NULL;
     return character;

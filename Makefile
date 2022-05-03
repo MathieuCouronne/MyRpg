@@ -20,8 +20,8 @@ SRC			=	$(SRC_DIR)my_rpg.c \
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
-				$(SRC_DIR)events/mouse/wheel.c \
-				$(SRC_DIR)events/mouse/menu_button.c
+				$(SRC_DIR)events/mouse/move.c \
+				$(SRC_DIR)events/mouse/click.c \
 
 SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/sound.c \
@@ -62,10 +62,10 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \
-				$(SRC_DIR)scenes/game/main_game.c \
+				$(SRC_DIR)scenes/game/game.c \
+				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
-				$(SRC_DIR)scenes/pause/main_pause.c
 
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
@@ -98,6 +98,7 @@ SRC			+=	$(SRC_DIR)utils/color_cmp.c \
 				$(SRC_DIR)utils/array/get_2d_array_length.c \
 				$(SRC_DIR)utils/array/itoa.c \
 				$(SRC_DIR)utils/string/clear_str.c \
+				$(SRC_DIR)utils/is_pos_in_button.c \
 
 OBJ			= $(SRC:.c=.o)
 

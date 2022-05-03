@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** wheel.c
+** is_pos_in_button.c
 ** File description:
-** Game wheel events handling
+** Is a position inside a button
 */
 
 #include "my_rpg.h"

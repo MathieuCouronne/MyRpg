@@ -64,6 +64,7 @@ game_t *init_game(void)
     game->inventory = init_inventory(game);
     game->sounds = menu_music();
     game->albert = init_albert();
+    game->chief = init_chief();
     game->collisions = sfImage_createFromFile(AREAS_PATH);
     game->saves = init_character_saves();
     game->scenes = init_scenes(game);

@@ -128,6 +128,7 @@ void get_player_stats(character_t *character, FILE *file, char **line);
 void get_player_inventory(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
 config_t *get_config(char const *filename);
+character_t *get_character_save(char const *filename);
 
 // Storage
 bool write_config(config_t *config);

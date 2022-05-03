@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include "menu.h"
 #include "enum.h"
+#include "character.h"
 
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
@@ -56,6 +57,7 @@ struct game_s {
     npc_t *albert;
     chest_t *chest;
     config_t *config;
+    character_t **saves;
 };
 
 struct game_asset_s {

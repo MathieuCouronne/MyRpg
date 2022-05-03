@@ -44,7 +44,6 @@ bool display_main_game(game_t *game)
     sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window, (sfVector2i) {0, 0}, game->view);
     sfSprite_setPosition(game->inventory->sprite, (sfVector2f) {pos.x, pos.y});
     sfRenderWindow_drawSprite(window, game->inventory->sprite, NULL);
-    display_pause(game);
     event_handling(game);
     return true;
 }

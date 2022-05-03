@@ -49,7 +49,8 @@ void (*on_click) (game_t *game) , sfVector2f scale)
     sfSprite_setPosition(button->asset->sprite, pos);
     init_text_butt(button, str);
     rect_button = sfSprite_getGlobalBounds(button->asset->sprite);
-    pos = center_text(rect_button.width, rect_button.height, button->text, pos_sprite);
+    pos = center_text(rect_button.width, rect_button.height,
+        button->text, pos_sprite);
     sfText_setPosition(button->text, pos);
     return button;
 }

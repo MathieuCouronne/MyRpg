@@ -44,10 +44,14 @@ button_t *init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 npc_t *init_albert(void);
+npc_t *init_chief(void);
 config_t *init_config(void);
+game_asset_t **init_character(character_t **saves);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
 button_t **init_slot(character_t **saves);
+sfIntRect *rect_player(void);
+void set_pos_character(game_asset_t **character);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -63,10 +67,12 @@ void settings_destroy_icons(button_t **buttons);
 void settings_destroy_buttons(button_t **buttons);
 
 // Events
+void default_event_handling(game_t *game, button_t **buttons);
 void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
+bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
 
 // Sounds

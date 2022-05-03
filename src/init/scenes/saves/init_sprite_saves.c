@@ -34,17 +34,16 @@ game_asset_t **init_character(character_t **saves)
     for (size_t i = 0; i < 3; i++) {
         if (!saves[i])
             continue;
-        else {
-            character[i] = malloc(sizeof(game_asset_t));
-            character[i]->rect = rect_player();
-            character[i]->sprite = sfSprite_create();
-            character[i]->texture = sfTexture_createFromFile(class_textures[saves[i]->class], NULL);
-            sfSprite_setTexture(character[i]->sprite, character[i]->texture, sfTrue);
-            sfSprite_setTextureRect(character[i]->sprite, *character[i]->rect);
-            sfSprite_setScale(character[i]->sprite, (sfVector2f) {5.f, 5.f});
-            rect = sfSprite_getGlobalBounds(character[i]->sprite);
-            character[i]->pos.y = WINDOW_HEIGHT / 2 - rect.height + 100;
-        }
+        character[i] = malloc(sizeof(game_asset_t));
+        character[i]->rect = rect_player();
+        character[i]->sprite = sfSprite_create();
+        character[i]->texture = sfTexture_createFromFile
+        (class_textures[saves[i]->class], NULL);
+        sfSprite_setTexture(character[i]->sprite, character[i]->texture, sfTrue);
+        sfSprite_setTextureRect(character[i]->sprite, *character[i]->rect);
+        sfSprite_setScale(character[i]->sprite, (sfVector2f) {5.f, 5.f});
+        rect = sfSprite_getGlobalBounds(character[i]->sprite);
+        character[i]->pos.y = WINDOW_HEIGHT / 2 - rect.height + 100;
     }
     character[count_saves(saves)] = NULL;
     return character;
@@ -62,11 +61,11 @@ void set_pos_character(game_asset_t **character)
     if (character[1] != NULL) {
         rect = sfSprite_getGlobalBounds(character[1]->sprite);
         sfSprite_setPosition(character[1]->sprite, (sfVector2f)
-                {WINDOW_WIDTH/ 2 - rect.height / 2 + 30, character[1]->pos.y});
+        {WINDOW_WIDTH/ 2 - rect.height / 2 + 30, character[1]->pos.y});
     }
     if (character[1] != NULL && character[2] != NULL) {
         rect = sfSprite_getGlobalBounds(character[2]->sprite);
         sfSprite_setPosition(character[2]->sprite, (sfVector2f)
-                {WINDOW_WIDTH/ 1.25 - rect.height / 2 + 30, character[2]->pos.y});
+        {WINDOW_WIDTH/ 1.25 - rect.height / 2 + 30, character[2]->pos.y});
     }
 }

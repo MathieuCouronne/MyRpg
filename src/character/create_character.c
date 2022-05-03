@@ -50,7 +50,7 @@ static stats_t *init_war_stats(void)
 
 character_t *create_character(void)
 {
-    character_t *character = malloc(sizeof(character_t *));
+    character_t *character = malloc(sizeof(character_t));
 
     if (!character)
         return NULL;

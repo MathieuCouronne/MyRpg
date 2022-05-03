@@ -23,7 +23,7 @@ button_t **init_button_saves(void)
 
     if (!buttons)
         return NULL;
-    buttons[0] = create_icon_buttons((sfVector2f) {30, 990},
+    buttons[0] = create_icon_buttons((sfVector2f) {30, 920},
     SAVES_BACK_PATH, go_back);
     buttons[1] = NULL;
     return buttons;

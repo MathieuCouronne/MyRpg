@@ -8,6 +8,9 @@
 #ifndef RPG_MACROS_H
     #define RPG_MACROS_H
 
+    // Functions
+    #define ABS(x) (x < 0) ? -x : x
+
     #define WINDOW_NAME "MyRPG"
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
@@ -23,6 +26,8 @@
     // Sprites Pathes
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ALBERT_PATH "./assets/images/characters/albert.png"
+    #define SAVES_PATH "./assets/images/saves/save.png"
+    #define INVENTORY_PATH "./assets/images/inventory.png"
     #define ENEMY_PATH "./assets/images/characters/enemy.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"
@@ -35,7 +40,6 @@
     #define SETTINGS_BG_PATH "./assets/images/settings/background.jpg"
     #define BUTTON_SETTINGS_PATH "./assets/images/settings/empty_icon.png"
     #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
-    #define SAVES_PATH "./assets/images/saves/save.png"
     #define SAVES_EMPTY_PATH "./assets/images/saves/empty.png"
     #define SAVES_BACK_PATH "./assets/images/saves/back.png"
 

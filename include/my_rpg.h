@@ -45,6 +45,7 @@ button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 pnj_t *init_albert(void);
 config_t *init_config(void);
+game_asset_t *init_inventory(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);

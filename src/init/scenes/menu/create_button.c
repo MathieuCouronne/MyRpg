@@ -39,11 +39,12 @@ void (*on_click) (game_t *game) , sfVector2f scale)
 
     button->asset = malloc(sizeof(game_asset_t));
     button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
+    button->on_click = on_click;
+    button->hover = false;
     button->text = sfText_create();
     button->asset->sprite = sfSprite_create();
     button->asset->texture = sfTexture_createFromFile(BUTTON_PATH, NULL);
     sfSprite_setScale(button->asset->sprite, scale);
-    button->on_click = on_click;
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos);
     init_text_butt(button, str);

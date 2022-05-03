@@ -67,7 +67,8 @@ void handle_arrow_keys(game_t *game);
 void handle_events(game_t *game, sfEvent *event);
 void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
-bool is_button_clicked(game_t *game, button_t *button);
+bool handle_buttons_hover(game_t *game, button_t **buttons);
+bool is_pos_in_button(button_t *button, sfVector2i pos);
 
 // Sounds
 sounds_t *menu_music(void);

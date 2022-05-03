@@ -146,7 +146,7 @@ struct text_s {
 
 struct enemy_s {
     sfSprite *sprite;
-    sfIntRect *rect;
+    sfIntRect rect;
     sfVector2f position;
     sfTexture *texture;
     char *name;

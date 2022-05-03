@@ -12,14 +12,12 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-static sfIntRect *rect_ogre(void)
+static sfIntRect rect_ogre(void)
 {
-    sfIntRect *rect = malloc(sizeof(sfIntRect));
+    sfIntRect rect = {
+        295, 8, 62, 54
+    };
 
-    rect->top = 8;
-    rect->left = 295;
-    rect->width = 62;
-    rect->height = 54;
     return rect;
 }
 
@@ -33,6 +31,6 @@ enemy_t *init_ogre(void)
     sfSprite_setTexture(enemy->sprite, enemy->texture, sfTrue);
     sfSprite_setScale(enemy->sprite, (sfVector2f) {10, 10});
     sfSprite_setPosition(enemy->sprite, (sfVector2f) {1125, 50});
-    sfSprite_setTextureRect(enemy->sprite, *enemy->rect);
+    sfSprite_setTextureRect(enemy->sprite, enemy->rect);
     return enemy;
 }

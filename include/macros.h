@@ -24,6 +24,8 @@
     #define PLAYER_MOVEMENT 2.5
 
     // Sprites Pathes
+    #define WARRIOR_PATH "./assets/images/characters/warrior.png"
+    #define MAGE_PATH "./assets/images/characters/mage.png"
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ALBERT_PATH "./assets/images/characters/albert.png"
     #define SAVES_PATH "./assets/images/saves/save.png"

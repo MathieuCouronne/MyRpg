@@ -11,13 +11,13 @@
 void save_keys(FILE *file, config_t *config)
 {
     data_parsing_match_t matches[] = {
-        {"MOVE_UP", &config->keys->up},
-        {"MOVE_LEFT", &config->keys->left},
-        {"MOVE_DOWN", &config->keys->down},
-        {"MOVE_RIGHT", &config->keys->right},
-        {"PAUSE", &config->keys->pause},
-        {"INTERACT", &config->keys->interact},
-        {"INVENTORY", &config->keys->inventory},
+        {"MOVE_UP", (unsigned int *) &config->keys->up},
+        {"MOVE_LEFT", (unsigned int *) &config->keys->left},
+        {"MOVE_DOWN", (unsigned int *) &config->keys->down},
+        {"MOVE_RIGHT", (unsigned int *) &config->keys->right},
+        {"PAUSE", (unsigned int *) &config->keys->pause},
+        {"INTERACT", (unsigned int *) &config->keys->interact},
+        {"INVENTORY", (unsigned int *) &config->keys->inventory},
         {NULL, NULL}
     };
 

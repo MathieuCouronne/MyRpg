@@ -48,6 +48,7 @@ config_t *init_config(void);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
 button_t **init_slot(character_t **saves);
+npc_t *init_chief(void);
 
 // Destroy
 void destroy_game(game_t *game);

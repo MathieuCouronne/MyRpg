@@ -23,4 +23,4 @@ vgcore.*
 
 new_assets/
 scenario.txt
-config/game.config
+config/*/*

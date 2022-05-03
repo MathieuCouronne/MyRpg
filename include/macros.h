@@ -57,5 +57,11 @@
     #define PLAYER2_FILE_PATH "./config/saves/player2.config"
     #define PLAYER3_FILE_PATH "./config/saves/player3.config"
 
+    // Albert
+    #define TOP_PADDING 9
+    #define LEFT_PADDING 22
+    #define ALBERT_WIDTH 38
+    #define ALBERT_HEIGHT 66
+
 
 #endif // RPG_MACROS_H

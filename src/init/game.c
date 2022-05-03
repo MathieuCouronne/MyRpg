@@ -30,7 +30,7 @@ static scenes_t *init_scenes(game_t *game)
     scenes->game_scene = init_main_game(game);
     scenes->fight = init_fight();
     scenes->settings = init_settings();
-    scenes->saves = init_saves();
+    scenes->saves = init_saves(game->saves);
     scenes->pause = init_pause(game);
     return scenes;
 }
@@ -62,11 +62,11 @@ game_t *init_game(void)
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
     game->inventory = init_inventory(game);
-    game->scenes = init_scenes(game);
     game->sounds = menu_music();
     game->albert = init_albert();
     game->collisions = sfImage_createFromFile(AREAS_PATH);
     game->saves = init_character_saves();
+    game->scenes = init_scenes(game);
     if (!game->window || !game->scenes)
         return NULL;
     return game;

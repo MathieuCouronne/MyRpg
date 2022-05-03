@@ -49,13 +49,14 @@ game_asset_t **init_save(void)
     return saves;
 }
 
-scene_saves_t *init_saves(void)
+scene_saves_t *init_saves(character_t **saves)
 {
     scene_saves_t *scene = malloc(sizeof(main_menu_scenes_t));
 
     if (!scene)
         return NULL;
+
     scene->background = init_save();
-    scene->buttons = init_button_saves();
+    scene->buttons = init_slot(saves);
     return scene;
 }

@@ -44,11 +44,14 @@ button_t *init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 npc_t *init_albert(void);
+npc_t *init_chief(void);
 config_t *init_config(void);
+game_asset_t **init_character(character_t **saves);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
 button_t **init_slot(character_t **saves);
-npc_t *init_chief(void);
+sfIntRect *rect_player(void);
+void set_pos_character(game_asset_t **character);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -66,9 +69,11 @@ void settings_destroy_buttons(button_t **buttons);
 // Events
 void default_event_handling(game_t *game, button_t **buttons);
 void handle_arrow_keys(game_t *game);
+void handle_events(game_t *game, sfEvent *event);
+void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
-bool is_pos_in_button(button_t *button, sfVector2i pos);
+bool is_button_clicked(game_t *game, button_t *button);
 
 // Sounds
 sounds_t *menu_music(void);
@@ -100,7 +105,6 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
-void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
 
 // Character
 character_t *create_character(void);
@@ -124,6 +128,7 @@ void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
+bool is_pos_in_button(button_t *button, sfVector2i pos);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],

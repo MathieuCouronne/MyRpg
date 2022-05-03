@@ -27,11 +27,11 @@ SRC			+=	$(SRC_DIR)init/game.c \
 				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/player.c \
 				$(SRC_DIR)init/albert.c \
-				$(SRC_DIR)init/chief.c \
 				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/create_icons.c \
 				$(SRC_DIR)init/config.c \
+				$(SRC_DIR)init/chief.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \
@@ -47,6 +47,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/settings.c \
 				$(SRC_DIR)init/scenes/saves/saves.c \
 				$(SRC_DIR)init/scenes/saves/init_buttons.c \
+				$(SRC_DIR)init/scenes/saves/init_sprite_saves.c \
 				$(SRC_DIR)init/clock.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \

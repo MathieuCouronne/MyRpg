@@ -66,7 +66,7 @@ struct game_s {
 struct game_asset_s {
     sfSprite *sprite;
     sfTexture *texture;
-    sfRectangleShape *rect;
+    sfIntRect *rect;
     sfVector2f pos;
     float scaling;
 };
@@ -202,6 +202,7 @@ struct config_s {
 struct scene_saves_s {
     game_asset_t **background;
     button_t **buttons;
+    game_asset_t **character;
     button_t **icons;
 };
 

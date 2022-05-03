@@ -14,9 +14,7 @@
 
 static sfIntRect rect_ogre(void)
 {
-    sfIntRect rect = {
-        295, 8, 62, 54
-    };
+    sfIntRect rect = {295, 8, 62, 54};
 
     return rect;
 }

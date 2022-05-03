@@ -48,6 +48,7 @@ config_t *init_config(void);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
 button_t **init_slot(character_t **saves);
+npc_t *init_chief(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -99,6 +100,7 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
+void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
 
 // Character
 character_t *create_character(void);

@@ -63,9 +63,8 @@ void settings_destroy_icons(button_t **buttons);
 void settings_destroy_buttons(button_t **buttons);
 
 // Events
+void default_event_handling(game_t *game, button_t **buttons);
 void handle_arrow_keys(game_t *game);
-void handle_events(game_t *game, sfEvent *event);
-void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_pos_in_button(button_t *button, sfVector2i pos);

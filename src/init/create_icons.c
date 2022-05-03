@@ -38,6 +38,7 @@ void (*on_click) (game_t *game))
     button->asset->sprite = sfSprite_create();
     button->asset->texture = sfTexture_createFromFile(path, NULL);
     button->on_click = on_click;
+    button->asset->pos = pos;
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos_sprite);
     return button;

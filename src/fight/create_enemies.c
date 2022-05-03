@@ -10,24 +10,42 @@
 #include "inventory.h"
 #include "macros.h"
 
+enemy_t *create_dragon(void)
+{
+    enemy_t *dragon = malloc(sizeof(enemy_t));
+
+    if (!dragon)
+        return NULL;
+    dragon->sprite = sfSprite_create();
+    dragon->rect = (sfIntRect) {279, 8, 74, 73};
+    dragon->position = (sfVector2f) {0, 0};
+    dragon->texture = sfTexture_createFromFile(DRAGON_PATH, NULL);
+    sfSprite_setTexture(dragon->sprite, dragon->texture, sfTrue);
+    sfSprite_setTextureRect(dragon->sprite, dragon->rect);
+    sfSprite_setPosition(dragon->sprite, dragon->position);
+    dragon->name = "Dragon";
+    dragon->dps = 25;
+    dragon->hp = 500;
+    dragon->max_hp = 150;
+}
 
 enemy_t *create_ogre(void)
 {
-    enemy_t *troll = malloc(sizeof(enemy_t));
+    enemy_t *ogre = malloc(sizeof(enemy_t));
 
-    if (!troll)
+    if (!ogre)
         return NULL;
-    troll->sprite = sfSprite_create();
-    troll->rect = (sfIntRect) {239, 37, 39, 44};
-    troll->position = (sfVector2f) {0, 0};
-    troll->texture = sfTexture_createFromFile(OGRE_PATH, NULL);
-    sfSprite_setTexture(troll->sprite, troll->texture, sfTrue);
-    sfSprite_setTextureRect(troll->sprite, troll->rect);
-    sfSprite_setPosition(troll->sprite, troll->position);
-    troll->name = "Ogre";
-    troll->dps = 10;
-    troll->hp = 150;
-    troll->max_hp = 150;
+    ogre->sprite = sfSprite_create();
+    ogre->rect = (sfIntRect) {239, 37, 39, 44};
+    ogre->position = (sfVector2f) {0, 0};
+    ogre->texture = sfTexture_createFromFile(OGRE_PATH, NULL);
+    sfSprite_setTexture(ogre->sprite, ogre->texture, sfTrue);
+    sfSprite_setTextureRect(ogre->sprite, ogre->rect);
+    sfSprite_setPosition(ogre->sprite, ogre->position);
+    ogre->name = "Ogre";
+    ogre->dps = 10;
+    ogre->hp = 150;
+    ogre->max_hp = 150;
 }
 
 

@@ -35,8 +35,8 @@ button_t **init_buttons_settings(void)
     button_t **buttons = malloc(sizeof(button_t *) * 2);
     float pos_x = 960 - 390 / 2;
 
-    buttons[0] =
-        create_button("Confirm", (sfVector2f) {pos_x, 870}, go_to_prev);
+    buttons[0] = create_button("Confirm", (sfVector2f) {pos_x, 870},
+    go_to_prev,(sfVector2f) {1, 1});
     buttons[1] = NULL;
     return buttons;
 }

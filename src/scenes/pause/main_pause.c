@@ -20,9 +20,17 @@ static void event_handling(game_t *game)
         }
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
-        if (handle_buttons_clicks(game, game->scenes->main_menu->buttons))
+        if (handle_buttons_clicks(game, game->scenes->pause->buttons))
             return;
     }
+}
+main_game_t *copy_game(game_t *game)
+{
+    main_game_t *copy = NULL;
+
+    copy = game->scenes->game_scene;
+    return copy;
+
 }
 
 bool display_pause(game_t *game)
@@ -38,7 +46,6 @@ bool display_pause(game_t *game)
     pause = game->scenes->pause;
     buttons = pause->buttons;
     event_handling(game);
-    sfRenderWindow_setView(window, pause->view);
     sfRenderWindow_drawSprite(window, pause->background->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[0]->text, NULL);

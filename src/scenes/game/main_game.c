@@ -10,7 +10,7 @@
 #include "structs.h"
 #include <stdlib.h>
 
-static void event_handling(game_t *game, sfRenderWindow *window)
+static void event_handling(game_t *game)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
@@ -18,6 +18,7 @@ static void event_handling(game_t *game, sfRenderWindow *window)
         && game->event.key.code == sfKeyEscape) {
             game->scenes->prev = game->scenes->current;
             game->scenes->current = PAUSE;
+            sfRenderWindow_setView(game->window, sfRenderWindow_getDefaultView(game->window));
         }
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
@@ -40,6 +41,6 @@ bool display_main_game(game_t *game)
     chest(game);
     sfRenderWindow_drawSprite(window, game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
-    event_handling(game, window);
+    event_handling(game);
     return true;
 }

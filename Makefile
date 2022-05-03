@@ -41,6 +41,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/fight/hp_bar.c \
 				$(SRC_DIR)init/scenes/fight/text.c \
 				$(SRC_DIR)init/scenes/pause.c \
+				$(SRC_DIR)init/scenes/inventory.c \
 				$(SRC_DIR)init/scenes/game.c \
 				$(SRC_DIR)init/scenes/settings.c \
 				$(SRC_DIR)init/scenes/saves/saves.c \

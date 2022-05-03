@@ -45,6 +45,7 @@ game_t *init_game(void)
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
+    game->inventory = init_inventory(game);
     game->scenes = init_scenes(game);
     game->sounds = menu_music();
     game->albert = init_albert();

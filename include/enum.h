@@ -16,4 +16,4 @@ typedef enum {
     LOADING, MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE
 } scenes;
 
-#endif //RPG_ENUM_H
+#endif // RPG_ENUM_H

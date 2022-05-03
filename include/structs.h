@@ -39,6 +39,7 @@ typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
 typedef struct scene_saves_s scene_saves_t;
+typedef struct attack_s attack_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -199,6 +200,11 @@ struct scene_saves_s {
     game_asset_t **background;
     button_t **buttons;
     button_t **icons;
+};
+
+struct attack_s {
+    char const *name;
+    unsigned int dmg;
 };
 
 #endif

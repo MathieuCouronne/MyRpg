@@ -44,6 +44,7 @@ game_t *init_game(void)
     game->config = parse_config();
     if (game->config->assets_loaded != 1 && !download_assets())
         return NULL;
+    game->config->assets_loaded = true;
     game->player = init_player();
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);

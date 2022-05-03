@@ -20,4 +20,5 @@ int main(void)
         sfRenderWindow_display(game->window);
     }
     destroy_all(game);
+    write_config(game->config);
 }

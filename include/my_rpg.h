@@ -40,7 +40,6 @@ button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
 pause_t *init_pause(game_t *game);
 scene_saves_t *init_saves(character_t **saves);
-button_t *init_button_saves(void);
 button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 npc_t *init_albert(void);

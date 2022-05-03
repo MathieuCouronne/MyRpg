@@ -11,13 +11,13 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-void go_back(game_t *game)
+static void go_back(game_t *game)
 {
     game->scenes->prev = game->scenes->current;
     game->scenes->current = MAIN_MENU;
 }
 
-button_t *init_button_saves(void)
+static button_t *init_button_saves(void)
 {
     button_t *buttons = malloc(sizeof(button_t));
     sfVector2f pos = {0, (float) WINDOW_HEIGHT / 2 - 768.f / 2};
@@ -28,7 +28,7 @@ button_t *init_button_saves(void)
     return buttons;
 }
 
-button_t *init_empty_button(void)
+static button_t *init_empty_button(void)
 {
     button_t *buttons = malloc(sizeof(button_t));
     sfVector2f pos = {0, (float) WINDOW_HEIGHT / 2 - 768.f / 2};

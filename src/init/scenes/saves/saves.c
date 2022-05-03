@@ -8,7 +8,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
 #include "macros.h"
@@ -56,8 +55,7 @@ scene_saves_t *init_saves(character_t **saves)
     if (!scene)
         return NULL;
     scene->background = init_save();
-    scene->buttons = init_slot(saves);
+    scene->buttons = init_slots(saves);
     scene->character = init_character(saves);
-    set_pos_character(scene->character);
     return scene;
 }

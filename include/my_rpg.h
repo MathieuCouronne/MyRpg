@@ -49,9 +49,8 @@ config_t *init_config(void);
 game_asset_t **init_character(character_t **saves);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
-button_t **init_slot(character_t **saves);
+button_t **init_slots(character_t **saves);
 sfIntRect *rect_player(void);
-void set_pos_character(game_asset_t **character);
 
 // Destroy
 void destroy_game(game_t *game);

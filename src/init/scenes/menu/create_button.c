@@ -22,8 +22,16 @@ sfVector2f center_text(float x, float y, sfText *text, sfVector2f pos_sprite)
     return pos;
 }
 
+void init_text_butt(button_t *button, char *str)
+{
+    sfText_setFont(button->text, button->font);
+    sfText_setString(button->text, str);
+    sfText_setCharacterSize(button->text, 40);
+    sfText_setColor(button->text, sfBlack);
+}
+
 button_t *create_button(char *str, sfVector2f pos_sprite,
-void (*on_click) (game_t *game))
+void (*on_click) (game_t *game) , sfVector2f scale)
 {
     button_t *button = malloc(sizeof(button_t));
     sfVector2f pos = {pos_sprite.x, pos_sprite.y};
@@ -34,13 +42,11 @@ void (*on_click) (game_t *game))
     button->text = sfText_create();
     button->asset->sprite = sfSprite_create();
     button->asset->texture = sfTexture_createFromFile(BUTTON_PATH, NULL);
+    sfSprite_setScale(button->asset->sprite, scale);
     button->on_click = on_click;
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos);
-    sfText_setFont(button->text, button->font);
-    sfText_setString(button->text, str);
-    sfText_setCharacterSize(button->text, 40);
-    sfText_setColor(button->text, sfBlack);
+    init_text_butt(button, str);
     rect_button = sfSprite_getGlobalBounds(button->asset->sprite);
     pos = center_text(rect_button.width, rect_button.height, button->text, pos_sprite);
     sfText_setPosition(button->text, pos);

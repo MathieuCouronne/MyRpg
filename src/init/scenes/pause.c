@@ -13,7 +13,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-game_asset_t *init_pause_background(void)
+game_asset_t *init_pause_background(game_t *game)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -34,27 +34,27 @@ void back_home(game_t *game)
 button_t **init_buttons_pause(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 5);
-    float pos_x = 960 - 390 / 2;
+    float pos_x = 960 - 273 / 2;
 
-    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,500}, go_to_game);
-    buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650},
-        go_to_settings);
-    buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800}, quit_game);
-    buttons[3] = create_button("Back home", (sfVector2f) {pos_x, 800},
-        back_home);
+    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,370}, go_to_game,
+    (sfVector2f) {.7f, .7f});
+    buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 470},
+        go_to_settings, (sfVector2f) {.7f, .7f});
+    buttons[2] = create_button("Home", (sfVector2f) {pos_x, 570}, back_home,
+    (sfVector2f) {.7f, .7f});
+    buttons[3] = create_button("Quit", (sfVector2f) {pos_x, 670},
+        quit_game, (sfVector2f) {.7f, .7f});
     buttons[4] = NULL;
     return buttons;
 }
 
-pause_t *init_pause(void)
+pause_t *init_pause(game_t *game)
 {
     pause_t *scene = malloc(sizeof(pause_t));
-    sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     if (!scene)
         return NULL;
-    scene->background = init_pause_background();
+    scene->background = init_pause_background(game);
     scene->buttons = init_buttons_pause();
-    scene->view = sfView_createFromRect(view_rect);
     return scene;
 }

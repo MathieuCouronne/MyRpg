@@ -27,7 +27,7 @@
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ALBERT_PATH "./assets/images/characters/albert.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
-    #define INVENTORY_PATH "./assets/images/inventory.png"
+    #define INVENTORY_PATH "./assets/images/inventory/inventory.png"
     #define ENEMY_PATH "./assets/images/characters/enemy.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"

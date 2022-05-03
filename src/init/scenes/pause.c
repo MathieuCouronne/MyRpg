@@ -22,7 +22,6 @@ game_asset_t *init_pause_background(void)
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(PAUSE_BG_PATH, NULL);
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
-    sfSprite_setScale(background->sprite, (sfVector2f) {.5f, .5f});
     return background;
 }
 
@@ -50,11 +49,12 @@ button_t **init_buttons_pause(void)
 pause_t *init_pause(void)
 {
     pause_t *scene = malloc(sizeof(pause_t));
+    sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     if (!scene)
         return NULL;
     scene->background = init_pause_background();
     scene->buttons = init_buttons_pause();
-    scene->active = false;
+    scene->view = sfView_createFromRect(view_rect);
     return scene;
 }

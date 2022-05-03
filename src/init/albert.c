@@ -16,10 +16,10 @@ sfIntRect *rect_albert(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
-    rect->top = 9;
-    rect->left = 22;
-    rect->width = 38;
-    rect->height = 66;
+    rect->top = TOP_PADDING;
+    rect->left = LEFT_PADDING;
+    rect->width = ALBERT_WIDTH;
+    rect->height = ALBERT_HEIGHT;
     return rect;
 }
 

@@ -41,22 +41,22 @@ static button_t *init_empty_button(void)
 
 button_t **init_slots(character_t **saves)
 {
+    sfVector2f pos = {0};
     button_t **buttons = malloc(sizeof(button_t) * 5);
+    float shifts[3] = {5, 2, 1.25f};
 
     for (size_t i = 0; i < 3; i++) {
         if (!saves[i])
             buttons[i] = init_empty_button();
         else
             buttons[i] = init_button_saves();
+        pos.x = WINDOW_WIDTH / shifts[i] - (float) 462 / 2;
+        pos.y = buttons[i]->asset->pos.y;
+        sfSprite_setPosition(buttons[i]->asset->sprite, pos);
     }
-    sfSprite_setPosition(buttons[0]->asset->sprite,
-        (sfVector2f) {WINDOW_WIDTH / 5 - 462 / 2, buttons[0]->asset->pos.y});
-    sfSprite_setPosition(buttons[1]->asset->sprite,
-        (sfVector2f) {WINDOW_WIDTH / 2 - 462 / 2, buttons[1]->asset->pos.y});
-    sfSprite_setPosition(buttons[2]->asset->sprite,
-        (sfVector2f) {WINDOW_WIDTH / 1.25 - 462 / 2, buttons[2]->asset->pos.y});
-    buttons[3] = create_icon_buttons((sfVector2f) {30, 768},
-        SAVES_BACK_PATH, go_back);
+    pos.x = 30;
+    pos.y = 768;
+    buttons[3] = create_icon_buttons(pos, SAVES_BACK_PATH, go_back);
     buttons[4] = NULL;
     return buttons;
 }

@@ -10,6 +10,7 @@
 const char *class_names[] = {
     "Warrior", "Mage", "DogWarrior"
 };
+
 const char *class_textures[] = {
-    DOGWARRIOR_PATH, DOGWARRIOR_PATH, DOGWARRIOR_PATH
+    WARRIOR_PATH, MAGE_PATH, DOGWARRIOR_PATH
 };

@@ -39,9 +39,9 @@ button_t *init_empty_button(void)
     return buttons;
 }
 
-button_t **init_slot(character_t **saves)
+button_t **init_slot(character_t **saves, scene_saves_t *scene)
 {
-    button_t **buttons = malloc(sizeof(button_t) * 5);
+    button_t **buttons = malloc(sizeof(button_t *) * 5);
 
     for (size_t i = 0; i < 3; i++) {
         if (!saves[i])

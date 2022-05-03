@@ -54,7 +54,7 @@
     // Config files
     #define CONFIG_FILE_PATH "./config/game.config"
     #define PLAYER1_FILE_PATH "./config/saves/player1.config"
-    #define PLAYER2_FILE_PATH "./config/saves/player2.config"
+    #define PLAYER2_FILE_PATH "./config/saves/player3.config"
     #define PLAYER3_FILE_PATH "./config/saves/player3.config"
 
     // Albert

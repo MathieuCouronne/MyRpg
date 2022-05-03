@@ -39,7 +39,7 @@ game_asset_t *init_text_bar(void)
     return background;
 }
 
-static sfIntRect *rect_player(void)
+static sfIntRect *rect_playe(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
@@ -55,7 +55,7 @@ player_t *player_fight(void)
     player_t *player = malloc(sizeof(player_t));
 
     player->sprite = sfSprite_create();
-    player->rect = rect_player();
+    player->rect = rect_playe();
     player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     player->position = malloc(sizeof(sfVector2f));

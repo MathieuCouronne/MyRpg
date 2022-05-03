@@ -19,7 +19,7 @@ sfIntRect *rect_albert(void)
     rect->top = 16;
     rect->left = 14;
     rect->width = 43;
-    rect->height = 61;
+    rect->height = 60;
     return rect;
 }
 

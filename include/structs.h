@@ -57,6 +57,7 @@ struct game_s {
     player_t *player;
     enemy_t *enemy;
     npc_t *albert;
+    npc_t *chief;
     chest_t *chest;
     config_t *config;
     character_t **saves;

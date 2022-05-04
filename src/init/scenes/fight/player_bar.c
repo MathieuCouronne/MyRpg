@@ -20,7 +20,7 @@ game_asset_t *init_player_bar(void)
         return NULL;
     hp->sprite = sfSprite_create();
     hp->texture = sfTexture_createFromFile(FIGHT_PLAYER_BAR_PATH, NULL);
-    sfSprite_setPosition(hp->sprite, (sfVector2f) {50, 100});
+    sfSprite_setPosition(hp->sprite, (sfVector2f) {50, 50});
     sfSprite_setScale(hp->sprite, (sfVector2f) {0.75, 0.75});
     sfSprite_setTexture(hp->sprite, hp->texture, sfTrue);
     return hp;

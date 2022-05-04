@@ -23,7 +23,6 @@ static void event_handling(game_t *game)
         }
         if (game->event.type == sfEvtKeyPressed
         && game->event.key.code == sfKeyI) {
-            printf("ça passe la con de ta mere\n");
             game->scenes->prev = game->scenes->current;
             game->scenes->current = INVENTORY;
             sfRenderWindow_setView(game->window,

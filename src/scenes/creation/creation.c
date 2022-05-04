@@ -39,5 +39,7 @@ bool display_creation(game_t *game)
     sfRenderWindow_drawSprite(window, creation->buttons[7]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, creation->buttons[8]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, creation->buttons[9]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[10]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
     return true;
 }

@@ -62,6 +62,9 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/destroy_all.c \
 				$(SRC_DIR)destroy/fight.c \
 				$(SRC_DIR)destroy/chest.c \
+				$(SRC_DIR)destroy/inventory.c \
+				$(SRC_DIR)destroy/albert.c \
+				$(SRC_DIR)destroy/chief.c \
 				$(SRC_DIR)destroy/settings.c
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \

@@ -8,18 +8,18 @@
 #ifndef RPG_MACROS_H
     #define RPG_MACROS_H
 
-    // Functions
-    #define ABS(x) (x < 0) ? -x : x
-
     #define WINDOW_NAME "MyRPG"
     #define WINDOW_WIDTH 1920
     #define WINDOW_HEIGHT 1080
     #define WINDOW_BITS 32
+    #define LOADER_WINDOW_WIDTH 500
+    #define LOADER_WINDOW_HEIGHT 600
     #define WINDOW_PADDING 350
     #define MAP_WIDTH 3200
     #define MAP_HEIGHT 3200
 
     // Misc
+    #define ASSETS_AMOUNT 30
     #define PLAYER_SCALE 1.15
     #define PLAYER_MOVEMENT 2.5
 
@@ -54,6 +54,8 @@
     #define CREATION_LESS_PATH "./assets/images/creation/less.png"
     #define CREATION_ARROW_LEFT_PATH "./assets/images/creation/arrow_left.png"
     #define CREATION_ARROW_RIGHT_PATH "./assets/images/creation/arrow_right.png"
+    #define LOADER_BAR_PATH "./assets/images/loader/bar.png"
+    #define LOADER_FILL_PATH "./assets/images/loader/fill.png"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

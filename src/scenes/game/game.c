@@ -13,7 +13,8 @@ static void event_handling(game_t *game)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        default_event_handling(game, game->scenes->main_menu->buttons);
+        if (game->event.type == sfEvtClosed)
+            sfRenderWindow_close(game->window);
         if (game->event.type == sfEvtKeyPressed
         && game->event.key.code == sfKeyEscape) {
             game->scenes->prev = game->scenes->current;

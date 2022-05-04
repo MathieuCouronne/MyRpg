@@ -48,6 +48,7 @@
     #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
     #define SAVES_EMPTY_PATH "./assets/images/saves/empty.png"
     #define SAVES_BACK_PATH "./assets/images/saves/back.png"
+    #define SAVES_CREATION_PATH "./assets/images/creation/champ_select.jpg"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

@@ -27,12 +27,11 @@ game_asset_t *init_creation_background(game_t *game)
 
 main_creation_scenes_t *init_creation(game_t *game)
 {
-    pause_t *scene = malloc(sizeof(pause_t));
+    main_creation_scenes_t *scene = malloc(sizeof(main_creation_scenes_t));
 
     if (!scene)
         return NULL;
-    scene->background = init_pause_background(game);
-    scene->buttons = init_buttons_pause();
+    scene->background = init_creation_background(game);
     return scene;
 }
 

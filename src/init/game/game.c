@@ -43,14 +43,14 @@ game_t *init_game(void)
     game_t *game = malloc(sizeof(game_t));
     sfThread *thread = NULL;
 
-    int *test = malloc(sizeof(int));
-
     params->game = game;
-    params->loaded = test;
+    params->loaded = malloc(sizeof(int));
+    *(params->loaded) = 0;
     thread = sfThread_create((void *) load_game, params);
     sfThread_launch(thread);
     open_loader_window(params->loaded);
     sfThread_wait(thread);
+    load_game(params);
     if (!game->scenes || !game->config || !game->player || !game->saves ||
     !game->view || !game->collisions)
         return NULL;

@@ -57,7 +57,7 @@ static game_asset_t *init_loader_fill(void)
 
 loader_t *init_loader_window(int *total)
 {
-    sfVideoMode desktop_mode = sfVideoMode_getDesktopMode();
+    sfVideoMode desktop_mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
     sfVideoMode mode = {LOADER_WINDOW_WIDTH, LOADER_WINDOW_HEIGHT, WINDOW_BITS};
     loader_t *scene = malloc(sizeof(loader_t));
     sfVector2i pos = {

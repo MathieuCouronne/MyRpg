@@ -17,7 +17,8 @@ void my_printf(char *str, ...);
 
 // Initialization
 game_t *init_game(void);
-game_asset_t *init_hp_bar(void);
+game_asset_t *init_player_bar(void);
+game_asset_t *init_enemy_bar(void);
 game_asset_t *init_menu_background(void);
 button_t **init_buttons(void);
 fight_t *init_fight(void);

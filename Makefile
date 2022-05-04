@@ -39,7 +39,8 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight.c \
 				$(SRC_DIR)init/scenes/fight/ogre.c \
-				$(SRC_DIR)init/scenes/fight/hp_bar.c \
+				$(SRC_DIR)init/scenes/fight/player_bar.c \
+				$(SRC_DIR)init/scenes/fight/enemy_bar.c \
 				$(SRC_DIR)init/scenes/fight/text.c \
 				$(SRC_DIR)init/scenes/fight/init_buttons.c \
 				$(SRC_DIR)init/scenes/pause.c \

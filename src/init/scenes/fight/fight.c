@@ -79,6 +79,7 @@ fight_t *init_fight(void)
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
     fight->enemy = init_ogre();
-    fight->hp_bar = init_hp_bar();
+    fight->player_bar = init_player_bar();
+    fight->enemy_bar = init_enemy_bar();
     return fight;
 }

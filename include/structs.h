@@ -34,6 +34,7 @@ typedef struct enemy_s enemy_t;
 typedef struct pnj_s npc_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
+typedef struct loader_s loader_t;
 typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
 typedef struct inventory_sprite_s inventory_sprite_t;
@@ -165,6 +166,14 @@ struct settings_s {
     game_asset_t *background;
     button_t **buttons;
     button_t **icons;
+};
+
+struct loader_s {
+    sfRenderWindow *window;
+    sfEvent event;
+    game_asset_t *bar;
+    game_asset_t *fill;
+    int *total;
 };
 
 struct pause_s {

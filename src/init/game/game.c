@@ -22,31 +22,18 @@ static sfRenderWindow *init_window(void)
     return window;
 }
 
+// TODO: destroy / free window
 static void open_loader_window(int *total)
 {
-    sfVideoMode mode = {500, 600, 32};
-    sfRenderWindow *window = sfRenderWindow_create(mode, NULL, sfNone, NULL);
-    sfEvent event = {};
-    sfVideoMode default_mode = sfVideoMode_getDesktopMode();
-    sfVector2i pos = {default_mode.width / 2 - mode.width / 2, default_mode.height / 2 - mode.height / 2};
-    sfCircleShape *circle = sfCircleShape_create();
-    sfCircleShape_setFillColor(circle, sfRed);
-    sfCircleShape_setPosition(circle, (sfVector2f) {50, 50});
-    sfCircleShape_setRadius(circle, 0);
-    sfRenderWindow_setPosition(window, pos);
-    sfRenderWindow_setFramerateLimit(window, 60);
+    loader_t *loader = init_loader_window(total);
+    sfColor background = sfColor_fromRGB(125, 125, 125);
 
-    while (sfRenderWindow_isOpen(window)) {
+    while (sfRenderWindow_isOpen(loader->window)) {
         if (*total == -1)
-            sfRenderWindow_close(window);
-        while (sfRenderWindow_pollEvent(window, &event)) {
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(window);
-        }
-        sfCircleShape_setRadius(circle, *total);
-        sfRenderWindow_clear(window, sfBlack);
-        sfRenderWindow_drawCircleShape(window, circle, NULL);
-        sfRenderWindow_display(window);
+            sfRenderWindow_close(loader->window);
+        sfRenderWindow_clear(loader->window, background);
+        display_loader(loader, *total);
+        sfRenderWindow_display(loader->window);
     }
 }
 
@@ -56,9 +43,10 @@ game_t *init_game(void)
     game_t *game = malloc(sizeof(game_t));
     sfThread *thread = NULL;
 
+    int *test = malloc(sizeof(int));
+
     params->game = game;
-    params->loaded = malloc(sizeof(int));
-    (*params->loaded) = 0;
+    params->loaded = test;
     thread = sfThread_create((void *) load_game, params);
     sfThread_launch(thread);
     open_loader_window(params->loaded);

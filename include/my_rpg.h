@@ -57,10 +57,9 @@ button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
 button_t **init_buttons_creation();
-inventory_sprite_t *init_inventory(void);
-bool display_inventory(game_t *game);
 game_asset_t **init_characters();
 sfText **init_text_creation(sfFont *font);
+loader_t *init_loader_window(int *total);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -93,6 +92,7 @@ void destroy_sound(sounds_t *music);
 
 // Display
 void scene_manager(game_t *game);
+bool display_loader(loader_t *loader, int total);
 bool display_main_menu(game_t *game);
 bool display_fight(game_t *game);
 bool display_main_game(game_t *game);

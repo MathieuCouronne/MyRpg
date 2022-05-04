@@ -174,9 +174,9 @@ struct settings_s {
 struct loader_s {
     sfRenderWindow *window;
     sfEvent event;
+    game_asset_t *background;
     game_asset_t *bar;
     game_asset_t *fill;
-    int *total;
 };
 
 struct pause_s {

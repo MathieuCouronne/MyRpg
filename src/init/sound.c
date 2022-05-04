@@ -16,7 +16,7 @@ void play_music(sfMusic *sounds)
     sfMusic_play(sounds);
 }
 
-sounds_t *menu_music(void)
+sounds_t *menu_music(config_t *config)
 {
     sounds_t *sounds = malloc(sizeof(sounds_t));
 
@@ -26,5 +26,6 @@ sounds_t *menu_music(void)
     if (!sounds->menu)
         return NULL;
     sfMusic_play(sounds->menu);
+    sfMusic_setVolume(sounds->menu, config->volume);
     return sounds;
 }

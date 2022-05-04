@@ -51,7 +51,7 @@ void load_game(thread_params_t *params)
     params->game->player = init_player();
     params->game->chest = chest_sprite();
     params->game->view = sfView_createFromRect(view_rect);
-    params->game->sounds = menu_music();
+    params->game->sounds = menu_music(params->game->config);
     params->game->albert = init_albert();
     params->game->chief = init_chief();
     params->game->collisions = sfImage_createFromFile(AREAS_PATH);

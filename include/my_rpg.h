@@ -89,7 +89,7 @@ bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
 
 // Sounds
-sounds_t *menu_music(void);
+sounds_t *menu_music(config_t *config);
 void destroy_sound(sounds_t *music);
 
 // Display

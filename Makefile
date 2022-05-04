@@ -23,7 +23,8 @@ SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/mouse/move.c \
 				$(SRC_DIR)events/mouse/click.c \
 
-SRC			+=	$(SRC_DIR)init/game.c \
+SRC			+=	$(SRC_DIR)init/game/game.c \
+				$(SRC_DIR)init/game/thread.c \
 				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/player.c \
 				$(SRC_DIR)init/albert.c \

@@ -39,6 +39,7 @@ typedef struct pause_s pause_t;
 typedef struct inventory_sprite_s inventory_sprite_t;
 typedef struct scene_saves_s scene_saves_t;
 typedef struct attack_s attack_t;
+typedef struct thread_params_s thread_params_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -205,6 +206,11 @@ struct scene_saves_s {
 struct attack_s {
     char const *name;
     unsigned int dmg;
+};
+
+struct thread_params_s {
+    game_t *game;
+    int *loaded;
 };
 
 #endif

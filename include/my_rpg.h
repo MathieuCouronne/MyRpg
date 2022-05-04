@@ -17,9 +17,12 @@ void my_printf(char *str, ...);
 
 // Initialization
 game_t *init_game(void);
-game_asset_t *init_player_bar(void);
-game_asset_t *init_enemy_bar(void);
+void load_game(thread_params_t *params);
+game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
+game_asset_t *init_enemy_bar(void);
+game_asset_t *init_player_bar(void);
+button_t **init_attack_buttons(void);
 button_t **init_buttons(void);
 fight_t *init_fight(void);
 enemy_t *init_ogre(void);
@@ -32,7 +35,7 @@ button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);
 text_t *init_text(char *str);
-bool download_assets(void);
+bool download_assets(int *loaded);
 char **read_file(char const *filename);
 bool write_file(char const *filename, config_t *config);
 config_t *parse_config(void);
@@ -48,6 +51,8 @@ npc_t *init_albert(void);
 npc_t *init_chief(void);
 config_t *init_config(void);
 game_asset_t **init_character(character_t **saves);
+inventory_sprite_t *init_inventory(void);
+bool display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
@@ -107,7 +112,6 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
-button_t **init_attack_buttons(void);
 
 // Character
 character_t *create_character(void);

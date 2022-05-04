@@ -29,11 +29,13 @@ static void open_loader_window(int *total)
     sfColor background = sfColor_fromRGB(125, 125, 125);
 
     while (sfRenderWindow_isOpen(loader->window)) {
-        if (*total == -1)
-            sfRenderWindow_close(loader->window);
         sfRenderWindow_clear(loader->window, background);
         display_loader(loader, *total);
         sfRenderWindow_display(loader->window);
+        if (*total == -1) {
+            sfSleep(sfMilliseconds(500));
+            sfRenderWindow_close(loader->window);
+        }
     }
 }
 

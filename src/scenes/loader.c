@@ -25,7 +25,7 @@ bool display_loader(loader_t *loader, int total)
     if (!loader || !loader->window || !loader->fill || !loader->bar)
         return false;
     event_handling(loader);
-    percent = (float) total / ASSETS_AMOUNT;
+    percent = total == -1 ? 1 : (float) total / ASSETS_AMOUNT;
     rect.width = (int) (439 * percent);
     sfSprite_setTextureRect(loader->fill->sprite, rect);
     sfRenderWindow_drawSprite(loader->window, loader->bar->sprite, NULL);

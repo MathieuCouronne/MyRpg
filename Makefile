@@ -68,6 +68,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
+				$(SRC_DIR)scenes/creation/creation.c
 
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \

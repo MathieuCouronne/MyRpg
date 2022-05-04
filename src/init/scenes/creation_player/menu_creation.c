@@ -13,7 +13,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-game_asset_t *init_creation_background(game_t *game)
+game_asset_t *init_creation_background()
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -25,12 +25,12 @@ game_asset_t *init_creation_background(game_t *game)
     return background;
 }
 
-main_creation_scenes_t *init_creation(game_t *game)
+main_creation_scenes_t *init_creation(void)
 {
     main_creation_scenes_t *scene = malloc(sizeof(main_creation_scenes_t));
 
     if (!scene)
         return NULL;
-    scene->background = init_creation_background(game);
+    scene->background = init_creation_background();
     return scene;
 }

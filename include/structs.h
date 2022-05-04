@@ -118,7 +118,7 @@ struct chest_s {
 
 struct main_creation_scenes_s {
     game_asset_t *background;
-    menu_creation_t *buttons;
+    button_t *buttons;
 };
 
 struct text_s {

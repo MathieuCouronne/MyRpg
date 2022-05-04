@@ -50,6 +50,7 @@ game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
+main_creation_scenes_t *init_creation(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -85,6 +86,7 @@ bool display_main_game(game_t *game);
 bool display_settings(game_t *game);
 bool display_pause(game_t *game);
 bool display_saves(game_t *game);
+bool display_creation(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);

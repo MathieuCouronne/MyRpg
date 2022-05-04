@@ -32,6 +32,7 @@ static scenes_t *init_scenes(game_t *game)
     scenes->settings = init_settings();
     scenes->saves = init_saves(game);
     scenes->pause = init_pause(game);
+    scenes->creation_menu = init_creation();
     return scenes;
 }
 

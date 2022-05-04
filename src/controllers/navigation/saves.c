@@ -31,6 +31,6 @@ void go_to_game_player3(game_t *game)
 
 void go_to_creation(game_t *game)
 {
-    (void) *game;
-    my_printf("We should redirect player to character creation\n");
+    game->scenes->prev = game->scenes->current;
+    game->scenes->current = CREATION;
 }

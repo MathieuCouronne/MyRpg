@@ -49,6 +49,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/saves/init_buttons.c \
 				$(SRC_DIR)init/scenes/saves/init_sprite_saves.c \
 				$(SRC_DIR)init/scenes/creation_player/menu_creation.c \
+				$(SRC_DIR)init/scenes/creation_player/buttons_creation.c \
 				$(SRC_DIR)init/clock.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
@@ -68,7 +69,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
-				$(SRC_DIR)scenes/creation/creation.c
+				$(SRC_DIR)scenes/creation/creation.c \
 
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \

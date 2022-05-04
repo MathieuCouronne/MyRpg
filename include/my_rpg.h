@@ -36,7 +36,8 @@ char **read_file(char const *filename);
 bool write_file(char const *filename, config_t *config);
 config_t *parse_config(void);
 settings_t *init_settings(void);
-button_t *create_icon(sfVector2f pos_sprite, char *path);
+button_t *create_icon(sfVector2f pos_sprite, char *path,
+void (*on_click) (game_t *game));
 int chest(game_t *game);
 pause_t *init_pause(game_t *game);
 scene_saves_t *init_saves(game_t *game);
@@ -51,6 +52,7 @@ void display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
+button_t **init_buttons_creation();
 
 // Destroy
 void destroy_game(game_t *game);

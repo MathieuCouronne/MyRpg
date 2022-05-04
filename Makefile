@@ -40,8 +40,10 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight.c \
 				$(SRC_DIR)init/scenes/fight/ogre.c \
-				$(SRC_DIR)init/scenes/fight/hp_bar.c \
+				$(SRC_DIR)init/scenes/fight/player_bar.c \
+				$(SRC_DIR)init/scenes/fight/enemy_bar.c \
 				$(SRC_DIR)init/scenes/fight/text.c \
+				$(SRC_DIR)init/scenes/fight/init_buttons.c \
 				$(SRC_DIR)init/scenes/pause.c \
 				$(SRC_DIR)init/scenes/inventory.c \
 				$(SRC_DIR)init/scenes/game.c \
@@ -50,6 +52,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/saves/init_buttons.c \
 				$(SRC_DIR)init/scenes/saves/init_sprite_saves.c \
 				$(SRC_DIR)init/scenes/creation_player/menu_creation.c \
+				$(SRC_DIR)init/scenes/creation_player/buttons_creation.c \
 				$(SRC_DIR)init/clock.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
@@ -61,15 +64,19 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/destroy_all.c \
 				$(SRC_DIR)destroy/fight.c \
 				$(SRC_DIR)destroy/chest.c \
+				$(SRC_DIR)destroy/inventory.c \
+				$(SRC_DIR)destroy/albert.c \
+				$(SRC_DIR)destroy/chief.c \
 				$(SRC_DIR)destroy/settings.c
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/game.c \
 				$(SRC_DIR)scenes/game/pause.c \
+				$(SRC_DIR)scenes/game/inventory.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
-				$(SRC_DIR)scenes/creation/creation.c
+				$(SRC_DIR)scenes/creation/creation.c \
 
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \

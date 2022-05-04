@@ -31,7 +31,7 @@ void init_text_butt(button_t *button, char *str)
 }
 
 button_t *create_button(char *str, sfVector2f pos_sprite,
-void (*on_click) (game_t *game) , sfVector2f scale)
+void (*on_click) (game_t *game), sfVector2f scale)
 {
     button_t *button = malloc(sizeof(button_t));
     sfVector2f pos = {pos_sprite.x, pos_sprite.y};

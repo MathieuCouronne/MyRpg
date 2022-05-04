@@ -36,6 +36,7 @@ typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
+typedef struct inventory_sprite_s inventory_sprite_t;
 typedef struct scene_saves_s scene_saves_t;
 typedef struct attack_s attack_t;
 typedef struct thread_params_s thread_params_t;
@@ -50,7 +51,6 @@ struct game_s {
     sfEvent event;
     sfImage *collisions;
     sfView *view;
-    game_asset_t *inventory;
     scenes_t *scenes;
     sounds_t *sounds;
     player_t *player;
@@ -94,6 +94,7 @@ struct scenes_s {
     scene_saves_t *saves;
     fight_t *fight;
     pause_t *pause;
+    inventory_sprite_t *inventory;
 };
 
 struct main_game_s {
@@ -119,7 +120,7 @@ struct chest_s {
 
 struct main_creation_scenes_s {
     game_asset_t *background;
-    button_t *buttons;
+    button_t **buttons;
 };
 
 struct text_s {
@@ -149,7 +150,9 @@ struct pnj_s {
 struct fight_s {
     game_asset_t *background_fight;
     game_asset_t *text_bar;
-    game_asset_t *hp_bar;
+    game_asset_t *player_bar;
+    game_asset_t *enemy_bar;
+    button_t **buttons;
     player_t *player;
     enemy_t *enemy;
 };
@@ -163,6 +166,13 @@ struct settings_s {
 struct pause_s {
     game_asset_t *background;
     button_t **buttons;
+    sfView *view;
+};
+
+struct inventory_sprite_s {
+    game_asset_t *background;
+    button_t **buttons;
+    sfVector2f pos;
     sfView *view;
 };
 

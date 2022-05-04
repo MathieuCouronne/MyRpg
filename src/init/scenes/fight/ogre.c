@@ -14,7 +14,7 @@
 
 static sfIntRect rect_ogre(void)
 {
-    sfIntRect rect = {295, 8, 62, 54};
+    sfIntRect rect = {239, 10, 39, 44};
 
     return rect;
 }
@@ -25,10 +25,10 @@ enemy_t *init_ogre(void)
 
     enemy->sprite = sfSprite_create();
     enemy->rect = rect_ogre();
-    enemy->texture = sfTexture_createFromFile(ENEMY_PATH, NULL);
+    enemy->texture = sfTexture_createFromFile(OGRE_PATH, NULL);
     sfSprite_setTexture(enemy->sprite, enemy->texture, sfTrue);
     sfSprite_setScale(enemy->sprite, (sfVector2f) {10, 10});
-    sfSprite_setPosition(enemy->sprite, (sfVector2f) {1125, 50});
+    sfSprite_setPosition(enemy->sprite, (sfVector2f) {300, 75});
     sfSprite_setTextureRect(enemy->sprite, enemy->rect);
     return enemy;
 }

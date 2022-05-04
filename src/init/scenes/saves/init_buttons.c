@@ -54,8 +54,7 @@ button_t **init_slots(game_t *game)
     }
     pos.x = 30;
     pos.y = 768;
-    buttons[3] = create_icon(pos, SAVES_BACK_PATH);
-    buttons[3]->on_click = go_to_menu;
+    buttons[3] = create_icon(pos, SAVES_BACK_PATH, go_to_menu);
     buttons[4] = NULL;
     return buttons;
 }

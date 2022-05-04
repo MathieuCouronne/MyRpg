@@ -46,10 +46,14 @@ button_t **init_icons_settings(void)
     float icons_pos = 960 - 41 / 2;
     button_t **icons = malloc(sizeof(button_t *) * 5);
 
-    icons[0] = create_icon((sfVector2f) {icons_pos ,640}, BUTTON_SETTINGS_PATH);
-    icons[1] = create_icon((sfVector2f) {icons_pos ,700}, BUTTON_SETTINGS_PATH);
-    icons[2] = create_icon((sfVector2f) {icons_pos ,760}, BUTTON_SETTINGS_PATH);
-    icons[3] = create_icon((sfVector2f) {icons_pos ,820}, BUTTON_SETTINGS_PATH);
+    icons[0] = create_icon((sfVector2f)
+    {icons_pos ,640}, BUTTON_SETTINGS_PATH, go_to_prev);
+    icons[1] = create_icon((sfVector2f) {icons_pos ,700},
+    BUTTON_SETTINGS_PATH, go_to_prev);
+    icons[2] = create_icon((sfVector2f) {icons_pos ,760},
+    BUTTON_SETTINGS_PATH, go_to_prev);
+    icons[3] = create_icon((sfVector2f) {icons_pos ,820},
+    BUTTON_SETTINGS_PATH, go_to_prev);
     icons[4] = NULL;
     return icons;
 }

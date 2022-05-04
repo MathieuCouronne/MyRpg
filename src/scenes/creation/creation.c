@@ -12,7 +12,7 @@
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
-        default_event_handling(game, game->scenes->pause->buttons);
+        default_event_handling(game, game->scenes->creation_menu->buttons);
     }
 }
 
@@ -26,8 +26,20 @@ bool display_creation(game_t *game)
         return false;
     window = game->window;
     creation = game->scenes->creation_menu ;
-    //buttons = creation->buttons;
+    buttons = creation->buttons;
     event_handling(game);
     sfRenderWindow_drawSprite(window, creation->background->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[0]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[4]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[5]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[6]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[7]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[8]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[9]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[10]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
     return true;
 }

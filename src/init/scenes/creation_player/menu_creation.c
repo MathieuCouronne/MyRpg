@@ -8,7 +8,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
 #include "macros.h"
@@ -32,5 +31,6 @@ main_creation_scenes_t *init_creation(void)
     if (!scene)
         return NULL;
     scene->background = init_creation_background();
+    scene->buttons = init_buttons_creation();
     return scene;
 }

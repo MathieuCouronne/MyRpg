@@ -17,7 +17,6 @@ void my_printf(char *str, ...);
 
 // Initialization
 game_t *init_game(void);
-void load_game(thread_params_t *params);
 game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
 button_t **init_buttons(void);
@@ -32,7 +31,7 @@ button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);
 text_t *init_text(char *str);
-bool download_assets(int *total);
+bool download_assets(void);
 char **read_file(char const *filename);
 bool write_file(char const *filename, config_t *config);
 config_t *parse_config(void);

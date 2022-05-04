@@ -13,7 +13,7 @@ bool handle_buttons_hover(game_t *game, button_t **buttons)
     bool is_inside = false;
     bool status = false;
 
-    if (game->event.type != sfEvtMouseMoved)
+    if (game->event.type != sfEvtMouseMoved || !buttons)
         return false;
     for (unsigned short i = 0; buttons[i]; i++) {
         is_inside = is_pos_in_button(buttons[i], pos);

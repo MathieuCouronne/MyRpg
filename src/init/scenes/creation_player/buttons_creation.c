@@ -19,7 +19,7 @@ void oui()
 
 button_t **init_buttons_creation()
 {
-    button_t **buttons = malloc(sizeof(button_t) * 6);
+    button_t **buttons = malloc(sizeof(button_t) * 13);
 
     buttons[0] = create_icon((sfVector2f) {715, 505}, CREATION_PLUS_PATH, oui);
     buttons[1] = create_icon((sfVector2f) {715, 575}, CREATION_PLUS_PATH, oui);
@@ -31,6 +31,8 @@ button_t **init_buttons_creation()
     buttons[7] = create_icon((sfVector2f) {580, 645}, CREATION_LESS_PATH, oui);
     buttons[8] = create_icon((sfVector2f) {580, 720}, CREATION_LESS_PATH, oui);
     buttons[9] = create_icon((sfVector2f) {580, 790}, CREATION_LESS_PATH, oui);
-    buttons[10] = NULL;
+    buttons[10] = create_icon((sfVector2f) {470, 355}, CREATION_ARROW_LEFT_PATH, oui);
+    buttons[11] = create_icon((sfVector2f) {720, 355}, CREATION_ARROW_RIGHT_PATH, oui);
+    buttons[12] = NULL;
     return buttons;
 }

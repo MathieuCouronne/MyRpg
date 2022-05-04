@@ -51,6 +51,8 @@
     #define CREATION_BG_PATH "./assets/images/creation/champ_select.jpg"
     #define CREATION_PLUS_PATH "./assets/images/creation/plus_buttons.png"
     #define CREATION_LESS_PATH "./assets/images/creation/less.png"
+    #define CREATION_ARROW_LEFT_PATH "./assets/images/creation/arrow_left.png"
+    #define CREATION_ARROW_RIGHT_PATH "./assets/images/creation/arrow_right.png"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

@@ -16,7 +16,6 @@
 button_t *create_icon(sfVector2f pos_sprite, char *path)
 {
     button_t *button = malloc(sizeof(button_t));
-    sfVector2f pos = {pos_sprite.x, pos_sprite.y};
 
     button->asset = malloc(sizeof(game_asset_t));
     button->text = sfText_create();
@@ -27,7 +26,7 @@ button_t *create_icon(sfVector2f pos_sprite, char *path)
     return button;
 }
 
-button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
+button_t *create_save_card(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game))
 {
     button_t *button = malloc(sizeof(button_t));

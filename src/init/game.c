@@ -30,7 +30,7 @@ static scenes_t *init_scenes(game_t *game)
     scenes->game_scene = init_main_game(game);
     scenes->fight = init_fight();
     scenes->settings = init_settings();
-    scenes->saves = init_saves(game->saves);
+    scenes->saves = init_saves(game);
     scenes->pause = init_pause(game);
     return scenes;
 }

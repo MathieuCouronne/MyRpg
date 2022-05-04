@@ -35,15 +35,16 @@ button_t **init_buttons_pause(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 5);
     float pos_x = 960 - 273 / 2;
+    sfVector2f scale = {.7f, .7f};
 
-    buttons[0] = create_button("Play", (sfVector2f) {pos_x ,370}, go_to_game,
-    (sfVector2f) {.7f, .7f});
+    buttons[0] = create_button("Resume", (sfVector2f) {pos_x ,370},
+        back_to_game, scale);
     buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 470},
-        go_to_settings, (sfVector2f) {.7f, .7f});
+        go_to_settings, scale);
     buttons[2] = create_button("Home", (sfVector2f) {pos_x, 570}, back_home,
-    (sfVector2f) {.7f, .7f});
+        scale);
     buttons[3] = create_button("Quit", (sfVector2f) {pos_x, 670},
-        quit_game, (sfVector2f) {.7f, .7f});
+        quit_game, scale);
     buttons[4] = NULL;
     return buttons;
 }

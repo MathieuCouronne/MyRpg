@@ -4,6 +4,7 @@ my_rpg
 
 assets/images/*/*
 !assets/images/*/.gitkeep
+!assets/images/loader/*
 assets/sounds/*
 !assets/sounds/.gitkeep
 assets/fonts/*

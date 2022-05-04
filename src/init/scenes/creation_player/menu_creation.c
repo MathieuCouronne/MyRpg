@@ -36,9 +36,12 @@ main_creation_scenes_t *init_creation(void)
     scene->buttons = init_buttons_creation();
     scene->class = 0;
     scene->text = init_text_creation(scene->font);
-    scene->stats[0] = (int [5]) {BASE_WAR_STR, BASE_WAR_DEF, BASE_WAR_VIT, BASE_WAR_SPD, BASE_WAR_DEX};
-    scene->stats[1] = (int [5]) {BASE_MAGE_STR, BASE_MAGE_DEF, BASE_MAGE_VIT, BASE_MAGE_SPD, BASE_MAGE_DEX};
-    scene->stats[2] = (int [5]) {BASE_DOG_STR, BASE_DOG_DEF, BASE_DOG_VIT, BASE_DOG_SPD, BASE_DOG_DEX};
+    scene->stats[0] = (int [5])
+    {BASE_WAR_STR, BASE_WAR_DEF, BASE_WAR_VIT, BASE_WAR_SPD, BASE_WAR_DEX};
+    scene->stats[1] = (int [5])
+    {BASE_MAGE_STR, BASE_MAGE_DEF, BASE_MAGE_VIT, BASE_MAGE_SPD, BASE_MAGE_DEX};
+    scene->stats[2] = (int [5])
+    {BASE_DOG_STR, BASE_DOG_DEF, BASE_DOG_VIT, BASE_DOG_SPD, BASE_DOG_DEX};
     scene->stats[3] = NULL;
     scene->stat = create_stat_text(scene->font, scene);
     return scene;

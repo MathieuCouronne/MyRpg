@@ -169,5 +169,10 @@ void up_defense(game_t *game);
 void up_vitality(game_t *game);
 void up_speed(game_t *game);
 void up_dexterity(game_t *game);
+void down_strength(game_t *game);
+void down_defense(game_t *game);
+void down_vitality(game_t *game);
+void down_speed(game_t *game);
+void down_dexterity(game_t *game);
 
 #endif

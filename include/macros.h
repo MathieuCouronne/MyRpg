@@ -37,7 +37,8 @@
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"
     #define FIGHT_BG_PATH "./assets/images/fight/background.png"
-    #define FIGHT_TOOLTIP_PATH "./assets/images/fight/tooltip.png"
+//    #define FIGHT_TOOLTIP_PATH "./assets/images/fight/tooltip.png"
+    #define FIGHT_TOOLTIP_PATH "./new_assets/textures/text_field/focused.png"
     #define FIGHT_PLAYER_BAR_PATH "./assets/images/fight/player_bar.png"
     #define FIGHT_ENEMY_BAR_PATH "./assets/images/fight/enemy_bar.png"
     #define AREAS_PATH "./assets/images/maps/areas.jpg"
@@ -73,6 +74,5 @@
     #define LEFT_PADDING 22
     #define ALBERT_WIDTH 38
     #define ALBERT_HEIGHT 66
-
 
 #endif // RPG_MACROS_H

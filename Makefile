@@ -54,6 +54,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/saves/init_sprite_saves.c \
 				$(SRC_DIR)init/scenes/creation_player/menu_creation.c \
 				$(SRC_DIR)init/scenes/creation_player/buttons_creation.c \
+				$(SRC_DIR)init/scenes/creation_player/create_text_stat.c \
 				$(SRC_DIR)init/clock.c \
 				$(SRC_DIR)init/load_assets.c
 
@@ -90,6 +91,9 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \
 				$(SRC_DIR)controllers/camera/move_bottom.c \
+
+SRC			+=	$(SRC_DIR)controllers/setup_stats/up_stat.c \
+				$(SRC_DIR)controllers/setup_stats/down_stat.c \
 
 SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \

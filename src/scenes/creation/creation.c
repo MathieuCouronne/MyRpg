@@ -16,6 +16,23 @@ static void event_handling(game_t *game)
     }
 }
 
+void display_buttons_creation(sfRenderWindow *window,
+main_creation_scenes_t *creation)
+{
+    sfRenderWindow_drawSprite(window, creation->buttons[0]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[4]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[5]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[6]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[7]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[8]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[9]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[10]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
+}
+
 bool display_creation(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -29,18 +46,7 @@ bool display_creation(game_t *game)
     buttons = creation->buttons;
     event_handling(game);
     sfRenderWindow_drawSprite(window, creation->background->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[0]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[1]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[2]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[3]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[4]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[5]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[6]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[7]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[8]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[9]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[10]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
+    display_buttons_creation(window, creation);
     sfSprite_setPosition(game->characters[creation->class]->sprite, (sfVector2f) {940, 270});
     sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});
     sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});

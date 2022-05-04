@@ -20,7 +20,7 @@ game_asset_t *init_creation_background(game_t *game)
     if (!background)
         return NULL;
     background->sprite = sfSprite_create();
-    background->texture = sfTexture_createFromFile(PAUSE_BG_PATH, NULL);
+    background->texture = sfTexture_createFromFile(CREATION_BG_PATH, NULL);
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -34,4 +34,3 @@ main_creation_scenes_t *init_creation(game_t *game)
     scene->background = init_creation_background(game);
     return scene;
 }
-

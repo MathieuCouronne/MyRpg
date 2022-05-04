@@ -16,13 +16,11 @@
 #ifndef STRUCTS_H_
     #define STRUCTS_H_
 
-typedef struct config_value_s config_value_t;
 typedef struct config_s config_t;
 typedef struct scenes_s scenes_t;
 typedef struct sounds_s sounds_t;
 typedef struct game_s game_t;
 typedef struct game_asset_s game_asset_t;
-typedef struct event_controller_s event_controller_t;
 typedef struct button_s button_t;
 typedef struct main_menu_scenes_s main_menu_scenes_t;
 typedef struct chest_s chest_t;
@@ -83,13 +81,6 @@ struct button_s {
 struct main_menu_scenes_s {
     game_asset_t *background;
     button_t **buttons;
-};
-
-struct event_controller_s {
-    sfEventType type;
-    game_asset_t *background;
-    button_t **buttons;
-    void (*fn) (game_t *game, sfEvent *event);
 };
 
 struct scenes_s {

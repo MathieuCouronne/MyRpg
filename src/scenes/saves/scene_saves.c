@@ -33,8 +33,9 @@ bool display_saves(game_t *game)
     for (size_t i = 0; buttons[i]; i++)
         sfRenderWindow_drawSprite(window, buttons[i]->asset->sprite, NULL);
     for (size_t i = 0; i < 3; i++) {
-        if (saves->character[i])
-            sfRenderWindow_drawSprite(window, saves->character[i]->sprite, NULL);
+        if (!saves->character[i])
+            continue;
+        sfRenderWindow_drawSprite(window, saves->character[i]->sprite, NULL);
     }
     return true;
 }

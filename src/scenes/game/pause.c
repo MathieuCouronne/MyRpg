@@ -20,14 +20,6 @@ static void event_handling(game_t *game)
         }
     }
 }
-main_game_t *copy_game(game_t *game)
-{
-    main_game_t *copy = NULL;
-
-    copy = game->scenes->game_scene;
-    return copy;
-
-}
 
 bool display_pause(game_t *game)
 {

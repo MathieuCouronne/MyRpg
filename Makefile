@@ -69,6 +69,11 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 
+SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
+				$(SRC_DIR)controllers/navigation/menu.c \
+				$(SRC_DIR)controllers/navigation/saves.c \
+				$(SRC_DIR)controllers/navigation/pause.c \
+
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \

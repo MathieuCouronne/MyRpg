@@ -39,9 +39,8 @@ settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path);
 int chest(game_t *game);
 pause_t *init_pause(game_t *game);
-scene_saves_t *init_saves(character_t **saves);
-button_t *init_button_saves(void);
-button_t *create_icon_buttons(sfVector2f pos_sprite, char *path,
+scene_saves_t *init_saves(game_t *game);
+button_t *create_save_card(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 npc_t *init_albert(void);
 npc_t *init_chief(void);
@@ -49,7 +48,7 @@ config_t *init_config(void);
 game_asset_t **init_character(character_t **saves);
 game_asset_t *init_inventory(game_t *game);
 void display_inventory(game_t *game);
-button_t **init_slots(character_t **saves);
+button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 
 // Destroy
@@ -87,11 +86,6 @@ bool display_settings(game_t *game);
 bool display_pause(game_t *game);
 bool display_saves(game_t *game);
 
-// Movement
-void clock_player_down(sfClock *clock, game_t *game);
-void clock_player_up(sfClock *clock, game_t *game);
-void clock_player_right(sfClock *clock, game_t *game);
-
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
 inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
@@ -121,9 +115,6 @@ void move_bottom(game_t *game, sfColor color);
 
 // Utils
 bool color_cmp(sfColor color1, sfColor color2);
-void go_to_game(game_t *game);
-void go_to_settings(game_t *game);
-void quit_game(game_t *game);
 unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
@@ -144,5 +135,16 @@ bool write_config(config_t *config);
 void write_value(FILE *file, data_parsing_match_t match);
 void save_infos(FILE *file, config_t *config);
 void save_keys(FILE *file, config_t *config);
+
+// Navigations
+void go_to_creation(game_t *game);
+void go_to_menu(game_t *game);
+void go_to_settings(game_t *game);
+void go_to_saves(game_t *game);
+void go_to_game_player1(game_t *game);
+void go_to_game_player2(game_t *game);
+void go_to_game_player3(game_t *game);
+void back_to_game(game_t *game);
+void quit_game(game_t *game);
 
 #endif

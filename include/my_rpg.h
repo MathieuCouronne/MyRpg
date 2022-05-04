@@ -47,12 +47,12 @@ npc_t *init_albert(void);
 npc_t *init_chief(void);
 config_t *init_config(void);
 game_asset_t **init_character(character_t **saves);
-game_asset_t *init_inventory(game_t *game);
-void display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
 button_t **init_buttons_creation();
+inventory_sprite_t *init_inventory(void);
+bool display_inventory(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);

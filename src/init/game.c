@@ -32,6 +32,7 @@ static scenes_t *init_scenes(game_t *game)
     scenes->settings = init_settings();
     scenes->saves = init_saves(game);
     scenes->pause = init_pause(game);
+    scenes->inventory = init_inventory();
     scenes->creation_menu = init_creation();
     return scenes;
 }
@@ -62,7 +63,6 @@ game_t *init_game(void)
     game->chest = chest_sprite();
     game->view = sfView_createFromRect(view_rect);
     game->window = init_window();
-    game->inventory = init_inventory(game);
     game->sounds = menu_music();
     game->albert = init_albert();
     game->chief = init_chief();

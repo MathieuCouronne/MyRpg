@@ -51,7 +51,6 @@ game_t *init_game(void)
     open_loader_window(params->loaded);
     sfThread_wait(thread);
     sfThread_destroy(thread);
-    load_game(params);
     if (!game->scenes || !game->config || !game->player || !game->saves ||
     !game->view || !game->collisions)
         return NULL;

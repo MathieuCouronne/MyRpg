@@ -73,5 +73,4 @@
     #define ALBERT_WIDTH 38
     #define ALBERT_HEIGHT 66
 
-
 #endif // RPG_MACROS_H

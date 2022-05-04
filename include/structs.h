@@ -171,6 +171,7 @@ struct pause_s {
 struct inventory_sprite_s {
     game_asset_t *background;
     button_t **buttons;
+    sfVector2f pos;
     sfView *view;
 };
 

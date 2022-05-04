@@ -68,6 +68,8 @@ void destroy_settings(game_asset_t *settings);
 void settings_destroy_icons(button_t **buttons);
 void settings_destroy_buttons(button_t **buttons);
 void destroy_inventory(inventory_sprite_t *inventory);
+void destroy_albert(npc_t *albert);
+void destroy_chief(npc_t *chief);
 
 // Events
 void default_event_handling(game_t *game, button_t **buttons);

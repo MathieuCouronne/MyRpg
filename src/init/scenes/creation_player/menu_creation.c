@@ -32,5 +32,6 @@ main_creation_scenes_t *init_creation(void)
         return NULL;
     scene->background = init_creation_background();
     scene->buttons = init_buttons_creation();
+    scene->class = 0;
     return scene;
 }

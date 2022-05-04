@@ -5,16 +5,31 @@
 ** Game initializer
 */
 
-#include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
 #include "structs.h"
 #include "my_rpg.h"
 #include "macros.h"
 
+extern const char *class_names[];
+
 void oui()
 {
 
+}
+
+sfText **init_text_creation(sfFont *font)
+{
+    sfText **text = malloc(sizeof(sfText *) * 3);
+
+    for (size_t i = 0; i < 3; i++) {
+        text[i] = sfText_create();
+        sfText_setFont(text[i], font);
+        sfText_setString(text[i], class_names[i]);
+        sfText_setCharacterSize(text[i], 40);
+        sfText_setColor(text[i], sfBlack);
+    }
+    return text;
 }
 
 button_t **init_buttons_creation()

@@ -54,6 +54,7 @@ main_creation_scenes_t *init_creation(void);
 button_t **init_buttons_creation();
 inventory_sprite_t *init_inventory(void);
 bool display_inventory(game_t *game);
+game_asset_t **init_characters();
 
 // Destroy
 void destroy_game(game_t *game);

@@ -49,6 +49,7 @@ struct game_s {
     sfRenderWindow *window;
     sfEvent event;
     sfImage *collisions;
+    game_asset_t **characters;
     sfView *view;
     scenes_t *scenes;
     sounds_t *sounds;
@@ -120,6 +121,9 @@ struct chest_s {
 struct main_creation_scenes_s {
     game_asset_t *background;
     button_t **buttons;
+    sfText *text;
+    sfFont *font;
+    int class;
 };
 
 struct text_s {

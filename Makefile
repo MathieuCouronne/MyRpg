@@ -52,7 +52,8 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/saves/init_sprite_saves.c \
 				$(SRC_DIR)init/scenes/creation_player/menu_creation.c \
 				$(SRC_DIR)init/scenes/creation_player/buttons_creation.c \
-				$(SRC_DIR)init/clock.c
+				$(SRC_DIR)init/clock.c \
+				$(SRC_DIR)init/load_assets.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/menu.c \

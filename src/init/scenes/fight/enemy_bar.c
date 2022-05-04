@@ -20,8 +20,8 @@ game_asset_t *init_enemy_bar(void)
         return NULL;
     hp->sprite = sfSprite_create();
     hp->texture = sfTexture_createFromFile(FIGHT_ENEMY_BAR_PATH, NULL);
-    sfSprite_setPosition(hp->sprite, (sfVector2f) {1350, 100});
-    sfSprite_setScale(hp->sprite, (sfVector2f) {1, 1});
+    sfSprite_setPosition(hp->sprite, (sfVector2f) {1450, 100});
+    sfSprite_setScale(hp->sprite, (sfVector2f) {0.75, 0.75});
     sfSprite_setTexture(hp->sprite, hp->texture, sfTrue);
     return hp;
 }

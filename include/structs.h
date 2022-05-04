@@ -36,6 +36,7 @@ typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
+typedef struct inventory_sprite_s inventory_sprite_t;
 typedef struct scene_saves_s scene_saves_t;
 typedef struct attack_s attack_t;
 
@@ -49,7 +50,6 @@ struct game_s {
     sfEvent event;
     sfImage *collisions;
     sfView *view;
-    game_asset_t *inventory;
     scenes_t *scenes;
     sounds_t *sounds;
     player_t *player;
@@ -93,6 +93,7 @@ struct scenes_s {
     scene_saves_t *saves;
     fight_t *fight;
     pause_t *pause;
+    inventory_sprite_t *inventory;
 };
 
 struct main_game_s {
@@ -160,6 +161,12 @@ struct settings_s {
 };
 
 struct pause_s {
+    game_asset_t *background;
+    button_t **buttons;
+    sfView *view;
+};
+
+struct inventory_sprite_s {
     game_asset_t *background;
     button_t **buttons;
     sfView *view;

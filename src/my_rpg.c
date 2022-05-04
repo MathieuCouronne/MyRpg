@@ -18,7 +18,6 @@ int main(void)
         sfRenderWindow_clear(game->window, sfBlack);
         scene_manager(game);
         sfRenderWindow_display(game->window);
-        printf("%d\n", game->stats->dexterity);
     }
     write_config(game->config);
     destroy_all(game);

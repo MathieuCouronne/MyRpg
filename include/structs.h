@@ -131,6 +131,7 @@ struct chest_s {
 };
 
 struct menu_creation_s {
+    game_asset_t *background;
     button_t *confirm;
 };
 

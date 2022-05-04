@@ -13,6 +13,22 @@
 
 extern const char *class_names[];
 
+void up_class(game_t *game)
+{
+    if (game->scenes->creation_menu->class == 2)
+        game->scenes->creation_menu->class = 0;
+    else
+        game->scenes->creation_menu->class += 1;
+}
+
+void down_class(game_t *game)
+{
+    if (game->scenes->creation_menu->class == 0)
+        game->scenes->creation_menu->class = 2;
+    else
+        game->scenes->creation_menu->class -= 1;
+}
+
 void oui()
 {
 
@@ -26,8 +42,8 @@ sfText **init_text_creation(sfFont *font)
         text[i] = sfText_create();
         sfText_setFont(text[i], font);
         sfText_setString(text[i], class_names[i]);
-        sfText_setCharacterSize(text[i], 40);
-        sfText_setColor(text[i], sfBlack);
+        sfText_setCharacterSize(text[i], 20);
+        sfText_setColor(text[i], sfWhite);
     }
     return text;
 }
@@ -46,8 +62,8 @@ button_t **init_buttons_creation()
     buttons[7] = create_icon((sfVector2f) {580, 645}, CREATION_LESS_PATH, oui);
     buttons[8] = create_icon((sfVector2f) {580, 720}, CREATION_LESS_PATH, oui);
     buttons[9] = create_icon((sfVector2f) {580, 790}, CREATION_LESS_PATH, oui);
-    buttons[10] = create_icon((sfVector2f) {470, 355}, CREATION_ARROW_LEFT_PATH, oui);
-    buttons[11] = create_icon((sfVector2f) {720, 355}, CREATION_ARROW_RIGHT_PATH, oui);
+    buttons[10] = create_icon((sfVector2f) {470, 355}, CREATION_ARROW_LEFT_PATH, down_class);
+    buttons[11] = create_icon((sfVector2f) {720, 355}, CREATION_ARROW_RIGHT_PATH, up_class);
     buttons[12] = NULL;
     return buttons;
 }

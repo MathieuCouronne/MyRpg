@@ -33,7 +33,7 @@ main_creation_scenes_t *init_creation(void)
     scene->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     scene->background = init_creation_background();
     scene->buttons = init_buttons_creation();
-    scene->class = 1;
+    scene->class = 0;
     scene->text = init_text_creation(scene->font);
     return scene;
 }

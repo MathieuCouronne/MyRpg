@@ -19,7 +19,7 @@ game_asset_t **init_characters()
         characters[i] = malloc(sizeof(game_asset_t));
         characters[i]->sprite = sfSprite_create();
         characters[i]->rect = rect_player();
-        characters[i]->texture = sfTexture_createFromFile(class_textures[i], characters[i]->rect);
+        characters[i]->texture = sfTexture_createFromFile(class_textures[i], NULL);
         sfSprite_setTexture(characters[i]->sprite, characters[i]->texture, sfTrue);
         sfSprite_setTextureRect(characters[i]->sprite, *characters[i]->rect);
     }

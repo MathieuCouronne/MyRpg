@@ -41,7 +41,11 @@ bool display_creation(game_t *game)
     sfRenderWindow_drawSprite(window, creation->buttons[9]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, creation->buttons[10]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
-    sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {0.2f, 0.2f});
+    sfSprite_setPosition(game->characters[creation->class]->sprite, (sfVector2f) {940, 270});
+    sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});
+    sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});
     sfRenderWindow_drawSprite(window, game->characters[creation->class]->sprite, NULL);
+    sfText_setPosition(creation->text[creation->class], (sfVector2f) {540, 360});
+    sfRenderWindow_drawText(window, creation->text[creation->class], NULL);
     return true;
 }

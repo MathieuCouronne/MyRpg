@@ -33,6 +33,7 @@ inventory_sprite_t *init_inventory(void)
     scene->background = init_inventory_background();
     scene->pos.x = 700;
     scene->pos.y = 500;
+    scene->buttons = NULL;
     sfSprite_setPosition(scene->background->sprite, scene->pos);
     return scene;
 }

@@ -125,6 +125,7 @@ struct main_creation_scenes_s {
     sfText **text;
     sfText ***stat;
     sfFont *font;
+    int **stats;
     int class;
 };
 

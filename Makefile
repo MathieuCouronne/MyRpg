@@ -90,6 +90,8 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_top.c \
 				$(SRC_DIR)controllers/camera/move_bottom.c \
 
+SRC			+=	$(SRC_DIR)controllers/setup_stats/up_stat.c \
+
 SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \

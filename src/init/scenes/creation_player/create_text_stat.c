@@ -12,7 +12,7 @@
 #include "macros.h"
 
 void init_txt(sfText ***text, sfFont *font,
-int class_stats[3][5], float *shifts)
+int **class_stats, float *shifts)
 {
     for (size_t i = 0; i < 3; i++) {
         text[i] = malloc(sizeof(sfText *) * 6);
@@ -28,17 +28,12 @@ int class_stats[3][5], float *shifts)
     }
 }
 
-sfText ***create_stat_text(sfFont *font)
+sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation)
 {
     sfText ***text = malloc(sizeof(sfText **) * 4);
     float shifts[5] = {515, 585, 655, 730, 800};
-    int class_stats[3][5] = {
-        {BASE_WAR_STR, BASE_WAR_DEF, BASE_WAR_VIT, BASE_WAR_SPD, BASE_WAR_DEX},
-        {BASE_MAGE_STR, BASE_MAGE_DEF, BASE_MAGE_VIT, BASE_MAGE_SPD, BASE_MAGE_DEX},
-        {BASE_DOG_STR, BASE_DOG_DEF, BASE_DOG_VIT, BASE_DOG_SPD, BASE_DOG_DEX}
-    };
 
-    init_txt(text, font, class_stats, shifts);
+    init_txt(text, font, creation->stats, shifts);
     text[3] = NULL;
     return text;
 }

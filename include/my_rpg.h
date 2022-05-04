@@ -61,7 +61,7 @@ inventory_sprite_t *init_inventory(void);
 bool display_inventory(game_t *game);
 game_asset_t **init_characters();
 sfText **init_text_creation(sfFont *font);
-sfText ***create_stat_text(sfFont *font);
+sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -162,5 +162,12 @@ void go_to_game_player2(game_t *game);
 void go_to_game_player3(game_t *game);
 void back_to_game(game_t *game);
 void quit_game(game_t *game);
+
+// Setup_stats
+void up_strength(game_t *game);
+void up_defense(game_t *game);
+void up_vitality(game_t *game);
+void up_speed(game_t *game);
+void up_dexterity(game_t *game);
 
 #endif

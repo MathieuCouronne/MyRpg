@@ -31,6 +31,7 @@
     #define CHIEF_PATH "./assets/images/characters/chief.png"
     #define TROLL_PATH "./assets/images/characters/troll.png"
     #define OGRE_PATH "./assets/images/characters/ogre.png"
+    #define REVERSED_OGRE_PATH "./assets/images/fight/reversed_ogre.png"
     #define DRAGON_PATH "./assets/images/characters/dragon.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define INVENTORY_PATH "./assets/images/inventory/inventory.png"

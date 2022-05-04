@@ -33,8 +33,8 @@ game_asset_t *init_text_bar(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(FIGHT_TOOLTIP_PATH, NULL);
-    sfSprite_setPosition(background->sprite, (sfVector2f) {0, 800});
-    sfSprite_setScale(background->sprite, (sfVector2f) {8.05, 6});
+    sfSprite_setPosition(background->sprite, (sfVector2f) {-20, 773});
+    sfSprite_setScale(background->sprite, (sfVector2f) {17.2, 2.8});
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }

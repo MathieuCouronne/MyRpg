@@ -43,10 +43,10 @@ static sfIntRect *rect_playe(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
-    rect->top = 0;
-    rect->left = 74;
-    rect->width = 74;
-    rect->height = 50;
+    rect->top = 92;
+    rect->left = 405;
+    rect->width = 43;
+    rect->height = 60;
     return rect;
 }
 
@@ -59,9 +59,9 @@ player_t *player_fight(void)
     player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     player->position = malloc(sizeof(sfVector2f));
-    player->position->x = 200;
-    player->position->y = 330;
-    sfSprite_setScale(player->sprite, (sfVector2f) {10, 10});
+    player->position->x = 1200;
+    player->position->y = 375;
+    sfSprite_setScale(player->sprite, (sfVector2f) {7, 7});
     sfSprite_setPosition(player->sprite, *player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
     player->clock = sfClock_create();
@@ -75,6 +75,7 @@ fight_t *init_fight(void)
     if (!fight)
         return NULL;
     fight->background_fight = init_fight_background();
+    fight->buttons = init_attack_buttons();
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
     fight->enemy = init_ogre();

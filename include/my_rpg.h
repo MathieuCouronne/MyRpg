@@ -102,6 +102,7 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
+button_t **init_attack_buttons(void);
 
 // Character
 character_t *create_character(void);

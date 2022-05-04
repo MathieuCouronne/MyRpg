@@ -150,6 +150,7 @@ struct fight_s {
     game_asset_t *background_fight;
     game_asset_t *text_bar;
     game_asset_t *hp_bar;
+    button_t **buttons;
     player_t *player;
     enemy_t *enemy;
 };

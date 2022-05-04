@@ -10,6 +10,13 @@
 #include "structs.h"
 #include <stdlib.h>
 
+static void event_handling(game_t *game)
+{
+    while (sfRenderWindow_pollEvent(game->window, &game->event)) {
+        default_event_handling(game, game->scenes->fight->buttons);
+    }
+}
+
 bool display_fight(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -17,6 +24,7 @@ bool display_fight(game_t *game)
 
     if (!game || !game->window || !game->scenes || !game->scenes->fight)
         return false;
+    event_handling(game);
     window = game->window;
     fight = game->scenes->fight;
     sfRenderWindow_drawSprite(window, fight->background_fight->sprite, NULL);

@@ -84,6 +84,7 @@ SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \
 				$(SRC_DIR)controllers/navigation/saves.c \
 				$(SRC_DIR)controllers/navigation/pause.c \
+				$(SRC_DIR)controllers/navigation/creation.c \
 
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \

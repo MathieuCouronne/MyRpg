@@ -61,6 +61,7 @@ struct game_s {
     chest_t *chest;
     config_t *config;
     character_t **saves;
+    stats_t *stats;
 };
 
 struct game_asset_s {

@@ -31,6 +31,8 @@ main_creation_scenes_t *creation)
     sfRenderWindow_drawSprite(w, creation->buttons[9]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[10]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[11]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(w, creation->buttons[12]->asset->sprite, NULL);
+    sfRenderWindow_drawText(w, creation->buttons[12]->text, NULL);
 }
 
 void display_stat(main_creation_scenes_t *creation,
@@ -52,9 +54,10 @@ sfRenderWindow *window)
 
 void set_parameters(game_t *game, main_creation_scenes_t *creation)
 {
-    sfSprite_setPosition(game->characters[creation->class]->sprite, (sfVector2f) {940, 270});
-    sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});
-    sfSprite_setScale(game->characters[creation->class]->sprite, (sfVector2f) {8.f, 8.f});
+    sfSprite_setPosition(game->characters
+    [creation->class]->sprite, (sfVector2f) {940, 270});
+    sfSprite_setScale(game->characters
+    [creation->class]->sprite, (sfVector2f) {8.f, 8.f});
 }
 
 bool display_creation(game_t *game)

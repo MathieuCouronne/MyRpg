@@ -65,7 +65,7 @@ game_t *init_game(void)
     sfThread_wait(thread);
 
     if (!game->scenes || !game->config || !game->player || !game->saves ||
-        !game->inventory || !game->view || !game->collisions)
+    !game->view || !game->collisions)
         return NULL;
     game->window = init_window();
     if (!game->window)

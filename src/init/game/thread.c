@@ -21,6 +21,7 @@ static scenes_t *init_scenes(game_t *game)
     scenes->saves = init_saves(game);
     scenes->pause = init_pause(game);
     scenes->creation_menu = init_creation();
+    scenes->inventory = init_inventory();
     return scenes;
 }
 
@@ -50,7 +51,6 @@ void load_game(thread_params_t *params)
     params->game->player = init_player();
     params->game->chest = chest_sprite();
     params->game->view = sfView_createFromRect(view_rect);
-    params->game->inventory = init_inventory(params->game);
     params->game->sounds = menu_music();
     params->game->albert = init_albert();
     params->game->chief = init_chief();

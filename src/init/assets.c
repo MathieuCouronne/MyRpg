@@ -63,7 +63,7 @@ size_t i)
     return true;
 }
 
-static bool download_folder(sfFtp *ftp, char *folder)
+static bool download_folder(sfFtp *ftp, char *folder, int *total)
 {
     sfFtpListingResponse *list = sfFtp_getDirectoryListing(ftp, concat(folder));
     size_t size = 0;
@@ -75,11 +75,12 @@ static bool download_folder(sfFtp *ftp, char *folder)
     for (size_t i = 0; i < size; i++) {
         if (!download_file(ftp, folder, list, i))
             return display_status(FTP_DOWNLOAD_FAILED, false);
+        (*total)++;
     }
     return display_status(FTP_DOWNLOAD_SUCCESSFUL, true);
 }
 
-bool download_assets(void)
+bool download_assets(int *total)
 {
     sfFtp *ftp = sfFtp_create();
     sfFtpResponse *res = sfFtp_connect(ftp, FTP_IP, 21, sfSeconds(5));
@@ -91,7 +92,7 @@ bool download_assets(void)
     if (!sfFtpResponse_isOk(res))
         return display_status(FTP_WRONG_IDS, false);
     for (unsigned short i = 0; directories[i]; i++) {
-        if (!download_folder(ftp, directories[i])) {
+        if (!download_folder(ftp, directories[i], total)) {
             status = false;
             break;
         }

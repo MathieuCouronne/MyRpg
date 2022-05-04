@@ -123,6 +123,7 @@ struct main_creation_scenes_s {
     game_asset_t *background;
     button_t **buttons;
     sfText **text;
+    sfText ***stat;
     sfFont *font;
     int class;
 };

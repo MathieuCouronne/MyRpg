@@ -61,6 +61,7 @@ inventory_sprite_t *init_inventory(void);
 bool display_inventory(game_t *game);
 game_asset_t **init_characters();
 sfText **init_text_creation(sfFont *font);
+sfText ***create_stat_text(sfFont *font);
 
 // Destroy
 void destroy_game(game_t *game);

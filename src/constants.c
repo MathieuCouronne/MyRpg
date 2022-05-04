@@ -7,6 +7,7 @@
 
 #include <SFML/Network.h>
 #include "macros.h"
+#include "character.h"
 
 const char *class_names[] = {
     "Warrior", "Mage", "DogWarrior"

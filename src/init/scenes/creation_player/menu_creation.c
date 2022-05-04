@@ -35,5 +35,6 @@ main_creation_scenes_t *init_creation(void)
     scene->buttons = init_buttons_creation();
     scene->class = 0;
     scene->text = init_text_creation(scene->font);
+    scene->stat = create_stat_text(scene->font);
     return scene;
 }

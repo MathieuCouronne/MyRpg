@@ -9,6 +9,8 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+extern const stats_t class_stats[];
+
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
@@ -33,6 +35,18 @@ main_creation_scenes_t *creation)
     sfRenderWindow_drawSprite(window, creation->buttons[11]->asset->sprite, NULL);
 }
 
+void display_stat(main_creation_scenes_t *creation,
+sfRenderWindow *window)
+{
+    for (size_t i = 0; i < 5; i++) {
+        sfRenderWindow_drawText(window, creation->stat[creation->class][0], NULL);
+        sfRenderWindow_drawText(window, creation->stat[creation->class][1], NULL);
+        sfRenderWindow_drawText(window, creation->stat[creation->class][2], NULL);
+        sfRenderWindow_drawText(window, creation->stat[creation->class][3], NULL);
+        sfRenderWindow_drawText(window, creation->stat[creation->class][4], NULL);
+    }
+}
+
 bool display_creation(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -53,5 +67,6 @@ bool display_creation(game_t *game)
     sfRenderWindow_drawSprite(window, game->characters[creation->class]->sprite, NULL);
     sfText_setPosition(creation->text[creation->class], (sfVector2f) {540, 360});
     sfRenderWindow_drawText(window, creation->text[creation->class], NULL);
+    display_stat(creation, window);
     return true;
 }

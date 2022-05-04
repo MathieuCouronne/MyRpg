@@ -12,6 +12,10 @@
 #include "menu.h"
 #include "messages.h"
 
+extern const sfIpAddress FTP_IP;
+extern const char *FTP_USER;
+extern const char *FTP_PWD;
+
 static char *directories[] = {
     "fonts", "sounds", "images/characters", "images/fight",
     "images/main_menu", "images/maps", "images/misc",
@@ -77,14 +81,13 @@ static bool download_folder(sfFtp *ftp, char *folder)
 
 bool download_assets(void)
 {
-    sfIpAddress ip = (sfIpAddress) {"185.31.40.91"};
     sfFtp *ftp = sfFtp_create();
-    sfFtpResponse *res = sfFtp_connect(ftp, ip, 21, sfSeconds(5));
+    sfFtpResponse *res = sfFtp_connect(ftp, FTP_IP, 21, sfSeconds(5));
     bool status = true;
 
     if (!sfFtpResponse_isOk(res))
         return display_status(FTP_NO_CONNECTION, false);
-    res = sfFtp_login(ftp, "rpg", "rpg_password");
+    res = sfFtp_login(ftp, FTP_USER, FTP_PWD);
     if (!sfFtpResponse_isOk(res))
         return display_status(FTP_WRONG_IDS, false);
     for (unsigned short i = 0; directories[i]; i++) {

@@ -57,5 +57,6 @@ void load_game(thread_params_t *params)
     params->game->collisions = sfImage_createFromFile(AREAS_PATH);
     params->game->saves = init_character_saves();
     params->game->scenes = init_scenes(params->game);
+    params->game->characters = init_characters();
     *params->loaded = -1;
 }

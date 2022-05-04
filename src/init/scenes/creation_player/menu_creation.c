@@ -30,8 +30,10 @@ main_creation_scenes_t *init_creation(void)
 
     if (!scene)
         return NULL;
+    scene->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     scene->background = init_creation_background();
     scene->buttons = init_buttons_creation();
-    scene->class = 0;
+    scene->class = 1;
+    scene->text = init_text_creation(scene->font);
     return scene;
 }

@@ -60,6 +60,7 @@ button_t **init_buttons_creation();
 inventory_sprite_t *init_inventory(void);
 bool display_inventory(game_t *game);
 game_asset_t **init_characters();
+sfText **init_text_creation(sfFont *font);
 
 // Destroy
 void destroy_game(game_t *game);

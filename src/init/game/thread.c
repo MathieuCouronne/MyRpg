@@ -58,5 +58,6 @@ void load_game(thread_params_t *params)
     params->game->saves = init_character_saves();
     params->game->scenes = init_scenes(params->game);
     params->game->characters = init_characters();
+    params->game->stats = init_war_stats();
     *params->loaded = -1;
 }

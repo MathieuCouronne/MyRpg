@@ -68,13 +68,15 @@ void change_stat(button_t **buttons)
 }
 button_t **init_buttons_creation()
 {
-    button_t **buttons = malloc(sizeof(button_t) * 13);
+    button_t **buttons = malloc(sizeof(button_t) * 14);
 
     change_stat(buttons);
     buttons[10] = create_icon(
     (sfVector2f) {470, 355}, CREATION_ARROW_LEFT_PATH, down_class);
     buttons[11] = create_icon(
     (sfVector2f) {720, 355}, CREATION_ARROW_RIGHT_PATH, up_class);
-    buttons[12] = NULL;
+    buttons[12] = create_button("Confirmed",
+    (sfVector2f) {1500, 850}, create_game, (sfVector2f) {1, 1});
+    buttons[13] = NULL;
     return buttons;
 }

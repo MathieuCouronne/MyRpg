@@ -36,7 +36,7 @@ static stats_t *init_mage_stats(void)
     return stats;
 }
 
-static stats_t *init_war_stats(void)
+stats_t *init_war_stats(void)
 {
     stats_t *stats = malloc(sizeof(stats_t));
 

@@ -14,7 +14,6 @@ int main(void)
 
     if (!game)
         return 84;
-    sfCursor_createFromSystem(sfCursorHand);
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
         scene_manager(game);

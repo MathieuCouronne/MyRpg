@@ -24,7 +24,7 @@ static sfRenderWindow *init_window(void)
 
 static void open_loader_window(int *total)
 {
-    sfVideoMode mode = {500, 500, 32};
+    sfVideoMode mode = {500, 600, 32};
     sfRenderWindow *window = sfRenderWindow_create(mode, NULL, sfNone, NULL);
     sfEvent event = {};
     sfVideoMode default_mode = sfVideoMode_getDesktopMode();

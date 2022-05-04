@@ -8,22 +8,18 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include "structs.h"
-#include "menu.h"
 #include "my_rpg.h"
 #include "macros.h"
 
+// TODO: set position of the sprite on opening instead of in initializing
 game_asset_t *init_inventory(game_t *game)
 {
     game_asset_t *inventory = malloc(sizeof(game_asset_t));
-    sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
-    sfVector2i top_left = {0, 0};
 
     inventory->sprite = sfSprite_create();
     inventory->texture = sfTexture_createFromFile(INVENTORY_PATH, NULL);
     sfSprite_setTexture(inventory->sprite, inventory->texture, sfTrue);
     sfSprite_setScale(inventory->sprite, (sfVector2f) {1.1, 1.1});
-    inventory->pos = sfRenderWindow_mapPixelToCoords(game->window, top_left,
-        game->view);
     sfSprite_setPosition(inventory->sprite, inventory->pos);
     return inventory;
 }

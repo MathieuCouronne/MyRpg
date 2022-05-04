@@ -95,11 +95,6 @@ struct scenes_s {
     pause_t *pause;
 };
 
-struct game_scene_s {
-    game_asset_t *map;
-    sfView *view;
-};
-
 struct main_game_s {
     game_asset_t *map;
 };
@@ -119,11 +114,6 @@ struct chest_s {
     sfVector2f position;
     sfTexture *texture;
     sfClock *clock;
-};
-
-struct menu_creation_s {
-    game_asset_t *background;
-    button_t *confirm;
 };
 
 struct main_creation_scenes_s {

@@ -17,7 +17,7 @@ void my_printf(char *str, ...);
 
 // Initialization
 game_t *init_game(void);
-void load_game(thread_params_t *params);
+bool load_game(thread_params_t *params);
 game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
 game_asset_t *init_enemy_bar(void);

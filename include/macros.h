@@ -54,6 +54,7 @@
     #define CREATION_LESS_PATH "./assets/images/creation/less.png"
     #define CREATION_ARROW_LEFT_PATH "./assets/images/creation/arrow_left.png"
     #define CREATION_ARROW_RIGHT_PATH "./assets/images/creation/arrow_right.png"
+    #define CREATION_VALIDATE_PATH "./assets/images/creation/ok.png"
     #define LOADER_BAR_BG_PATH "./assets/images/loader/background.png"
     #define LOADER_BAR_PATH "./assets/images/loader/bar.png"
     #define LOADER_FILL_PATH "./assets/images/loader/fill.png"

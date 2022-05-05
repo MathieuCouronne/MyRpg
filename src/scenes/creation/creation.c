@@ -78,7 +78,6 @@ bool display_creation(game_t *game)
     game->characters[creation->class]->sprite, NULL);
     sfText_setPosition(creation->text[creation->class],
     (sfVector2f) {540, 360});
-    sfRenderWindow_drawText(window, creation->text[creation->class], NULL);
     display_stat(creation, window);
     return true;
 }

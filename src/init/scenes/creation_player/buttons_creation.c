@@ -75,8 +75,8 @@ button_t **init_buttons_creation()
     (sfVector2f) {470, 355}, CREATION_ARROW_LEFT_PATH, down_class);
     buttons[11] = create_icon(
     (sfVector2f) {720, 355}, CREATION_ARROW_RIGHT_PATH, up_class);
-    buttons[12] = create_button("Confirmed",
-    (sfVector2f) {1500, 850}, create_game, (sfVector2f) {1, 1});
+    buttons[12] = create_icon(
+    (sfVector2f) {1400, 810}, CREATION_VALIDATE_PATH, create_game);
     buttons[13] = NULL;
     return buttons;
 }

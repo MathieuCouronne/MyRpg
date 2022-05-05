@@ -25,4 +25,4 @@ const int class_base_data[3][5] = {
 
 const sfIpAddress FTP_IP = (sfIpAddress) {"185.31.40.91"};
 const char *FTP_USER = "rpg";
-const char *FTP_PWD = "rpg_password";
+const char *FTP_PWD = "RaphiMathithouMathissouJoshitou35000?!";

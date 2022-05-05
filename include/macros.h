@@ -61,6 +61,8 @@
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"
+    #define OPEN_CHEST_PATH "./assets/sounds/open_chest.ogg"
+    #define WALK_PATH "./assets/sounds/Walk.ogg"
 
     // Fonts Pathes
     #define ARIAL_FONT_PATH "./assets/fonts/arial_black.ttf"

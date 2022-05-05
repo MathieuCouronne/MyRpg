@@ -54,6 +54,7 @@ int chest(game_t *game)
     static bool isopen = false;
 
     while (isopen != true) {
+        sfMusic_play(game->sounds->chest);
         if (milliseconds > 400 && isopen == false) {
             move_rect(game->chest->rect, 46, 184);
             sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);

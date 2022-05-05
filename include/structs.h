@@ -45,6 +45,7 @@ typedef struct thread_params_s thread_params_t;
 struct sounds_s {
     sfMusic *menu;
     sfMusic *main_theme;
+    sfMusic *chest;
 };
 
 struct game_s {

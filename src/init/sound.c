@@ -22,6 +22,7 @@ sounds_t *menu_music(config_t *config)
 
     if (!sounds)
         return NULL;
+    sounds->chest = sfMusic_createFromFile(OPEN_CHEST_PATH);
     sounds->menu = sfMusic_createFromFile(MAIN_THEME_PATH);
     if (!sounds->menu)
         return NULL;

@@ -11,8 +11,9 @@
 
 void destroy_sound(sounds_t *sounds)
 {
-    if (!sounds->menu)
+    if (!sounds->menu || !sounds->chest)
         return;
     sfMusic_destroy(sounds->menu);
+    sfMusic_destroy(sounds->chest);
     free(sounds);
 }

@@ -35,7 +35,11 @@ bool display_fight(game_t *game)
     sfRenderWindow_drawSprite(window, fight->enemy_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->buttons[1]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, fight->buttons[2]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, fight->buttons[3]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, fight->buttons[0]->text, NULL);
     sfRenderWindow_drawText(window, fight->buttons[1]->text, NULL);
+    sfRenderWindow_drawText(window, fight->buttons[2]->text, NULL);
+    sfRenderWindow_drawText(window, fight->buttons[3]->text, NULL);
     return true;
 }

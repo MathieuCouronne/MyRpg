@@ -30,20 +30,12 @@ void init_text_butt(button_t *button, char *str)
     sfText_setColor(button->text, sfBlack);
 }
 
-button_t *create_button(char *str, sfVector2f pos_sprite,
-void (*on_click) (game_t *game), sfVector2f scale)
+static void set_button_infos(button_t *button, sfVector2f pos_sprite,
+    char *str, sfVector2f scale)
 {
-    button_t *button = malloc(sizeof(button_t));
     sfVector2f pos = {pos_sprite.x, pos_sprite.y};
     sfFloatRect rect_button;
 
-    button->asset = malloc(sizeof(game_asset_t));
-    button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
-    button->on_click = on_click;
-    button->hover = false;
-    button->text = sfText_create();
-    button->asset->sprite = sfSprite_create();
-    button->asset->texture = sfTexture_createFromFile(BUTTON_PATH, NULL);
     sfSprite_setScale(button->asset->sprite, scale);
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos);
@@ -52,5 +44,27 @@ void (*on_click) (game_t *game), sfVector2f scale)
     pos = center_text(rect_button.width, rect_button.height,
         button->text, pos_sprite);
     sfText_setPosition(button->text, pos);
+}
+
+button_t *create_button(char *str, sfVector2f pos_sprite,
+void (*on_click) (game_t *game), sfVector2f scale)
+{
+    button_t *button = malloc(sizeof(button_t));
+
+    if (!button)
+        return NULL;
+    button->asset = malloc(sizeof(game_asset_t));
+    button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
+    button->on_click = on_click;
+    button->hover = false;
+    button->text = sfText_create();
+    if (!button->asset)
+        return NULL;
+    button->asset->sprite = sfSprite_create();
+    button->asset->texture = sfTexture_createFromFile(BUTTON_PATH, NULL);
+    if (!button->font || !button->text ||
+        !button->asset->sprite || !button->asset->texture)
+        return NULL;
+    set_button_infos(button, pos_sprite, str, scale);
     return button;
 }

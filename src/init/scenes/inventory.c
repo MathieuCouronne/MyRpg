@@ -20,6 +20,8 @@ game_asset_t *init_inventory_background(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(INVENTORY_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -31,6 +33,8 @@ inventory_sprite_t *init_inventory(void)
     if (!scene)
         return NULL;
     scene->background = init_inventory_background();
+    if (!scene->background)
+        return NULL;
     scene->pos.x = 650;
     scene->pos.y = 330;
     scene->buttons = NULL;

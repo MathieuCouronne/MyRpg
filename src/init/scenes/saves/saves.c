@@ -20,6 +20,8 @@ game_asset_t *init_saves_background(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(MAIN_MENU_BG_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -38,24 +40,16 @@ game_asset_t *init_save_slot(sfVector2f pos)
     return background;
 }
 
-game_asset_t **init_save(void)
-{
-    game_asset_t **saves = malloc(sizeof(game_asset_t *) * 5);
-
-    if (!saves)
-        return NULL;
-    saves[0] = init_saves_background();
-    return saves;
-}
-
 scene_saves_t *init_saves(game_t *game)
 {
     scene_saves_t *scene = malloc(sizeof(scene_saves_t));
 
-    if (!scene)
+    if (!scene || !game || !game->saves)
         return NULL;
-    scene->background = init_save();
+    scene->background = init_saves_background();
     scene->buttons = init_slots(game);
     scene->character = init_character(game->saves);
+    if (!scene->background || !scene->buttons || !scene->character)
+        return NULL;
     return scene;
 }

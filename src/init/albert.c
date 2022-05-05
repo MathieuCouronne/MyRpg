@@ -16,6 +16,8 @@ sfIntRect *rect_albert(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
+    if (!rect)
+        return NULL;
     rect->top = TOP_PADDING;
     rect->left = LEFT_PADDING;
     rect->width = ALBERT_WIDTH;
@@ -36,12 +38,13 @@ static void transform_albert(npc_t *albert)
 npc_t *init_albert(void)
 {
     npc_t *albert = malloc(sizeof(npc_t));
+
+    if (!albert)
+        return NULL;
     albert->sprite = sfSprite_create();
     albert->rect = rect_albert();
     albert->texture = sfTexture_createFromFile(ALBERT_PATH, NULL);
-    albert->relative_pos = malloc(sizeof(sfVector2f));
-    if (!albert->sprite || !albert->rect || !albert->texture ||
-    !albert->relative_pos)
+    if (!albert->sprite || !albert->rect || !albert->texture)
         return NULL;
     albert->position.x = 2275;
     albert->position.y = 1910;

@@ -28,16 +28,19 @@ int **class_stats, float *shifts)
     }
 }
 
-sfText *init_unspent(main_creation_scenes_t *creation, sfFont *font)
+sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font)
 {
-    sfText *text_unspent;
+    sfText **text_unspent = malloc(sizeof(sfText *) * 4);
 
-    text_unspent = sfText_create();
-    sfText_setFont(text_unspent, font);
-    sfText_setString(text_unspent, itoa(creation->unspent));
-    sfText_setCharacterSize(text_unspent, 20);
-    sfText_setColor(text_unspent, sfWhite);
-    sfText_setPosition(text_unspent, (sfVector2f) {650, 450});
+    for (size_t i = 0; i < 3; i++) {
+        text_unspent[i] = sfText_create();
+        sfText_setFont(text_unspent[i], font);
+        sfText_setString(text_unspent[i], itoa(creation->unspent[creation->class]));
+        sfText_setCharacterSize(text_unspent[i], 20);
+        sfText_setColor(text_unspent[i], sfWhite);
+        sfText_setPosition(text_unspent[i], (sfVector2f) {650, 450});
+    }
+    text_unspent[3] = NULL;
     return text_unspent;
 }
 

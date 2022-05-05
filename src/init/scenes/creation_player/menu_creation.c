@@ -35,6 +35,16 @@ game_asset_t *init_creation_background()
     return background;
 }
 
+int *unspent_init()
+{
+    int *unspent = malloc(sizeof(int) * 4);
+
+    for (size_t i = 0; i < 3; i++)
+        unspent[i] = 20;
+    unspent[3] = -1;
+    return unspent;
+}
+
 main_creation_scenes_t *init_creation(void)
 {
     main_creation_scenes_t *scene = malloc(sizeof(main_creation_scenes_t));
@@ -49,7 +59,7 @@ main_creation_scenes_t *init_creation(void)
     scene->text = init_text_creation(scene->font);
     init_classes_base_data(scene->stats);
     scene->stat = create_stat_text(scene->font, scene);
-    scene->unspent = 20;
+    scene->unspent = unspent_init();
     scene->unspent_text = init_unspent(scene, scene->font);
     return scene;
 }

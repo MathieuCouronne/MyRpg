@@ -12,16 +12,19 @@
 
 button_t **init_attack_buttons(void)
 {
-    button_t **buttons = malloc(sizeof(button_t *) * 3);
-    sfVector2f scale = {2.35, 2};
-// 33 744
-// 967 744
+    button_t **buttons = malloc(sizeof(button_t *) * 5);
+    sfVector2f scale = {2.35, 1};
+
     if (!buttons)
         return NULL;
-    buttons[0] = create_button("Mathis", (sfVector2f) {33, 774}, go_to_saves,
+    buttons[0] = create_button("Bite", (sfVector2f) {33, 779}, go_to_saves,
         scale);
-    buttons[1] = create_button("Le Bouffon",(sfVector2f) {967, 774},
+    buttons[1] = create_button("Iron Claws",(sfVector2f) {967, 779},
         go_to_settings, scale);
-    buttons[2] = NULL;
+    buttons[2] = create_button("Giga",(sfVector2f) {33, 890},
+        go_to_settings, scale);
+    buttons[3] = create_button("Bouffon",(sfVector2f) {967, 890},
+        go_to_settings, scale);
+    buttons[4] = NULL;
     return buttons;
 }

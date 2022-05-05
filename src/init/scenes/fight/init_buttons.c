@@ -26,5 +26,7 @@ button_t **init_attack_buttons(void)
     buttons[3] = create_button("Bouffon",(sfVector2f) {967, 890},
         go_to_settings, scale);
     buttons[4] = NULL;
+    if (!buttons[0] || !buttons[1] || !buttons[2] || !buttons[3])
+        return NULL;
     return buttons;
 }

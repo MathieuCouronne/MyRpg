@@ -21,6 +21,8 @@ game_asset_t *init_fight_background(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(FIGHT_BG_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -33,6 +35,8 @@ game_asset_t *init_text_bar(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(FIGHT_TOOLTIP_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setPosition(background->sprite, (sfVector2f) {-20, 773});
     sfSprite_setScale(background->sprite, (sfVector2f) {17.2, 2.8});
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
@@ -43,6 +47,8 @@ static sfIntRect *rect_playe(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
+    if (!rect)
+        NULL;
     rect->top = 169;
     rect->left = 94;
     rect->width = 38;
@@ -54,17 +60,22 @@ player_t *player_fight(void)
 {
     player_t *player = malloc(sizeof(player_t));
 
+    if (!player)
+        return NULL;
     player->sprite = sfSprite_create();
     player->rect = rect_playe();
     player->texture = sfTexture_createFromFile(DOGWARRIOR_PATH, NULL);
     sfSprite_setTexture(player->sprite, player->texture, sfTrue);
     player->position = malloc(sizeof(sfVector2f));
+    player->clock = sfClock_create();
+    if (!player->sprite || !player->rect || !player->texture ||
+        !player->position || !player->clock)
+        return NULL;
     player->position->x = 250;
     player->position->y = 260;
     sfSprite_setScale(player->sprite, (sfVector2f) {7, 7});
     sfSprite_setPosition(player->sprite, *player->position);
     sfSprite_setTextureRect(player->sprite, *player->rect);
-    player->clock = sfClock_create();
     return player;
 }
 
@@ -81,5 +92,8 @@ fight_t *init_fight(void)
     fight->enemy = init_ogre();
     fight->player_bar = init_player_bar();
     fight->enemy_bar = init_enemy_bar();
+    if (!fight->background_fight || !fight->buttons || !fight->text_bar ||
+    !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar)
+        return NULL;
     return fight;
 }

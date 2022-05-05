@@ -31,7 +31,7 @@ typedef struct menu_creation_s menu_creation_t;
 typedef struct main_creation_scenes_s main_creation_scenes_t;
 typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
-typedef struct pnj_s npc_t;
+typedef struct npc_s npc_t;
 typedef struct text_s text_t;
 typedef struct settings_s settings_t;
 typedef struct loader_s loader_t;
@@ -152,11 +152,10 @@ struct enemy_s {
     unsigned int max_hp;
 };
 
-struct pnj_s {
+struct npc_s {
     sfSprite *sprite;
     sfIntRect *rect;
     sfVector2f position;
-    sfVector2f *relative_pos;
     sfTexture *texture;
 };
 
@@ -214,7 +213,7 @@ struct config_s {
 };
 
 struct scene_saves_s {
-    game_asset_t **background;
+    game_asset_t *background;
     button_t **buttons;
     game_asset_t **character;
     button_t **icons;

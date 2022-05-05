@@ -21,6 +21,8 @@ game_asset_t *init_pause_background(game_t *game)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(PAUSE_BG_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -37,6 +39,8 @@ button_t **init_buttons_pause(void)
     float pos_x = 960 - 273 / 2;
     sfVector2f scale = {.7f, .7f};
 
+    if (!buttons)
+        return NULL;
     buttons[0] = create_button("Resume", (sfVector2f) {pos_x ,370},
         back_to_game, scale);
     buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 470},
@@ -46,6 +50,8 @@ button_t **init_buttons_pause(void)
     buttons[3] = create_button("Quit", (sfVector2f) {pos_x, 670},
         quit_game, scale);
     buttons[4] = NULL;
+    if (!buttons[0] || !buttons[1] || !buttons[2] || !buttons[3])
+        return NULL;
     return buttons;
 }
 

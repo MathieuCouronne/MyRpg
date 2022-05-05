@@ -16,6 +16,8 @@ static sfIntRect *rect_chest(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
+    if (!rect)
+        return NULL;
     rect->top = 0;
     rect->left = 0;
     rect->width = 47;
@@ -28,10 +30,14 @@ chest_t *init_chest(void)
     chest_t *chest = malloc(sizeof(chest_t));
     sfVector2f scale = {1.1f, 1.1f};
 
+    if (!chest)
+        return NULL;
     chest->clock = sfClock_create();
     chest->sprite = sfSprite_create();
     chest->rect = rect_chest();
     chest->texture = sfTexture_createFromFile(CHEST_PATH, NULL);
+    if (!chest->clock || !chest->sprite || !chest->rect || !chest->texture)
+        return NULL;
     sfSprite_setTexture(chest->sprite, chest->texture, sfTrue);
     chest->position.x = 1500;
     chest->position.y = 1500;

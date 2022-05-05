@@ -25,5 +25,7 @@ button_t **init_buttons(void)
     buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800}, quit_game,
         scale);
     buttons[3] = NULL;
+    if (!buttons[0] || !buttons[1] || !buttons[2])
+        return NULL;
     return buttons;
 }

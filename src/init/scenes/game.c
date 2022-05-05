@@ -18,6 +18,8 @@ game_asset_t *init_map(game_t *game)
         return NULL;
     map->sprite = sfSprite_create();
     map->texture = sfTexture_createFromFile(MAP_PATH, NULL);
+    if (!map->sprite || !map->texture)
+        return NULL;
     sfView_setCenter(game->view, (sfVector2f) {2270, 2030});
     sfView_zoom(game->view, .5f);
     sfSprite_setTexture(map->sprite, map->texture, sfTrue);
@@ -34,5 +36,8 @@ main_game_t *init_main_game(game_t *game)
     main_game->chest = init_chest();
     main_game->albert = init_albert();
     main_game->chief = init_chief();
+    if (!main_game->map || !main_game->chest || !main_game->albert ||
+        !main_game->chief)
+        return NULL;
     return main_game;
 }

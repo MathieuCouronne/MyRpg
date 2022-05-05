@@ -22,6 +22,10 @@ static scenes_t *init_scenes(game_t *game)
     scenes->pause = init_pause(game);
     scenes->creation_menu = init_creation();
     scenes->inventory = init_inventory();
+    if (!scenes->main_menu || !scenes->game_scene || !scenes->fight ||
+        !scenes->settings || !scenes->saves || !scenes->pause ||
+        !scenes->creation_menu || !scenes->inventory)
+        return NULL;
     return scenes;
 }
 
@@ -48,7 +52,6 @@ void load_game(thread_params_t *params)
     !download_assets(params->loaded)))
         return;
     params->game->config->assets_loaded = true;
-    params->game->player = init_player();
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);
     params->game->collisions = sfImage_createFromFile(AREAS_PATH);

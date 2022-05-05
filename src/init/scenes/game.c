@@ -31,5 +31,8 @@ main_game_t *init_main_game(game_t *game)
     if (!game)
         return NULL;
     main_game->map = init_map(game);
+    main_game->chest = init_chest();
+    main_game->albert = init_albert();
+    main_game->chief = init_chief();
     return main_game;
 }

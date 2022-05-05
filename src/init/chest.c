@@ -50,18 +50,19 @@ static void move_rect(sfIntRect *rect)
 
 int open_chest(game_t *game)
 {
-    sfTime time = sfClock_getElapsedTime(game->chest->clock);
+    chest_t *chest = game->scenes->game_scene->chest;
+    sfTime time = sfClock_getElapsedTime(chest->clock);
     sfInt32 milliseconds = sfTime_asMilliseconds(time);
     static bool is_open = false;
 
     while (is_open != true) {
         sfMusic_play(game->sounds->chest);
         if (milliseconds > 400 && !is_open) {
-            move_rect(game->chest->rect);
-            sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
-            sfClock_restart(game->chest->clock);
+            move_rect(chest->rect);
+            sfSprite_setTextureRect(chest->sprite, *chest->rect);
+            sfClock_restart(chest->clock);
         }
-        if (milliseconds > 400 && !is_open && game->chest->rect->top == 138)
+        if (milliseconds > 400 && !is_open && chest->rect->top == 138)
             is_open = true;
     }
     return 0;

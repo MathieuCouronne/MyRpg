@@ -44,9 +44,9 @@ bool display_main_game(game_t *game)
     main_game = game->scenes->game_scene;
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
-    sfRenderWindow_drawSprite(game->window, game->chest->sprite, NULL);
-    sfRenderWindow_drawSprite(game->window, game->chief->sprite, NULL);
-    sfRenderWindow_drawSprite(window, game->albert->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, main_game->chest->sprite, NULL);
+    sfRenderWindow_drawSprite(game->window, main_game->chief->sprite, NULL);
+    sfRenderWindow_drawSprite(window, main_game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     event_handling(game);
     return true;

@@ -170,6 +170,7 @@ struct fight_s {
     button_t **buttons;
     player_t *player;
     enemy_t *enemy;
+    game_t *game;
     int *life;
 };
 

@@ -59,9 +59,6 @@ struct game_s {
     sounds_t *sounds;
     player_t *player;
     enemy_t *enemy;
-    npc_t *albert;
-    npc_t *chief;
-    chest_t *chest;
     config_t *config;
     character_t **saves;
     stats_t *stats;
@@ -105,6 +102,9 @@ struct scenes_s {
 
 struct main_game_s {
     game_asset_t *map;
+    npc_t *albert;
+    npc_t *chief;
+    chest_t *chest;
 };
 
 struct player_s {

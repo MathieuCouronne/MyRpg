@@ -36,7 +36,7 @@ static void transform_chief(npc_t *chief)
 npc_t *init_chief(void)
 {
     npc_t *chief = malloc(sizeof(npc_t));
-    
+
     chief->sprite = sfSprite_create();
     chief->rect = rect_chief();
     chief->texture = sfTexture_createFromFile(CHIEF_PATH, NULL);
@@ -44,8 +44,8 @@ npc_t *init_chief(void)
     if (!chief->sprite || !chief->rect || !chief->texture ||
     !chief->relative_pos)
         return NULL;
-    chief->position.x = 2280;
-    chief->position.y = 850;
+    chief->position.x = 2600;
+    chief->position.y = 1150;
     transform_chief(chief);
     return chief;
 }

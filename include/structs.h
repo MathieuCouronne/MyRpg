@@ -165,9 +165,13 @@ struct fight_s {
     game_asset_t *text_bar;
     game_asset_t *player_bar;
     game_asset_t *enemy_bar;
+    sfText **text_life;
+    sfFont *font;
+    character_t *character;
     button_t **buttons;
     player_t *player;
     enemy_t *enemy;
+    int *life;
 };
 
 struct settings_s {

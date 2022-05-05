@@ -70,13 +70,15 @@ player_t *player_fight(void)
 
 fight_t *init_fight(void)
 {
-    fight_t  *fight = malloc(sizeof(fight_t));
+    fight_t *fight = malloc(sizeof(fight_t));
 
     if (!fight)
         return NULL;
     fight->background_fight = init_fight_background();
     fight->buttons = init_attack_buttons();
+    fight->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     fight->text_bar = init_text_bar();
+    fight->text_life = init_text_life(fight);
     fight->player = player_fight();
     fight->enemy = init_ogre();
     fight->player_bar = init_player_bar();

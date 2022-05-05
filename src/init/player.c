@@ -16,6 +16,8 @@ sfIntRect *rect_player(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
+    if (!rect)
+        return NULL;
     rect->top = 16;
     rect->left = 14;
     rect->width = 43;

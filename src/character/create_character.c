@@ -16,6 +16,8 @@ static stats_t *init_dog_stats(void)
 {
     stats_t *stats = malloc(sizeof(stats_t));
 
+    if (!stats)
+        return NULL;
     stats->strength = BASE_DOG_STR;
     stats->defense = BASE_DOG_DEF;
     stats->vitality = BASE_DOG_VIT;
@@ -28,6 +30,8 @@ static stats_t *init_mage_stats(void)
 {
     stats_t *stats = malloc(sizeof(stats_t));
 
+    if (!stats)
+        return NULL;
     stats->strength = BASE_MAGE_STR;
     stats->defense = BASE_MAGE_DEF;
     stats->vitality = BASE_MAGE_VIT;
@@ -40,6 +44,8 @@ stats_t *init_war_stats(void)
 {
     stats_t *stats = malloc(sizeof(stats_t));
 
+    if (!stats)
+        return NULL;
     stats->strength = BASE_WAR_STR;
     stats->defense = BASE_WAR_DEF;
     stats->vitality = BASE_WAR_VIT;
@@ -64,5 +70,7 @@ character_t *create_character(void)
     character->exp_required = 100;
     character->hp = 13;
     character->inventory = create_inventory(INVENTORY_WIDTH, INVENTORY_HEIGHT);
+    if (!character->inventory)
+        return NULL;
     return character;
 }

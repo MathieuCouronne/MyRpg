@@ -33,15 +33,23 @@ static character_t **init_character_saves(void)
 {
     character_t **saves = malloc(sizeof(character_t *) * 4);
 
+    if (!saves)
+        return NULL;
     saves[0] = get_character_save(PLAYER1_FILE_PATH);
     saves[1] = get_character_save(PLAYER2_FILE_PATH);
     saves[2] = get_character_save(PLAYER3_FILE_PATH);
     saves[3] = NULL;
-
     return saves;
 }
 
-void load_game(thread_params_t *params)
+static bool are_params_valid(thread_params_t *params)
+{
+    return (!params->game->view || !params->game->sounds ||
+        !params->game->collisions || !params->game->saves ||
+        !params->game->characters || !params->game->stats);
+}
+
+bool load_game(thread_params_t *params)
 {
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
@@ -59,5 +67,8 @@ void load_game(thread_params_t *params)
     params->game->scenes = init_scenes(params->game);
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
+    if (!are_params_valid(params))
+        return NULL;
     *params->loaded = -1;
+    return true;
 }

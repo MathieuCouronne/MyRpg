@@ -7,7 +7,6 @@
 
 #include <SFML/Graphics.h>
 #include "my_rpg.h"
-#include "macros.h"
 
 void handle_arrow_keys(game_t *game)
 {
@@ -22,6 +21,6 @@ void handle_arrow_keys(game_t *game)
     if (sfKeyboard_isKeyPressed(sfKeyS))
         move_bottom(game, collision);
     if (sfKeyboard_isKeyPressed(sfKeyE))
-        chest(game);
+        open_chest(game);
     sfSprite_setPosition(game->player->sprite, *game->player->position);
 }

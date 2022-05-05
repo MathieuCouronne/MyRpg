@@ -49,7 +49,7 @@ void load_game(thread_params_t *params)
         return;
     params->game->config->assets_loaded = true;
     params->game->player = init_player();
-    params->game->chest = chest_sprite();
+    params->game->chest = init_chest();
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);
     params->game->albert = init_albert();

@@ -27,7 +27,7 @@ button_t **init_buttons(void);
 fight_t *init_fight(void);
 enemy_t *init_ogre(void);
 player_t *init_player(void);
-chest_t *chest_sprite(void);
+chest_t *init_chest(void);
 button_t *create_button(char *str, sfVector2f pos_sprite,
 void (*on_click) (game_t *game), sfVector2f scale);
 int clock_time(sfClock *clock, float time_offset);
@@ -42,7 +42,7 @@ config_t *parse_config(void);
 settings_t *init_settings(void);
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
-int chest(game_t *game);
+int open_chest(game_t *game);
 pause_t *init_pause(game_t *game);
 scene_saves_t *init_saves(game_t *game);
 button_t *create_save_card(sfVector2f pos_sprite, char *path,

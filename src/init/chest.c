@@ -12,7 +12,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-sfIntRect *rect_chest(void)
+static sfIntRect *rect_chest(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
@@ -23,9 +23,10 @@ sfIntRect *rect_chest(void)
     return rect;
 }
 
-chest_t *chest_sprite(void)
+chest_t *init_chest(void)
 {
     chest_t *chest = malloc(sizeof(chest_t));
+    sfVector2f scale = {1.1f, 1.1f};
 
     chest->clock = sfClock_create();
     chest->sprite = sfSprite_create();
@@ -34,34 +35,34 @@ chest_t *chest_sprite(void)
     sfSprite_setTexture(chest->sprite, chest->texture, sfTrue);
     chest->position.x = 1500;
     chest->position.y = 1500;
-    sfSprite_setScale(chest->sprite, (sfVector2f) {1.1, 1.1});
+    sfSprite_setScale(chest->sprite, scale);
     sfSprite_setPosition(chest->sprite, chest->position);
     sfSprite_setTextureRect(chest->sprite, *chest->rect);
     return chest;
 }
 
-void move_rect(sfIntRect *rect, int offset, int max_value)
+static void move_rect(sfIntRect *rect)
 {
-    rect->top += offset;
-    if (rect->top == max_value)
+    rect->top += 46;
+    if (rect->top == 184)
         rect->top = 0;
 }
 
-int chest(game_t *game)
+int open_chest(game_t *game)
 {
     sfTime time = sfClock_getElapsedTime(game->chest->clock);
     sfInt32 milliseconds = sfTime_asMilliseconds(time);
-    static bool isopen = false;
+    static bool is_open = false;
 
-    while (isopen != true) {
+    while (is_open != true) {
         sfMusic_play(game->sounds->chest);
-        if (milliseconds > 400 && isopen == false) {
-            move_rect(game->chest->rect, 46, 184);
+        if (milliseconds > 400 && !is_open) {
+            move_rect(game->chest->rect);
             sfSprite_setTextureRect(game->chest->sprite, *game->chest->rect);
             sfClock_restart(game->chest->clock);
-            if (game->chest->rect->top == 138)
-                isopen = true;
         }
+        if (milliseconds > 400 && !is_open && game->chest->rect->top == 138)
+            is_open = true;
     }
     return 0;
 }

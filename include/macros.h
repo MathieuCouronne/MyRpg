@@ -15,8 +15,8 @@
     #define LOADER_WINDOW_WIDTH 500
     #define LOADER_WINDOW_HEIGHT 600
     #define WINDOW_PADDING 350
-    #define MAP_WIDTH 3200
-    #define MAP_HEIGHT 3200
+    #define MAP_WIDTH 3840
+    #define MAP_HEIGHT 3840
 
     // Misc
     #define ASSETS_AMOUNT 30

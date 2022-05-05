@@ -43,8 +43,8 @@ npc_t *init_albert(void)
     if (!albert->sprite || !albert->rect || !albert->texture ||
     !albert->relative_pos)
         return NULL;
-    albert->position.x = 1740;
-    albert->position.y = 1600;
+    albert->position.x = 2275;
+    albert->position.y = 1910;
     transform_albert(albert);
     return albert;
 }

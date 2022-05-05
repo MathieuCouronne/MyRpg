@@ -32,7 +32,6 @@ main_creation_scenes_t *creation)
     sfRenderWindow_drawSprite(w, creation->buttons[10]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[11]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[12]->asset->sprite, NULL);
-    sfRenderWindow_drawText(w, creation->buttons[12]->text, NULL);
 }
 
 void display_stat(main_creation_scenes_t *creation,
@@ -78,6 +77,7 @@ bool display_creation(game_t *game)
     game->characters[creation->class]->sprite, NULL);
     sfText_setPosition(creation->text[creation->class],
     (sfVector2f) {540, 360});
+    sfRenderWindow_drawText(window, creation->text[creation->class], NULL);
     display_stat(creation, window);
     return true;
 }

@@ -29,6 +29,9 @@ static void event_handling(game_t *game)
             sfRenderWindow_setView(game->window,
                 sfRenderWindow_getDefaultView(game->window));
         }
+        if (game->event.type == sfEvtKeyPressed
+            && game->event.key.code == sfKeyE)
+            open_chest(game);
     }
 }
 

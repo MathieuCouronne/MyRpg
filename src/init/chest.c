@@ -55,8 +55,8 @@ int open_chest(game_t *game)
     sfInt32 milliseconds = sfTime_asMilliseconds(time);
     static bool is_open = false;
 
+    sfMusic_play(game->sounds->chest);
     while (is_open != true) {
-        sfMusic_play(game->sounds->chest);
         if (milliseconds > 400 && !is_open) {
             move_rect(chest->rect);
             sfSprite_setTextureRect(chest->sprite, *chest->rect);

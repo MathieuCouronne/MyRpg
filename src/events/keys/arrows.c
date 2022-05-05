@@ -20,7 +20,5 @@ void handle_arrow_keys(game_t *game)
         move_top(game, collision);
     if (sfKeyboard_isKeyPressed(sfKeyS))
         move_bottom(game, collision);
-    if (sfKeyboard_isKeyPressed(sfKeyE))
-        open_chest(game);
     sfSprite_setPosition(game->player->sprite, *game->player->position);
 }

@@ -32,6 +32,8 @@ main_creation_scenes_t *creation)
     sfRenderWindow_drawSprite(w, creation->buttons[10]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[11]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(w, creation->buttons[12]->asset->sprite, NULL);
+    sfRenderWindow_drawText(w,creation->unspent_text, NULL);
+    sfRenderWindow_drawText(w,creation->stat[4][0], NULL);
 }
 
 void display_stat(main_creation_scenes_t *creation,

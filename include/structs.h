@@ -129,6 +129,8 @@ struct main_creation_scenes_s {
     sfFont *font;
     int **stats;
     int class;
+    int unspent;
+    sfText *unspent_text;
 };
 
 struct text_s {

@@ -49,5 +49,7 @@ main_creation_scenes_t *init_creation(void)
     scene->text = init_text_creation(scene->font);
     init_classes_base_data(scene->stats);
     scene->stat = create_stat_text(scene->font, scene);
+    scene->unspent = 20;
+    scene->unspent_text = init_unspent(scene, scene->font);
     return scene;
 }

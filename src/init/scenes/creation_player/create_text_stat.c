@@ -16,6 +16,8 @@ int **class_stats, float *shifts)
 {
     for (size_t i = 0; i < 3; i++) {
         text[i] = malloc(sizeof(sfText *) * 6);
+        if (!text[i])
+            return NULL;
         for (size_t y = 0; y < 5; y++) {
             text[i][y] = sfText_create();
             sfText_setFont(text[i][y], font);
@@ -32,6 +34,8 @@ sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font)
 {
     sfText **text_unspent = malloc(sizeof(sfText *) * 4);
 
+    if (!text_unspent)
+        return NULL;
     for (size_t i = 0; i < 3; i++) {
         text_unspent[i] = sfText_create();
         sfText_setFont(text_unspent[i], font);
@@ -49,6 +53,8 @@ sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation)
     sfText ***text = malloc(sizeof(sfText **) * 5);
     float shifts[5] = {515, 585, 655, 730, 800};
 
+    if (!text)
+        return NULL;
     init_txt(text, font, creation->stats, shifts);
     text[3] = malloc(sizeof(sfText *) * 2);
     text[3][0] = sfText_create();

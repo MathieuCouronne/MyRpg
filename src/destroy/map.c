@@ -8,11 +8,16 @@
 #include <stdlib.h>
 #include "my_rpg.h"
 
-void destroy_map(main_game_t *map)
+void destroy_game_scene(main_game_t *map)
 {
     if (!map)
         return;
-    sfSprite_destroy(map->map->sprite);
-    sfTexture_destroy(map->map->texture);
+    if (map->map->sprite)
+        sfSprite_destroy(map->map->sprite);
+    if (map->map->texture)
+        sfTexture_destroy(map->map->texture);
+    destroy_chest(map->chest);
+    destroy_albert(map->albert);
+    destroy_chief(map->chief);
     free(map);
 }

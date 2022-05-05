@@ -71,7 +71,7 @@ void menu_destroy_buttons(button_t **button);
 void destroy_player(player_t *player);
 void destroy_fight(fight_t *fight);
 void destroy_all(game_t *game);
-void destroy_map(main_game_t *map);
+void destroy_game_scene(main_game_t *map);
 void destroy_chest(chest_t *chest);
 void destroy_settings(game_asset_t *settings);
 void settings_destroy_icons(button_t **buttons);

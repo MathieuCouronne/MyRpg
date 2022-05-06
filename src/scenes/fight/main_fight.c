@@ -17,6 +17,12 @@ static void event_handling(game_t *game)
     }
 }
 
+void display_text(game_t *game, sfRenderWindow *window, fight_t *fight)
+{
+    sfRenderWindow_drawText(window, fight->text_life_characters[0], NULL);
+    sfRenderWindow_drawText(window, fight->text_life_enemy[0], NULL);
+}
+
 bool display_fight(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -33,8 +39,7 @@ bool display_fight(game_t *game)
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->enemy_bar->sprite, NULL);
-    sfRenderWindow_drawText(window, fight->text_life_characters[0], NULL);
-    sfRenderWindow_drawText(window, fight->text_life_enemy[0], NULL);
+    display_text(game, window, fight);
     for (unsigned int i = 0; i < 4; i++) {
         sfRenderWindow_drawSprite(window,
             fight->buttons[i]->asset->sprite, NULL);

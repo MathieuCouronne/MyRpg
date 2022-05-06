@@ -28,7 +28,7 @@ static void position_character_asset(game_asset_t *character, float shift)
     sfSprite_setPosition(character->sprite, pos);
 }
 
-static character_t *fill_character_infos(character_t *saves)
+static game_asset_t *fill_character_infos(character_t *saves)
 {
     game_asset_t *character = malloc(sizeof(game_asset_t));
     char *path = (char *) class_textures[saves->class];

@@ -89,7 +89,7 @@ fight_t *init_fight(void)
     fight->buttons = init_attack_buttons();
     fight->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     fight->text_bar = init_text_bar();
-    fight->text_life = init_text_life(fight);
+    //fight->text_life = init_text_life(fight);
     fight->player = player_fight();
     fight->enemy = init_ogre();
     fight->player_bar = init_player_bar();

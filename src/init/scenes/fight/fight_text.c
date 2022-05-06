@@ -13,7 +13,7 @@
 
 sfText **init_text_life(fight_t *text_fight)
 {
-    sfText **text_life = malloc(sizeof(sfText *) * 3);
+    sfText **text_life = malloc(sizeof(sfText *) * 4);
     int life = 100;
 
     if (!text_life)

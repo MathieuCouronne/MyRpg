@@ -13,6 +13,7 @@ static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->settings->buttons);
+        default_event_handling(game, game->scenes->settings->icons);
     }
 }
 

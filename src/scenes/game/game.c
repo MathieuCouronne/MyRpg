@@ -21,9 +21,10 @@ static void event_handling(game_t *game)
 
 static void display_quest(game_t *game)
 {
-    if (!game->quests->speaking)
+    if (!game->quests->speaking || !game->quests->text)
         return;
     sfRenderWindow_drawSprite(game->window, game->quests->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, game->quests->text, NULL);
 }
 
 bool display_main_game(game_t *game)

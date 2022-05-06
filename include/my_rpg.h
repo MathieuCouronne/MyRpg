@@ -68,6 +68,8 @@ quests_t *init_quests(void);
 sfText **init_text_life_characters(fight_t *text_fight);
 sfText **init_text_life_enemy(fight_t *text_enemy);
 button_t **init_icons_settings(void);
+quest_t *create_first_quest(void);
+quest_t *create_second_quest(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -94,6 +96,7 @@ bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
 void handle_game_change_scenes(game_t *game);
+bool handle_quests_keys(game_t *game);
 
 // Sounds
 sounds_t *menu_music(config_t *config);
@@ -118,6 +121,10 @@ inventory_t *remove_from_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
     sfVector2u pos2);
+
+// Controllers
+void transform_dialog_txt(game_t *game, sfText *sprite);
+void transform_dialog(game_t *game);
 
 // Fight
 char *string_info(fight_t *fight);

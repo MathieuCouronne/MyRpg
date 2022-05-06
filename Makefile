@@ -21,6 +21,7 @@ SRC			=	$(SRC_DIR)my_rpg.c \
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
 				$(SRC_DIR)events/keys/game.c \
+				$(SRC_DIR)events/keys/quests.c \
 				$(SRC_DIR)events/mouse/move.c \
 				$(SRC_DIR)events/mouse/click.c \
 
@@ -31,7 +32,9 @@ SRC			+=	$(SRC_DIR)init/game/game.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/create_icons.c \
 				$(SRC_DIR)init/config.c \
-				$(SRC_DIR)init/quests.c \
+				$(SRC_DIR)init/quests/quests.c \
+				$(SRC_DIR)init/quests/first.c \
+				$(SRC_DIR)init/quests/second.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \
@@ -85,6 +88,8 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 				$(SRC_DIR)scenes/creation/creation.c \
 				$(SRC_DIR)scenes/loader.c \
+
+SRC			+=	$(SRC_DIR)controllers/interactions/quests.c \
 
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \

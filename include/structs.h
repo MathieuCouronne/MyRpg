@@ -238,28 +238,26 @@ struct thread_params_s {
 };
 
 struct quests_s {
+    unsigned int current;
     game_asset_t *asset;
     sfText *text;
+    sfClock *clock;
     quest_t **quests;
     bool speaking;
 };
 
 struct quest_s {
+    bool started;
+    bool done;
     unsigned int id;
     unsigned int xp;
     char *name;
-    bool launched;
-    bool done;
     slot_t **required;
     slot_t **rewards;
-    // quest_messages_t *messages;
-    char ***messages;
-};
-
-struct quest_messages_s {
-    char **start;
-    char **pending;
-    char **end;
+    sfText **texts;
+    unsigned int step_index;
+    unsigned int msg_index;
+    const char ***messages;
 };
 
 #endif

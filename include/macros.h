@@ -15,6 +15,7 @@
     #define LOADER_WINDOW_WIDTH 500
     #define LOADER_WINDOW_HEIGHT 600
     #define WINDOW_PADDING 350
+    #define MAP_SCALE 2
     #define MAP_WIDTH 3840
     #define MAP_HEIGHT 3840
 
@@ -44,6 +45,7 @@
     #define FIGHT_ENEMY_BAR_PATH "./assets/images/fight/enemy_bar.png"
     #define AREAS_PATH "./assets/images/game/areas.jpg"
     #define MAP_PATH "./assets/images/game/map.jpg"
+    #define QUEST_BG_PATH "./assets/images/game/quest.png"
     #define MAIN_MENU_BG_PATH "./assets/images/main_menu/background.png"
     #define SETTINGS_BG_PATH "./assets/images/settings/settings.jpg"
     #define BUTTON_SETTINGS_PATH "./assets/images/settings/empty_icon.png"

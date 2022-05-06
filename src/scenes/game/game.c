@@ -9,6 +9,14 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+static void event_fight(game_t *game)
+{
+    if (detect_enemies(game)) {
+        game->scenes->prev = game->scenes->current;
+        game->scenes->current = FIGHT;
+    }
+}
+
 static void event_handling(game_t *game)
 {
     handle_arrow_keys(game);
@@ -16,6 +24,10 @@ static void event_handling(game_t *game)
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
         handle_game_change_scenes(game);
+        if (game->event.type == sfEvtKeyPressed && game->event.key.code == sfKeyK) {
+            sfRenderWindow_setView(game->window, sfRenderWindow_getDefaultView(game->window));
+            event_fight(game);
+        }
     }
 }
 

@@ -38,6 +38,7 @@ enemy_t *create_ogre(void)
         return NULL;
     ogre->sprite = sfSprite_create();
     ogre->texture = sfTexture_createFromFile(REVERSED_OGRE_PATH, NULL);
+    ogre->color = sfColor_fromRGB(0, 255, 255);
     if (!ogre->sprite || !ogre->texture)
         return NULL;
     sfSprite_setTexture(ogre->sprite, ogre->texture, sfTrue);

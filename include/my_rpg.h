@@ -128,6 +128,7 @@ char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
 void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
 enemy_t *create_ogre(void);
+bool detect_enemies(game_t *game);
 
 // Character
 character_t *create_character(void);

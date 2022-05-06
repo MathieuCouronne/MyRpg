@@ -13,7 +13,7 @@ static scenes_t *init_scenes(game_t *game)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
-    scenes->current = FIGHT;
+    scenes->current = MAIN_MENU;
     if (!(scenes->main_menu = init_main_menu()) ||
     !(scenes->game_scene = init_main_game(game)) ||
     !(scenes->fight = init_fight()) ||
@@ -53,6 +53,7 @@ static void init_params(thread_params_t *params)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     params->game->player = init_player();
+    params->game->enemy = create_ogre();
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);

@@ -112,6 +112,8 @@ SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/remove_from_inventory.c \
 				$(SRC_DIR)controllers/inventory/swap_slots.c \
 
+SRC			+=	$(SRC_DIR)controllers/fight/detect_enemies.c \
+
 SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/character/get_data.c \
 				$(SRC_DIR)controllers/parsing/character/get_inventory.c \

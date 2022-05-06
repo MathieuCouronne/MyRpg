@@ -151,6 +151,7 @@ struct enemy_s {
     sfIntRect rect;
     sfVector2f position;
     sfTexture *texture;
+    sfColor color;
     char *name;
     unsigned int dps;
     unsigned int hp;

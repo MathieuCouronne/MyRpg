@@ -17,4 +17,8 @@ typedef enum {
     INVENTORY
 } scenes;
 
+typedef enum {
+    FANG, BOOK, DRAGON_TAIL, TACOS
+} items;
+
 #endif // RPG_ENUM_H

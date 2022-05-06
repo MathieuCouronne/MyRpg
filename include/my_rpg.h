@@ -88,6 +88,7 @@ void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
+void handle_game_change_scenes(game_t *game);
 
 // Sounds
 sounds_t *menu_music(config_t *config);

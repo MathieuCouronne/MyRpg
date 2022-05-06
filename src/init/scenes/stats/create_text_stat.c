@@ -10,8 +10,7 @@
 #include "structs.h"
 #include "my_rpg.h"
 
-static bool init_txt(sfText **text,
-    int *class_stats, float *shifts)
+static bool init_txt(sfText **text, int *class_stats, float *shifts)
 {
     for (size_t y = 0; y < 5; y++) {
         text[y] = sfText_create();
@@ -27,8 +26,7 @@ static bool init_txt(sfText **text,
     return true;
 }
 
-static bool init_txt_array(sfText **text, sfFont *font,
-    int *class_stats)
+static bool init_txt_array(sfText **text, sfFont *font, int *class_stats)
 {
     float shifts[5] = {515, 585, 655, 730, 800};
 
@@ -40,8 +38,7 @@ static bool init_txt_array(sfText **text, sfFont *font,
     return true;
 }
 
-sfText **create_stat_text_scene(sfFont *font,
-    stats_scene_t *stats)
+sfText **create_stat_text_scene(sfFont *font, stats_scene_t *stats)
 {
     sfText **text = malloc(sizeof(sfText *) * 8);
 

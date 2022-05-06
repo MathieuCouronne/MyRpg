@@ -40,6 +40,17 @@ static button_t *init_empty_button(unsigned short i)
     return buttons;
 }
 
+static bool init_button(game_t *game, unsigned short i, button_t **buttons)
+{
+    if (!game->saves[i])
+        buttons[i] = init_empty_button(i);
+    else
+        buttons[i] = init_button_saves(i);
+    if (!buttons[i])
+        return false;
+    return true;
+}
+
 button_t **init_slots(game_t *game)
 {
     sfVector2f pos = {0};
@@ -49,11 +60,7 @@ button_t **init_slots(game_t *game)
     if (!buttons)
         return NULL;
     for (unsigned short i = 0; i < 3; i++) {
-        if (!game->saves[i])
-            buttons[i] = init_empty_button(i);
-        else
-            buttons[i] = init_button_saves(i);
-        if (!buttons[i])
+        if (!init_button(game, i, buttons))
             return NULL;
         pos.x = WINDOW_WIDTH / shifts[i] - (float) 462 / 2;
         pos.y = buttons[i]->asset->pos.y;

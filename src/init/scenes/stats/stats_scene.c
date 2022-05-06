@@ -68,7 +68,7 @@ stats_scene_t *init_stats(game_t *game)
     scene->unspent = game->saves[game->current]->unspent;
     scene->stat = create_stat_text_scene(scene->font, scene);
     scene->unspent_text = create_unspent(scene->font, scene->unspent);
-    if (!scene->stat)
+    if (!scene->stat || !scene->unspent_text)
         return NULL;
     return scene;
 }

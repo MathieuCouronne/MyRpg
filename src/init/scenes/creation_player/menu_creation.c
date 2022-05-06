@@ -71,8 +71,7 @@ main_creation_scenes_t *init_creation(void)
     scene->unspent = unspent_init();
     scene->class = 0;
     scene->unspent_text = init_unspent(scene, scene->font);
-    if (!init_classes_base_data(scene->stats) || !scene->stat ||
-        !scene->unspent || !scene->unspent_text)
+    if (!scene->stat || !scene->unspent || !scene->unspent_text)
         return NULL;
     return scene;
 }

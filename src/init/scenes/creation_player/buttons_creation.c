@@ -13,7 +13,7 @@
 
 extern const char *class_names[];
 
-void up_class(game_t *game)
+static void up_class(game_t *game)
 {
     if (game->scenes->creation_menu->class == 2)
         game->scenes->creation_menu->class = 0;
@@ -21,7 +21,7 @@ void up_class(game_t *game)
         game->scenes->creation_menu->class += 1;
 }
 
-void down_class(game_t *game)
+static void down_class(game_t *game)
 {
     if (game->scenes->creation_menu->class == 0)
         game->scenes->creation_menu->class = 2;

@@ -61,6 +61,7 @@ static void init_params(thread_params_t *params)
     params->game->scenes = init_scenes(params->game);
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
+    params->game->current = 0;
 }
 
 bool load_game(thread_params_t *params)

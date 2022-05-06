@@ -11,7 +11,7 @@
 static bool (*scenes_list[])(game_t *game) = {
     display_main_menu, display_main_game, display_fight,
     display_creation, display_settings, display_saves, display_pause,
-    display_inventory, NULL
+    display_inventory, display_stats , NULL
 };
 
 void scene_manager(game_t *game)

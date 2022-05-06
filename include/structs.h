@@ -66,6 +66,7 @@ struct game_s {
     character_t **saves;
     stats_t *stats;
     quests_t **quests;
+    unsigned short current;
 };
 
 struct game_asset_s {
@@ -100,6 +101,7 @@ struct scenes_s {
     scene_saves_t *saves;
     fight_t *fight;
     pause_t *pause;
+    stats_scene_t *stats;
     inventory_sprite_t *inventory;
 };
 
@@ -263,7 +265,8 @@ struct stats_scene_s {
     sfText **stat;
     sfFont *font;
     int *stats;
-    sfText **unspent_text;
+    int unspent;
+    sfText *unspent_text;
 };
 
 struct quest_messages_s {

@@ -46,7 +46,8 @@ static bool are_params_valid(thread_params_t *params)
 {
     return (!params->game->view || !params->game->sounds ||
         !params->game->collisions || !params->game->saves ||
-        !params->game->characters || !params->game->stats);
+        !params->game->characters || !params->game->stats ||
+        !params->game->player);
 }
 
 bool load_game(thread_params_t *params)
@@ -59,6 +60,7 @@ bool load_game(thread_params_t *params)
     if (!params->game->config || (params->game->config->assets_loaded != 1 &&
     !download_assets(params->loaded)))
         return false;
+    params->game->player = init_player();
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);

@@ -26,7 +26,7 @@ enemy_t *create_dragon(void)
     dragon->name = "Dragon";
     dragon->dps = 25;
     dragon->hp = 500;
-    dragon->max_hp = 150;
+    dragon->max_hp = 500;
 }
 
 enemy_t *create_ogre(void)

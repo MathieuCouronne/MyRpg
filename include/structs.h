@@ -166,7 +166,8 @@ struct fight_s {
     game_asset_t *text_bar;
     game_asset_t *player_bar;
     game_asset_t *enemy_bar;
-    sfText **text_life;
+    sfText **text_life_characters;
+    sfText **text_life_enemy;
     sfFont *font;
     character_t *character;
     button_t **buttons;

@@ -63,7 +63,8 @@ loader_t *init_loader_window(int *total);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
-sfText **init_text_life(fight_t *text_fight);
+sfText **init_text_life_characters(fight_t *text_fight);
+sfText **init_text_life_enemy(fight_t *text_enemy);
 button_t **init_icons_settings(void);
 
 // Destroy

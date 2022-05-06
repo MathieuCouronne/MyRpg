@@ -22,7 +22,6 @@ static bool dodge(character_t *character)
     srand(seed);
     free(ptr);
     res = (rand() % 100) + 1;
-    my_printf("res = %d\n", res);
     if (res <= character->stats->dexterity)
         return true;
     return false;
@@ -30,7 +29,9 @@ static bool dodge(character_t *character)
 
 void attack_player(character_t *player, enemy_t *enemy, attack_t *attack)
 {
+    unsigned int dmg = (enemy->dps - player->stats->defense);
 
-    unsigned int dmg = enemy->dps - player->stats->defense;
+    if (dodge(player))
+        return;
     player->hp -= dmg;
 }

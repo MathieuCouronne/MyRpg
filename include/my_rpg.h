@@ -120,6 +120,8 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
+void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
+enemy_t *create_ogre(void);
 
 // Character
 character_t *create_character(void);

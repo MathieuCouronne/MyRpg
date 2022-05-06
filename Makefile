@@ -128,6 +128,9 @@ SRC			+=	$(SRC_DIR)utils/color_cmp.c \
 				$(SRC_DIR)utils/string/clear_str.c \
 				$(SRC_DIR)utils/is_pos_in_button.c \
 
+SRC			+= 	$(SRC_DIR)fight/attack_player.c \
+				$(SRC_DIR)fight/create_enemies.c \
+
 OBJ			= $(SRC:.c=.o)
 
 RM 			= rm -rf

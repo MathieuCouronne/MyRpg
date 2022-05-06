@@ -33,6 +33,8 @@ bool display_fight(game_t *game)
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->enemy_bar->sprite, NULL);
+    sfRenderWindow_drawText(window, fight->text_life[0], NULL);
+    sfRenderWindow_drawText(window, fight->text_life[1], NULL);
     for (unsigned int i = 0; i < 4; i++) {
         sfRenderWindow_drawSprite(window,
             fight->buttons[i]->asset->sprite, NULL);

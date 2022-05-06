@@ -11,7 +11,7 @@
 
 extern const char *class_textures[];
 
-game_asset_t **init_characters()
+game_asset_t **init_characters(void)
 {
     game_asset_t **characters = malloc(sizeof(game_asset_t *) * 4);
 

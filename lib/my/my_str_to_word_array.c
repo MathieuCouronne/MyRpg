@@ -29,7 +29,7 @@ static char *get_words(char const *str, char const *separators)
 }
 
 static unsigned int get_word_count(char const *str, unsigned int pos,
-                                   char const *separators)
+char const *separators)
 {
     unsigned int count = 0;
 

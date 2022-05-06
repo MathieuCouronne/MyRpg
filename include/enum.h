@@ -13,8 +13,12 @@ typedef enum {
 } button_state;
 
 typedef enum {
-    LOADING, MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE,
+    MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE,
     INVENTORY
 } scenes;
+
+typedef enum {
+    FANG, BOOK, DRAGON_TAIL, TACOS
+} items;
 
 #endif // RPG_ENUM_H

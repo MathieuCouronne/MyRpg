@@ -15,23 +15,7 @@ static void event_handling(game_t *game)
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
-        if (game->event.type == sfEvtKeyPressed
-        && game->event.key.code == sfKeyEscape) {
-            game->scenes->prev = game->scenes->current;
-            game->scenes->current = PAUSE;
-            sfRenderWindow_setView(game->window,
-                sfRenderWindow_getDefaultView(game->window));
-        }
-        if (game->event.type == sfEvtKeyPressed
-        && game->event.key.code == sfKeyI) {
-            game->scenes->prev = game->scenes->current;
-            game->scenes->current = INVENTORY;
-            sfRenderWindow_setView(game->window,
-                sfRenderWindow_getDefaultView(game->window));
-        }
-        if (game->event.type == sfEvtKeyPressed
-            && game->event.key.code == sfKeyE)
-            open_chest(game);
+        handle_game_change_scenes(game);
     }
 }
 

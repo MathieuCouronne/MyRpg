@@ -56,13 +56,14 @@ bool display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
-button_t **init_buttons_creation();
-game_asset_t **init_characters();
+button_t **init_buttons_creation(void);
+game_asset_t **init_characters(void);
 sfText **init_text_creation(sfFont *font);
 loader_t *init_loader_window(int *total);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
+sfText **init_text_life(fight_t *text_fight);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -88,6 +89,7 @@ void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
+void handle_game_change_scenes(game_t *game);
 
 // Sounds
 sounds_t *menu_music(config_t *config);

@@ -9,23 +9,30 @@
 #include <stdlib.h>
 #include "structs.h"
 #include "my_rpg.h"
-#include "macros.h"
 
-void init_txt(sfText ***text, sfFont *font,
+static bool init_txt(sfText **text, sfFont *font,
+int **class_stats, float *shifts)
+{
+    for (size_t y = 0; y < 5; y++) {
+        text[y] = sfText_create();
+        if (!text[y])
+            return false;
+        sfText_setFont(text[y], font);
+        sfText_setString(text[y], itoa(*class_stats[y]));
+        sfText_setCharacterSize(text[y], 20);
+        sfText_setColor(text[y], sfWhite);
+        sfText_setPosition(text[y], (sfVector2f) {650, shifts[y]});
+    }
+    return true;
+}
+
+static bool init_txt_array(sfText ***text, sfFont *font,
 int **class_stats, float *shifts)
 {
     for (size_t i = 0; i < 3; i++) {
         text[i] = malloc(sizeof(sfText *) * 6);
-        if (!text[i])
+        if (!text[i] || init_txt(text[i], font, class_stats, shifts))
             return NULL;
-        for (size_t y = 0; y < 5; y++) {
-            text[i][y] = sfText_create();
-            sfText_setFont(text[i][y], font);
-            sfText_setString(text[i][y], itoa(class_stats[i][y]));
-            sfText_setCharacterSize(text[i][y], 20);
-            sfText_setColor(text[i][y], sfWhite);
-            sfText_setPosition(text[i][y], (sfVector2f) {650, shifts[y]});
-        }
         text[i][5] = NULL;
     }
 }
@@ -55,7 +62,7 @@ sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation)
 
     if (!text)
         return NULL;
-    init_txt(text, font, creation->stats, shifts);
+    init_txt_array(text, font, creation->stats, shifts);
     text[3] = malloc(sizeof(sfText *) * 2);
     text[3][0] = sfText_create();
     sfText_setFont(text[3][0], font);

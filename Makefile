@@ -20,6 +20,7 @@ SRC			=	$(SRC_DIR)my_rpg.c \
 
 SRC			+=	$(SRC_DIR)events/handling.c \
 				$(SRC_DIR)events/keys/arrows.c \
+				$(SRC_DIR)events/keys/game.c \
 				$(SRC_DIR)events/mouse/move.c \
 				$(SRC_DIR)events/mouse/click.c \
 
@@ -27,12 +28,10 @@ SRC			+=	$(SRC_DIR)init/game/game.c \
 				$(SRC_DIR)init/game/thread.c \
 				$(SRC_DIR)init/sound.c \
 				$(SRC_DIR)init/player.c \
-				$(SRC_DIR)init/albert.c \
-				$(SRC_DIR)init/chest.c \
 				$(SRC_DIR)init/assets.c \
 				$(SRC_DIR)init/create_icons.c \
 				$(SRC_DIR)init/config.c \
-				$(SRC_DIR)init/chief.c \
+				$(SRC_DIR)init/quests.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \
@@ -44,9 +43,13 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/fight/enemy_bar.c \
 				$(SRC_DIR)init/scenes/fight/text.c \
 				$(SRC_DIR)init/scenes/fight/init_buttons.c \
+				$(SRC_DIR)init/scenes/fight/fight_text.c \
 				$(SRC_DIR)init/scenes/pause.c \
 				$(SRC_DIR)init/scenes/inventory.c \
-				$(SRC_DIR)init/scenes/game.c \
+				$(SRC_DIR)init/scenes/game/game.c \
+				$(SRC_DIR)init/scenes/game/albert.c \
+				$(SRC_DIR)init/scenes/game/chest.c \
+				$(SRC_DIR)init/scenes/game/chief.c \
 				$(SRC_DIR)init/scenes/settings.c \
 				$(SRC_DIR)init/scenes/loader.c \
 				$(SRC_DIR)init/scenes/saves/saves.c \

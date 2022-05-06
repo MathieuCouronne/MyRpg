@@ -66,7 +66,8 @@ void change_stat(button_t **buttons)
     buttons[9] = create_icon(
     (sfVector2f) {580, 790}, CREATION_LESS_PATH, down_dexterity);
 }
-button_t **init_buttons_creation()
+
+button_t **init_buttons_creation(void)
 {
     button_t **buttons = malloc(sizeof(button_t) * 14);
 

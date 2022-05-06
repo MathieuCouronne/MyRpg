@@ -41,6 +41,8 @@ typedef struct inventory_sprite_s inventory_sprite_t;
 typedef struct scene_saves_s scene_saves_t;
 typedef struct attack_s attack_t;
 typedef struct quest_s quest_t;
+typedef struct quests_s quests_t;
+typedef struct quest_messages_s quest_messages_t;
 typedef struct thread_params_s thread_params_t;
 
 struct sounds_s {
@@ -62,7 +64,7 @@ struct game_s {
     config_t *config;
     character_t **saves;
     stats_t *stats;
-    quest_t **quests;
+    quests_t **quests;
 };
 
 struct game_asset_s {
@@ -234,13 +236,28 @@ struct thread_params_s {
     int *loaded;
 };
 
+struct quests_s {
+    game_asset_t *asset;
+    sfText *text;
+    quest_t **quests;
+};
+
 struct quest_s {
     unsigned int id;
     unsigned int xp;
     char *name;
+    bool launched;
     bool done;
     slot_t **required;
     slot_t **rewards;
+    // quest_messages_t *messages;
+    char ***messages;
+};
+
+struct quest_messages_s {
+    char **start;
+    char **pending;
+    char **end;
 };
 
 #endif

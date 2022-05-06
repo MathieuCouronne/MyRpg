@@ -11,7 +11,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-sfText **init_text_life_characters(fight_t *text_fight)
+sfText **init_text_player_hp(fight_t *text_fight)
 {
     sfText **text_life = malloc(sizeof(sfText *) * 4);
     int life = 100;
@@ -32,7 +32,7 @@ sfText **init_text_life_characters(fight_t *text_fight)
     return text_life;
 }
 
-sfText **init_text_life_enemy(fight_t *text_enemy)
+sfText **init_text_enemy_hp(fight_t *text_enemy)
 {
     sfText **text_life = malloc(sizeof(sfText *) * 4);
     int life = 100;

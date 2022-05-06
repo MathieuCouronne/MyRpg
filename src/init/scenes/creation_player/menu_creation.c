@@ -45,7 +45,7 @@ int *unspent_init()
     int *unspent = malloc(sizeof(int) * 4);
 
     if (!unspent)
-        return 84;
+        return NULL;
     for (size_t i = 0; i < 3; i++)
         unspent[i] = 20;
     unspent[3] = -1;
@@ -58,20 +58,21 @@ main_creation_scenes_t *init_creation(void)
 
     if (!scene)
         return NULL;
-    scene->stats = malloc(sizeof(int *) * 4);
+    scene->stats = malloc(sizeof(int *) * 6);
     scene->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     scene->background = init_creation_background();
     scene->buttons = init_buttons_creation();
     scene->text = init_text_creation(scene->font);
+    init_classes_base_data(scene->stats);
     if (!scene->stats || !scene->font || !scene->background ||
         !scene->buttons || !scene->text)
         return NULL;
     scene->stat = create_stat_text(scene->font, scene);
     scene->unspent = unspent_init();
+    scene->class = 0;
     scene->unspent_text = init_unspent(scene, scene->font);
     if (!init_classes_base_data(scene->stats) || !scene->stat ||
-        scene->unspent == 84 || !scene->unspent_text)
+        !scene->unspent || !scene->unspent_text)
         return NULL;
-    scene->class = 0;
     return scene;
 }

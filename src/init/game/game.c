@@ -55,7 +55,7 @@ game_t *init_game(void)
     open_loader_window(params->loaded);
     sfThread_wait(thread);
     sfThread_destroy(thread);
-    if (!game->scenes || !game->config || !game->player || !game->saves ||
+    if (!game->scenes || !game->config || !game->saves ||
     !game->view || !game->collisions)
         return NULL;
     game->window = init_window();

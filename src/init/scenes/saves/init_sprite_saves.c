@@ -1,4 +1,3 @@
-
 /*
 ** EPITECH PROJECT, 2021
 ** init_menu_button.c

@@ -48,7 +48,6 @@ enemy_t *create_ogre(void)
     ogre->max_hp = 150;
 }
 
-
 enemy_t *create_troll(void)
 {
     enemy_t *troll = malloc(sizeof(enemy_t));

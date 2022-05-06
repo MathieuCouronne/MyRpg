@@ -9,7 +9,8 @@
 
 void up_strength(game_t *game)
 {
-    if (game->scenes->creation_menu->unspent == 0)
+    if (game->scenes->creation_menu->unspent
+    [game->scenes->creation_menu->class] == 0)
         return;
     game->scenes->creation_menu->stats
     [game->scenes->creation_menu->class][0] += 1;
@@ -26,7 +27,8 @@ void up_strength(game_t *game)
 
 void up_defense(game_t *game)
 {
-    if (game->scenes->creation_menu->unspent == 0)
+    if (game->scenes->creation_menu->unspent
+    [game->scenes->creation_menu->class] == 0)
         return;
     game->scenes->creation_menu->stats
     [game->scenes->creation_menu->class][1] += 1;
@@ -43,7 +45,8 @@ void up_defense(game_t *game)
 
 void up_vitality(game_t *game)
 {
-    if (game->scenes->creation_menu->unspent == 0)
+    if (game->scenes->creation_menu->unspent
+    [game->scenes->creation_menu->class] == 0)
         return;
     game->scenes->creation_menu->stats
     [game->scenes->creation_menu->class][2] += 1;
@@ -78,7 +81,8 @@ void up_speed(game_t *game)
 
 void up_dexterity(game_t *game)
 {
-    if (game->scenes->creation_menu->unspent == 0)
+    if (game->scenes->creation_menu->unspent
+    [game->scenes->creation_menu->class] == 0)
         return;
     game->scenes->creation_menu->stats
     [game->scenes->creation_menu->class][4] += 1;

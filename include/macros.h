@@ -19,7 +19,7 @@
     #define MAP_HEIGHT 3840
 
     // Misc
-    #define ASSETS_AMOUNT 30
+    #define ASSETS_AMOUNT 37
     #define PLAYER_SCALE 1.15
     #define PLAYER_MOVEMENT 2.5
     #define QUEST_AMOUNT 3

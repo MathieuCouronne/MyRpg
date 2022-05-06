@@ -24,7 +24,7 @@ sounds_t *menu_music(config_t *config)
         return NULL;
     sounds->chest = sfMusic_createFromFile(OPEN_CHEST_PATH);
     sounds->menu = sfMusic_createFromFile(MAIN_THEME_PATH);
-    if (!sounds->menu || sounds->chest)
+    if (!sounds->menu || !sounds->chest)
         return NULL;
     sfMusic_play(sounds->menu);
     sfMusic_setVolume(sounds->menu, config->volume);

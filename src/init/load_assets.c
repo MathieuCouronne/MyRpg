@@ -17,10 +17,17 @@ game_asset_t **init_characters()
 
     for (size_t i = 0; i < 3; i++) {
         characters[i] = malloc(sizeof(game_asset_t));
+        if (!characters[i])
+            return NULL;
         characters[i]->sprite = sfSprite_create();
         characters[i]->rect = rect_player();
-        characters[i]->texture = sfTexture_createFromFile(class_textures[i], NULL);
-        sfSprite_setTexture(characters[i]->sprite, characters[i]->texture, sfTrue);
+        characters[i]->texture =
+            sfTexture_createFromFile(class_textures[i], NULL);
+        if (!characters[i]->sprite || !characters[i]->rect ||
+            !characters[i]->texture)
+            return NULL;
+        sfSprite_setTexture(characters[i]->sprite, characters[i]->texture,
+            sfTrue);
         sfSprite_setTextureRect(characters[i]->sprite, *characters[i]->rect);
     }
     characters[3] = NULL;

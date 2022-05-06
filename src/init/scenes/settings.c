@@ -21,6 +21,8 @@ game_asset_t *init_settings_background(void)
         return NULL;
     background->sprite = sfSprite_create();
     background->texture = sfTexture_createFromFile(SETTINGS_BG_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);
     return background;
 }
@@ -35,9 +37,13 @@ button_t **init_buttons_settings(void)
     button_t **buttons = malloc(sizeof(button_t *) * 2);
     float pos_x = 960 - 390 / 2;
 
+    if (!buttons)
+        return NULL;
     buttons[0] = create_button("Confirm", (sfVector2f) {pos_x, 870},
     go_to_prev,(sfVector2f) {1, 1});
     buttons[1] = NULL;
+    if (!buttons[0])
+        return NULL;
     return buttons;
 }
 
@@ -46,6 +52,8 @@ button_t **init_icons_settings(void)
     float icons_pos = 960 - 41 / 2;
     button_t **icons = malloc(sizeof(button_t *) * 5);
 
+    if (!icons)
+        return NULL;
     icons[0] = create_icon((sfVector2f)
     {icons_pos ,640}, BUTTON_SETTINGS_PATH, go_to_prev);
     icons[1] = create_icon((sfVector2f) {icons_pos ,700},
@@ -55,6 +63,8 @@ button_t **init_icons_settings(void)
     icons[3] = create_icon((sfVector2f) {icons_pos ,820},
     BUTTON_SETTINGS_PATH, go_to_prev);
     icons[4] = NULL;
+    if (!icons[0] || !icons[1] || !icons[2] || !icons[3])
+        return NULL;
     return icons;
 }
 
@@ -67,5 +77,7 @@ settings_t *init_settings(void)
     scene->background = init_settings_background();
     scene->buttons = init_buttons_settings();
     scene->icons = init_icons_settings();
+    if (!scene->background || !scene->buttons || !scene->icons)
+        return NULL;
     return scene;
 }

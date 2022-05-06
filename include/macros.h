@@ -45,7 +45,7 @@
     #define AREAS_PATH "./assets/images/maps/areas.jpg"
     #define MAP_PATH "./assets/images/maps/map.jpg"
     #define MAIN_MENU_BG_PATH "./assets/images/main_menu/background.png"
-    #define SETTINGS_BG_PATH "./assets/images/settings/background.jpg"
+    #define SETTINGS_BG_PATH "./assets/images/settings/settings.jpg"
     #define BUTTON_SETTINGS_PATH "./assets/images/settings/empty_icon.png"
     #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
     #define SAVES_EMPTY_PATH "./assets/images/saves/empty.png"

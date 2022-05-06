@@ -1,3 +1,4 @@
+
 /*
 ** EPITECH PROJECT, 2021
 ** init_menu_button.c
@@ -27,22 +28,38 @@ static void position_character_asset(game_asset_t *character, float shift)
     sfSprite_setPosition(character->sprite, pos);
 }
 
+static character_t *fill_character_infos(character_t *saves)
+{
+    game_asset_t *character = malloc(sizeof(game_asset_t));
+    char *path = (char *) class_textures[saves->class];
+
+    if (!character)
+        return NULL;
+    character->rect = rect_player();
+    character->sprite = sfSprite_create();
+    character->texture = sfTexture_createFromFile(path, NULL);
+    if (!character->rect || !character->sprite ||
+        !character->texture)
+        return NULL;
+    return character;
+}
+
 game_asset_t **init_character(character_t **saves)
 {
     game_asset_t **character = malloc(sizeof(game_asset_t *) * 4);
     float shifts[3] = {5, 2, 1.25f};
-    char *path = NULL;
 
+
+    if (!character)
+        return NULL;
     for (size_t i = 0; i < 3; i++) {
         if (!saves[i]) {
             character[i] = NULL;
             continue;
         }
-        path = (char *) class_textures[saves[i]->class];
-        character[i] = malloc(sizeof(game_asset_t));
-        character[i]->rect = rect_player();
-        character[i]->sprite = sfSprite_create();
-        character[i]->texture = sfTexture_createFromFile(path, NULL);
+        character[i] = fill_character_infos(saves[i]);
+        if (!character[i])
+            return NULL;
         position_character_asset(character[i], shifts[i]);
     }
     character[3] = NULL;

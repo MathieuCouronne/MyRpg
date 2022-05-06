@@ -17,7 +17,7 @@ void my_printf(char *str, ...);
 
 // Initialization
 game_t *init_game(void);
-void load_game(thread_params_t *params);
+bool load_game(thread_params_t *params);
 game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
 game_asset_t *init_enemy_bar(void);
@@ -56,8 +56,8 @@ bool display_inventory(game_t *game);
 button_t **init_slots(game_t *game);
 sfIntRect *rect_player(void);
 main_creation_scenes_t *init_creation(void);
-button_t **init_buttons_creation();
-game_asset_t **init_characters();
+button_t **init_buttons_creation(void);
+game_asset_t **init_characters(void);
 sfText **init_text_creation(sfFont *font);
 loader_t *init_loader_window(int *total);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);

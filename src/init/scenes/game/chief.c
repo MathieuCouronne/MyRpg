@@ -16,6 +16,8 @@ sfIntRect *rect_chief(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
+    if (!rect)
+        return NULL;
     rect->top = 9;
     rect->left = 22;
     rect->width = 38;
@@ -37,12 +39,12 @@ npc_t *init_chief(void)
 {
     npc_t *chief = malloc(sizeof(npc_t));
 
+    if (!chief)
+        return NULL;
     chief->sprite = sfSprite_create();
     chief->rect = rect_chief();
     chief->texture = sfTexture_createFromFile(CHIEF_PATH, NULL);
-    chief->relative_pos = malloc(sizeof(sfVector2f));
-    if (!chief->sprite || !chief->rect || !chief->texture ||
-    !chief->relative_pos)
+    if (!chief->sprite || !chief->rect || !chief->texture)
         return NULL;
     chief->position.x = 2600;
     chief->position.y = 1150;

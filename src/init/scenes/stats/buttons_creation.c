@@ -31,7 +31,7 @@ button_t **init_buttons_stats(void)
 
     change_stat(buttons);
     buttons[10] = create_icon(
-            (sfVector2f) {1400, 810}, CREATION_VALIDATE_PATH, create_game);
+            (sfVector2f) {1400, 810}, CREATION_VALIDATE_PATH, back_to_game);
     buttons[11] = NULL;
     return buttons;
 }

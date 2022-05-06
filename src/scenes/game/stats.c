@@ -9,6 +9,8 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+extern const char *class_textures[];
+
 static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
@@ -43,10 +45,10 @@ static void display_stat(stats_scene_t *stats, sfRenderWindow *window)
 
 void set_parameters(game_t *game)
 {
-    sfSprite_setPosition(game->characters
-    [game->scenes->creation_menu->class]->sprite, (sfVector2f) {940, 270});
-    sfSprite_setScale(game->characters
-    [game->scenes->creation_menu->class]->sprite, (sfVector2f) {8.f, 8.f});
+    sfSprite_setPosition(game->characters[game->saves
+    [game->current]->class]->sprite,(sfVector2f) {940, 270});
+    sfSprite_setScale(game->characters[game->saves
+    [game->current]->class]->sprite,(sfVector2f) {8.f, 8.f});
 }
 
 bool display_stats(game_t *game)
@@ -63,8 +65,8 @@ bool display_stats(game_t *game)
     sfRenderWindow_drawSprite(window, stats->background->sprite, NULL);
     display_buttons_creation(window, stats);
     set_parameters(game);
-    sfRenderWindow_drawSprite(window,
-        game->characters[game->scenes->creation_menu->class]->sprite, NULL);
+    sfRenderWindow_drawSprite(window,game->characters[game->saves
+    [game->current]->class]->sprite, NULL);
     sfText_setPosition(stats->text,(sfVector2f) {540, 360});
     sfRenderWindow_drawText(window, stats->text, NULL);
     display_stat(stats, window);

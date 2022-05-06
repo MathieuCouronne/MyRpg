@@ -50,7 +50,8 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
 				$(SRC_DIR)init/scenes/game/chest.c \
 				$(SRC_DIR)init/scenes/game/chief.c \
-				$(SRC_DIR)init/scenes/settings.c \
+				$(SRC_DIR)init/scenes/settings/init_button_settings.c \
+				$(SRC_DIR)init/scenes/settings/settings.c \
 				$(SRC_DIR)init/scenes/loader.c \
 				$(SRC_DIR)init/scenes/saves/saves.c \
 				$(SRC_DIR)init/scenes/saves/init_buttons.c \

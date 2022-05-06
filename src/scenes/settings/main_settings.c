@@ -37,5 +37,8 @@ bool display_settings(game_t *game)
     sfRenderWindow_drawSprite(window, icons[1]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, icons[2]->asset->sprite, NULL);
     sfRenderWindow_drawSprite(window, icons[3]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, icons[4]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, icons[5]->asset->sprite, NULL);
+    sfRenderWindow_drawSprite(window, icons[6]->asset->sprite, NULL);
     return true;
 }

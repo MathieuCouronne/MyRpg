@@ -55,7 +55,7 @@ button_t **init_slots(game_t *game)
         sfSprite_setPosition(buttons[i]->asset->sprite, pos);
     }
     pos.x = 30;
-    pos.y = 768;
+    pos.y = 925;
     buttons[3] = create_icon(pos, SAVES_BACK_PATH, go_to_menu);
     buttons[4] = NULL;
     if (!buttons[0] || !buttons[1] || !buttons[2] || !buttons[3])

@@ -45,9 +45,9 @@ sfText **init_text_life_enemy(fight_t *text_enemy)
             return NULL;
         sfText_setFont(text_life[i], text_enemy->font);
         sfText_setString(text_life[i], itoa(life));
-        sfText_setCharacterSize(text_life[i], 50);
+        sfText_setCharacterSize(text_life[i], 25);
         sfText_setColor(text_life[i], sfWhite);
-        sfText_setPosition(text_life[i], (sfVector2f) {1570, 70});
+        sfText_setPosition(text_life[i], (sfVector2f) {1540, 90});
     }
     text_life[3] = NULL;
     return text_life;

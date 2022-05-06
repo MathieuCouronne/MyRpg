@@ -13,7 +13,7 @@ static scenes_t *init_scenes(game_t *game)
 {
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
-    scenes->current = MAIN_MENU;
+    scenes->current = FIGHT;
     if (!(scenes->main_menu = init_main_menu()) ||
     !(scenes->game_scene = init_main_game(game)) ||
     !(scenes->fight = init_fight()) ||

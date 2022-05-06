@@ -19,8 +19,8 @@ static void event_handling(game_t *game)
 
 void display_text(game_t *game, sfRenderWindow *window, fight_t *fight)
 {
-    sfRenderWindow_drawText(window, fight->text_life_characters[0], NULL);
-    sfRenderWindow_drawText(window, fight->text_life_enemy[0], NULL);
+    sfRenderWindow_drawText(window, fight->text_player_hp[0], NULL);
+    sfRenderWindow_drawText(window, fight->text_enemy_hp[0], NULL);
 }
 
 bool display_fight(game_t *game)

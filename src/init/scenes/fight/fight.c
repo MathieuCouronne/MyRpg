@@ -93,8 +93,8 @@ fight_t *init_fight(void)
     fight->enemy = create_ogre();
     fight->player_bar = init_player_bar();
     fight->enemy_bar = init_enemy_bar();
-    fight->text_life_characters = init_text_life_characters(fight);
-    fight->text_life_enemy = init_text_life_enemy(fight);
+    fight->text_player_hp = init_text_life_characters(fight);
+    fight->text_enemy_hp = init_text_life_enemy(fight);
     if (!fight->background_fight || !fight->buttons || !fight->text_bar ||
     !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar)
         return NULL;

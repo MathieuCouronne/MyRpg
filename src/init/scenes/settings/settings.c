@@ -8,7 +8,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
 #include "macros.h"
@@ -27,11 +26,6 @@ game_asset_t *init_settings_background(void)
     return background;
 }
 
-void go_to_prev(game_t *game)
-{
-    game->scenes->current = game->scenes->prev;
-}
-
 button_t **init_buttons_settings(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 2);
@@ -45,27 +39,6 @@ button_t **init_buttons_settings(void)
     if (!buttons[0])
         return NULL;
     return buttons;
-}
-
-button_t **init_icons_settings(void)
-{
-    float icons_pos = 960 - 41 / 2;
-    button_t **icons = malloc(sizeof(button_t *) * 5);
-
-    if (!icons)
-        return NULL;
-    icons[0] = create_icon((sfVector2f)
-    {icons_pos ,640}, BUTTON_SETTINGS_PATH, go_to_prev);
-    icons[1] = create_icon((sfVector2f) {icons_pos ,700},
-    BUTTON_SETTINGS_PATH, go_to_prev);
-    icons[2] = create_icon((sfVector2f) {icons_pos ,760},
-    BUTTON_SETTINGS_PATH, go_to_prev);
-    icons[3] = create_icon((sfVector2f) {icons_pos ,820},
-    BUTTON_SETTINGS_PATH, go_to_prev);
-    icons[4] = NULL;
-    if (!icons[0] || !icons[1] || !icons[2] || !icons[3])
-        return NULL;
-    return icons;
 }
 
 settings_t *init_settings(void)

@@ -18,7 +18,7 @@ extern const char *FTP_PWD;
 
 static char *directories[] = {
     "fonts", "sounds", "images/characters", "images/fight",
-    "images/main_menu", "images/maps", "images/misc",
+    "images/main_menu", "images/game", "images/misc",
     "images/settings", "images/pause", "images/saves",
     "images/inventory", "images/creation", NULL
 };

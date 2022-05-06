@@ -65,6 +65,9 @@ stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
 sfText **init_text_life(fight_t *text_fight);
 quests_t *init_quests(void);
+sfText **init_text_life_characters(fight_t *text_fight);
+sfText **init_text_life_enemy(fight_t *text_enemy);
+button_t **init_icons_settings(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -168,6 +171,7 @@ void go_to_game_player3(game_t *game);
 void back_to_game(game_t *game);
 void quit_game(game_t *game);
 void create_game(game_t *game);
+void go_to_prev(game_t *game);
 
 // Setup_stats
 void up_strength(game_t *game);

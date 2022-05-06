@@ -48,7 +48,6 @@ game_asset_t **init_character(character_t **saves)
     game_asset_t **character = malloc(sizeof(game_asset_t *) * 4);
     float shifts[3] = {5, 2, 1.25f};
 
-
     if (!character)
         return NULL;
     for (size_t i = 0; i < 3; i++) {

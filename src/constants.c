@@ -8,6 +8,11 @@
 #include <SFML/Network.h>
 #include "macros.h"
 #include "character.h"
+#include "structs.h"
+
+const sfIpAddress FTP_IP = (sfIpAddress) {"185.31.40.91"};
+const char *FTP_USER = "rpg";
+const char *FTP_PWD = "RaphiMathithouMathissouJoshitou35000?!";
 
 const char *class_names[] = {
     "Warrior", "Mage", "DogWarrior"

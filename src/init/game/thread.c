@@ -14,17 +14,14 @@ static scenes_t *init_scenes(game_t *game)
     scenes_t *scenes = malloc(sizeof(scenes_t));
 
     scenes->current = MAIN_MENU;
-    scenes->main_menu = init_main_menu();
-    scenes->game_scene = init_main_game(game);
-    scenes->fight = init_fight();
-    scenes->settings = init_settings();
-    scenes->saves = init_saves(game);
-    scenes->pause = init_pause(game);
-    scenes->creation_menu = init_creation();
-    scenes->inventory = init_inventory();
-    if (!scenes->main_menu || !scenes->game_scene || !scenes->fight ||
-        !scenes->settings || !scenes->saves || !scenes->pause ||
-        !scenes->creation_menu || !scenes->inventory)
+    if (!(scenes->main_menu = init_main_menu()) ||
+    !(scenes->game_scene = init_main_game(game)) ||
+    !(scenes->fight = init_fight()) ||
+    !(scenes->settings = init_settings()) ||
+    !(scenes->saves = init_saves(game)) ||
+    !(scenes->pause = init_pause(game)) ||
+    !(scenes->creation_menu = init_creation()) ||
+    !(scenes->inventory = init_inventory()))
         return NULL;
     return scenes;
 }

@@ -54,11 +54,11 @@ bool load_game(thread_params_t *params)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     if (!params || !params->game || !params->loaded)
-        return;
+        return false;
     params->game->config = parse_config();
     if (!params->game->config || (params->game->config->assets_loaded != 1 &&
     !download_assets(params->loaded)))
-        return;
+        return false;
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);
@@ -68,7 +68,7 @@ bool load_game(thread_params_t *params)
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
     if (!are_params_valid(params))
-        return NULL;
+        return false;
     *params->loaded = -1;
     return true;
 }

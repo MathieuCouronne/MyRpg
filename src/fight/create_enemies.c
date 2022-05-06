@@ -27,6 +27,7 @@ enemy_t *create_dragon(void)
     dragon->dps = 25;
     dragon->hp = 500;
     dragon->max_hp = 500;
+    return dragon;
 }
 
 enemy_t *create_ogre(void)
@@ -46,6 +47,7 @@ enemy_t *create_ogre(void)
     ogre->dps = 10;
     ogre->hp = 150;
     ogre->max_hp = 150;
+    return ogre;
 }
 
 enemy_t *create_troll(void)
@@ -65,4 +67,5 @@ enemy_t *create_troll(void)
     troll->dps = 15;
     troll->hp = 100;
     troll->max_hp = 100;
+    return troll;
 }

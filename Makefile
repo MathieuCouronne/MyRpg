@@ -59,6 +59,9 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/creation_player/menu_creation.c \
 				$(SRC_DIR)init/scenes/creation_player/buttons_creation.c \
 				$(SRC_DIR)init/scenes/creation_player/create_text_stat.c \
+				$(SRC_DIR)init/scenes/stats/stats_scene.c \
+                $(SRC_DIR)init/scenes/stats/buttons_creation.c \
+                $(SRC_DIR)init/scenes/stats/create_text_stat.c \
 				$(SRC_DIR)init/clock.c \
 				$(SRC_DIR)init/load_assets.c
 
@@ -84,6 +87,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 				$(SRC_DIR)scenes/creation/creation.c \
+				$(SRC_DIR)scenes/game/stats.c \
 				$(SRC_DIR)scenes/loader.c \
 
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
@@ -91,6 +95,7 @@ SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/saves.c \
 				$(SRC_DIR)controllers/navigation/pause.c \
 				$(SRC_DIR)controllers/navigation/creation.c \
+				$(SRC_DIR)controllers/navigation/empty_saves.c \
 
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
@@ -99,6 +104,8 @@ SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 
 SRC			+=	$(SRC_DIR)controllers/setup_stats/up_stat.c \
 				$(SRC_DIR)controllers/setup_stats/down_stat.c \
+				$(SRC_DIR)controllers/setup_stats/down_stats_game.c \
+				$(SRC_DIR)controllers/setup_stats/up_stats_game.c \
 
 SRC			+=	$(SRC_DIR)controllers/inventory/create_inventory.c \
 				$(SRC_DIR)controllers/inventory/add_to_inventory.c \

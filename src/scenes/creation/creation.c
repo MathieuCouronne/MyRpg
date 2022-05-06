@@ -16,7 +16,7 @@ static void event_handling(game_t *game)
     }
 }
 
-void display_buttons_creation(sfRenderWindow *w,
+static void display_buttons_creation(sfRenderWindow *w,
 main_creation_scenes_t *creation)
 {
     sfRenderWindow_drawSprite(w, creation->buttons[0]->asset->sprite, NULL);
@@ -36,7 +36,7 @@ main_creation_scenes_t *creation)
     sfRenderWindow_drawText(w,creation->stat[3][0], NULL);
 }
 
-void display_stat(main_creation_scenes_t *creation,
+static void display_stat(main_creation_scenes_t *creation,
 sfRenderWindow *window)
 {
     for (size_t i = 0; i < 5; i++) {
@@ -53,7 +53,7 @@ sfRenderWindow *window)
     }
 }
 
-void set_parameters(game_t *game, main_creation_scenes_t *creation)
+static void set_parameters(game_t *game, main_creation_scenes_t *creation)
 {
     sfSprite_setPosition(game->characters
     [creation->class]->sprite, (sfVector2f) {940, 270});

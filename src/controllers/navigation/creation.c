@@ -10,6 +10,26 @@
 
 extern const char *class_textures[];
 
+void put_stats(game_t *game)
+{
+    game->saves[game->current]->stats->strength =
+    game->scenes->creation_menu->stats
+    [game->scenes->creation_menu->class][0];
+    game->saves[game->current]->stats->defense =
+    game->scenes->creation_menu->stats
+    [game->scenes->creation_menu->class][1];
+    game->saves[game->current]->stats->vitality =
+    game->scenes->creation_menu->stats
+    [game->scenes->creation_menu->class][2];
+    game->saves[game->current]->stats->speed =
+    game->scenes->creation_menu->stats
+    [game->scenes->creation_menu->class][3];
+    game->saves[game->current]->stats->dexterity =
+    game->scenes->creation_menu->stats
+    [game->scenes->creation_menu->class][4];
+    game->saves[game->current]->class = game->scenes->creation_menu->class;
+}
+
 void create_game(game_t *game)
 {
     sfSprite_setScale(game->characters
@@ -17,16 +37,12 @@ void create_game(game_t *game)
     game->player->texture = sfTexture_createFromFile(class_textures
     [game->scenes->creation_menu->class], NULL);
     sfSprite_setTexture(game->player->sprite, game->player->texture, sfFalse);
-    game->stats->strength = game->scenes->creation_menu->stats
-    [game->scenes->creation_menu->class][0];
-    game->stats->defense = game->scenes->creation_menu->stats
-    [game->scenes->creation_menu->class][1];
-    game->stats->vitality = game->scenes->creation_menu->stats
-    [game->scenes->creation_menu->class][2];
-    game->stats->speed = game->scenes->creation_menu->stats
-    [game->scenes->creation_menu->class][3];
-    game->stats->dexterity = game->scenes->creation_menu->stats
-    [game->scenes->creation_menu->class][4];
-    game->scenes->prev = game->scenes->current;
+    game->player->position->x = (float) 2270;
+    game->player->position->y = (float) 2030;
+    game->saves[game->current] = create_character();
+    put_stats(game);
+    game->saves[game->current]->unspent =
+    game->scenes->creation_menu->unspent[game->scenes->creation_menu->class];
+    game->scenes->stats = init_stats(game);
     game->scenes->current = MAIN_GAME;
 }

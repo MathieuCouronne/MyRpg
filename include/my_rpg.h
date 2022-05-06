@@ -66,6 +66,11 @@ sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
 sfText **init_text_player_hp(fight_t *text_fight);
 sfText **init_text_enemy_hp(fight_t *text_enemy);
 button_t **init_icons_settings(void);
+sfText **create_stat_text_scene(sfFont *font,
+    stats_scene_t *saves);
+sfText *init_text_class_scene(sfFont *font, game_t *game);
+button_t **init_buttons_stats(void);
+stats_scene_t *init_stats(game_t *game);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -107,6 +112,7 @@ bool display_settings(game_t *game);
 bool display_pause(game_t *game);
 bool display_saves(game_t *game);
 bool display_creation(game_t *game);
+bool display_stats(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
@@ -168,6 +174,9 @@ void go_to_saves(game_t *game);
 void go_to_game_player1(game_t *game);
 void go_to_game_player2(game_t *game);
 void go_to_game_player3(game_t *game);
+void go_to_creation_player1(game_t *game);
+void go_to_creation_player2(game_t *game);
+void go_to_creation_player3(game_t *game);
 void back_to_game(game_t *game);
 void quit_game(game_t *game);
 void create_game(game_t *game);
@@ -184,5 +193,15 @@ void down_defense(game_t *game);
 void down_vitality(game_t *game);
 void down_speed(game_t *game);
 void down_dexterity(game_t *game);
+void up_strength_game(game_t *game);
+void up_defense_game(game_t *game);
+void up_vitality_game(game_t *game);
+void up_speed_game(game_t *game);
+void up_dexterity_game(game_t *game);
+void down_strength_game(game_t *game);
+void down_defense_game(game_t *game);
+void down_vitality_game(game_t *game);
+void down_speed_game(game_t *game);
+void down_dexterity_game(game_t *game);
 
 #endif

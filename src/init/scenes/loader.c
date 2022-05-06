@@ -74,6 +74,14 @@ static game_asset_t *init_loader_fill(void)
     return bar;
 }
 
+static void init(loader_t *scene)
+{
+    scene->event = (sfEvent) {0};
+    scene->background = init_background();
+    scene->bar = init_loader_bar();
+    scene->fill = init_loader_fill();
+}
+
 loader_t *init_loader_window(int *total)
 {
     sfVideoMode desktop_mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
@@ -90,10 +98,7 @@ loader_t *init_loader_window(int *total)
     if (!scene->window)
         return NULL;
     sfRenderWindow_setPosition(scene->window, pos);
-    scene->event = (sfEvent) {0};
-    scene->background = init_background();
-    scene->bar = init_loader_bar();
-    scene->fill = init_loader_fill();
+    init(scene);
     if (!scene->bar || !scene->fill)
         return NULL;
     return scene;

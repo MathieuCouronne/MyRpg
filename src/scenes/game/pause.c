@@ -35,13 +35,9 @@ bool display_pause(game_t *game)
     buttons = pause->buttons;
     event_handling(game);
     sfRenderWindow_drawSprite(window, pause->background->sprite, NULL);
-    sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[0]->text, NULL);
-    sfRenderWindow_drawSprite(window, buttons[1]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[1]->text, NULL);
-    sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[2]->text, NULL);
-    sfRenderWindow_drawSprite(window, buttons[3]->asset->sprite, NULL);
-    sfRenderWindow_drawText(window, buttons[3]->text, NULL);
+    for (size_t i = 0; i < 4; i++) {
+        sfRenderWindow_drawSprite(window, buttons[i]->asset->sprite, NULL);
+        sfRenderWindow_drawText(window, buttons[i]->text, NULL);
+    }
     return true;
 }

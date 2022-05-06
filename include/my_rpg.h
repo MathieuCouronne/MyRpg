@@ -66,7 +66,6 @@ sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
 sfText **init_text_life_characters(fight_t *text_fight);
 sfText **init_text_life_enemy(fight_t *text_enemy);
 button_t **init_icons_settings(void);
-void change_stat(button_t **buttons);
 sfText **create_stat_text_scene(sfFont *font,
     stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);
@@ -192,5 +191,15 @@ void down_defense(game_t *game);
 void down_vitality(game_t *game);
 void down_speed(game_t *game);
 void down_dexterity(game_t *game);
+void up_strength_game(game_t *game);
+void up_defense_game(game_t *game);
+void up_vitality_game(game_t *game);
+void up_speed_game(game_t *game);
+void up_dexterity_game(game_t *game);
+void down_strength_game(game_t *game);
+void down_defense_game(game_t *game);
+void down_vitality_game(game_t *game);
+void down_speed_game(game_t *game);
+void down_dexterity_game(game_t *game);
 
 #endif

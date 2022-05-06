@@ -43,7 +43,7 @@ sfText **init_text_creation(sfFont *font)
     return text;
 }
 
-void change_stat(button_t **buttons)
+static void change_stat(button_t **buttons)
 {
     buttons[0] = create_icon(
     (sfVector2f) {715, 505}, CREATION_PLUS_PATH, up_strength);

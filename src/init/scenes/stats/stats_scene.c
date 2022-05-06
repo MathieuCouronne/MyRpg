@@ -12,14 +12,15 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-extern const int class_base_data[3][5];
-
 static bool init_classes_base_data(int *stats, game_t *game)
 {
     if (!stats)
         return false;
-    for (unsigned int j = 0; j < 5; j++)
-        stats[j] = class_base_data[game->saves[game->current]->class][j];
+    stats[0] = game->saves[game->current]->stats->strength;
+    stats[1] = game->saves[game->current]->stats->defense;
+    stats[2] = game->saves[game->current]->stats->vitality;
+    stats[3] = game->saves[game->current]->stats->speed;
+    stats[4] = game->saves[game->current]->stats->dexterity;
     return true;
 }
 

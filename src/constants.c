@@ -30,10 +30,11 @@ const int class_base_data[3][5] = {
 
 char const *quest1[3][5] = {
     {
-        "Hey lad ! Come here ! I need help... I'm getting old, as you can see" \
-        "around you, some trolls took control of the western part of the village.",
-        "I would be grateful if you could please get rid of them and bring me 5" \
-        "of their fangs so I can brew some potions please ?",
+        "Hey lad ! Come here ! I need help..." \
+        "I'm getting old, as you can see around you, some trolls took control" \
+        "of the western part of the village.",
+        "I would be grateful if you could please get rid of them and" \
+        "bring me 5 of their fangs so I can brew some potions please ?",
         NULL
     },
     {

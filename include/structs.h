@@ -44,6 +44,7 @@ typedef struct quest_s quest_t;
 typedef struct quests_s quests_t;
 typedef struct quest_messages_s quest_messages_t;
 typedef struct thread_params_s thread_params_t;
+typedef struct stats_scene_s stats_scene_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -253,6 +254,16 @@ struct quest_s {
     slot_t **rewards;
     // quest_messages_t *messages;
     char ***messages;
+};
+
+struct stats_scene_s {
+    game_asset_t *background;
+    button_t **buttons;
+    sfText *text;
+    sfText **stat;
+    sfFont *font;
+    int *stats;
+    sfText **unspent_text;
 };
 
 struct quest_messages_s {

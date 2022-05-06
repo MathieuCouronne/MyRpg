@@ -23,7 +23,7 @@ static void init_classes_base_data(int **stats)
     }
 }
 
-game_asset_t *init_creation_background()
+game_asset_t *init_creation_background(void)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -35,7 +35,7 @@ game_asset_t *init_creation_background()
     return background;
 }
 
-int *unspent_init()
+static int *unspent_init(void)
 {
     int *unspent = malloc(sizeof(int) * 4);
 

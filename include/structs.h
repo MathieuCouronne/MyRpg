@@ -64,7 +64,7 @@ struct game_s {
     config_t *config;
     character_t **saves;
     stats_t *stats;
-    quests_t **quests;
+    quests_t *quests;
 };
 
 struct game_asset_s {
@@ -240,6 +240,7 @@ struct quests_s {
     game_asset_t *asset;
     sfText *text;
     quest_t **quests;
+    bool speaking;
 };
 
 struct quest_s {

@@ -38,6 +38,7 @@ quests_t *init_quests(void)
 
     if (!quests)
         return NULL;
+    quests->speaking = false;
     quests->quests = malloc(sizeof(quest_t *) * (QUEST_AMOUNT + 1));
     quests->quests[0] = create_first_quest();
     quests->quests[1] = NULL;

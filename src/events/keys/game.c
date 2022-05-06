@@ -30,5 +30,6 @@ void handle_game_change_scenes(game_t *game)
     if (game->event.type != sfEvtKeyPressed)
         return;
     if (!change_scenes(game) && game->event.key.code == sfKeyE)
-        open_chest(game);
+        game->quests->speaking = true;
+        // open_chest(game);
 }

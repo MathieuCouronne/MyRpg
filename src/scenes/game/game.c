@@ -19,6 +19,13 @@ static void event_handling(game_t *game)
     }
 }
 
+static void display_quest(game_t *game)
+{
+    if (!game->quests->speaking)
+        return;
+    sfRenderWindow_drawSprite(game->window, game->quests->asset->sprite, NULL);
+}
+
 bool display_main_game(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -35,6 +42,7 @@ bool display_main_game(game_t *game)
     sfRenderWindow_drawSprite(game->window, main_game->chief->sprite, NULL);
     sfRenderWindow_drawSprite(window, main_game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
+    display_quest(game);
     event_handling(game);
     return true;
 }

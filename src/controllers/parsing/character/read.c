@@ -10,8 +10,7 @@
 #include "my_rpg.h"
 #include "character.h"
 
-void update_character(data_parsing_match_t matches[],
-char **array)
+void update_character(data_parsing_match_t matches[], char **array)
 {
     for (unsigned int i = 0; matches[i].key; i++) {
         if (my_strcmp(matches[i].key, array[0]) == 0) {

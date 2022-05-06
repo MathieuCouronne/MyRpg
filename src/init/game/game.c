@@ -47,7 +47,6 @@ game_t *init_game(void)
 
     params->game = game;
     params->loaded = malloc(sizeof(int));
-    *(params->loaded) = 0;
     thread = sfThread_create((void *) load_game, params);
     if (!thread)
         return NULL;

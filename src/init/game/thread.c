@@ -51,17 +51,10 @@ static bool are_params_invalid(thread_params_t *params)
     );
 }
 
-bool load_game(thread_params_t *params)
+static void init_params(thread_params_t *params)
 {
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
-    if (!params || !params->game || !params->loaded)
-        return false;
-    params->game->config = parse_config();
-    if (!params->game->config || (params->game->config->assets_loaded != 1 &&
-    !download_assets(params->loaded))) {
-        return false;
-    }
     params->game->player = init_player();
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
@@ -71,6 +64,18 @@ bool load_game(thread_params_t *params)
     params->game->scenes = init_scenes(params->game);
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
+}
+
+bool load_game(thread_params_t *params)
+{
+    if (!params || !params->game || !params->loaded)
+        return false;
+    *(params->loaded) = 0;g
+    params->game->config = parse_config();
+    if (!params->game->config || (params->game->config->assets_loaded != 1 &&
+    !download_assets(params->loaded)))
+        return false;
+    init_params(params);
     if (are_params_invalid(params))
         return false;
     *params->loaded = -1;

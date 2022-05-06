@@ -71,7 +71,6 @@ sfText **create_stat_text_scene(sfFont *font,
     stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);
 button_t **init_buttons_stats(void);
-game_asset_t *init_creation_background(void);
 stats_scene_t *init_stats(game_t *game);
 
 // Destroy

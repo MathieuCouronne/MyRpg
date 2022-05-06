@@ -23,6 +23,32 @@ static bool init_classes_base_data(int *stats, game_t *game)
     return true;
 }
 
+static game_asset_t *init_creation_background(void)
+{
+    game_asset_t *background = malloc(sizeof(game_asset_t));
+
+    if (!background)
+        return NULL;
+    background->sprite = sfSprite_create();
+    background->texture = sfTexture_createFromFile(CREATION_BG_PATH, NULL);
+    if (!background->sprite || !background->texture)
+        return NULL;
+    sfSprite_setTexture(background->sprite, background->texture, sfTrue);
+    return background;
+}
+
+static sfText *create_unspent(sfFont *font, int i)
+{
+    sfText *text = sfText_create();
+
+    sfText_setFont(text, font);
+    sfText_setString(text, itoa(i));
+    sfText_setCharacterSize(text, 20);
+    sfText_setColor(text, sfWhite);
+    sfText_setPosition(text, (sfVector2f) {650, 450});
+    return text;
+}
+
 stats_scene_t *init_stats(game_t *game)
 {
     stats_scene_t *scene = malloc(sizeof(stats_scene_t));
@@ -38,11 +64,10 @@ stats_scene_t *init_stats(game_t *game)
     if (!scene->stats || !scene->font || !scene->background ||
         !scene->buttons || !scene->text)
         return NULL;
-    scene->stat = create_stat_text_scene(scene->font, scene);
     scene->unspent = game->saves[game->current]->unspent;
-    scene->unspent_text = game->scenes->creation_menu->unspent_text
-    [game->scenes->creation_menu->class];
-    if (!scene->stat || !scene->unspent || !scene->unspent_text)
+    scene->stat = create_stat_text_scene(scene->font, scene);
+    scene->unspent_text = create_unspent(scene->font, scene->unspent);
+    if (!scene->stat)
         return NULL;
     return scene;
 }

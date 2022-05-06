@@ -26,7 +26,7 @@ static bool init_classes_base_data(int **stats)
     return true;
 }
 
-game_asset_t *init_creation_background(void)
+static game_asset_t *init_creation_background(void)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 

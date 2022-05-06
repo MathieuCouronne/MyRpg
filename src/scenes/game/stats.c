@@ -56,11 +56,12 @@ bool display_stats(game_t *game)
     sfRenderWindow *window = NULL;
     stats_scene_t *stats = NULL;
 
-    if (!game || !game->window || !game->scenes ||
-        !game->scenes->creation_menu)
+    if (!game || !game->window || !game->scenes || !game->scenes->stats) {
+        printf("je afdsfq<\n");
         return false;
+    }
     window = game->window;
-    stats = game->scenes->stats ;
+    stats = game->scenes->stats;
     event_handling(game);
     sfRenderWindow_drawSprite(window, stats->background->sprite, NULL);
     display_buttons_creation(window, stats);

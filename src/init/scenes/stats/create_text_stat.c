@@ -15,8 +15,9 @@ static bool init_txt(sfText **text,
 {
     for (size_t y = 0; y < 5; y++) {
         text[y] = sfText_create();
-        if (!text[y])
+        if (!text[y]) {
             return false;
+        }
         sfText_setString(text[y], itoa(class_stats[y]));
         sfText_setCharacterSize(text[y], 20);
         sfText_setColor(text[y], sfWhite);
@@ -47,7 +48,7 @@ sfText **create_stat_text_scene(sfFont *font,
     if (!text || !init_txt_array(text, font, stats->stats))
         return NULL;
     text[6] = sfText_create();
-    if (!text[3])
+    if (!text[6])
         return NULL;
     sfText_setFont(text[6], font);
     sfText_setString(text[6], "Unspent:");

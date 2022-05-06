@@ -36,12 +36,12 @@ enemy_t *create_ogre(void)
     if (!ogre)
         return NULL;
     ogre->sprite = sfSprite_create();
-    ogre->rect = (sfIntRect) {239, 37, 39, 44};
-    ogre->position = (sfVector2f) {0, 0};
-    ogre->texture = sfTexture_createFromFile(OGRE_PATH, NULL);
+    ogre->texture = sfTexture_createFromFile(REVERSED_OGRE_PATH, NULL);
+    if (!ogre->sprite || !ogre->texture)
+        return NULL;
     sfSprite_setTexture(ogre->sprite, ogre->texture, sfTrue);
-    sfSprite_setTextureRect(ogre->sprite, ogre->rect);
-    sfSprite_setPosition(ogre->sprite, ogre->position);
+    sfSprite_setScale(ogre->sprite, (sfVector2f) {10, 10});
+    sfSprite_setPosition(ogre->sprite, (sfVector2f) {1350, 240});
     ogre->name = "Ogre";
     ogre->dps = 10;
     ogre->hp = 150;

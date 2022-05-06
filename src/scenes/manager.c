@@ -8,14 +8,8 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 
-static bool empty(game_t *game)
-{
-    (void) game;
-    return true;
-}
-
 static bool (*scenes_list[])(game_t *game) = {
-    empty, display_main_menu, display_main_game, display_fight,
+    display_main_menu, display_main_game, display_fight,
     display_creation, display_settings, display_saves, display_pause,
     display_inventory, NULL
 };

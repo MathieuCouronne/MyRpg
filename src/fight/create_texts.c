@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 #include "structs.h"
+#include "my.h"
 
 bool create_text_enemy(enemy_t *enemy, fight_t *fight)
 {

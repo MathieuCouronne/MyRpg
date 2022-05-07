@@ -70,7 +70,7 @@ bool display_stats(game_t *game)
     sfRenderWindow_drawSprite(window, stats->background->sprite, NULL);
     display_buttons_creation(window, stats);
     set_parameters(game);
-    sfRenderWindow_drawSprite(window,game->characters[game->saves
+    sfRenderWindow_drawSprite(window, game->characters[game->saves
     [game->current]->class]->sprite, NULL);
     sfText_setPosition(stats->text,(sfVector2f) {540, 360});
     sfRenderWindow_drawText(window, stats->text, NULL);

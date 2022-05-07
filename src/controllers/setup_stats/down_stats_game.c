@@ -19,7 +19,7 @@ void down_strength_game(game_t *game)
     itoa(game->saves[game->current]->stats->strength));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_defense_game(game_t *game)
@@ -32,7 +32,7 @@ void down_defense_game(game_t *game)
     itoa(game->saves[game->current]->stats->defense));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_vitality_game(game_t *game)
@@ -45,7 +45,7 @@ void down_vitality_game(game_t *game)
     itoa(game->saves[game->current]->stats->vitality));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_speed_game(game_t *game)
@@ -58,7 +58,7 @@ void down_speed_game(game_t *game)
     itoa(game->saves[game->current]->stats->speed));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_dexterity_game(game_t *game)
@@ -71,5 +71,5 @@ void down_dexterity_game(game_t *game)
     itoa(game->saves[game->current]->stats->dexterity));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }

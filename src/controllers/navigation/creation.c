@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include "my_rpg.h"
+#include "macros.h"
 
 extern const char *class_textures[];
 
@@ -32,6 +33,8 @@ void put_stats(game_t *game)
 
 void create_game(game_t *game)
 {
+    sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
+
     sfSprite_setScale(game->characters
     [game->scenes->creation_menu->class]->sprite, (sfVector2f) {1.f, 1.f});
     game->player->texture = sfTexture_createFromFile(class_textures
@@ -44,5 +47,9 @@ void create_game(game_t *game)
     game->saves[game->current]->unspent =
     game->scenes->creation_menu->unspent[game->scenes->creation_menu->class];
     game->scenes->stats = init_stats(game);
+    game->view = sfView_createFromRect(view_rect);
+    sfView_setCenter(game->view, (sfVector2f) {2270, 2030});
+    sfView_zoom(game->view, 1.f / MAP_SCALE);
+    sfRenderWindow_setView(game->window, game->view);
     game->scenes->current = MAIN_GAME;
 }

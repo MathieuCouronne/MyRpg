@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** title.c
 ** File description:
-** Game initializer
+** tile menu initializer
 */
 
 #include <stdlib.h>

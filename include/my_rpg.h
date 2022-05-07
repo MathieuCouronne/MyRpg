@@ -186,6 +186,9 @@ bool write_config(config_t *config);
 void write_value(FILE *file, data_parsing_match_t match);
 void save_infos(FILE *file, config_t *config);
 void save_keys(FILE *file, config_t *config);
+bool write_character(character_t *character, char const *filename);
+void save_characters_infos(FILE *file, character_t *characters);
+void save_characters_stats(FILE *file, character_t *character);
 
 // Navigations
 void go_to_creation(game_t *game);

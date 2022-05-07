@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** text.c
 ** File description:
-** Game initializer
+** Text fight initializer
 */
 
 #include <stdlib.h>

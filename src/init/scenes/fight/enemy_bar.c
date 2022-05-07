@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** player.c
+** enemy_bar.c
 ** File description:
-** init_player
+** Create enemy bar
 */
 
 #include "structs.h"

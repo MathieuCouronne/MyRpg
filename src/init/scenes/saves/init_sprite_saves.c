@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** init_menu_button.c
+** init_sprite_saves.c
 ** File description:
-** init menu button
+** Create buttons for saves
 */
 
 #include <stdlib.h>

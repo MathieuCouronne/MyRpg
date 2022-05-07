@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** creation.c
 ** File description:
 ** create creation player scene
 */

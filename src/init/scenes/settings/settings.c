@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** settings.c
 ** File description:
-** Game initializer
+** Same initializer
 */
 
 #include <SFML/Graphics.h>

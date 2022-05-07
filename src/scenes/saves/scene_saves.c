@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** scene_saves.c
 ** File description:
-** Game arrow keys events handling
+** display saves scene
 */
 
 #include <stdbool.h>

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** init_button_settings.c
 ** File description:
-** Game initializer
+** Init buttons for settings scene
 */
 
 #include <SFML/Graphics.h>

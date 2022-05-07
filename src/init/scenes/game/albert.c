@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** pnj.c
+** albert.c
 ** File description:
-** init_pnj
+** init albert
 */
 
 #include <SFML/Audio.h>

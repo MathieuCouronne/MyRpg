@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** write.c
+** itoa.c
 ** File description:
-** Write config into a file
+** int to char
 */
 
 #include <stdlib.h>

@@ -7,6 +7,20 @@
 
 #include "my_rpg.h"
 #include "inventory.h"
+#include "macros.h"
+
+static const char *SAVE_FILENAMES[] = {
+    PLAYER1_FILE_PATH, PLAYER2_FILE_PATH, PLAYER3_FILE_PATH
+};
+
+static void save_data(game_t *game)
+{
+    write_config(game->config);
+    for (unsigned int i = 0; i < 3; i++) {
+        if (game->saves[i])
+            write_character(game->saves[i], SAVE_FILENAMES[i]);
+    }
+}
 
 int main(void)
 {
@@ -19,6 +33,6 @@ int main(void)
         scene_manager(game);
         sfRenderWindow_display(game->window);
     }
-    write_config(game->config);
+    save_data(game);
     destroy_all(game);
 }

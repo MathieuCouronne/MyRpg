@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** stats.c
 ** File description:
-** create creation player scene
+** display stats
 */
 
 #include <stdbool.h>

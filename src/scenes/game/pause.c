@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** pause.c
 ** File description:
-** Game arrow keys events handling
+** Display pause
 */
 
 #include <stdbool.h>

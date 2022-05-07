@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** loading.c
+** loader.c
 ** File description:
-** init_inventory
+** Init all sprite for loading
 */
 
 #include <SFML/Audio.h>

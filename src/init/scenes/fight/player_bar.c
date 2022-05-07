@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** player.c
+** player_bar.c
 ** File description:
-** init_player
+** Init player bar
 */
 
 #include "structs.h"

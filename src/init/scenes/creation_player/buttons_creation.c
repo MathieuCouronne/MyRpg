@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** button_creation.c
 ** File description:
-** Game initializer
+** Cutton creation for creation player
 */
 
 #include <SFML/Window.h>

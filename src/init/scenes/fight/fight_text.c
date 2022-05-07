@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** fight_text.c
 ** File description:
-** Game initializer
+** Init text hp for player and enemy fight
 */
 
 #include <SFML/Window.h>

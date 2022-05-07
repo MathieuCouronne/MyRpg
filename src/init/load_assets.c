@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** load_assets.c
 ** File description:
-** Game initializer
+** Init all characters sprite
 */
 
 #include <stdlib.h>

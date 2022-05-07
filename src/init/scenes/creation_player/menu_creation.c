@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** menu_creation.c
 ** File description:
-** Game initializer
+** Menu creation initializer
 */
 
 #include <SFML/Graphics.h>

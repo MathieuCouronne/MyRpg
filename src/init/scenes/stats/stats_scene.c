@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** stats_scene.c
 ** File description:
-** Game initializer
+** Stats initializer
 */
 
 #include <SFML/Graphics.h>

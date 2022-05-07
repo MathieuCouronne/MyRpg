@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** create_map.c
+** main_fight.c
 ** File description:
-** create_map main game
+** display fight
 */
 
 #include <stdbool.h>

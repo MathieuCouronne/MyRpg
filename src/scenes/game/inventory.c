@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** inventory.c
 ** File description:
-** inventory
+** Display inventory
 */
 
 #include <stdbool.h>

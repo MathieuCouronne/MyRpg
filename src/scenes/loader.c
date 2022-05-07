@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** loader.c
 ** File description:
-** Game arrow keys events handling
+** Display loader
 */
 
 #include <stdbool.h>

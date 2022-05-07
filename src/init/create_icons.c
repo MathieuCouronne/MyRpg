@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** create_icons.c
 ** File description:
-** Game initializer
+** Create icons and save card
 */
 
 #include <SFML/Graphics.h>

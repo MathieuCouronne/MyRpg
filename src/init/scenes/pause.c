@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** pause.c
 ** File description:
-** Game initializer
+** Pause initializer
 */
 
 #include <SFML/Graphics.h>

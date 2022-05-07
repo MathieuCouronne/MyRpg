@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** init_menu_button.c
+** init_buttons.c
 ** File description:
-** init menu button
+** init buttons for fight
 */
 
 #include <stdlib.h>

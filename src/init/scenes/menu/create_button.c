@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** create_button.c
 ** File description:
-** Game initializer
+** Create buttons for menu
 */
 
 #include <stdlib.h>

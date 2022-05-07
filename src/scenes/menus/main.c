@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** main.c
 ** File description:
-** Game arrow keys events handling
+** Display main menu
 */
 
 #include <stdbool.h>

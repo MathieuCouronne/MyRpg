@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** clock.c
 ** File description:
-** Game initializer
+** Clock initializer
 */
 
 #include <SFML/Graphics.h>

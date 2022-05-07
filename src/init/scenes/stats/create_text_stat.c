@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** create_text_stats.c
 ** File description:
-** Game initializer
+** Create text for stats menu
 */
 
 #include <SFML/Window.h>

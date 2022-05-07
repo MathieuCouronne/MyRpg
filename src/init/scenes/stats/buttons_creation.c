@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** buttons_creation.c
 ** File description:
-** Game initializer
+** Create button for stats menu
 */
 
 #include <SFML/Window.h>

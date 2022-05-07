@@ -136,6 +136,9 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
 				$(SRC_DIR)controllers/storage/config/save_infos.c \
 				$(SRC_DIR)controllers/storage/config/save_keys.c \
+				$(SRC_DIR)controllers/storage/character/write.c \
+				$(SRC_DIR)controllers/storage/character/save_infos.c \
+				$(SRC_DIR)controllers/storage/character/save_stats.c \
 
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 

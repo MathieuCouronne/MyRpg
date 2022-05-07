@@ -11,7 +11,7 @@ extern int class_base_data[3][5];
 
 void down_strength(game_t *game)
 {
-    if (game->scenes->creation_menu->stats
+    if ((int) game->scenes->creation_menu->stats
     [game->scenes->creation_menu->class][0] - 1 <
     class_base_data[game->scenes->creation_menu->class][0])
         return;
@@ -30,7 +30,7 @@ void down_strength(game_t *game)
 
 void down_defense(game_t *game)
 {
-    if (game->scenes->creation_menu->stats
+    if ((int) game->scenes->creation_menu->stats
         [game->scenes->creation_menu->class][1] - 1 <
         class_base_data[game->scenes->creation_menu->class][1])
         return;
@@ -49,7 +49,7 @@ void down_defense(game_t *game)
 
 void down_vitality(game_t *game)
 {
-    if (game->scenes->creation_menu->stats
+    if ((int) game->scenes->creation_menu->stats
         [game->scenes->creation_menu->class][2] - 1 <
         class_base_data[game->scenes->creation_menu->class][2])
         return;
@@ -68,7 +68,7 @@ void down_vitality(game_t *game)
 
 void down_speed(game_t *game)
 {
-    if (game->scenes->creation_menu->stats
+    if ((int) game->scenes->creation_menu->stats
         [game->scenes->creation_menu->class][3] - 1 <
         class_base_data[game->scenes->creation_menu->class][3])
         return;
@@ -87,7 +87,7 @@ void down_speed(game_t *game)
 
 void down_dexterity(game_t *game)
 {
-    if (game->scenes->creation_menu->stats
+    if ((int) game->scenes->creation_menu->stats
         [game->scenes->creation_menu->class][4] - 1 <
         class_base_data[game->scenes->creation_menu->class][4])
         return;

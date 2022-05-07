@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** move_left.c
 ** File description:
-** Move camera
+** Move camera left
 */
 
 #include <stdbool.h>

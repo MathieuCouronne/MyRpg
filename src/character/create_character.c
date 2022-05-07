@@ -12,34 +12,6 @@
 #include "inventory.h"
 #include "character.h"
 
-static stats_t *init_dog_stats(void)
-{
-    stats_t *stats = malloc(sizeof(stats_t));
-
-    if (!stats)
-        return NULL;
-    stats->strength = BASE_DOG_STR;
-    stats->defense = BASE_DOG_DEF;
-    stats->vitality = BASE_DOG_VIT;
-    stats->speed = BASE_DOG_SPD;
-    stats->dexterity = BASE_DOG_DEX;
-    return stats;
-}
-
-static stats_t *init_mage_stats(void)
-{
-    stats_t *stats = malloc(sizeof(stats_t));
-
-    if (!stats)
-        return NULL;
-    stats->strength = BASE_MAGE_STR;
-    stats->defense = BASE_MAGE_DEF;
-    stats->vitality = BASE_MAGE_VIT;
-    stats->speed = BASE_MAGE_SPD;
-    stats->dexterity = BASE_MAGE_DEX;
-    return stats;
-}
-
 stats_t *init_war_stats(void)
 {
     stats_t *stats = malloc(sizeof(stats_t));

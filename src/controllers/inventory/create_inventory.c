@@ -1,15 +1,11 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_rpg.h
+** create_inventory.c
 ** File description:
-** my_rpg header file
+** Create an inventory
 */
 
-#include <stdio.h>
-#include <SFML/Audio.h>
-#include <stdlib.h>
 #include "structs.h"
-#include "menu.h"
 #include "my_rpg.h"
 #include "inventory.h"
 

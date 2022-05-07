@@ -1,14 +1,10 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_rpg.h
+** add_to_inventory.h
 ** File description:
-** my_rpg header file
+** Function to add items to inventory
 */
 
-#include <stdio.h>
-#include <SFML/Audio.h>
-#include <stdlib.h>
-#include "my.h"
 #include "structs.h"
 #include "menu.h"
 #include "my_rpg.h"

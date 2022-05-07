@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** c.c
+** click.c
 ** File description:
-** Game wheel events handling
+** Game buttons click events handling
 */
 
 #include "my_rpg.h"

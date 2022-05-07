@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** get_infos.c
+** get_data.c
 ** File description:
-** Parse player infos
+** Parse player data
 */
 
 #include <stddef.h>

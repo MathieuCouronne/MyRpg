@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** menu.c
+** player.c
 ** File description:
-** menu destroyer
+** Player destroyer
 */
 
 #include <stdlib.h>

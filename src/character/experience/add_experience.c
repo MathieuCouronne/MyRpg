@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** RPG
+** add_experience.c
 ** File description:
-** Download assets from FTP
+** Add experience
 */
 
 #include "my_rpg.h"
@@ -10,7 +10,6 @@
 void add_experience(character_t *character, unsigned int exp)
 {
     unsigned int missing_exp = character->exp_required - character->current_exp;
-    float new_exp = 0;
 
     if (missing_exp <= exp) {
         exp -= missing_exp;

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** create_map.c
+** attack_player.c
 ** File description:
-** attacks enemy during fight
+** Attacks player during fight
 */
 
 #include <stdbool.h>
@@ -12,7 +12,7 @@
 
 static bool dodge(character_t *character)
 {
-    void *ptr = malloc(sizeof(1));
+    void *ptr = malloc(1);
     unsigned int seed = 0;
     unsigned int res = 0;
 

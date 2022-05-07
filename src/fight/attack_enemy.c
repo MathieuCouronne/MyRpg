@@ -1,12 +1,10 @@
 /*
 ** EPITECH PROJECT, 2021
-** create_map.c
+** attack_enemy.c
 ** File description:
-** attacks enemy during fight
+** Attacks enemy during fight
 */
 
-#include <stdbool.h>
-#include <stdlib.h>
 #include "my_rpg.h"
 #include "structs.h"
 

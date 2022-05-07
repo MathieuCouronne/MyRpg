@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** RPG
+** move_right.c
 ** File description:
-** Created by mathis
+** Move right
 */
 
 #include <stdbool.h>

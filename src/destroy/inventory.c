@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** menu.c
+** inventory.c
 ** File description:
-** menu destroyer
+** Inventory destroyer
 */
 
 #include <stdlib.h>

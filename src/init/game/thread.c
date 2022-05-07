@@ -26,15 +26,15 @@ static scenes_t *init_scenes(game_t *game)
     return scenes;
 }
 
-static character_t **init_character_saves(void)
+static character_t **init_character_saves(game_t *game)
 {
     character_t **saves = malloc(sizeof(character_t *) * 4);
 
     if (!saves)
         return NULL;
-    saves[0] = get_character_save(PLAYER1_FILE_PATH);
-    saves[1] = get_character_save(PLAYER2_FILE_PATH);
-    saves[2] = get_character_save(PLAYER3_FILE_PATH);
+    saves[0] = get_character_save(game, PLAYER1_FILE_PATH);
+    saves[1] = get_character_save(game, PLAYER2_FILE_PATH);
+    saves[2] = get_character_save(game, PLAYER3_FILE_PATH);
     saves[3] = NULL;
     return saves;
 }
@@ -57,7 +57,7 @@ static void init_params(thread_params_t *params)
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);
     params->game->collisions = sfImage_createFromFile(AREAS_PATH);
-    params->game->saves = init_character_saves();
+    params->game->saves = init_character_saves(params->game);
     params->game->scenes = init_scenes(params->game);
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();

@@ -128,6 +128,7 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/character/get_data.c \
 				$(SRC_DIR)controllers/parsing/character/get_inventory.c \
 				$(SRC_DIR)controllers/parsing/character/get_stats.c \
+				$(SRC_DIR)controllers/parsing/character/get_positions.c \
 				$(SRC_DIR)controllers/parsing/config/read.c \
 				$(SRC_DIR)controllers/parsing/config/get_options.c \
 

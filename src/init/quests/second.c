@@ -25,7 +25,7 @@ static const char *valid[4] = {
     "near the burnt land, go there abd you'll meet a friend of mine.",
     "Everybody here calls him Uo, you should also ask him\n" \
     "for some food, he is a really good chief, but... don't be in a\n" \
-    " hurry... He is pretty slow at cooking...\n",
+    "hurry... He is pretty slow at cooking...\n",
     "Anyways! You're free to go! Thank you again my friend.",
     NULL
 };

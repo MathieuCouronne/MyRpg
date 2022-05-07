@@ -157,7 +157,7 @@ struct enemy_s {
     sfColor color;
     char *name;
     unsigned int dps;
-    unsigned int hp;
+    int hp;
     unsigned int max_hp;
 };
 

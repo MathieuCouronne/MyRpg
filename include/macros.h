@@ -38,7 +38,6 @@
     #define REVERSED_DRAGON_PATH "./assets/images/fight/reversed_dragon.png"
     #define DRAGON_PATH "./assets/images/characters/dragon.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
-    #define INVENTORY_PATH "./assets/images/inventory/inventory.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"
     #define FIGHT_BG_PATH "./assets/images/fight/background.png"
@@ -69,6 +68,12 @@
     #define OPEN_CHEST_PATH "./assets/sounds/open_chest.ogg"
     #define WALK_PATH "./assets/sounds/Walk.ogg"
     #define CLIC_PATH "./assets/sounds/clic.ogg"
+
+    // Inventory
+    #define INVENTORY_PATH "./assets/images/inventory/inventory.png"
+    #define BOOK_PATH "./assets/images/inventory/book.jpg"
+    #define DRAGON_TAIL_PATH "./assets/images/inventory/dragon_tail.jpg"
+    #define TROLL_FANG_PATH "./assets/images/inventory/troll_fang.jpg"
 
     // Fonts Pathes
     #define ARIAL_FONT_PATH "./assets/fonts/arial_black.ttf"

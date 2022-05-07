@@ -77,6 +77,7 @@ stats_scene_t *init_stats(game_t *game);
 sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
+game_asset_t **init_inventory_sprite(char const *filename);
 
 // Destroy
 void destroy_game(game_t *game);

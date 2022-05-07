@@ -41,7 +41,7 @@ character_t *create_character(void)
     character->level = 1;
     character->current_exp = 0;
     character->exp_required = 100;
-    character->hp = 13;
+    character->hp = character->stats->vitality;
     character->inventory = create_inventory(INVENTORY_WIDTH, INVENTORY_HEIGHT);
     character->camera = (sfVector2f) {DEFAULT_VIEW_X, DEFAULT_VIEW_Y};
     character->player = (sfVector2f) {DEFAULT_VIEW_X, DEFAULT_VIEW_Y};

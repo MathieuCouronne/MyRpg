@@ -16,6 +16,7 @@ static bool event_fight(game_t *game)
             sfRenderWindow_getDefaultView(game->window));
         game->scenes->prev = game->scenes->current;
         game->scenes->current = FIGHT;
+        game->saves[game->current]->hp = game->saves[game->current]->stats->vitality;
         create_text_enemy(game->enemy[game->enemy_id], game->scenes->fight);
         create_text_player(game->saves[game->current], game->scenes->fight);
         return true;
@@ -45,6 +46,14 @@ static void display_quest(game_t *game)
     sfRenderWindow_drawText(game->window, game->quests->text, NULL);
 }
 
+static void display_level_up(game_t *game)
+{
+    if (!game->scenes->game_scene->level_up)
+        return;
+    sfRenderWindow_drawSprite(game->window,
+        game->scenes->game_scene->level_up_sprite->sprite, NULL);
+}
+
 bool display_main_game(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -62,6 +71,7 @@ bool display_main_game(game_t *game)
         sfRenderWindow_drawSprite(window, main_game->npc[i]->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     display_quest(game);
+    display_level_up(game);
     if (event_handling(game))
         return true;
     return true;

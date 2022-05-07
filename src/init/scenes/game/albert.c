@@ -47,6 +47,7 @@ npc_t *init_albert(void)
         return NULL;
     albert->position.x = 2275;
     albert->position.y = 1910;
+    albert->color = sfColor_fromRGB(148, 153, 255);
     transform_albert(albert);
     return albert;
 }

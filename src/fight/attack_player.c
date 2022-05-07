@@ -27,7 +27,7 @@ static bool dodge(character_t *character)
     return false;
 }
 
-void attack_player(character_t *player, enemy_t *enemy, attack_t *attack)
+void attack_player(character_t *player, enemy_t *enemy)
 {
     unsigned int dmg = (enemy->dps - player->stats->defense);
 

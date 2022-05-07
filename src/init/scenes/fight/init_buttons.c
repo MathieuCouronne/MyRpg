@@ -17,7 +17,7 @@ button_t **init_attack_buttons(void)
 
     if (!buttons)
         return NULL;
-    buttons[0] = create_button("Bite", (sfVector2f) {33, 779}, go_to_saves,
+    buttons[0] = create_button("Bite", (sfVector2f) {33, 779}, attack_enemy,
         scale);
     buttons[1] = create_button("Iron Claws",(sfVector2f) {967, 779},
         go_to_settings, scale);

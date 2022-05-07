@@ -91,12 +91,14 @@ fight_t *init_fight(void)
     fight->text_bar = init_text_bar();
     fight->player = player_fight();
     fight->enemy = create_enemies();
+    fight->characters = create_characters();
     fight->player_bar = init_player_bar();
     fight->enemy_bar = init_enemy_bar();
     fight->text_player_hp = init_text_player_hp(fight);
     fight->text_enemy_hp = init_text_enemy_hp(fight);
     if (!fight->background_fight || !fight->buttons || !fight->text_bar ||
-    !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar)
+    !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar
+    || !fight->characters)
         return NULL;
     return fight;
 }

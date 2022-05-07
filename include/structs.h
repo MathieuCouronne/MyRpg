@@ -177,6 +177,7 @@ struct fight_s {
     sfText *text_enemy_hp;
     sfFont *font;
     character_t *character;
+    player_t **characters;
     button_t **buttons;
     player_t *player;
     enemy_t **enemy;

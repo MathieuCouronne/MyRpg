@@ -136,8 +136,10 @@ void transform_dialog(game_t *game);
 // Fight
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
-void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
+void attack_player(character_t *player, enemy_t *enemy);
+void attack_enemy(game_t *game);
 enemy_t **create_enemies(void);
+player_t **create_characters(void);
 enemy_t *create_ogre(void);
 bool detect_enemies(game_t *game);
 sfText *init_text_player_hp(fight_t *text_fight);

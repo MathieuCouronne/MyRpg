@@ -41,10 +41,9 @@ static character_t **init_character_saves(void)
 
 static bool are_params_invalid(game_t *game)
 {
-    return (!game->view || !game->sounds ||
-        !game->collisions || !game->saves ||
-        !game->characters || !game->stats ||
-        !game->player || !game->quests
+    return (
+        !game->view || !game->sounds || !game->collisions || !game->saves ||
+        !game->characters || !game->stats || !game->player || !game->quests
     );
 }
 
@@ -76,8 +75,8 @@ bool load_game(thread_params_t *params)
     !download_assets(params->loaded)))
         return false;
     init_params(params);
+    *params->loaded = -1;
     if (are_params_invalid(params->game))
         return false;
-    *params->loaded = -1;
     return true;
 }

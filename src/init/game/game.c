@@ -55,7 +55,7 @@ game_t *init_game(void)
     sfThread_wait(thread);
     sfThread_destroy(thread);
     if (!game->scenes || !game->config || !game->saves ||
-    !game->view || !game->collisions)
+    !game->view || !game->collisions || !game->sounds)
         return NULL;
     game->window = init_window();
     if (!game->window)

@@ -33,8 +33,6 @@ void put_stats(game_t *game)
 
 void create_game(game_t *game)
 {
-    sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
-
     sfSprite_setScale(game->characters
     [game->scenes->creation_menu->class]->sprite, (sfVector2f) {1.f, 1.f});
     game->player->texture = sfTexture_createFromFile(class_textures
@@ -42,6 +40,8 @@ void create_game(game_t *game)
     sfSprite_setTexture(game->player->sprite, game->player->texture, sfFalse);
     game->player->position->x = (float) 2270;
     game->player->position->y = (float) 2030;
+    game->player->relative_pos->x = 0;
+    game->player->relative_pos->y = 0;
     game->saves[game->current] = create_character();
     put_stats(game);
     game->saves[game->current]->unspent =

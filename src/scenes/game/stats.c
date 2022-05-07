@@ -15,6 +15,11 @@ static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->stats->buttons);
+        if (game->event.type == sfEvtKeyPressed &&
+            game->event.key.code == sfKeyT) {
+            game->scenes->prev = game->scenes->current;
+            game->scenes->current = MAIN_GAME;
+        }
     }
 }
 

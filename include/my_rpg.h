@@ -149,9 +149,6 @@ bool create_text_enemy(enemy_t *enemy, fight_t *fight);
 character_t *create_character(void);
 void add_experience(character_t *character, unsigned int exp);
 
-// Music
-void play_music(sfMusic *sounds);
-
 // Map
 sfColor get_pixel_at_pos(game_t *game, sfVector2f shift);
 void move_left(game_t *game, sfColor color);

@@ -9,12 +9,23 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+static bool check_key(game_t *game, sfKeyCode key, sfKeyCode *keybinds[])
+{
+    for (size_t i = 0; i < 7; i++) {
+        if (*keybinds[i] == key)
+            return true;
+    }
+    return false;
+}
+
 static void event_handling(game_t *game, sfKeyCode *keybinds[])
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->settings->buttons);
         default_event_handling(game, game->scenes->settings->icons);
         if (game->event.type == sfEvtKeyPressed && check_bool(game) == 1) {
+            if (check_key(game, game->event.key.code, keybinds))
+                return;
             game->scenes->settings->icons
             [game->scenes->settings->current]->select = false;
             *keybinds[game->scenes->settings->current] = game->event.key.code;

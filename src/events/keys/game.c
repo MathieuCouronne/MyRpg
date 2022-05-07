@@ -17,7 +17,7 @@ static bool change_scenes(game_t *game)
     if (code != sfKeyEscape &&
     code != game->config->keys->inventory && code != sfKeyT)
         return false;
-    if (code == sfKeyEscape)
+    if (code == game->config->keys->pause)
         game->scenes->current = PAUSE;
     else if (game->event.key.code == game->config->keys->inventory)
         game->scenes->current = INVENTORY;

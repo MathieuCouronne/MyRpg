@@ -113,6 +113,8 @@ struct main_game_s {
     game_asset_t *map;
     npc_t **npc;
     chest_t *chest;
+    game_asset_t *level_up_sprite;
+    bool level_up;
 };
 
 struct player_s {

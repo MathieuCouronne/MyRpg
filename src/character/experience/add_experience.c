@@ -7,7 +7,7 @@
 
 #include "my_rpg.h"
 
-void add_experience(character_t *character, unsigned int exp)
+bool add_experience(character_t *character, unsigned int exp)
 {
     unsigned int missing_exp = character->exp_required - character->current_exp;
 
@@ -17,6 +17,8 @@ void add_experience(character_t *character, unsigned int exp)
         character->level++;
         character->exp_required *= 2;
         character->unspent += 5;
+        return true;
     }
     character->current_exp += exp;
+    return false;
 }

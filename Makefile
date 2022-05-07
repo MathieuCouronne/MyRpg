@@ -132,6 +132,7 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/character/get_positions.c \
 				$(SRC_DIR)controllers/parsing/config/read.c \
 				$(SRC_DIR)controllers/parsing/config/get_options.c \
+				$(SRC_DIR)controllers/parsing/config/check_config.c
 
 SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
 				$(SRC_DIR)controllers/storage/config/save_infos.c \

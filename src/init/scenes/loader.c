@@ -82,7 +82,7 @@ static void init(loader_t *scene)
     scene->fill = init_loader_fill();
 }
 
-loader_t *init_loader_window(int *total)
+loader_t *init_loader_window(void)
 {
     sfVideoMode desktop_mode = {WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_BITS};
     sfVideoMode mode = {LOADER_WINDOW_WIDTH, LOADER_WINDOW_HEIGHT, WINDOW_BITS};

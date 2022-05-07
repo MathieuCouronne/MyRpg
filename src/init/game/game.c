@@ -23,9 +23,9 @@ static sfRenderWindow *init_window(void)
 }
 
 // TODO: destroy / free window
-static void open_loader_window(int *total)
+static void open_loader_window(const int *total)
 {
-    loader_t *loader = init_loader_window(total);
+    loader_t *loader = init_loader_window();
     sfColor background = sfColor_fromRGB(125, 125, 125);
 
     while (sfRenderWindow_isOpen(loader->window)) {

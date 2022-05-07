@@ -23,6 +23,7 @@ void transform_dialog(game_t *game)
     pos.y += (float) WINDOW_HEIGHT / 2 - size.height - size.height * .15f;
     game->quests->asset->pos = pos;
     sfSprite_setPosition(game->quests->asset->sprite, game->quests->asset->pos);
+    transform_dialog_txt(game, game->quests->text);
 }
 
 void transform_dialog_txt(game_t *game, sfText *sprite)

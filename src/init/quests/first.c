@@ -32,6 +32,7 @@ static const char *invalid[5] = {
     "- Oh here you are already! Have you done what I asked?",
     "......",
     "I can see you didn't collected enough fangs!",
+    "You should come back when you have five of them.",
     NULL
 };
 
@@ -61,7 +62,7 @@ quest_t *create_first_quest(void)
     quest_t *quest = malloc(sizeof(quest_t));
 
     quest->id = 0;
-    quest->xp = 15;
+    quest->xp = 70;
     quest->name = "Get the fangs.";
     quest->started = false;
     quest->done = false;
@@ -69,6 +70,7 @@ quest_t *create_first_quest(void)
     quest->msg_index = 0;
     quest->messages = messages;
     quest->required = init_required_items();
+    quest->rewards = NULL;
     quest->npc_id = 0;
     return quest;
 }

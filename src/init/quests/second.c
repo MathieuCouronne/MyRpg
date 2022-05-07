@@ -14,7 +14,7 @@
 static const char *welcome[3] = {
     "But I have something else to ask...",
     "I accidentally dropped my book behind the Church...\n" \
-    "Could you bring it to me ? I'm kind of scared to go there...\n" \
+    "Could you bring it to me? I'm kind of scared to go there...\n" \
     "Who knows what could happen to an old man like me...",
     NULL
 };
@@ -30,7 +30,7 @@ static const char *valid[4] = {
     NULL
 };
 
-static const char *invalid[4] = {
+static const char *invalid[2] = {
     "Hi man! Thanks for my boo... uh... You didn't find my book?",
     NULL
 };
@@ -48,8 +48,8 @@ static slot_t **init_required_items(void)
     required[0] = malloc(sizeof(slot_t));
     if (!required[0])
         return NULL;
-    required[0]->id = FANG;
-    required[0]->quantity = 5;
+    required[0]->id = BOOK;
+    required[0]->quantity = 1;
     required[0]->pos.x = 0;
     required[0]->pos.y = 0;
     required[1] = NULL;
@@ -61,7 +61,7 @@ quest_t *create_second_quest(void)
     quest_t *quest = malloc(sizeof(quest_t));
 
     quest->id = 1;
-    quest->xp = 15;
+    quest->xp = 120;
     quest->name = "Get the books";
     quest->started = false;
     quest->done = false;
@@ -69,6 +69,7 @@ quest_t *create_second_quest(void)
     quest->msg_index = 0;
     quest->messages = messages;
     quest->required = init_required_items();
-    quest->npc_id = 1;
+    quest->rewards = NULL;
+    quest->npc_id = 0;
     return quest;
 }

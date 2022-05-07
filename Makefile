@@ -94,6 +94,8 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 
 SRC			+=	$(SRC_DIR)controllers/interactions/quests.c \
 
+SRC			+=	$(SRC_DIR)controllers/quests/finish.c \
+
 SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/menu.c \
 				$(SRC_DIR)controllers/navigation/saves.c \

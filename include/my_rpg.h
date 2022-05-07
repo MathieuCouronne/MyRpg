@@ -59,7 +59,7 @@ main_creation_scenes_t *init_creation(void);
 button_t **init_buttons_creation(void);
 game_asset_t **init_characters(void);
 sfText **init_text_creation(sfFont *font);
-loader_t *init_loader_window(int *total);
+loader_t *init_loader_window(void);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
@@ -70,7 +70,6 @@ sfText **init_text_life_enemy(fight_t *text_enemy);
 button_t **init_icons_settings(void);
 quest_t *create_first_quest(void);
 quest_t *create_second_quest(void);
-button_t **init_icons_settings(void);
 sfText **create_stat_text_scene(sfFont *font,
 stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);
@@ -122,6 +121,7 @@ bool display_stats(game_t *game);
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
 bool is_slot_in_inventory(inventory_t *inventory, slot_t *slot);
+bool is_quest_valid(inventory_t *inventory, slot_t **slot);
 inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *remove_from_inventory(inventory_t *inventory, unsigned int id,
@@ -132,6 +132,7 @@ sfVector2u pos2);
 // Controllers
 void transform_dialog_txt(game_t *game, sfText *sprite);
 void transform_dialog(game_t *game);
+void finish_quest(game_t *game);
 
 // Fight
 char *string_info(fight_t *fight);

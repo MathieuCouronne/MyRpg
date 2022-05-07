@@ -25,3 +25,12 @@ bool is_slot_in_inventory(inventory_t *inventory, slot_t *slot)
     }
     return false;
 }
+
+bool is_quest_valid(inventory_t *inventory, slot_t **slot)
+{
+    for (unsigned int i = 0; slot[i]; i++) {
+        if (!is_slot_in_inventory(inventory, slot[i]))
+            return false;
+    }
+    return true;
+}

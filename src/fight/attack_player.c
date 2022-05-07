@@ -17,7 +17,7 @@ static bool dodge(character_t *character)
     unsigned int res = 0;
 
     if (!ptr)
-        return;
+        return false;
     seed = *((unsigned int *)&ptr);
     srand(seed);
     free(ptr);

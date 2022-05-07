@@ -63,8 +63,6 @@ loader_t *init_loader_window(int *total);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
-sfText **init_text_player_hp(fight_t *text_fight);
-sfText **init_text_enemy_hp(fight_t *text_enemy);
 button_t **init_icons_settings(void);
 sfText **create_stat_text_scene(sfFont *font,
     stats_scene_t *saves);
@@ -127,8 +125,11 @@ inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
 char *string_info(fight_t *fight);
 char *string_info_enemy(fight_t *fight);
 void attack_player(character_t *player, enemy_t *enemy, attack_t *attack);
+enemy_t **create_enemies(void);
 enemy_t *create_ogre(void);
 bool detect_enemies(game_t *game);
+sfText *init_text_player_hp(fight_t *text_fight);
+sfText *init_text_enemy_hp(fight_t *text_enemy);
 
 // Character
 character_t *create_character(void);

@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include "my_rpg.h"
+#include "macros.h"
 
 bool detect_enemies(game_t *game)
 {
@@ -15,9 +16,12 @@ bool detect_enemies(game_t *game)
 
     bottom_left.y += (float) rect->height / 2;
     bottom_left.x += (float) rect->width / 2;
-    sfColor color = get_pixel_at_pos(game, bottom_left);
-    printf("%d %d %d\n", color.r, color.g, color.b);
-    if (color_cmp(get_pixel_at_pos(game, bottom_left), game->enemy->color))
-        return true;
+    for (unsigned int i = 0; i < 3; i++) {
+        if (color_cmp(get_pixel_at_pos(game, bottom_left),
+        game->enemy[i]->color)) {
+           game->enemy_id = i;
+            return true;
+        }
+    }
     return false;
 }

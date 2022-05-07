@@ -61,12 +61,13 @@ struct game_s {
     scenes_t *scenes;
     sounds_t *sounds;
     player_t *player;
-    enemy_t *enemy;
+    enemy_t **enemy;
     config_t *config;
     character_t **saves;
     stats_t *stats;
     quests_t **quests;
     unsigned short current;
+    unsigned int enemy_id;
 };
 
 struct game_asset_s {
@@ -170,13 +171,13 @@ struct fight_s {
     game_asset_t *text_bar;
     game_asset_t *player_bar;
     game_asset_t *enemy_bar;
-    sfText **text_player_hp;
-    sfText **text_enemy_hp;
+    sfText *text_player_hp;
+    sfText *text_enemy_hp;
     sfFont *font;
     character_t *character;
     button_t **buttons;
     player_t *player;
-    enemy_t *enemy;
+    enemy_t **enemy;
     game_t *game;
     int *life;
 };

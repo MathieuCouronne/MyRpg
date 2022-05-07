@@ -53,7 +53,7 @@ static void init_params(thread_params_t *params)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     params->game->player = init_player();
-    params->game->enemy = create_ogre();
+    params->game->enemy = create_enemies();
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);

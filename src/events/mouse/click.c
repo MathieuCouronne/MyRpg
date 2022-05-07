@@ -14,8 +14,10 @@ bool handle_buttons_clicks(game_t *game, button_t **buttons)
     if (game->event.type != sfEvtMouseButtonPressed || !buttons)
         return false;
     for (unsigned short i = 0; buttons[i]; i++) {
-        if (!is_pos_in_button(buttons[i], pos))
+        if (!is_pos_in_button(buttons[i], pos)) {
             continue;
+        }
+        sfSound_play(game->sounds->clic);
         buttons[i]->on_click(game);
         return true;
     }

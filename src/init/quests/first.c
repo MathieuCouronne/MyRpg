@@ -62,5 +62,6 @@ quest_t *create_first_quest(void)
     quest->msg_index = 0;
     quest->messages = messages;
     quest->required = init_required_items();
+    quest->npc_id = 0;
     return quest;
 }

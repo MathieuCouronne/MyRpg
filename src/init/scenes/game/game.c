@@ -34,10 +34,14 @@ main_game_t *init_main_game(game_t *game)
         return NULL;
     main_game->map = init_map(game);
     main_game->chest = init_chest();
-    main_game->albert = init_albert();
-    main_game->chief = init_chief();
-    if (!main_game->map || !main_game->chest || !main_game->albert ||
-        !main_game->chief)
+    main_game->npc = malloc(sizeof(npc_t) * 3);
+    if (!main_game->npc)
+        return NULL;
+    main_game->npc[0] = init_albert();
+    main_game->npc[1] = init_chief();
+    main_game->npc[2] = NULL;
+    if (!main_game->map || !main_game->chest || !main_game->npc[0] ||
+    !main_game->npc[1])
         return NULL;
     return main_game;
 }

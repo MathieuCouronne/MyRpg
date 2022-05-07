@@ -55,7 +55,7 @@ quest_t *create_second_quest(void)
 {
     quest_t *quest = malloc(sizeof(quest_t));
 
-    quest->id = 0;
+    quest->id = 1;
     quest->xp = 15;
     quest->name = "Get the books";
     quest->started = false;
@@ -64,5 +64,6 @@ quest_t *create_second_quest(void)
     quest->msg_index = 0;
     quest->messages = messages;
     quest->required = init_required_items();
+    quest->npc_id = 1;
     return quest;
 }

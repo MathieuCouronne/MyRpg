@@ -48,10 +48,16 @@ static void display_quest(game_t *game)
 
 static void display_level_up(game_t *game)
 {
+    sfVector2i top = {0, 0};
+    sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window, top,
+    game->view);
+
     if (!game->scenes->game_scene->level_up)
         return;
+    sfSprite_setPosition(game->scenes->game_scene->level_up_sprite->sprite,
+    pos);
     sfRenderWindow_drawSprite(game->window,
-        game->scenes->game_scene->level_up_sprite->sprite, NULL);
+    game->scenes->game_scene->level_up_sprite->sprite, NULL);
 }
 
 bool display_main_game(game_t *game)

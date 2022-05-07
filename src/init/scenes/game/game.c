@@ -36,8 +36,8 @@ static game_asset_t *init_level_up(void)
         sfTexture_createFromFile(LEVEL_UP_PATH, NULL);
     if (!main_game->sprite || !main_game->texture)
         return NULL;
-    sfSprite_setPosition(main_game->sprite, (sfVector2f) {1000, 500});
     sfSprite_setTexture(main_game->sprite, main_game->texture, sfTrue);
+    sfSprite_setScale(main_game->sprite, (sfVector2f) {.5f, .5f});
     return main_game;
 }
 

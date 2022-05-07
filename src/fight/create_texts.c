@@ -6,6 +6,7 @@
 */
 
 #include <stdbool.h>
+#include <string.h>
 #include "my_rpg.h"
 #include "structs.h"
 #include "my.h"

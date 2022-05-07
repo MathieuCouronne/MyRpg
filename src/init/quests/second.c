@@ -30,8 +30,13 @@ static const char *valid[4] = {
     NULL
 };
 
-static char const **messages[3] = {
-    welcome, valid, NULL
+static const char *invalid[4] = {
+    "Hi man! Thanks for my boo... uh... You didn't find my book?",
+    NULL
+};
+
+static char const **messages[4] = {
+    welcome, valid, invalid, NULL
 };
 
 static slot_t **init_required_items(void)

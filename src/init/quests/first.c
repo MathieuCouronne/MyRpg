@@ -12,24 +12,31 @@
 #include "structs.h"
 
 static const char *welcome[3] = {
-    "Hey lad ! Come here ! I need help... " \
+    "Hey lad ! Come here! I need help... " \
     "I'm getting old, as you\ncan see around you, some trolls took" \
     " control of the western\npart of the village.",
     "I would be grateful if you could please get rid of them and\n" \
-    "bring me 5 of their fangs so I can brew some potions please ?",
+    "bring me 5 of their fangs so I can brew some potions please?",
     NULL
 };
 
 static const char *valid[5] = {
-    "- Oh here you are already ! Have you done what I asked ?",
+    "- Oh here you are already ! Have you done what I asked?",
     "......",
-    "I can see you collected thoses fangs ! Thank you very much" \
+    "I can see you collected thoses fangs! Thank you very much" \
     "\nfor your help... ",
     NULL
 };
 
-static char const **messages[3] = {
-    welcome, valid, NULL
+static const char *invalid[5] = {
+    "- Oh here you are already! Have you done what I asked?",
+    "......",
+    "I can see you didn't collected enough fangs!",
+    NULL
+};
+
+static char const **messages[4] = {
+    welcome, valid, invalid, NULL
 };
 
 static slot_t **init_required_items(void)

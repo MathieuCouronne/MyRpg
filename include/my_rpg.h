@@ -115,12 +115,13 @@ bool display_creation(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
+bool is_slot_in_inventory(inventory_t *inventory, slot_t *slot);
 inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *remove_from_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
-    sfVector2u pos2);
+sfVector2u pos2);
 
 // Controllers
 void transform_dialog_txt(game_t *game, sfText *sprite);

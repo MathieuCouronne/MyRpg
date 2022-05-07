@@ -50,6 +50,8 @@ struct sounds_s {
     sfMusic *menu;
     sfMusic *main_theme;
     sfMusic *chest;
+    sfSound *clic;
+    sfSoundBuffer *buffer;
 };
 
 struct game_s {

@@ -34,6 +34,8 @@
     #define TROLL_PATH "./assets/images/characters/troll.png"
     #define OGRE_PATH "./assets/images/characters/ogre.png"
     #define REVERSED_OGRE_PATH "./assets/images/fight/reversed_ogre.png"
+    #define REVERSED_TROLL_PATH "./assets/images/fight/reversed_troll.png"
+    #define REVERSED_DRAGON_PATH "./assets/images/fight/reversed_dragon.png"
     #define DRAGON_PATH "./assets/images/characters/dragon.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define INVENTORY_PATH "./assets/images/inventory/inventory.png"
@@ -66,6 +68,7 @@
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"
     #define OPEN_CHEST_PATH "./assets/sounds/open_chest.ogg"
     #define WALK_PATH "./assets/sounds/Walk.ogg"
+    #define CLIC_PATH "./assets/sounds/clic.ogg"
 
     // Fonts Pathes
     #define ARIAL_FONT_PATH "./assets/fonts/arial_black.ttf"

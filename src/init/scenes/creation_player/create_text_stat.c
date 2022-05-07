@@ -49,7 +49,7 @@ sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font)
         text_unspent[i] = sfText_create();
         sfText_setFont(text_unspent[i], font);
         sfText_setString(text_unspent[i],
-            itoa(creation->unspent[creation->class]));
+        itoa(creation->unspent[creation->class]));
         sfText_setCharacterSize(text_unspent[i], 20);
         sfText_setColor(text_unspent[i], sfWhite);
         sfText_setPosition(text_unspent[i], (sfVector2f) {650, 450});

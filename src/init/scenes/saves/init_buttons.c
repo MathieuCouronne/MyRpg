@@ -15,6 +15,10 @@ static void (*game_redirect[3])(game_t *game) = {
     go_to_game_player1, go_to_game_player2, go_to_game_player3
 };
 
+static void (*game_redirect_creation[3])(game_t *game) = {
+    go_to_creation_player1, go_to_creation_player2, go_to_creation_player3
+};
+
 static button_t *init_button_saves(unsigned short i)
 {
     sfVector2f pos = {0, (float) WINDOW_HEIGHT / 2 - 768.f / 2};
@@ -25,14 +29,26 @@ static button_t *init_button_saves(unsigned short i)
     return buttons;
 }
 
-static button_t *init_empty_button(void)
+static button_t *init_empty_button(unsigned short i)
 {
     sfVector2f pos = {0, (float) WINDOW_HEIGHT / 2 - 768.f / 2};
-    button_t *buttons = create_save_card(pos, SAVES_EMPTY_PATH, go_to_creation);
+    button_t *buttons = create_save_card(pos, SAVES_EMPTY_PATH,
+    game_redirect_creation[i]);
 
     if (!buttons)
         return NULL;
     return buttons;
+}
+
+static bool init_button(game_t *game, unsigned short i, button_t **buttons)
+{
+    if (!game->saves[i])
+        buttons[i] = init_empty_button(i);
+    else
+        buttons[i] = init_button_saves(i);
+    if (!buttons[i])
+        return false;
+    return true;
 }
 
 button_t **init_slots(game_t *game)
@@ -44,11 +60,7 @@ button_t **init_slots(game_t *game)
     if (!buttons)
         return NULL;
     for (unsigned short i = 0; i < 3; i++) {
-        if (!game->saves[i])
-            buttons[i] = init_empty_button();
-        else
-            buttons[i] = init_button_saves(i);
-        if (!buttons[i])
+        if (!init_button(game, i, buttons))
             return NULL;
         pos.x = WINDOW_WIDTH / shifts[i] - (float) 462 / 2;
         pos.y = buttons[i]->asset->pos.y;

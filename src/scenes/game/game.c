@@ -9,14 +9,32 @@
 #include "my_rpg.h"
 #include "structs.h"
 
-static void event_handling(game_t *game)
+static bool event_fight(game_t *game)
+{
+    if (detect_enemies(game)) {
+        sfRenderWindow_setView(game->window,
+            sfRenderWindow_getDefaultView(game->window));
+        game->scenes->prev = game->scenes->current;
+        game->scenes->current = FIGHT;
+        create_text_enemy(game->enemy[game->enemy_id], game->scenes->fight);
+        create_text_player(game->saves[game->current], game->scenes->fight);
+        return true;
+    }
+    return false;
+}
+
+static bool event_handling(game_t *game)
 {
     handle_arrow_keys(game);
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         if (game->event.type == sfEvtClosed)
             sfRenderWindow_close(game->window);
         handle_game_change_scenes(game);
+        if (game->event.type == sfEvtKeyPressed &&
+            game->event.key.code == sfKeyK && event_fight(game))
+            return true;
     }
+    return false;
 }
 
 static void display_quest(game_t *game)
@@ -44,6 +62,7 @@ bool display_main_game(game_t *game)
         sfRenderWindow_drawSprite(window, main_game->npc[i]->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
     display_quest(game);
-    event_handling(game);
+    if (event_handling(game))
+        return true;
     return true;
 }

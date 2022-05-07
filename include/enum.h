@@ -14,7 +14,7 @@ typedef enum {
 
 typedef enum {
     MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE,
-    INVENTORY
+    INVENTORY, STATS
 } scenes;
 
 typedef enum {

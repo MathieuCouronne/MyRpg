@@ -53,6 +53,7 @@ static void init_params(thread_params_t *params)
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
 
     params->game->player = init_player();
+    params->game->enemy = create_enemies();
     params->game->config->assets_loaded = true;
     params->game->view = sfView_createFromRect(view_rect);
     params->game->sounds = menu_music(params->game->config);
@@ -62,6 +63,7 @@ static void init_params(thread_params_t *params)
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
     params->game->quests = init_quests();
+    params->game->current = 0;
 }
 
 bool load_game(thread_params_t *params)

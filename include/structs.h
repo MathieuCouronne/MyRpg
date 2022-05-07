@@ -44,11 +44,14 @@ typedef struct quest_s quest_t;
 typedef struct quests_s quests_t;
 typedef struct quest_messages_s quest_messages_t;
 typedef struct thread_params_s thread_params_t;
+typedef struct stats_scene_s stats_scene_t;
 
 struct sounds_s {
     sfMusic *menu;
     sfMusic *main_theme;
     sfMusic *chest;
+    sfSound *clic;
+    sfSoundBuffer *buffer;
 };
 
 struct game_s {
@@ -60,11 +63,13 @@ struct game_s {
     scenes_t *scenes;
     sounds_t *sounds;
     player_t *player;
-    enemy_t *enemy;
+    enemy_t **enemy;
     config_t *config;
     character_t **saves;
     stats_t *stats;
     quests_t *quests;
+    unsigned short current;
+    unsigned int enemy_id;
 };
 
 struct game_asset_s {
@@ -99,6 +104,7 @@ struct scenes_s {
     scene_saves_t *saves;
     fight_t *fight;
     pause_t *pause;
+    stats_scene_t *stats;
     inventory_sprite_t *inventory;
 };
 
@@ -147,6 +153,7 @@ struct enemy_s {
     sfIntRect rect;
     sfVector2f position;
     sfTexture *texture;
+    sfColor color;
     char *name;
     unsigned int dps;
     unsigned int hp;
@@ -166,13 +173,13 @@ struct fight_s {
     game_asset_t *text_bar;
     game_asset_t *player_bar;
     game_asset_t *enemy_bar;
-    sfText **text_life_characters;
-    sfText **text_life_enemy;
+    sfText *text_player_hp;
+    sfText *text_enemy_hp;
     sfFont *font;
     character_t *character;
     button_t **buttons;
     player_t *player;
-    enemy_t *enemy;
+    enemy_t **enemy;
     game_t *game;
     int *life;
 };
@@ -259,6 +266,17 @@ struct quest_s {
     unsigned int step_index;
     unsigned int msg_index;
     const char ***messages;
+};
+
+struct stats_scene_s {
+    game_asset_t *background;
+    button_t **buttons;
+    sfText *text;
+    sfText **stat;
+    sfFont *font;
+    int *stats;
+    int unspent;
+    sfText *unspent_text;
 };
 
 #endif

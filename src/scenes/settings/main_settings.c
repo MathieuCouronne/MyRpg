@@ -13,6 +13,7 @@ static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->settings->buttons);
+        default_event_handling(game, game->scenes->settings->icons);
     }
 }
 
@@ -33,12 +34,7 @@ bool display_settings(game_t *game)
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[0]->text, NULL);
-    sfRenderWindow_drawSprite(window, icons[0]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[1]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[2]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[3]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[4]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[5]->asset->sprite, NULL);
-    sfRenderWindow_drawSprite(window, icons[6]->asset->sprite, NULL);
+    for (size_t i = 0; i < 7; i++)
+        sfRenderWindow_drawSprite(window, icons[i]->asset->sprite, NULL);
     return true;
 }

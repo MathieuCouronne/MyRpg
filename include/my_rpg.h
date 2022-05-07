@@ -180,6 +180,7 @@ void get_player_positions(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
 config_t *get_config(char const *filename);
 character_t *get_character_save(char const *filename);
+bool check_config(config_t *config);
 
 // Storage
 bool write_config(config_t *config);

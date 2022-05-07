@@ -71,9 +71,12 @@ bool load_game(thread_params_t *params)
         return false;
     *(params->loaded) = 0;
     params->game->config = parse_config();
-    if (!params->game->config || (params->game->config->assets_loaded != 1 &&
-    !download_assets(params->loaded)))
+    if (!params->game->config || !check_config(params->game->config) ||
+    (params->game->config->assets_loaded != 1 &&
+    !download_assets(params->loaded))) {
+        *params->loaded = -1;
         return false;
+    }
     init_params(params);
     *params->loaded = -1;
     if (are_params_invalid(params->game))

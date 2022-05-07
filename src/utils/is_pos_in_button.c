@@ -5,8 +5,8 @@
 ** Is a position inside a button
 */
 
-#include "my_rpg.h"
 #include <stdbool.h>
+#include "my_rpg.h"
 
 bool is_pos_in_button(button_t *button, sfVector2i pos)
 {

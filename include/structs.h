@@ -188,6 +188,8 @@ struct settings_s {
     game_asset_t *background;
     button_t **buttons;
     button_t **icons;
+    sfText **keys;
+    sfFont *font;
 };
 
 struct loader_s {

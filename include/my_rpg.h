@@ -39,7 +39,7 @@ bool download_assets(int *loaded);
 char **read_file(char const *filename);
 bool write_file(char const *filename, config_t *config);
 config_t *parse_config(void);
-settings_t *init_settings(void);
+settings_t *init_settings(game_t *game);
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 int open_chest(game_t *game);
@@ -67,7 +67,6 @@ sfText **init_text_life(fight_t *text_fight);
 quests_t *init_quests(void);
 sfText **init_text_life_characters(fight_t *text_fight);
 sfText **init_text_life_enemy(fight_t *text_enemy);
-button_t **init_icons_settings(void);
 quest_t *create_first_quest(void);
 quest_t *create_second_quest(void);
 button_t **init_icons_settings(void);
@@ -76,6 +75,7 @@ stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);
 button_t **init_buttons_stats(void);
 stats_scene_t *init_stats(game_t *game);
+sfText **init_keybinds_text(game_t *game, sfFont *font);
 
 // Destroy
 void destroy_game(game_t *game);

@@ -38,7 +38,7 @@ static void init_icons(button_t **icons)
     icons[7] = NULL;
 }
 
-static char *char_from_key(sfKeyCode key)
+char *char_from_key(sfKeyCode key)
 {
     for (size_t i = 0; i < 28; i++) {
         if (key == KEY_CODES[i])

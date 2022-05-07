@@ -167,6 +167,7 @@ unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
 bool is_pos_in_button(button_t *button, sfVector2i pos);
+char *char_from_key(sfKeyCode key);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],

@@ -14,10 +14,10 @@ static bool change_scenes(game_t *game)
     sfKeyCode code = game->event.key.code;
     const sfView *view = sfRenderWindow_getDefaultView(game->window);
 
-    if (code != sfKeyEscape &&
+    if (code != game->config->keys->pause &&
     code != game->config->keys->inventory && code != sfKeyT)
         return false;
-    if (code == game->config->keys->pause)
+    if (game->event.key.code == game->config->keys->pause)
         game->scenes->current = PAUSE;
     else if (game->event.key.code == game->config->keys->inventory)
         game->scenes->current = INVENTORY;

@@ -12,7 +12,8 @@
 static bool check_key(game_t *game, sfKeyCode key, sfKeyCode *keybinds[])
 {
     for (size_t i = 0; i < 7; i++) {
-        if (*keybinds[i] == key || key == sfKeyK || key == sfKeyT)
+        if (*keybinds[i] == key || key == sfKeyK || key == sfKeyT
+        || key == sfKeyEscape)
             return true;
     }
     return false;

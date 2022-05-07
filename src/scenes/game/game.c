@@ -43,8 +43,6 @@ bool display_main_game(game_t *game)
     if (!game || !game->window || !game->scenes || !game->scenes->main_menu ||
         !game->scenes->main_menu->buttons)
         return false;
-    if (event_handling(game))
-        return true;
     window = game->window;
     main_game = game->scenes->game_scene;
     sfRenderWindow_setView(window, game->view);
@@ -53,5 +51,7 @@ bool display_main_game(game_t *game)
     sfRenderWindow_drawSprite(game->window, main_game->chief->sprite, NULL);
     sfRenderWindow_drawSprite(window, main_game->albert->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
+    if (event_handling(game))
+        return true;
     return true;
 }

@@ -12,7 +12,6 @@
 
 void attack_enemy(game_t *game)
 {
-//    unsigned int dmg = player->stats->strength + attack->dmg;
     unsigned int dmg = game->saves[game->current]->stats->strength;
 
     game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;

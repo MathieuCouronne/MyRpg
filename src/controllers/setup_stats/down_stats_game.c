@@ -11,7 +11,7 @@ extern int class_base_data[3][5];
 
 void down_strength_game(game_t *game)
 {
-    if (game->saves[game->current]->stats->strength - 1 <
+    if ((int) game->saves[game->current]->stats->strength - 1 <
         class_base_data[game->saves[game->current]->class][0])
         return;
     game->saves[game->current]->stats->strength--;
@@ -19,12 +19,12 @@ void down_strength_game(game_t *game)
     itoa(game->saves[game->current]->stats->strength));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_defense_game(game_t *game)
 {
-    if (game->saves[game->current]->stats->defense - 1 <
+    if ((int) game->saves[game->current]->stats->defense - 1 <
         class_base_data[game->saves[game->current]->class][1])
         return;
     game->saves[game->current]->stats->defense--;
@@ -32,12 +32,12 @@ void down_defense_game(game_t *game)
     itoa(game->saves[game->current]->stats->defense));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_vitality_game(game_t *game)
 {
-    if (game->saves[game->current]->stats->vitality - 1 <
+    if ((int) game->saves[game->current]->stats->vitality - 1 <
         class_base_data[game->saves[game->current]->class][2])
         return;
     game->saves[game->current]->stats->vitality--;
@@ -45,12 +45,12 @@ void down_vitality_game(game_t *game)
     itoa(game->saves[game->current]->stats->vitality));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_speed_game(game_t *game)
 {
-    if (game->saves[game->current]->stats->speed - 1 <
+    if ((int) game->saves[game->current]->stats->speed - 1 <
         class_base_data[game->saves[game->current]->class][3])
         return;
     game->saves[game->current]->stats->speed--;
@@ -58,12 +58,12 @@ void down_speed_game(game_t *game)
     itoa(game->saves[game->current]->stats->speed));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }
 
 void down_dexterity_game(game_t *game)
 {
-    if (game->saves[game->current]->stats->dexterity - 1 <
+    if ((int) game->saves[game->current]->stats->dexterity - 1 <
         class_base_data[game->saves[game->current]->class][4])
         return;
     game->saves[game->current]->stats->dexterity--;
@@ -71,5 +71,5 @@ void down_dexterity_game(game_t *game)
     itoa(game->saves[game->current]->stats->dexterity));
     game->saves[game->current]->unspent++;
     sfText_setString(game->scenes->stats->unspent_text,
-    itoa(game->scenes->stats->unspent));
+    itoa(game->saves[game->current]->unspent));
 }

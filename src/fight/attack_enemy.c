@@ -10,9 +10,13 @@
 #include "my_rpg.h"
 #include "structs.h"
 
-void attack_enemy(character_t *player, enemy_t *enemy, attack_t *attack)
+void attack_enemy(game_t *game)
 {
-    unsigned int dmg = player->stats->strength + attack->dmg;
+//    unsigned int dmg = player->stats->strength + attack->dmg;
+    unsigned int dmg = game->saves[game->current]->stats->strength;
 
-    enemy->hp -= dmg;
+    game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;
+    create_text_enemy(game->scenes->fight->enemy[game->enemy_id], game->scenes->fight);
+    attack_player(game->saves[game->current], game->scenes->fight->enemy[game->enemy_id]);
+    create_text_player(game->saves[game->current], game->scenes->fight);
 }

@@ -35,6 +35,8 @@ bool display_settings(game_t *game)
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[0]->text, NULL);
     for (size_t i = 0; i < 7; i++)
-        sfRenderWindow_drawSprite(window, icons[i]->asset->sprite, NULL);
+         sfRenderWindow_drawSprite(window, icons[i]->asset->sprite, NULL);
+    for (size_t i = 0; i < 7; i++)
+        sfRenderWindow_drawText(window, settings->keys[i], NULL);
     return true;
 }

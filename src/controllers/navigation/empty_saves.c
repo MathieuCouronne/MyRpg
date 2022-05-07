@@ -5,7 +5,6 @@
 ** Saves scene navigation
 */
 
-#include <SFML/Graphics.h>
 #include "my_rpg.h"
 
 void go_to_creation_player1(game_t *game)

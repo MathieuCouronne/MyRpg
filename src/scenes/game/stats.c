@@ -15,6 +15,11 @@ static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->stats->buttons);
+        if (game->event.type == sfEvtKeyPressed &&
+            game->event.key.code == sfKeyT) {
+            game->scenes->prev = game->scenes->current;
+            game->scenes->current = MAIN_GAME;
+        }
     }
 }
 
@@ -57,7 +62,6 @@ bool display_stats(game_t *game)
     stats_scene_t *stats = NULL;
 
     if (!game || !game->window || !game->scenes || !game->scenes->stats) {
-        printf("je afdsfq<\n");
         return false;
     }
     window = game->window;
@@ -66,7 +70,7 @@ bool display_stats(game_t *game)
     sfRenderWindow_drawSprite(window, stats->background->sprite, NULL);
     display_buttons_creation(window, stats);
     set_parameters(game);
-    sfRenderWindow_drawSprite(window,game->characters[game->saves
+    sfRenderWindow_drawSprite(window, game->characters[game->saves
     [game->current]->class]->sprite, NULL);
     sfText_setPosition(stats->text,(sfVector2f) {540, 360});
     sfRenderWindow_drawText(window, stats->text, NULL);

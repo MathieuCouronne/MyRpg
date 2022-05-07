@@ -27,3 +27,22 @@ const int class_base_data[3][5] = {
     {BASE_MAGE_STR, BASE_MAGE_DEF, BASE_MAGE_VIT, BASE_MAGE_SPD, BASE_MAGE_DEX},
     {BASE_DOG_STR, BASE_DOG_DEF, BASE_DOG_VIT, BASE_DOG_SPD, BASE_DOG_DEX}
 };
+
+const char *KEYS[29] = {
+    "A" , "B", "C", "D", "E",
+    "F", "G", "H", "I", "J",
+    "K", "L", "M", "N", "O",
+    "P", "Q", "R", "S", "T",
+    "U", "V", "W", "X", "Y",
+    "Z", "ESC", "SPC", NULL
+};
+
+const sfKeyCode KEY_CODES[29] = {
+    sfKeyA, sfKeyB, sfKeyC, sfKeyD,
+    sfKeyE, sfKeyF, sfKeyG, sfKeyH,
+    sfKeyI, sfKeyJ, sfKeyK, sfKeyL,
+    sfKeyM, sfKeyN, sfKeyO, sfKeyP,
+    sfKeyQ, sfKeyR, sfKeyS, sfKeyT,
+    sfKeyU, sfKeyV, sfKeyW, sfKeyX,
+    sfKeyY, sfKeyZ, sfKeyEscape, sfKeySpace
+};

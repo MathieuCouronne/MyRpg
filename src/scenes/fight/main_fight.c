@@ -29,7 +29,8 @@ static void draw_sprites(sfRenderWindow *window,
     sfRenderWindow_drawSprite(window, fight->background_fight->sprite, NULL);
     sfRenderWindow_drawSprite(window,
         fight->enemy[game->enemy_id]->sprite, NULL);
-    sfRenderWindow_drawSprite(window, fight->player->sprite, NULL);
+    sfRenderWindow_drawSprite(window,
+        fight->characters[game->current]->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->enemy_bar->sprite, NULL);

@@ -19,7 +19,7 @@ bool detect_enemies(game_t *game)
     for (unsigned int i = 0; i < 3; i++) {
         if (color_cmp(get_pixel_at_pos(game, bottom_left),
         game->enemy[i]->color)) {
-           game->enemy_id = i;
+            game->enemy_id = i;
             return true;
         }
     }

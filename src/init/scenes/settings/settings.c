@@ -41,15 +41,17 @@ button_t **init_buttons_settings(void)
     return buttons;
 }
 
-settings_t *init_settings(void)
+settings_t *init_settings(game_t *game)
 {
     settings_t *scene = malloc(sizeof(settings_t));
 
     if (!scene)
         return NULL;
+    scene->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     scene->background = init_settings_background();
     scene->buttons = init_buttons_settings();
     scene->icons = init_icons_settings();
+    scene->keys = init_keybinds_text(game, scene->font);
     if (!scene->background || !scene->buttons || !scene->icons)
         return NULL;
     return scene;

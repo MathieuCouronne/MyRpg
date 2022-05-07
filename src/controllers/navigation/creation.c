@@ -7,6 +7,7 @@
 
 #include <SFML/Graphics.h>
 #include "my_rpg.h"
+#include "macros.h"
 
 extern const char *class_textures[];
 
@@ -39,10 +40,13 @@ void create_game(game_t *game)
     sfSprite_setTexture(game->player->sprite, game->player->texture, sfFalse);
     game->player->position->x = (float) 2270;
     game->player->position->y = (float) 2030;
+    game->player->relative_pos->x = 0;
+    game->player->relative_pos->y = 0;
     game->saves[game->current] = create_character();
     put_stats(game);
     game->saves[game->current]->unspent =
     game->scenes->creation_menu->unspent[game->scenes->creation_menu->class];
     game->scenes->stats = init_stats(game);
+    sfView_setCenter(game->view, (sfVector2f) {2270, 2030});
     game->scenes->current = MAIN_GAME;
 }

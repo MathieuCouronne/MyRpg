@@ -145,7 +145,9 @@ SRC			+=	$(SRC_DIR)utils/color_cmp.c \
 				$(SRC_DIR)utils/is_pos_in_button.c \
 
 SRC			+= 	$(SRC_DIR)fight/attack_player.c \
+				$(SRC_DIR)fight/attack_enemy.c \
 				$(SRC_DIR)fight/create_enemies.c \
+				$(SRC_DIR)fight/create_characters.c \
 				$(SRC_DIR)fight/create_texts.c \
 
 OBJ			= $(SRC:.c=.o)

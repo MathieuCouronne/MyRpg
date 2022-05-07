@@ -177,6 +177,7 @@ struct fight_s {
     sfText *text_enemy_hp;
     sfFont *font;
     character_t *character;
+    player_t **characters;
     button_t **buttons;
     player_t *player;
     enemy_t **enemy;
@@ -188,6 +189,8 @@ struct settings_s {
     game_asset_t *background;
     button_t **buttons;
     button_t **icons;
+    sfText **keys;
+    sfFont *font;
 };
 
 struct loader_s {

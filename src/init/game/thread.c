@@ -17,7 +17,7 @@ static scenes_t *init_scenes(game_t *game)
     if (!(scenes->main_menu = init_main_menu()) ||
     !(scenes->game_scene = init_main_game(game)) ||
     !(scenes->fight = init_fight()) ||
-    !(scenes->settings = init_settings()) ||
+    !(scenes->settings = init_settings(game)) ||
     !(scenes->saves = init_saves(game)) ||
     !(scenes->pause = init_pause(game)) ||
     !(scenes->creation_menu = init_creation()) ||

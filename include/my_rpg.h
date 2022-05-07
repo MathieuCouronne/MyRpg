@@ -77,6 +77,7 @@ stats_scene_t *init_stats(game_t *game);
 sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
+game_asset_t **init_inventory_sprite(char const *filename);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -167,6 +168,7 @@ unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
 bool is_pos_in_button(button_t *button, sfVector2i pos);
+char *char_from_key(sfKeyCode key);
 
 // Parsing
 void update_character(data_parsing_match_t matches[],

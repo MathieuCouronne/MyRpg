@@ -52,7 +52,7 @@ typedef struct character_s {
     unsigned int level;
     unsigned int current_exp;
     unsigned int exp_required;
-    unsigned int hp;
+    int hp;
     unsigned int max_hp;
     unsigned int mp;
     unsigned int max_mp;

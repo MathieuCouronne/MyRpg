@@ -157,7 +157,7 @@ struct enemy_s {
     sfColor color;
     char *name;
     unsigned int dps;
-    unsigned int hp;
+    int hp;
     unsigned int max_hp;
 };
 
@@ -192,6 +192,7 @@ struct settings_s {
     button_t **icons;
     sfText **keys;
     sfFont *font;
+    unsigned int current;
 };
 
 struct loader_s {
@@ -210,6 +211,7 @@ struct pause_s {
 
 struct inventory_sprite_s {
     game_asset_t *background;
+    game_asset_t **loot;
     button_t **buttons;
     sfVector2f pos;
     sfView *view;

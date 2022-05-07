@@ -48,7 +48,8 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/fight/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight_text.c \
 				$(SRC_DIR)init/scenes/pause.c \
-				$(SRC_DIR)init/scenes/inventory.c \
+				$(SRC_DIR)init/scenes/inventory/inventory.c \
+				$(SRC_DIR)init/scenes/inventory/inventory_icon.c \
 				$(SRC_DIR)init/scenes/game/game.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
 				$(SRC_DIR)init/scenes/game/chest.c \

@@ -10,6 +10,7 @@
 #include "structs.h"
 #include "my_rpg.h"
 #include "inventory.h"
+#include "macros.h"
 #include "character.h"
 
 stats_t *init_war_stats(void)
@@ -42,6 +43,8 @@ character_t *create_character(void)
     character->exp_required = 100;
     character->hp = 13;
     character->inventory = create_inventory(INVENTORY_WIDTH, INVENTORY_HEIGHT);
+    character->camera = (sfVector2f) {DEFAULT_VIEW_X, DEFAULT_VIEW_Y};
+    character->player = (sfVector2f) {DEFAULT_VIEW_X, DEFAULT_VIEW_Y};
     if (!character->inventory)
         return NULL;
     return character;

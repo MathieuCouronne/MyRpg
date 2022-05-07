@@ -20,7 +20,7 @@ void update_character(data_parsing_match_t matches[], char **array)
     }
 }
 
-character_t *get_character_save(game_t *game, char const *filename)
+character_t *get_character_save(char const *filename)
 {
     char *line = NULL;
     FILE *file = fopen(filename, "r");
@@ -34,7 +34,7 @@ character_t *get_character_save(game_t *game, char const *filename)
     get_player_data(character, file, &line);
     get_player_stats(character, file, &line);
     get_player_inventory(character, file, &line);
-    get_player_positions(game, character, file, &line);
+    get_player_positions(character, file, &line);
     fclose(file);
     return character;
 }

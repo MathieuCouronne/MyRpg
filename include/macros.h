@@ -18,6 +18,8 @@
     #define MAP_SCALE 2
     #define MAP_WIDTH 3840
     #define MAP_HEIGHT 3840
+    #define DEFAULT_VIEW_X 2270
+    #define DEFAULT_VIEW_Y 2030
 
     // Misc
     #define ASSETS_AMOUNT 37

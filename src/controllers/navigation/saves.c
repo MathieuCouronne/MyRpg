@@ -8,29 +8,34 @@
 #include <SFML/Graphics.h>
 #include "my_rpg.h"
 
-static void change_player(game_t *game, sfTexture *texture)
+static void change_player(game_t *game, unsigned int i)
 {
+    character_t *character = game->saves[i];
+    sfTexture *texture = game->scenes->saves->character[i]->texture;
+
+    game->current = i;
     sfSprite_setTexture(game->player->sprite, texture, false);
     game->scenes->stats = init_stats(game);
     back_to_game(game);
+    sfView_setCenter(game->view, character->camera);
+    game->player->position->x = character->player.x;
+    game->player->position->y = character->player.y;
+    sfSprite_setPosition(game->player->sprite, *game->player->position);
 }
 
 void go_to_game_player1(game_t *game)
 {
-    game->current = 0;
-    change_player(game, game->scenes->saves->character[0]->texture);
+    change_player(game, 0);
 }
 
 void go_to_game_player2(game_t *game)
 {
-    game->current = 1;
-    change_player(game, game->scenes->saves->character[1]->texture);
+    change_player(game, 1);
 }
 
 void go_to_game_player3(game_t *game)
 {
-    game->current = 2;
-    change_player(game, game->scenes->saves->character[2]->texture);
+    change_player(game, 2);
 }
 
 void go_to_creation(game_t *game)

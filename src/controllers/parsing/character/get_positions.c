@@ -20,23 +20,19 @@ static bool is_array_num(char **array)
     return true;
 }
 
-static void update_positions(game_t *game, char **array)
+static void update_positions(character_t *character, char **array)
 {
     sfVector2f pos = {(float) my_getnbr(array[1]), (float) my_getnbr(array[2])};
 
     if (!is_array_num(array + 1))
         return;
-    if (my_strcmp(array[0], "PLAYER") == 0) {
-        printf("PLAYER: x: %f y: %f\n", pos.x, pos.y);
-        game->player->position = &pos;
-    } else if (my_strcmp(array[0], "CAMERA") == 0) {
-        printf("CAMERA: x: %f y: %f\n", pos.x, pos.y);
-        sfView_setCenter(game->view, pos);
-    }
+    if (my_strcmp(array[0], "PLAYER") == 0)
+        character->player = pos;
+    else if (my_strcmp(array[0], "CAMERA") == 0)
+        character->camera = pos;
 }
 
-void get_player_positions(game_t *game, character_t *character, FILE *file,
-char **line)
+void get_player_positions(character_t *character, FILE *file, char **line)
 {
     size_t size = 0;
     char **array = NULL;
@@ -49,6 +45,6 @@ char **line)
         if (my_strcmp(array[0], "PLAYER_NAME") == 0)
             character->name = array[0];
         else
-            update_positions(game, array);
+            update_positions(character, array);
     }
 }

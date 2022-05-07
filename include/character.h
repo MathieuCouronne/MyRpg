@@ -48,6 +48,8 @@ typedef struct character_s {
     character_classes class;
     stats_t *stats;
     inventory_t *inventory;
+    sfVector2f player;
+    sfVector2f camera;
     unsigned int unspent;
     unsigned int level;
     unsigned int current_exp;

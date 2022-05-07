@@ -51,6 +51,7 @@ static void display_level_up(game_t *game)
     sfVector2i top = {0, 0};
     sfVector2f pos = sfRenderWindow_mapPixelToCoords(game->window, top,
     game->view);
+    float time_offset = 7;
 
     if (!game->scenes->game_scene->level_up)
         return;
@@ -58,6 +59,10 @@ static void display_level_up(game_t *game)
     pos);
     sfRenderWindow_drawSprite(game->window,
     game->scenes->game_scene->level_up_sprite->sprite, NULL);
+    if (clock_time(game->player->clock, time_offset)) {
+        game->scenes->game_scene->level_up = false;
+        sfClock_restart(game->player->clock);
+    }
 }
 
 bool display_main_game(game_t *game)

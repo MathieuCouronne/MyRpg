@@ -12,7 +12,9 @@
 
 bool create_text_enemy(enemy_t *enemy, fight_t *fight)
 {
-    int enemy_hp_len = my_strlen(itoa(enemy->hp)) + my_strlen(itoa(enemy->max_hp)) + 1;
+    int hp_len = my_strlen(itoa(enemy->hp));
+    int max_hp_len = my_strlen(itoa(enemy->max_hp));
+    int enemy_hp_len = hp_len + max_hp_len + 1;
     char *enemy_hp = malloc(sizeof(char) * (enemy_hp_len + 1));
 
     enemy_hp[0] = '\0';
@@ -29,7 +31,9 @@ bool create_text_enemy(enemy_t *enemy, fight_t *fight)
 
 bool create_text_player(character_t *player, fight_t *fight)
 {
-    int player_hp_len = my_strlen(itoa(player->hp)) + my_strlen(itoa(player->stats->vitality)) + 1;
+    int vitality_len = my_strlen(itoa(player->stats->vitality));
+    int hp_len = my_strlen(itoa(player->hp));
+    int player_hp_len = hp_len + vitality_len + 1;
     char *player_hp = malloc(sizeof(char) * (player_hp_len + 1));
 
     player_hp[0] = '\0';

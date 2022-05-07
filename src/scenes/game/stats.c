@@ -62,7 +62,6 @@ bool display_stats(game_t *game)
     stats_scene_t *stats = NULL;
 
     if (!game || !game->window || !game->scenes || !game->scenes->stats) {
-        printf("je afdsfq<\n");
         return false;
     }
     window = game->window;

@@ -48,6 +48,7 @@ npc_t *init_chief(void)
         return NULL;
     chief->position.x = 2600;
     chief->position.y = 1150;
+    chief->color = sfColor_fromRGB(0, 0, 254);
     transform_chief(chief);
     return chief;
 }

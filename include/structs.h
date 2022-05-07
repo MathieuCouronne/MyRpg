@@ -67,7 +67,7 @@ struct game_s {
     config_t *config;
     character_t **saves;
     stats_t *stats;
-    quests_t **quests;
+    quests_t *quests;
     unsigned short current;
     unsigned int enemy_id;
 };
@@ -110,8 +110,7 @@ struct scenes_s {
 
 struct main_game_s {
     game_asset_t *map;
-    npc_t *albert;
-    npc_t *chief;
+    npc_t **npc;
     chest_t *chest;
 };
 
@@ -166,6 +165,7 @@ struct npc_s {
     sfIntRect *rect;
     sfVector2f position;
     sfTexture *texture;
+    sfColor color;
 };
 
 struct fight_s {
@@ -245,21 +245,27 @@ struct thread_params_s {
 };
 
 struct quests_s {
+    unsigned int current;
     game_asset_t *asset;
     sfText *text;
+    sfClock *clock;
     quest_t **quests;
+    bool speaking;
 };
 
 struct quest_s {
+    bool started;
+    bool done;
     unsigned int id;
     unsigned int xp;
+    unsigned int npc_id;
     char *name;
-    bool launched;
-    bool done;
     slot_t **required;
     slot_t **rewards;
-    // quest_messages_t *messages;
-    char ***messages;
+    sfText **texts;
+    unsigned int step_index;
+    unsigned int msg_index;
+    const char ***messages;
 };
 
 struct stats_scene_s {
@@ -271,12 +277,6 @@ struct stats_scene_s {
     int *stats;
     int unspent;
     sfText *unspent_text;
-};
-
-struct quest_messages_s {
-    char **start;
-    char **pending;
-    char **end;
 };
 
 #endif

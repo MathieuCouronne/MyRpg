@@ -14,11 +14,12 @@ static bool change_scenes(game_t *game)
     sfKeyCode code = game->event.key.code;
     const sfView *view = sfRenderWindow_getDefaultView(game->window);
 
-    if (code != sfKeyEscape && code != sfKeyI && code != sfKeyT)
+    if (code != sfKeyEscape &&
+    code != game->config->keys->inventory && code != sfKeyT)
         return false;
     if (code == sfKeyEscape)
         game->scenes->current = PAUSE;
-    else if (game->event.key.code == sfKeyI)
+    else if (game->event.key.code == game->config->keys->inventory)
         game->scenes->current = INVENTORY;
     else if (game->event.key.code == sfKeyT) {
         game->scenes->current = STATS;
@@ -28,10 +29,11 @@ static bool change_scenes(game_t *game)
     return true;
 }
 
+// open_chest(game);
 void handle_game_change_scenes(game_t *game)
 {
     if (game->event.type != sfEvtKeyPressed)
         return;
-    if (!change_scenes(game) && game->event.key.code == sfKeyE)
-        open_chest(game);
+    if (!change_scenes(game))
+        handle_quests_keys(game);
 }

@@ -37,6 +37,14 @@ static bool event_handling(game_t *game)
     return false;
 }
 
+static void display_quest(game_t *game)
+{
+    if (!game->quests->speaking || !game->quests->text)
+        return;
+    sfRenderWindow_drawSprite(game->window, game->quests->asset->sprite, NULL);
+    sfRenderWindow_drawText(game->window, game->quests->text, NULL);
+}
+
 bool display_main_game(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -49,10 +57,11 @@ bool display_main_game(game_t *game)
     main_game = game->scenes->game_scene;
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
-    sfRenderWindow_drawSprite(game->window, main_game->chest->sprite, NULL);
-    sfRenderWindow_drawSprite(game->window, main_game->chief->sprite, NULL);
-    sfRenderWindow_drawSprite(window, main_game->albert->sprite, NULL);
+    sfRenderWindow_drawSprite(window, main_game->chest->sprite, NULL);
+    for (unsigned int i = 0; main_game->npc[i]; i++)
+        sfRenderWindow_drawSprite(window, main_game->npc[i]->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);
+    display_quest(game);
     if (event_handling(game))
         return true;
     return true;

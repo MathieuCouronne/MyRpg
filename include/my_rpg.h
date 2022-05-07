@@ -63,9 +63,16 @@ loader_t *init_loader_window(int *total);
 sfText ***create_stat_text(sfFont *font, main_creation_scenes_t *creation);
 stats_t *init_war_stats(void);
 sfText **init_unspent(main_creation_scenes_t *creation, sfFont *font);
+sfText **init_text_life(fight_t *text_fight);
+quests_t *init_quests(void);
+sfText **init_text_life_characters(fight_t *text_fight);
+sfText **init_text_life_enemy(fight_t *text_enemy);
+button_t **init_icons_settings(void);
+quest_t *create_first_quest(void);
+quest_t *create_second_quest(void);
 button_t **init_icons_settings(void);
 sfText **create_stat_text_scene(sfFont *font,
-    stats_scene_t *saves);
+stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);
 button_t **init_buttons_stats(void);
 stats_scene_t *init_stats(game_t *game);
@@ -83,8 +90,7 @@ void destroy_settings(game_asset_t *settings);
 void settings_destroy_icons(button_t **buttons);
 void settings_destroy_buttons(button_t **buttons);
 void destroy_inventory(inventory_sprite_t *inventory);
-void destroy_albert(npc_t *albert);
-void destroy_chief(npc_t *chief);
+void destroy_npcs(npc_t **npcs);
 
 // Events
 void default_event_handling(game_t *game, button_t **buttons);
@@ -95,6 +101,7 @@ bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 bool is_button_clicked(game_t *game, button_t *button);
 void handle_game_change_scenes(game_t *game);
+bool handle_quests_keys(game_t *game);
 
 // Sounds
 sounds_t *menu_music(config_t *config);
@@ -114,12 +121,17 @@ bool display_stats(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int height, unsigned int width);
+bool is_slot_in_inventory(inventory_t *inventory, slot_t *slot);
 inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *remove_from_inventory(inventory_t *inventory, unsigned int id,
 unsigned int quantity);
 inventory_t *swap_slots(inventory_t *inventory, sfVector2u pos1,
-    sfVector2u pos2);
+sfVector2u pos2);
+
+// Controllers
+void transform_dialog_txt(game_t *game, sfText *sprite);
+void transform_dialog(game_t *game);
 
 // Fight
 char *string_info(fight_t *fight);

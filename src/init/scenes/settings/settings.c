@@ -12,6 +12,17 @@
 #include "my_rpg.h"
 #include "macros.h"
 
+unsigned int check_bool(game_t *game)
+{
+    unsigned n = 0;
+
+    for (size_t i = 0; i < 7; i++) {
+        if (game->scenes->settings->icons[i]->select == true)
+            n++;
+    }
+    return n;
+}
+
 game_asset_t *init_settings_background(void)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));

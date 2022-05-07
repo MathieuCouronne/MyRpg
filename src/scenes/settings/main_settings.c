@@ -17,6 +17,18 @@ static void event_handling(game_t *game)
     }
 }
 
+static void display(settings_t *settings,
+    sfRenderWindow *window, button_t **icons)
+{
+    for (size_t i = 0; i < 7; i++)
+        sfRenderWindow_drawSprite(window, icons[i]->asset->sprite, NULL);
+    for (size_t i = 0; i < 7; i++) {
+        if (settings->icons[i]->select == true)
+            continue;
+        sfRenderWindow_drawText(window, settings->keys[i], NULL);
+    }
+}
+
 bool display_settings(game_t *game)
 {
     sfRenderWindow *window = NULL;
@@ -34,9 +46,6 @@ bool display_settings(game_t *game)
     sfRenderWindow_drawSprite(window, settings->background->sprite, NULL);
     sfRenderWindow_drawSprite(window, buttons[0]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[0]->text, NULL);
-    for (size_t i = 0; i < 7; i++)
-         sfRenderWindow_drawSprite(window, icons[i]->asset->sprite, NULL);
-    for (size_t i = 0; i < 7; i++)
-        sfRenderWindow_drawText(window, settings->keys[i], NULL);
+    display(settings, window, icons);
     return true;
 }

@@ -8,7 +8,6 @@
 #include <SFML/Graphics.h>
 #include <SFML/Window.h>
 #include <stdlib.h>
-#include "menu.h"
 #include "structs.h"
 #include "my_rpg.h"
 #include "macros.h"
@@ -23,19 +22,19 @@ static void init_icons(button_t **icons)
     float icons_pos = 1100 - 41 / 2;
 
     icons[0] = create_icon((sfVector2f) {icons_pos ,410},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_inventory);
     icons[1] = create_icon((sfVector2f) {icons_pos ,470},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_interact);
     icons[2] = create_icon((sfVector2f) {icons_pos ,530},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_pause);
     icons[3] = create_icon((sfVector2f) {icons_pos ,590},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_left);
     icons[4] = create_icon((sfVector2f) {icons_pos ,650},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_right);
     icons[5] = create_icon((sfVector2f) {icons_pos ,710},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_up);
     icons[6] = create_icon((sfVector2f) {icons_pos ,770},
-        BUTTON_SETTINGS_PATH, go_to_prev);
+        BUTTON_SETTINGS_PATH, change_down);
     icons[7] = NULL;
 }
 

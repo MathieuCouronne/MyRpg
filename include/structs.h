@@ -87,6 +87,7 @@ struct button_s {
     sfFont *font;
     void (*on_click) (game_t *game);
     bool hover;
+    bool select;
 };
 
 struct main_menu_scenes_s {

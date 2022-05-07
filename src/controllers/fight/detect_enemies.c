@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** detect_enemies.c
 ** File description:
-** Game arrow keys events handling
+** Detect if player is side to side with an enemy
 */
 
 #include <SFML/Graphics.h>

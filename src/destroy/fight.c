@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** fight.c
 ** File description:
-** Game destroyer
+** Fight destroyer
 */
 
 #include <stdlib.h>

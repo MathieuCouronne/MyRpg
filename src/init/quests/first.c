@@ -31,7 +31,7 @@ static const char *valid[5] = {
 static const char *invalid[5] = {
     "- Oh here you are already! Have you done what I asked?",
     "......",
-    "I can see you didn't collected enough fangs!",
+    "I can see you didn't collected enough fangs!\n" \
     "You should come back when you have five of them.",
     NULL
 };

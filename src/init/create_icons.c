@@ -30,6 +30,7 @@ void (*on_click) (game_t *game))
         return NULL;
     button->on_click = on_click;
     button->hover = false;
+    button->select = false;
     sfSprite_setTexture(button->asset->sprite, button->asset->texture, sfTrue);
     sfSprite_setPosition(button->asset->sprite, pos_sprite);
     return button;

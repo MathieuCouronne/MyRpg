@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** game.c
+** map.c
 ** File description:
-** Game destroyer
+** Map destroyer
 */
 
 #include <stdlib.h>

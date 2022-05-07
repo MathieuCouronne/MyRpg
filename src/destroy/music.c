@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** menu.c
+** music.c
 ** File description:
-** menu destroyer
+** Musics destroyer
 */
 
 #include <SFML/Audio.h>
@@ -13,9 +13,13 @@ void destroy_sound(sounds_t *sounds)
 {
     if (!sounds->menu || !sounds->chest || !sounds->clic)
         return;
-    sfMusic_destroy(sounds->menu);
-    sfMusic_destroy(sounds->chest);
-    sfSound_destroy(sounds->clic);
-    sfSoundBuffer_destroy(sounds->buffer);
+    if (sounds->menu)
+        sfMusic_destroy(sounds->menu);
+    if (sounds->chest)
+        sfMusic_destroy(sounds->chest);
+    if (sounds->clic)
+        sfSound_destroy(sounds->clic);
+    if (sounds->buffer)
+        sfSoundBuffer_destroy(sounds->buffer);
     free(sounds);
 }

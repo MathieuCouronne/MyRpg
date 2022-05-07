@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** npc.c
+** quests.c
 ** File description:
-** NPC Interactions controllers
+** Quests interactions
 */
 
 #include "my_rpg.h"

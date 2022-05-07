@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2021
 ** menu.c
 ** File description:
-** menu destroyer
+** Menu destroyer
 */
 
 #include <stdlib.h>

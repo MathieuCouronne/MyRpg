@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** get_inventory.c
+** get_options.c
 ** File description:
 ** Parse player inventory
 */
@@ -24,7 +24,6 @@ char **array)
     }
 }
 
-// TODO: change assets_loaded type from bool to unsigned int ?
 static void update_config(config_t *config, char **array)
 {
     data_parsing_match_t matches[] = {

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** saves.c
+** creation.c
 ** File description:
-** Saves scene navigation
+** Creation navigation
 */
 
 #include <SFML/Graphics.h>

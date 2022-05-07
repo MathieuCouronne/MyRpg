@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** saves.c
+** empty_saves.c
 ** File description:
 ** Saves scene navigation
 */

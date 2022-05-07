@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2022
-** RPG
+** move_bottom.c
 ** File description:
-** Created by mathis
+** Move playeeer from bottom
 */
 
 #include <stdbool.h>

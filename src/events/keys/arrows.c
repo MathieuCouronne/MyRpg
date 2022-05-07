@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2021
-** handling.c
+** arrows.c
 ** File description:
 ** Game arrow keys events handling
 */

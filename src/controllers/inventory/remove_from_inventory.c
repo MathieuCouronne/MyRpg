@@ -1,14 +1,10 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_rpg.h
+** remove_from_inventory.c
 ** File description:
-** my_rpg header file
+** Remove items from inventory
 */
 
-#include <stdio.h>
-#include <SFML/Audio.h>
-#include <stdlib.h>
-#include "my.h"
 #include "structs.h"
 #include "menu.h"
 #include "my_rpg.h"

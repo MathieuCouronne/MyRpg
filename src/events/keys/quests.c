@@ -12,17 +12,17 @@
 static bool handle_quest_dialog(game_t *game)
 {
     quest_t *current = game->quests->quests[game->quests->current];
-    inventory_t *inventory = game->saves[game->current]->inventory;
     char *msg = NULL;
 
-    if (!current || game->event.key.code != game->config->keys->interact)
+    if (!current || game->quests->speaking ||
+    game->event.key.code != game->config->keys->interact)
         return false;
     transform_dialog(game);
     if (!current->started && !game->quests->speaking) {
         current->step_index = 0;
         current->started = true;
     } else if (current->started &&
-    !is_quest_valid(inventory, current->required))
+    !is_quest_valid(game->saves[game->current]->inventory, current->required))
         current->step_index = 2;
     else
         current->step_index = 1;
@@ -77,7 +77,7 @@ bool handle_quests_keys(game_t *game)
     game->event.key.code != sfKeySpace)))
         return false;
     pos.x += size.width / 2;
-    pos.y += size.height / 2;
+    pos.y += size.height;
     color = get_pixel_at_pos(game, pos);
     for (unsigned int i = 0; game->quests->quests[i]; i++) {
         if (game->quests->quests[i]->done)

@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2022
-** move_left.c
+** move_top.c
 ** File description:
 ** Move camera
 */

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** button.c
+** settings.c
 ** File description:
-** button destroyer
+** settings destroyer
 */
 
 #include "my_rpg.h"

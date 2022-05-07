@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** global.c
+** up_stats_game.c
 ** File description:
-** Globals navigation functions
+** Up stats game
 */
 
 #include "my_rpg.h"

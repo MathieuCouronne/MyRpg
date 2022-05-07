@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** create_map.c
+** create_texts.c
 ** File description:
-** create_map main game
+** Create_map texts
 */
 
 #include <stdbool.h>

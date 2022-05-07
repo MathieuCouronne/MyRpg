@@ -87,6 +87,7 @@ struct button_s {
     sfFont *font;
     void (*on_click) (game_t *game);
     bool hover;
+    bool select;
 };
 
 struct main_menu_scenes_s {
@@ -191,6 +192,7 @@ struct settings_s {
     button_t **icons;
     sfText **keys;
     sfFont *font;
+    unsigned int current;
 };
 
 struct loader_s {

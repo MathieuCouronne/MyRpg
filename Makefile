@@ -103,6 +103,9 @@ SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/creation.c \
 				$(SRC_DIR)controllers/navigation/empty_saves.c \
 
+SRC			+=	$(SRC_DIR)controllers/settings/change_settings.c \
+				$(SRC_DIR)controllers/settings/change_move_key.c \
+
 SRC			+=	$(SRC_DIR)controllers/camera/move_left.c \
 				$(SRC_DIR)controllers/camera/move_right.c \
 				$(SRC_DIR)controllers/camera/move_top.c \

@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** my_rpg
+** creeate_enemies.c
 ** File description:
-** creates an enemy
+** Creates an enemy
 */
 
 #include "structs.h"

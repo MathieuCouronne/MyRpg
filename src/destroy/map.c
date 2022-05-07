@@ -17,7 +17,6 @@ void destroy_game_scene(main_game_t *map)
     if (map->map->texture)
         sfTexture_destroy(map->map->texture);
     destroy_chest(map->chest);
-    destroy_albert(map->albert);
-    destroy_chief(map->chief);
+    destroy_npcs(map->npc);
     free(map);
 }

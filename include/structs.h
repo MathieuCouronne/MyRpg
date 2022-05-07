@@ -104,8 +104,7 @@ struct scenes_s {
 
 struct main_game_s {
     game_asset_t *map;
-    npc_t *albert;
-    npc_t *chief;
+    npc_t **npc;
     chest_t *chest;
 };
 
@@ -159,6 +158,7 @@ struct npc_s {
     sfIntRect *rect;
     sfVector2f position;
     sfTexture *texture;
+    sfColor color;
 };
 
 struct fight_s {
@@ -251,6 +251,7 @@ struct quest_s {
     bool done;
     unsigned int id;
     unsigned int xp;
+    unsigned int npc_id;
     char *name;
     slot_t **required;
     slot_t **rewards;

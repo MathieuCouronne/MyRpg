@@ -85,6 +85,7 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \
 				$(SRC_DIR)scenes/game/game.c \
+				$(SRC_DIR)scenes/game/lava.c \
 				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/game/inventory.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \

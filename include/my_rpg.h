@@ -18,14 +18,12 @@ void my_printf(char *str, ...);
 // Initialization
 game_t *init_game(void);
 bool load_game(thread_params_t *params);
-game_asset_t *init_hp_bar(void);
 game_asset_t *init_menu_background(void);
 game_asset_t *init_enemy_bar(void);
 game_asset_t *init_player_bar(void);
 button_t **init_attack_buttons(void);
 button_t **init_buttons(void);
 fight_t *init_fight(void);
-enemy_t *init_ogre(void);
 player_t *init_player(void);
 chest_t *init_chest(void);
 button_t *create_button(char *str, sfVector2f pos_sprite,
@@ -79,9 +77,11 @@ button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
 game_asset_t **init_inventory_sprite(char const *filename);
 sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
+sfCircleShape **init_lava(void);
 
 // Destroy
 void destroy_game(game_t *game);
+void destroy_game_lava(sfCircleShape **lava);
 void destroy_menu(game_asset_t *menu);
 void menu_destroy_buttons(button_t **button);
 void destroy_player(player_t *player);
@@ -121,6 +121,7 @@ bool display_pause(game_t *game);
 bool display_saves(game_t *game);
 bool display_creation(game_t *game);
 bool display_stats(game_t *game);
+void draw_lava(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);

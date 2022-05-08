@@ -19,7 +19,7 @@ game_asset_t *init_saves_background(void)
     if (!background)
         return NULL;
     background->sprite = sfSprite_create();
-    background->texture = sfTexture_createFromFile(MAIN_MENU_BG_PATH, NULL);
+    background->texture = sfTexture_createFromFile(SAVES_BG_PATH, NULL);
     if (!background->sprite || !background->texture)
         return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);

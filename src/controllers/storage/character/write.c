@@ -25,15 +25,17 @@ static void write_separator(FILE *file, char *title)
     fwrite("\n", 1, 1, file);
 }
 
-bool write_character(character_t *character, char const *filename)
+bool write_character(game_t *game, char const *filename, unsigned int i)
 {
     FILE *file = fopen(filename, "w");
+    character_t *character = NULL;
 
-    if (!file || !character) {
+    if (!file || !game) {
         if (file)
             fclose(file);
         return false;
     }
+    character = game->saves[i];
     write_player_name(file, character->name);
     save_characters_infos(file, character);
     write_separator(file, "## STATS");
@@ -41,7 +43,7 @@ bool write_character(character_t *character, char const *filename)
     write_separator(file, "## INVENTORY");
     save_characters_inventory(file, character);
     write_separator(file, "## POSITIONS");
-    save_characters_positions(file, character);
+    save_characters_positions(file, character, game);
     fclose(file);
     return true;
 }

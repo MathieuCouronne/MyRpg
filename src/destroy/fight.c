@@ -12,8 +12,7 @@ void destroy_fight(fight_t *fight)
 {
     if (!fight)
         return;
-    if (fight->player->sprite)
-        sfSprite_destroy(fight->player->sprite);
+    destroy_player(fight->player);
     for (unsigned int i = 0; i < 3; i++) {
         if (fight->enemy[i]->sprite)
             sfSprite_destroy(fight->enemy[i]->sprite);

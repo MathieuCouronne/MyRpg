@@ -16,7 +16,8 @@ static bool event_fight(game_t *game)
             sfRenderWindow_getDefaultView(game->window));
         game->scenes->prev = game->scenes->current;
         game->scenes->current = FIGHT;
-        game->saves[game->current]->hp = game->saves[game->current]->stats->vitality;
+        game->saves[game->current]->hp =
+        game->saves[game->current]->stats->vitality;
         create_text_enemy(game->enemy[game->enemy_id], game->scenes->fight);
         create_text_player(game->saves[game->current], game->scenes->fight);
         return true;

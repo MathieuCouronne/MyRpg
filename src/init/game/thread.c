@@ -19,7 +19,7 @@ static scenes_t *init_scenes(game_t *game)
     !(scenes->fight = init_fight()) ||
     !(scenes->settings = init_settings(game)) ||
     !(scenes->saves = init_saves(game)) ||
-    !(scenes->pause = init_pause(game)) ||
+    !(scenes->pause = init_pause()) ||
     !(scenes->creation_menu = init_creation()) ||
     !(scenes->inventory = init_inventory()))
         return NULL;
@@ -54,6 +54,7 @@ static void init_params(thread_params_t *params)
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
     params->game->quests = init_quests();
+    params->game->help = init_help();
     params->game->current = 0;
 }
 

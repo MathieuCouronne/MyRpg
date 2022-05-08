@@ -36,9 +36,8 @@ static bool check_enemy_hp(game_t *game)
         }
         game->scenes->fight->win_clock = sfClock_create();
         game->scenes->fight->victory = true;
-        if (game->enemy_id != 1)
-            add_to_inventory(game->saves[game->current]->inventory,
-                game->enemy_id, 1);
+        add_to_inventory(game->saves[game->current]->inventory,
+            game->enemy_id, 1);
         return true;
     }
     return false;

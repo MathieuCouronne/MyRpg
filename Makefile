@@ -68,6 +68,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
                 $(SRC_DIR)init/scenes/stats/buttons_creation.c \
                 $(SRC_DIR)init/scenes/stats/create_text_stat.c \
 				$(SRC_DIR)init/clock.c \
+				$(SRC_DIR)init/help.c \
 				$(SRC_DIR)init/load_assets.c
 
 SRC			+=	$(SRC_DIR)destroy/game.c \
@@ -106,6 +107,8 @@ SRC			+=	$(SRC_DIR)controllers/navigation/global.c \
 				$(SRC_DIR)controllers/navigation/pause.c \
 				$(SRC_DIR)controllers/navigation/creation.c \
 				$(SRC_DIR)controllers/navigation/empty_saves.c \
+				$(SRC_DIR)controllers/navigation/how_to_play.c \
+
 
 SRC			+=	$(SRC_DIR)controllers/settings/change_settings.c \
 				$(SRC_DIR)controllers/settings/change_move_key.c \

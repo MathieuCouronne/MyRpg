@@ -15,7 +15,6 @@ text_t *init_text(char *str)
 {
     text_t *text = malloc(sizeof(text_t));
     sfVector2f pos;
-    sfFloatRect rect;
 
     text->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     text->text = sfText_create();

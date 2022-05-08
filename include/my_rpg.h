@@ -41,7 +41,7 @@ settings_t *init_settings(game_t *game);
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 int open_chest(game_t *game);
-pause_t *init_pause(game_t *game);
+pause_t *init_pause();
 scene_saves_t *init_saves(game_t *game);
 button_t *create_save_card(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
@@ -81,6 +81,8 @@ sfCircleShape **init_lava(void);
 game_asset_t *init_victory(void);
 game_asset_t *init_defeat(void);
 void init_win_condition(fight_t *fight);
+button_t **how_to_play_icon(void);
+game_asset_t *init_help(void);
 bool check_character_config(character_t *character);
 bool check_all_characters(character_t **characters);
 
@@ -128,6 +130,7 @@ bool display_stats(game_t *game);
 void draw_lava(game_t *game);
 void display_victory(game_t *game);
 void display_defeat(game_t *game);
+void window_help(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);
@@ -177,7 +180,7 @@ unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
 bool is_pos_in_button(button_t *button, sfVector2i pos);
-char *char_from_key(sfKeyCode key);
+const char *char_from_key(sfKeyCode key);
 
 // Parsing
 void update_match(data_parsing_match_t *matches, char **array);

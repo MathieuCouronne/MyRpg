@@ -53,6 +53,7 @@ struct sounds_s {
 struct game_s {
     sfRenderWindow *window;
     sfEvent event;
+    game_asset_t *help;
     sfImage *collisions;
     game_asset_t **characters;
     sfView *view;
@@ -87,6 +88,7 @@ struct button_s {
 struct main_menu_scenes_s {
     game_asset_t *background;
     button_t **buttons;
+    button_t **icon;
 };
 
 struct scenes_s {

@@ -14,7 +14,9 @@ void destroy_inventory(inventory_sprite_t *inventory)
 {
     if (!inventory)
         return;
-    sfSprite_destroy(inventory->background->sprite);
-    sfTexture_destroy(inventory->background->texture);
+    if (inventory->background->sprite)
+        sfSprite_destroy(inventory->background->sprite);
+    if (inventory->background->texture)
+        sfTexture_destroy(inventory->background->texture);
     free(inventory);
 }

@@ -82,6 +82,8 @@ sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 game_asset_t *init_victory(void);
 game_asset_t *init_defeat(void);
 void init_win_condition(fight_t *fight);
+bool check_character_config(character_t *character);
+bool check_all_characters(character_t **characters);
 
 // Destroy
 void destroy_game(game_t *game);

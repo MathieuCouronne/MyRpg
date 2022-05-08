@@ -37,7 +37,7 @@ static bool check_config_key(config_t *config)
 
 bool check_config(config_t *config)
 {
-    if (config->assets_loaded > 1 || config->volume > 100 || 
+    if (config->assets_loaded > 1 || config->volume > 100 ||
     !check_config_key(config))
         return false;
     return true;

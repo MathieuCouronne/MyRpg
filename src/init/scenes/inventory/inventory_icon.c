@@ -37,8 +37,11 @@ game_asset_t **init_inventory_items(void)
         inventory[i] = malloc(sizeof(game_asset_t));
         inventory[i]->sprite = sfSprite_create();
         inventory[i]->rect = rect_icons();
-        inventory[i]->texture = sfTexture_createFromFile(items_textures[i], NULL);
-        if (!inventory[i]->sprite || !inventory[i]->rect || !inventory[i]->texture)
+        inventory[i]->texture = sfTexture_createFromFile
+        (items_textures[i], NULL);
+        sfSprite_setScale(inventory[i]->sprite, (sfVector2f) {.75f, .75f});
+        if (!inventory[i]->sprite || !inventory[i]->rect
+        || !inventory[i]->texture)
             return NULL;
         sfSprite_setTexture(inventory[i]->sprite, inventory[i]->texture,
             sfTrue);

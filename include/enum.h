@@ -9,10 +9,6 @@
     #define RPG_ENUM_H
 
 typedef enum {
-    ACTIVE, INACTIVE, HOVER
-} button_state;
-
-typedef enum {
     MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE,
     INVENTORY, STATS
 } scenes;

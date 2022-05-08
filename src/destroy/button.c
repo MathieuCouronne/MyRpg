@@ -12,19 +12,12 @@ void destroy_button(button_t *button)
 {
     if (!button)
         return;
-    sfTexture_destroy(button->asset->texture);
-    sfSprite_destroy(button->asset->sprite);
-    sfFont_destroy(button->font);
-    sfText_destroy(button->text);
-    free(button);
-}
-
-void destroy_icons(button_t *button)
-{
-    if (!button)
-        return;
-    sfTexture_destroy(button->asset->texture);
-    sfSprite_destroy(button->asset->sprite);
+    if (button->asset->texture)
+        sfTexture_destroy(button->asset->texture);
+    if (button->asset->sprite)
+        sfSprite_destroy(button->asset->sprite);
+    if (button->text)
+        sfText_destroy(button->text);
     free(button);
 }
 
@@ -45,7 +38,7 @@ void settings_destroy_icons(button_t **buttons)
         return;
     for (unsigned short i = 0; buttons[i]; i++) {
         if (buttons[i])
-            destroy_icons(buttons[i]);
+            destroy_button(buttons[i]);
     }
     free(buttons);
 }

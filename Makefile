@@ -80,10 +80,10 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/player.c \
 				$(SRC_DIR)destroy/destroy_all.c \
 				$(SRC_DIR)destroy/fight.c \
-				$(SRC_DIR)destroy/chest.c \
 				$(SRC_DIR)destroy/inventory.c \
 				$(SRC_DIR)destroy/npcs.c \
-				$(SRC_DIR)destroy/settings.c
+				$(SRC_DIR)destroy/settings.c \
+				$(SRC_DIR)destroy/destroy_game_asset.c \
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \

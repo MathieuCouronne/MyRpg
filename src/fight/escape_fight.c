@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2021
-** init_buttons.c
+** escape_fight.c
 ** File description:
-** init buttons for fight
+** escape from fight
 */
 
 #include <stdlib.h>
@@ -11,5 +11,9 @@
 
 void escape_fight(game_t *game)
 {
+    game->saves[game->current]->hp =
+        game->saves[game->current]->stats->vitality;
+    game->scenes->fight->enemy[game->enemy_id]->hp =
+        game->scenes->fight->enemy[game->enemy_id]->max_hp;
     game->scenes->current = MAIN_GAME;
 }

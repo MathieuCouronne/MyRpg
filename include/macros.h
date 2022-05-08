@@ -22,7 +22,7 @@
     #define DEFAULT_VIEW_Y 2030
 
     // Misc
-    #define ASSETS_AMOUNT 37
+    #define ASSETS_AMOUNT 44
     #define PLAYER_SCALE 1.15
     #define PLAYER_MOVEMENT 2.5
     #define QUEST_AMOUNT 3
@@ -34,12 +34,9 @@
     #define DOGWARRIOR_PATH "./assets/images/characters/dogwarrior.png"
     #define ALBERT_PATH "./assets/images/characters/albert.png"
     #define CHIEF_PATH "./assets/images/characters/chief.png"
-    #define TROLL_PATH "./assets/images/characters/troll.png"
-    #define OGRE_PATH "./assets/images/characters/ogre.png"
     #define REVERSED_OGRE_PATH "./assets/images/fight/reversed_ogre.png"
     #define REVERSED_TROLL_PATH "./assets/images/fight/reversed_troll.png"
     #define REVERSED_DRAGON_PATH "./assets/images/fight/reversed_dragon.png"
-    #define DRAGON_PATH "./assets/images/characters/dragon.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define HELP_PATH "./assets/images/main_menu/help.png"
@@ -73,7 +70,6 @@
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"
-    #define WALK_PATH "./assets/sounds/Walk.ogg"
     #define CLIC_PATH "./assets/sounds/clic.ogg"
 
     // Inventory

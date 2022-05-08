@@ -54,7 +54,8 @@ quests_t *init_quests(void)
         return NULL;
     quests->quests[0] = create_first_quest();
     quests->quests[1] = create_second_quest();
-    quests->quests[2] = NULL;
+    quests->quests[2] = create_third_quest();
+    quests->quests[3] = NULL;
     if (!quests->text)
         return NULL;
     return quests;

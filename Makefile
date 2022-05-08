@@ -35,6 +35,7 @@ SRC			+=	$(SRC_DIR)init/game/game.c \
 				$(SRC_DIR)init/quests/quests.c \
 				$(SRC_DIR)init/quests/first.c \
 				$(SRC_DIR)init/quests/second.c \
+				$(SRC_DIR)init/quests/third.c \
 
 SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/menu/create_button.c \

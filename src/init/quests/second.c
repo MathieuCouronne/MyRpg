@@ -62,7 +62,7 @@ quest_t *create_second_quest(void)
 
     quest->id = 1;
     quest->xp = 120;
-    quest->name = "Get the books";
+    quest->name = "Get the book";
     quest->started = false;
     quest->done = false;
     quest->step_index = 0;

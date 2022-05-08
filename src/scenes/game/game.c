@@ -32,7 +32,8 @@ static bool event_handling(game_t *game)
             sfRenderWindow_close(game->window);
         handle_game_change_scenes(game);
         if (game->event.type == sfEvtKeyPressed &&
-            game->event.key.code == sfKeyK && event_fight(game))
+            game->event.key.code == game->config->keys->interact &&
+                event_fight(game))
             return true;
     }
     return false;

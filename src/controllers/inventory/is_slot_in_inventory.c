@@ -11,7 +11,7 @@
 static bool is_slot_in_line(slot_t **line, slot_t *slot)
 {
     for (unsigned int i = 0; line[i]; i++) {
-        if (line[i]->id == slot->id && line[i]->quantity == slot->quantity)
+        if (line[i]->id == slot->id && line[i]->quantity >= slot->quantity)
             return true;
     }
     return false;

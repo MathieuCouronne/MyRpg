@@ -22,7 +22,7 @@
     #define DEFAULT_VIEW_Y 2030
 
     // Misc
-    #define ASSETS_AMOUNT 37
+    #define ASSETS_AMOUNT 44
     #define PLAYER_SCALE 1.15
     #define PLAYER_MOVEMENT 2.5
     #define QUEST_AMOUNT 3

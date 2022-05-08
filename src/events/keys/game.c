@@ -9,6 +9,22 @@
 #include "my_rpg.h"
 #include "structs.h"
 
+static void change_current(game_t *game)
+{
+    if (game->event.key.code == game->config->keys->pause) {
+        game->scenes->current = PAUSE;
+        return;
+    }
+    if (game->event.key.code == game->config->keys->inventory) {
+        game->scenes->current = INVENTORY;
+        return;
+    }
+    if (game->event.key.code == sfKeyT) {
+        game->scenes->current = STATS;
+        return;
+    }
+}
+
 static bool change_scenes(game_t *game)
 {
     sfKeyCode code = game->event.key.code;
@@ -17,13 +33,7 @@ static bool change_scenes(game_t *game)
     if (code != game->config->keys->pause &&
     code != game->config->keys->inventory && code != sfKeyT)
         return false;
-    if (game->event.key.code == game->config->keys->pause)
-        game->scenes->current = PAUSE;
-    else if (game->event.key.code == game->config->keys->inventory)
-        game->scenes->current = INVENTORY;
-    else if (game->event.key.code == sfKeyT) {
-        game->scenes->current = STATS;
-    }
+    change_current(game);
     sfRenderWindow_setView(game->window, view);
     game->scenes->prev = game->scenes->current;
     return true;

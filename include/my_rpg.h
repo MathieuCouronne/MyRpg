@@ -87,6 +87,7 @@ bool check_character_config(character_t *character);
 bool check_all_characters(character_t **characters);
 game_asset_t *init_inventory_background(void);
 game_asset_t **init_inventory_items(void);
+credits_t *init_credits(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -134,6 +135,7 @@ void draw_lava(game_t *game);
 void display_victory(game_t *game);
 void display_defeat(game_t *game);
 void window_help(game_t *game);
+bool display_credits(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);

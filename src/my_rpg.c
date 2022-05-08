@@ -28,6 +28,7 @@ int main(void)
 
     if (!game) {
         write_config(init_config());
+        destroy_all(game);
         return 84;
     }
     while (sfRenderWindow_isOpen(game->window)) {

@@ -49,6 +49,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/fight/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight_text.c \
 				$(SRC_DIR)init/scenes/pause.c \
+				$(SRC_DIR)init/scenes/credits.c \
 				$(SRC_DIR)init/scenes/inventory/inventory.c \
 				$(SRC_DIR)init/scenes/inventory/inventory_icon.c \
 				$(SRC_DIR)init/scenes/game/game.c \
@@ -97,6 +98,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/creation/creation.c \
 				$(SRC_DIR)scenes/game/stats.c \
 				$(SRC_DIR)scenes/loader.c \
+				$(SRC_DIR)scenes/credits.c \
 
 SRC			+=	$(SRC_DIR)controllers/interactions/quests.c \
 

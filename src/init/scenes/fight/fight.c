@@ -97,7 +97,7 @@ fight_t *init_fight(void)
     init_win_condition(fight);
     if (!fight->background_fight || !fight->buttons || !fight->text_bar ||
     !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar
-    || !fight->characters)
+    || !fight->characters || !fight->win_sprite || !fight->defeat_prite)
         return NULL;
     return fight;
 }

@@ -21,7 +21,7 @@ button_t **init_buttons(void)
         return NULL;
     buttons[0] = create_button("Play", (sfVector2f) {pos_x, 500}, go_to_saves,
         scale);
-    buttons[1] = create_button("Settings",(sfVector2f) {pos_x, 650},
+    buttons[1] = create_button("Settings", (sfVector2f) {pos_x, 650},
         go_to_settings, scale);
     buttons[2] = create_button("Quit", (sfVector2f) {pos_x, 800}, quit_game,
         scale);
@@ -37,7 +37,7 @@ button_t **how_to_play_icon(void)
 
     if (!buttons)
         return NULL;
-    buttons[0] = create_icon( (sfVector2f) {1830, 930},
+    buttons[0] = create_icon((sfVector2f) {1830, 930},
     HELP_PATH, window_help);
     buttons[1] = NULL;
     return buttons;

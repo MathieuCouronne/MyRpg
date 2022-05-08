@@ -27,6 +27,8 @@ static bool check_enemy_hp(game_t *game)
         game->scenes->fight->enemy[game->enemy_id]->hp =
             game->scenes->fight->enemy[game->enemy_id]->max_hp;
         if (add_experience(game->saves[game->current], 40)) {
+            sfText_setString(game->scenes->stats->unspent_text,
+            itoa(game->saves[game->current]->unspent));
             game->scenes->game_scene->level_up = true;
             game->scenes->game_scene->level_up_clock = sfClock_create();
         }
@@ -38,7 +40,7 @@ static bool check_enemy_hp(game_t *game)
 
 void attack_enemy(game_t *game)
 {
-    unsigned int dmg = game->saves[game->current]->stats->strength;
+    unsigned int dmg = get_dmg(game->saves[game->current]->stats->strength);
 
     game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;
     create_text_enemy(game->scenes->fight->enemy[game->enemy_id],

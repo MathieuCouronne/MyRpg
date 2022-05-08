@@ -67,7 +67,7 @@ static void set_pos_text(button_t *buttons, sfVector2f pos, float shifts)
     else {
         n = sfText_getGlobalBounds(buttons->text);
         size = sfText_getCharacterSize(buttons->text);
-        pos_txt.x += (rect.width / 2 - n.width) + (float) size + n.height;
+        pos_txt.x += (rect.width / 2 - n.width) + n.width / 2;
         pos_txt.y += rect.height / 2 + (rect.height / 2 - 130);
         sfText_setPosition(buttons->text, pos_txt);
     }

@@ -25,7 +25,7 @@ static void save_position(FILE *file, const char *key, sfVector2f position)
     fwrite("\n", 1, 1, file);
 }
 
-void save_characters_positions(FILE *file, character_t *character)
+void save_characters_positions(FILE *file, character_t *character, game_t *game)
 {
     if (!character)
         return;

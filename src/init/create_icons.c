@@ -57,6 +57,7 @@ void (*on_click) (game_t *game))
     if (!button)
         return NULL;
     button->asset = malloc(sizeof(game_asset_t));
+    button->text = sfText_create();
     button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
     if (!button->asset)
         return NULL;

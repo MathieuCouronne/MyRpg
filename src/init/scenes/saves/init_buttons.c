@@ -57,20 +57,15 @@ static void set_pos_text(button_t *buttons, sfVector2f pos, float shifts)
 {
     sfVector2f pos_txt;
     sfFloatRect n;
-    unsigned int size;
     sfFloatRect rect = sfSprite_getGlobalBounds(buttons->asset->sprite);;
 
     pos.x = WINDOW_WIDTH / shifts - (float) 462 / 2;
     pos.y = buttons->asset->pos.y;
     pos_txt = pos;
-    if (!buttons->text);
-    else {
-        n = sfText_getGlobalBounds(buttons->text);
-        size = sfText_getCharacterSize(buttons->text);
-        pos_txt.x += (rect.width / 2 - n.width) + n.width / 2;
-        pos_txt.y += rect.height / 2 + (rect.height / 2 - 130);
-        sfText_setPosition(buttons->text, pos_txt);
-    }
+    n = sfText_getGlobalBounds(buttons->text);
+    pos_txt.x += (rect.width / 2 - n.width) + n.width / 2;
+    pos_txt.y += rect.height / 2 + (rect.height / 2 - 130);
+    sfText_setPosition(buttons->text, pos_txt);
     sfSprite_setPosition(buttons->asset->sprite, pos);
 }
 

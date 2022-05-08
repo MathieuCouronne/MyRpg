@@ -21,7 +21,7 @@ static const char *welcome[3] = {
 };
 
 static const char *valid[5] = {
-    "- Oh here you are already ! Have you done what I asked?",
+    "Oh here you are already ! Have you done what I asked?",
     "......",
     "I can see you collected thoses fangs! Thank you very much" \
     "\nfor your help... ",
@@ -29,7 +29,7 @@ static const char *valid[5] = {
 };
 
 static const char *invalid[5] = {
-    "- Oh here you are already! Have you done what I asked?",
+    "Oh here you are already! Have you done what I asked?",
     "......",
     "I can see you didn't collected enough fangs!\n" \
     "You should come back when you have five of them.",

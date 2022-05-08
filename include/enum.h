@@ -18,7 +18,7 @@ typedef enum {
 } scenes;
 
 typedef enum {
-    FANG, BOOK, DRAGON_TAIL, TACOS
+    EMPTY = -1, FANG, BOOK, DRAGON_TAIL, TACOS
 } items;
 
 #endif // RPG_ENUM_H

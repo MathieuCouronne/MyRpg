@@ -14,7 +14,7 @@
     #define INVENTORY_HEIGHT 4
 
 typedef struct slot_s {
-    unsigned int id;
+    int id;
     sfVector2u pos;
     unsigned int quantity;
 } slot_t;

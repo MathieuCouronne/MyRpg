@@ -21,4 +21,6 @@ void handle_arrow_keys(game_t *game)
     if (sfKeyboard_isKeyPressed(game->config->keys->down))
         move_bottom(game, collision);
     sfSprite_setPosition(game->player->sprite, *game->player->position);
+    game->saves[game->current]->player = *game->player->position;
+    game->saves[game->current]->camera = sfView_getCenter(game->view);
 }

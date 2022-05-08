@@ -179,7 +179,6 @@ char **array);
 void get_player_data(character_t *character, FILE *file, char **line);
 void get_player_stats(character_t *character, FILE *file, char **line);
 void get_player_inventory(character_t *character, FILE *file, char **line);
-void get_player_positions(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
 void get_config_keybinds(config_t *config, FILE *file, char **line);
 character_t *get_character_save(char const *filename);
@@ -194,7 +193,6 @@ bool write_character(game_t *game, char const *filename, unsigned int i);
 void save_characters_infos(FILE *file, character_t *characters);
 void save_characters_stats(FILE *file, character_t *character);
 void save_characters_inventory(FILE *file, character_t *character);
-void save_characters_positions(FILE *file, character_t *character, game_t *game);
 
 // Navigations
 void go_to_creation(game_t *game);

@@ -34,7 +34,6 @@ character_t *get_character_save(char const *filename)
     get_player_data(character, file, &line);
     get_player_stats(character, file, &line);
     get_player_inventory(character, file, &line);
-    get_player_positions(character, file, &line);
     fclose(file);
     return character;
 }

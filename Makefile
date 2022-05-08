@@ -129,7 +129,6 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/character/get_data.c \
 				$(SRC_DIR)controllers/parsing/character/get_inventory.c \
 				$(SRC_DIR)controllers/parsing/character/get_stats.c \
-				$(SRC_DIR)controllers/parsing/character/get_positions.c \
 				$(SRC_DIR)controllers/parsing/config/read.c \
 				$(SRC_DIR)controllers/parsing/config/get_options.c \
 				$(SRC_DIR)controllers/parsing/config/get_keybinds.c \
@@ -142,7 +141,6 @@ SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
 				$(SRC_DIR)controllers/storage/character/save_infos.c \
 				$(SRC_DIR)controllers/storage/character/save_stats.c \
 				$(SRC_DIR)controllers/storage/character/save_inventory.c \
-				$(SRC_DIR)controllers/storage/character/save_positions.c \
 
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 

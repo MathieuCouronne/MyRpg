@@ -26,7 +26,7 @@
     #define BASE_MAGE_DEX 10
 
     #define BASE_DOG_STR 7
-    #define BASE_DOG_DEF 0
+    #define BASE_DOG_DEF 1
     #define BASE_DOG_VIT 50
     #define BASE_DOG_SPD 200
     #define BASE_DOG_DEX 50

@@ -15,7 +15,8 @@ static void check_player_hp(game_t *game)
             game->saves[game->current]->stats->vitality;
         game->scenes->fight->enemy[game->enemy_id]->hp =
             game->scenes->fight->enemy[game->enemy_id]->max_hp;
-        game->scenes->current = MAIN_GAME;
+        game->scenes->fight->defeat = true;
+        game->scenes->fight->defeat_clock = sfClock_create();
     }
 }
 
@@ -32,7 +33,8 @@ static bool check_enemy_hp(game_t *game)
             game->scenes->game_scene->level_up = true;
             game->scenes->game_scene->level_up_clock = sfClock_create();
         }
-        game->scenes->current = MAIN_GAME;
+        game->scenes->fight->win_clock = sfClock_create();
+        game->scenes->fight->victory = true;
         return true;
     }
     return false;

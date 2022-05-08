@@ -75,9 +75,14 @@ stats_scene_t *init_stats(game_t *game);
 sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
-game_asset_t **init_inventory_sprite(char const *filename);
+game_asset_t **init_inventory_sprite(void);
 sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 sfCircleShape **init_lava(void);
+game_asset_t *init_victory(void);
+game_asset_t *init_defeat(void);
+void init_win_condition(fight_t *fight);
+bool check_character_config(character_t *character);
+bool check_all_characters(character_t **characters);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -122,6 +127,8 @@ bool display_saves(game_t *game);
 bool display_creation(game_t *game);
 bool display_stats(game_t *game);
 void draw_lava(game_t *game);
+void display_victory(game_t *game);
+void display_defeat(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);
@@ -153,6 +160,8 @@ sfText *init_text_enemy_hp(fight_t *text_enemy);
 bool create_text_player(character_t *player, fight_t *fight);
 bool create_text_enemy(enemy_t *enemy, fight_t *fight);
 unsigned int get_dmg(unsigned int str);
+void escape_fight(game_t *game);
+void gamble_fight(game_t *game);
 
 // Character
 character_t *create_character(void);

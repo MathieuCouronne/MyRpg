@@ -181,6 +181,12 @@ struct fight_s {
     player_t *player;
     enemy_t **enemy;
     game_t *game;
+    sfClock *win_clock;
+    sfClock *defeat_clock;
+    game_asset_t *win_sprite;
+    game_asset_t *defeat_prite;
+    bool victory;
+    bool defeat;
 };
 
 struct settings_s {

@@ -54,6 +54,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
 				$(SRC_DIR)init/scenes/game/chest.c \
 				$(SRC_DIR)init/scenes/game/chief.c \
+				$(SRC_DIR)init/scenes/fight/win_condition.c \
 				$(SRC_DIR)init/scenes/settings/init_button_settings.c \
 				$(SRC_DIR)init/scenes/settings/settings.c \
 				$(SRC_DIR)init/scenes/loader.c \
@@ -89,6 +90,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/game/inventory.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
+				$(SRC_DIR)scenes/fight/display_win_defeat.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 				$(SRC_DIR)scenes/creation/creation.c \
 				$(SRC_DIR)scenes/game/stats.c \
@@ -133,6 +135,7 @@ SRC			+=	$(SRC_DIR)controllers/parsing/character/read.c \
 				$(SRC_DIR)controllers/parsing/config/read.c \
 				$(SRC_DIR)controllers/parsing/config/get_options.c \
 				$(SRC_DIR)controllers/parsing/config/get_keybinds.c \
+				$(SRC_DIR)controllers/parsing/config/check_character_config.c \
 				$(SRC_DIR)controllers/parsing/config/check_config.c
 
 SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
@@ -161,6 +164,8 @@ SRC			+= 	$(SRC_DIR)fight/attack_player.c \
 				$(SRC_DIR)fight/create_characters.c \
 				$(SRC_DIR)fight/create_texts.c \
 				$(SRC_DIR)fight/get_dmg.c \
+				$(SRC_DIR)fight/escape_fight.c \
+				$(SRC_DIR)fight/gamble_fight.c \
 
 OBJ			= $(SRC:.c=.o)
 

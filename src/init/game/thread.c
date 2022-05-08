@@ -39,14 +39,6 @@ static character_t **init_character_saves(void)
     return saves;
 }
 
-static bool are_params_invalid(game_t *game)
-{
-    return (
-        !game->view || !game->sounds || !game->collisions || !game->saves ||
-        !game->characters || !game->stats || !game->player || !game->quests
-    );
-}
-
 static void init_params(thread_params_t *params)
 {
     sfFloatRect view_rect = {0, 0, WINDOW_WIDTH, WINDOW_HEIGHT};
@@ -71,15 +63,13 @@ bool load_game(thread_params_t *params)
         return false;
     *(params->loaded) = 0;
     params->game->config = parse_config();
-    if (!params->game->config || !check_config(params->game->config) ||
-    (params->game->config->assets_loaded != 1 &&
+    if (!params->game->config || !check_config(params->game->config)
+    || (params->game->config->assets_loaded != 1 &&
     !download_assets(params->loaded))) {
         *params->loaded = -1;
         return false;
     }
     init_params(params);
     *params->loaded = -1;
-    if (are_params_invalid(params->game))
-        return false;
     return true;
 }

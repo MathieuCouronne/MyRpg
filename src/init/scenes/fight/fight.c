@@ -94,11 +94,10 @@ fight_t *init_fight(void)
     fight->characters = create_characters();
     fight->player_bar = init_player_bar();
     fight->enemy_bar = init_enemy_bar();
-    fight->text_player_hp = init_text_player_hp(fight);
-    fight->text_enemy_hp = init_text_enemy_hp(fight);
+    init_win_condition(fight);
     if (!fight->background_fight || !fight->buttons || !fight->text_bar ||
     !fight->player || !fight->enemy || !fight->player_bar || !fight->enemy_bar
-    || !fight->characters)
+    || !fight->characters || !fight->win_sprite || !fight->defeat_prite)
         return NULL;
     return fight;
 }

@@ -41,7 +41,7 @@ settings_t *init_settings(game_t *game);
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 int open_chest(game_t *game);
-pause_t *init_pause();
+pause_t *init_pause(void);
 scene_saves_t *init_saves(game_t *game);
 button_t *create_save_card(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));

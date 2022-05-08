@@ -23,8 +23,8 @@ button_t **init_attack_buttons(void)
         attack_enemy, scale);
     buttons[2] = create_button("Giga",(sfVector2f) {33, 890},
         go_to_settings, scale);
-    buttons[3] = create_button("Bouffon",(sfVector2f) {967, 890},
-        go_to_settings, scale);
+    buttons[3] = create_button("Escape",(sfVector2f) {967, 890},
+        escape_fight, scale);
     buttons[4] = NULL;
     if (!buttons[0] || !buttons[1] || !buttons[2] || !buttons[3])
         return NULL;

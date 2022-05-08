@@ -18,7 +18,7 @@ bool create_text_enemy(enemy_t *enemy, fight_t *fight)
     int enemy_hp_len = hp_len + max_hp_len + 1;
     char *enemy_hp = malloc(sizeof(char) * (enemy_hp_len + 1));
 
-    memset(enemy_hp, '\0', enemy_hp_len);
+    memset(enemy_hp, '\0', enemy_hp_len + 1);
     my_strcat(enemy_hp, itoa(enemy->hp));
     my_strcat(enemy_hp, "/");
     my_strcat(enemy_hp, itoa(enemy->max_hp));
@@ -33,7 +33,7 @@ bool create_text_player(character_t *player, fight_t *fight)
     int player_hp_len = hp_len + vitality_len + 1;
     char *player_hp = malloc(sizeof(char) * (player_hp_len + 1));
 
-    memset(player_hp, '\0', player_hp_len);
+    memset(player_hp, '\0', player_hp_len + 1);
     my_strcat(player_hp, itoa(player->hp));
     my_strcat(player_hp, "/");
     my_strcat(player_hp, itoa(player->stats->vitality));

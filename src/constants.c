@@ -46,3 +46,7 @@ const sfKeyCode KEY_CODES[29] = {
     sfKeyU, sfKeyV, sfKeyW, sfKeyX,
     sfKeyY, sfKeyZ, sfKeyEscape, sfKeySpace
 };
+
+const char *items_textures[] = {
+        BOOK_PATH, DRAGON_TAIL_PATH, TROLL_FANG_PATH,
+};

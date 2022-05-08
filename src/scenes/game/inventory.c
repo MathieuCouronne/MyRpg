@@ -8,6 +8,7 @@
 #include <stdbool.h>
 #include "my_rpg.h"
 #include "structs.h"
+#include "macros.h"
 
 static void event_handling(game_t *game)
 {

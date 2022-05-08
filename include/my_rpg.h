@@ -191,6 +191,7 @@ bool write_character(character_t *character, char const *filename);
 void save_characters_infos(FILE *file, character_t *characters);
 void save_characters_stats(FILE *file, character_t *character);
 void save_characters_inventory(FILE *file, character_t *character);
+void save_characters_positions(FILE *file, character_t *character);
 
 // Navigations
 void go_to_creation(game_t *game);

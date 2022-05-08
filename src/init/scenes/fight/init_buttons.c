@@ -20,7 +20,7 @@ button_t **init_attack_buttons(void)
     buttons[0] = create_button("Bite", (sfVector2f) {33, 779}, attack_enemy,
         scale);
     buttons[1] = create_button("Iron Claws",(sfVector2f) {967, 779},
-        go_to_settings, scale);
+        attack_enemy, scale);
     buttons[2] = create_button("Giga",(sfVector2f) {33, 890},
         go_to_settings, scale);
     buttons[3] = create_button("Bouffon",(sfVector2f) {967, 890},

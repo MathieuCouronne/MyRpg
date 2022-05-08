@@ -67,6 +67,7 @@ sfText **init_text_life_characters(fight_t *text_fight);
 sfText **init_text_life_enemy(fight_t *text_enemy);
 quest_t *create_first_quest(void);
 quest_t *create_second_quest(void);
+quest_t *create_third_quest(void);
 sfText **create_stat_text_scene(sfFont *font,
 stats_scene_t *saves);
 sfText *init_text_class_scene(sfFont *font, game_t *game);

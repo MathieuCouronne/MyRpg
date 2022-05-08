@@ -11,7 +11,7 @@
 #include "structs.h"
 #include "my_rpg.h"
 
-static bool is_player_divided(game_t *game)
+static bool is_player_divided()
 {
     void *ptr = malloc(1);
     unsigned int seed = 0;
@@ -30,7 +30,7 @@ static bool is_player_divided(game_t *game)
 
 void gamble_fight(game_t *game)
 {
-    if (is_player_divided(game)) {
+    if (is_player_divided()) {
         game->saves[game->current]->hp /= 2;
         create_text_player(game->saves[game->current], game->scenes->fight);
     } else {

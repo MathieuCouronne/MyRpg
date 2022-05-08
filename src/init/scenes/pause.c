@@ -13,7 +13,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-game_asset_t *init_pause_background(game_t *game)
+static game_asset_t *init_pause_background()
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -27,13 +27,13 @@ game_asset_t *init_pause_background(game_t *game)
     return background;
 }
 
-void back_home(game_t *game)
+static void back_home(game_t *game)
 {
     game->scenes->prev = game->scenes->current;
     game->scenes->current = MAIN_MENU;
 }
 
-button_t **init_buttons_pause(void)
+static button_t **init_buttons_pause(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 5);
     float pos_x = 960 - 273 / 2;
@@ -55,13 +55,13 @@ button_t **init_buttons_pause(void)
     return buttons;
 }
 
-pause_t *init_pause(game_t *game)
+pause_t *init_pause()
 {
     pause_t *scene = malloc(sizeof(pause_t));
 
     if (!scene)
         return NULL;
-    scene->background = init_pause_background(game);
+    scene->background = init_pause_background();
     scene->buttons = init_buttons_pause();
     return scene;
 }

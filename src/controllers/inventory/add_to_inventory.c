@@ -16,7 +16,7 @@ unsigned int quantity, unsigned int x)
     unsigned int i = 0;
 
     for (; content[i]->id != EMPTY && i < INVENTORY_WIDTH; i++);
-    content[i]->id = id;
+    content[i]->id = (int) id;
     content[i]->quantity = quantity;
     content[i]->pos.x = x;
     content[i]->pos.y = i;
@@ -34,7 +34,7 @@ static bool line_is_full(slot_t **content)
 static bool item_found(slot_t **content, unsigned int id)
 {
     for (unsigned int i = 0; content[i]; i++) {
-        if (content[i]->id == id)
+        if (content[i]->id == (int) id)
             return true;
     }
     return false;
@@ -45,7 +45,7 @@ unsigned int quantity)
 {
     unsigned int i = 0;
 
-    for (; content[i]->id != id; i++);
+    for (; content[i]->id != (int) id; i++);
     content[i]->quantity += quantity;
 }
 

@@ -15,7 +15,7 @@ static void remove_slot(slot_t **content, unsigned int id, unsigned int x,
 {
     unsigned int i = 0;
 
-    for (; content[i]->id != id; i++);
+    for (; content[i]->id != (int) id; i++);
     if (quantity > content[i]->quantity)
         return;
     content[i]->quantity -= quantity;
@@ -28,7 +28,7 @@ static void remove_slot(slot_t **content, unsigned int id, unsigned int x,
 static bool is_slot_here(slot_t **content, unsigned int id)
 {
     for (unsigned int i = 0; content[i]; i++) {
-        if (content[i]->id == id)
+        if (content[i]->id == (int) id)
             return true;
     }
     return false;

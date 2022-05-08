@@ -41,7 +41,7 @@ settings_t *init_settings(game_t *game);
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
 int open_chest(game_t *game);
-pause_t *init_pause(game_t *game);
+pause_t *init_pause();
 scene_saves_t *init_saves(game_t *game);
 button_t *create_save_card(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game));
@@ -183,7 +183,7 @@ unsigned int get_2d_array_length(char **array);
 bool clear_str(char *str, char c);
 char *itoa(unsigned int value);
 bool is_pos_in_button(button_t *button, sfVector2i pos);
-char *char_from_key(sfKeyCode key);
+const char *char_from_key(sfKeyCode key);
 
 // Parsing
 void update_match(data_parsing_match_t *matches, char **array);

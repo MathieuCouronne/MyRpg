@@ -41,6 +41,7 @@ typedef struct quest_s quest_t;
 typedef struct quests_s quests_t;
 typedef struct thread_params_s thread_params_t;
 typedef struct stats_scene_s stats_scene_t;
+typedef struct input_s input_t;
 
 struct sounds_s {
     sfMusic *menu;
@@ -282,6 +283,14 @@ struct stats_scene_s {
     int *stats;
     int unspent;
     sfText *unspent_text;
+};
+
+struct input_s {
+    sfRenderWindow *window;
+    sfEvent *event;
+    sfText *text;
+    char *string;
+    unsigned int pos;
 };
 
 #endif

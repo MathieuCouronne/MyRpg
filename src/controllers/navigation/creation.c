@@ -44,6 +44,7 @@ void create_game(game_t *game)
     game->player->relative_pos->y = 0;
     game->saves[game->current] = create_character();
     put_stats(game);
+    game->saves[game->current]->name = get_text_input(game);
     game->saves[game->current]->unspent =
     game->scenes->creation_menu->unspent[game->scenes->creation_menu->class];
     game->scenes->stats = init_stats(game);

@@ -41,6 +41,7 @@
     #define DRAGON_PATH "./assets/images/characters/dragon.png"
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
+    #define HELP_PATH "./assets/images/main_menu/help.png"
     #define CHEST_PATH "./assets/images/misc/chest.png"
     #define FIGHT_BG_PATH "./assets/images/fight/background.png"
     #define FIGHT_TOOLTIP_PATH "./assets/images/fight/tooltip.png"

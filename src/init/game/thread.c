@@ -62,6 +62,7 @@ static void init_params(thread_params_t *params)
     params->game->characters = init_characters();
     params->game->stats = init_war_stats();
     params->game->quests = init_quests();
+    params->game->help = init_help();
     params->game->current = 0;
 }
 

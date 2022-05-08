@@ -82,6 +82,8 @@ sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 game_asset_t *init_victory(void);
 game_asset_t *init_defeat(void);
 void init_win_condition(fight_t *fight);
+button_t **how_to_play_icon(void);
+game_asset_t *init_help(void);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -126,6 +128,7 @@ bool display_creation(game_t *game);
 bool display_stats(game_t *game);
 void display_victory(game_t *game);
 void display_defeat(game_t *game);
+void window_help(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);

@@ -35,6 +35,7 @@ main_menu_scenes_t *init_main_menu(void)
         return NULL;
     scene->background = init_menu_background();
     scene->buttons = init_buttons();
+    scene->icon = how_to_play_icon();
     if (!scene->background || !scene->buttons)
         return NULL;
     return scene;

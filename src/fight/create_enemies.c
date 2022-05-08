@@ -17,11 +17,11 @@ enemy_t *create_dragon(void)
     if (!dragon)
         return NULL;
     dragon->sprite = sfSprite_create();
-    dragon->position = (sfVector2f) {1125, 180};
+    dragon->position = (sfVector2f) {1200, 210};
     dragon->texture = sfTexture_createFromFile(REVERSED_DRAGON_PATH, NULL);
     dragon->color = sfColor_fromRGB(255, 255, 0);
     sfSprite_setTexture(dragon->sprite, dragon->texture, sfTrue);
-    sfSprite_setScale(dragon->sprite, (sfVector2f) {8, 8});
+    sfSprite_setScale(dragon->sprite, (sfVector2f) {1.3, 1.3});
     sfSprite_setPosition(dragon->sprite, dragon->position);
     dragon->name = "Dragon";
     dragon->dps = 40;
@@ -42,8 +42,8 @@ enemy_t *create_ogre(void)
     if (!ogre->sprite || !ogre->texture)
         return NULL;
     sfSprite_setTexture(ogre->sprite, ogre->texture, sfTrue);
-    sfSprite_setScale(ogre->sprite, (sfVector2f) {10, 10});
-    sfSprite_setPosition(ogre->sprite, (sfVector2f) {1350, 240});
+    sfSprite_setScale(ogre->sprite, (sfVector2f) {1.8, 1.8});
+    sfSprite_setPosition(ogre->sprite, (sfVector2f) {1360, 185});
     ogre->name = "Ogre";
     ogre->dps = 25;
     ogre->hp = 150;
@@ -58,11 +58,11 @@ enemy_t *create_troll(void)
     if (!troll)
         return NULL;
     troll->sprite = sfSprite_create();
-    troll->position = (sfVector2f) {1250, 290};
+    troll->position = (sfVector2f) {1360, 190};
     troll->texture = sfTexture_createFromFile(REVERSED_TROLL_PATH, NULL);
     troll->color = sfColor_fromRGB(0, 255, 255);
     sfSprite_setTexture(troll->sprite, troll->texture, sfTrue);
-    sfSprite_setScale(troll->sprite, (sfVector2f) {10, 10});
+    sfSprite_setScale(troll->sprite, (sfVector2f) {1, 1});
     sfSprite_setPosition(troll->sprite, troll->position);
     troll->name = "Troll";
     troll->dps = 25;

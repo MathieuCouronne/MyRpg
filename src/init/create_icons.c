@@ -20,7 +20,8 @@ sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt)
     sfText_setString(text, game->saves[i]->name);
     sfText_setCharacterSize(text, 20);
     sfText_setColor(text, sfWhite);
-    sfText_setPosition(text, (sfVector2f) {butt->asset->pos.x, butt->asset->pos.y});
+    sfText_setPosition(text, (sfVector2f) {butt->asset->pos.x,
+        butt->asset->pos.y});
     sfText_setFont(text,butt->font);
     return text;
 }

@@ -48,5 +48,5 @@ const sfKeyCode KEY_CODES[29] = {
 };
 
 const char *items_textures[] = {
-        BOOK_PATH, DRAGON_TAIL_PATH, TROLL_FANG_PATH,
+    TROLL_FANG_PATH, BOOK_PATH, DRAGON_TAIL_PATH
 };

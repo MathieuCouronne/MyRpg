@@ -33,7 +33,7 @@ inventory_sprite_t *init_inventory(void)
     if (!scene)
         return NULL;
     scene->background = init_inventory_background();
-    scene->loot = init_inventory_sprite();
+    scene->loot = init_inventory_items();
     if (!scene->background)
         return NULL;
     scene->pos.x = 650;

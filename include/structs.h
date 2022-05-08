@@ -110,6 +110,7 @@ struct main_game_s {
     npc_t **npc;
     chest_t *chest;
     sfClock *level_up_clock;
+    sfCircleShape **lava;
     game_asset_t *level_up_sprite;
     bool level_up;
 };

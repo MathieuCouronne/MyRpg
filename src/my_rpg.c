@@ -5,6 +5,7 @@
 ** my_rpg main file
 */
 
+#include <sys/stat.h>
 #include "my_rpg.h"
 #include "inventory.h"
 #include "macros.h"
@@ -15,6 +16,8 @@ static const char *SAVE_FILENAMES[] = {
 
 static void save_data(game_t *game)
 {
+    mkdir("config", S_IRWXU);
+    mkdir("config/saves", S_IRWXU);
     write_config(game->config);
     for (unsigned int i = 0; i < 3; i++) {
         if (game->saves[i])

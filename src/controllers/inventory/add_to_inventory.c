@@ -15,7 +15,7 @@ unsigned int quantity, unsigned int x)
 {
     unsigned int i = 0;
 
-    for (; content[i]->id != 0 && i < INVENTORY_WIDTH; i++);
+    for (; content[i]->id != EMPTY && i < INVENTORY_WIDTH; i++);
     content[i]->id = id;
     content[i]->quantity = quantity;
     content[i]->pos.x = x;
@@ -25,7 +25,7 @@ unsigned int quantity, unsigned int x)
 static bool line_is_full(slot_t **content)
 {
     for (unsigned int i = 0; content[i]; i++) {
-        if (content[i]->id == 0)
+        if (content[i]->id == EMPTY)
             return false;
     }
     return true;
@@ -59,8 +59,10 @@ unsigned int quantity)
         }
     }
     for (unsigned int i = 0; inventory->content[i]; i++) {
-        if (!line_is_full(inventory->content[i]))
+        if (!line_is_full(inventory->content[i])) {
             add_to_empty_slot(inventory->content[i], id, quantity, i);
+            return inventory;
+        }
     }
     return inventory;
 }

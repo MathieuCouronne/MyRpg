@@ -44,7 +44,6 @@ bool display_fight(game_t *game)
 
     if (!game || !game->window || !game->scenes || !game->scenes->fight)
         return false;
-    event_handling(game);
     window = game->window;
     fight = game->scenes->fight;
     draw_sprites(window, fight, game);
@@ -53,5 +52,11 @@ bool display_fight(game_t *game)
             fight->buttons[i]->asset->sprite, NULL);
         sfRenderWindow_drawText(window, fight->buttons[i]->text, NULL);
     }
+    if (fight->victory == true)
+        display_victory(game);
+    if (fight->defeat == true)
+        display_defeat(game);
+    else
+        event_handling(game);
     return true;
 }

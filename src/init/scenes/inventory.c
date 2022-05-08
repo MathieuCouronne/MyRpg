@@ -12,20 +12,6 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-game_asset_t *init_inventory_background(void)
-{
-    game_asset_t *background = malloc(sizeof(game_asset_t));
-
-    if (!background)
-        return NULL;
-    background->sprite = sfSprite_create();
-    background->texture = sfTexture_createFromFile(INVENTORY_PATH, NULL);
-    if (!background->sprite || !background->texture)
-        return NULL;
-    sfSprite_setTexture(background->sprite, background->texture, sfTrue);
-    return background;
-}
-
 inventory_sprite_t *init_inventory(void)
 {
     inventory_sprite_t *scene = malloc(sizeof(inventory_sprite_t));

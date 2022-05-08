@@ -75,7 +75,6 @@ stats_scene_t *init_stats(game_t *game);
 sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
-game_asset_t **init_inventory_items(void);
 sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 sfCircleShape **init_lava(void);
 game_asset_t *init_victory(void);
@@ -85,6 +84,8 @@ button_t **how_to_play_icon(void);
 game_asset_t *init_help(void);
 bool check_character_config(character_t *character);
 bool check_all_characters(character_t **characters);
+game_asset_t *init_inventory_background(void);
+game_asset_t **init_inventory_items(void);
 
 // Destroy
 void destroy_game(game_t *game);

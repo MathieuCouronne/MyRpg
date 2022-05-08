@@ -24,6 +24,8 @@ static bool check_enemy_hp(game_t *game)
     if (game->scenes->fight->enemy[game->enemy_id]->hp <= 0) {
         game->saves[game->current]->hp =
             game->saves[game->current]->stats->vitality;
+        game->scenes->fight->enemy[game->enemy_id]->hp =
+            game->scenes->fight->enemy[game->enemy_id]->max_hp;
         if (add_experience(game->saves[game->current], 40))
             game->scenes->game_scene->level_up = true;
         game->scenes->current = MAIN_GAME;
@@ -36,11 +38,7 @@ void attack_enemy(game_t *game)
 {
     unsigned int dmg = game->saves[game->current]->stats->strength;
 
-    if (dmg > game->scenes->fight->enemy[game->enemy_id]->hp) {
-        game->scenes->fight->enemy[game->enemy_id]->hp =
-            game->scenes->fight->enemy[game->enemy_id]->max_hp;
-    } else
-        game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;
+    game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;
     create_text_enemy(game->scenes->fight->enemy[game->enemy_id],
         game->scenes->fight);
     if (check_enemy_hp(game))

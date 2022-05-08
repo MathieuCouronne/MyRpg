@@ -26,20 +26,6 @@ game_asset_t *init_saves_background(void)
     return background;
 }
 
-game_asset_t *init_save_slot(sfVector2f pos)
-{
-    game_asset_t *background = malloc(sizeof(game_asset_t));
-
-    if (!background)
-        return NULL;
-    background->sprite = sfSprite_create();
-    background->pos = pos;
-    background->texture = sfTexture_createFromFile(SAVES_PATH, NULL);
-    sfSprite_setPosition(background->sprite, background->pos);
-    sfSprite_setTexture(background->sprite, background->texture, sfTrue);
-    return background;
-}
-
 scene_saves_t *init_saves(game_t *game)
 {
     scene_saves_t *scene = malloc(sizeof(scene_saves_t));

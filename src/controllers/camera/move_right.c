@@ -36,7 +36,7 @@ static bool move_player_right(game_t *game, sfColor color, float speed)
     sfVector2f bottom_right = *game->player->position;
 
     top_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
-    top_right.y += (float) rect->height / 2;
+    top_right.y += (float) rect->height / 3 * 2;
     bottom_right.x += ((float) rect->width * (float) PLAYER_SCALE) + 1;
     bottom_right.y += (float) rect->height * (float) PLAYER_SCALE;
     if (color_cmp(get_pixel_at_pos(game, top_right), color) ||
@@ -54,7 +54,7 @@ static bool move_player_right(game_t *game, sfColor color, float speed)
 void move_right(game_t *game, sfColor color)
 {
     float width = sfSprite_getGlobalBounds(game->player->sprite).width;
-    float distance = WINDOW_WIDTH / 2 - WINDOW_PADDING;
+    float distance = (float) WINDOW_WIDTH / 2 - WINDOW_PADDING;
     float speed = PLAYER_MOVEMENT *
     (sfKeyboard_isKeyPressed(sfKeyLShift) ? 2 : 1);
 

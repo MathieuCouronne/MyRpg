@@ -40,7 +40,7 @@ static bool check_enemy_hp(game_t *game)
 
 void attack_enemy(game_t *game)
 {
-    unsigned int dmg = game->saves[game->current]->stats->strength;
+    unsigned int dmg = get_dmg(game->saves[game->current]->stats->strength);
 
     game->scenes->fight->enemy[game->enemy_id]->hp -= dmg;
     create_text_enemy(game->scenes->fight->enemy[game->enemy_id],

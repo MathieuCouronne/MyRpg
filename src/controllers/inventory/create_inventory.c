@@ -15,7 +15,7 @@ static slot_t **fill_slot(slot_t **content, unsigned int width, unsigned int y)
         content[x] = malloc(sizeof(slot_t));
         if (!content[x])
             return NULL;
-        content[x]->id = 0;
+        content[x]->id = EMPTY;
         content[x]->pos.x = x;
         content[x]->pos.y = y;
         content[x]->quantity = 0;
@@ -23,7 +23,7 @@ static slot_t **fill_slot(slot_t **content, unsigned int width, unsigned int y)
     return content;
 }
 
-static slot_t ***fill_inventory(unsigned int height, unsigned int width)
+static slot_t ***fill_inventory(unsigned int width, unsigned int height)
 {
     slot_t ***content = malloc(sizeof(slot_t **) * (height + 1));
 
@@ -42,7 +42,7 @@ static slot_t ***fill_inventory(unsigned int height, unsigned int width)
     return content;
 }
 
-inventory_t *create_inventory(unsigned int height, unsigned int width)
+inventory_t *create_inventory(unsigned int width, unsigned int height)
 {
     inventory_t *inventory = malloc(sizeof(inventory_t));
 
@@ -50,7 +50,7 @@ inventory_t *create_inventory(unsigned int height, unsigned int width)
         return NULL;
     inventory->height = height;
     inventory->width = width;
-    inventory->content = fill_inventory(height, width);
+    inventory->content = fill_inventory(width, height);
     if (!inventory->content)
         return NULL;
     return inventory;

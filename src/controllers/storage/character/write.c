@@ -39,7 +39,9 @@ bool write_character(character_t *character, char const *filename)
     write_separator(file, "## STATS");
     save_characters_stats(file, character);
     write_separator(file, "## INVENTORY");
+    save_characters_inventory(file, character);
     write_separator(file, "## POSITIONS");
+    save_characters_positions(file, character);
     fclose(file);
     return true;
 }

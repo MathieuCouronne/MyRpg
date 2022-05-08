@@ -44,8 +44,6 @@ void get_player_inventory(character_t *character, FILE *file, char **line)
     while (getline(line, &size, file) != -1) {
         clear_str(*line, '\n');
         array = my_str_to_word_array(*line, " ");
-        if (my_strcmp(*line, "## POSITIONS") == 0)
-            return;
         if (get_2d_array_length(array) != 4)
             continue;
         if (my_strcmp(array[0], "PLAYER_NAME") == 0)

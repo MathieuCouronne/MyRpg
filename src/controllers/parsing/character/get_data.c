@@ -18,7 +18,7 @@ static void update_character_data(character_t *character, char **array)
         {"UNSPENT_POINTS", &character->unspent},
         {"LEVEL", &character->level},
         {"EXP", &character->current_exp},
-        {"HP", &character->hp},
+        {"HP", (unsigned int *) &character->hp},
         {NULL, NULL}
     };
 

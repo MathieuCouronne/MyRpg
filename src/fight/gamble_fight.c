@@ -11,7 +11,7 @@
 #include "structs.h"
 #include "my_rpg.h"
 
-static bool is_player_divided()
+static bool is_player_divided(void)
 {
     void *ptr = malloc(1);
     unsigned int seed = 0;

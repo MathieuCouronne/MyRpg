@@ -13,7 +13,7 @@
 #include "my_rpg.h"
 #include "macros.h"
 
-static game_asset_t *init_pause_background()
+static game_asset_t *init_pause_background(void)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -55,7 +55,7 @@ static button_t **init_buttons_pause(void)
     return buttons;
 }
 
-pause_t *init_pause()
+pause_t *init_pause(void)
 {
     pause_t *scene = malloc(sizeof(pause_t));
 

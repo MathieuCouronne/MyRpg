@@ -20,7 +20,7 @@ static void remove_slot(slot_t **content, unsigned int id, unsigned int x,
         return;
     content[i]->quantity -= quantity;
     if (content[i]->quantity == 0)
-        content[i]->id = 0;
+        content[i]->id = -1;
     content[i]->pos.x = x;
     content[i]->pos.y = i;
 }

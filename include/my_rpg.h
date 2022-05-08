@@ -78,6 +78,7 @@ sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
 game_asset_t **init_inventory_sprite(char const *filename);
+sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -172,6 +173,7 @@ bool is_pos_in_button(button_t *button, sfVector2i pos);
 char *char_from_key(sfKeyCode key);
 
 // Parsing
+void update_match(data_parsing_match_t *matches, char **array);
 void update_character(data_parsing_match_t matches[],
 char **array);
 void get_player_data(character_t *character, FILE *file, char **line);
@@ -179,7 +181,7 @@ void get_player_stats(character_t *character, FILE *file, char **line);
 void get_player_inventory(character_t *character, FILE *file, char **line);
 void get_player_positions(character_t *character, FILE *file, char **line);
 void get_config_data(config_t *config, FILE *file, char **line);
-config_t *get_config(char const *filename);
+void get_config_keybinds(config_t *config, FILE *file, char **line);
 character_t *get_character_save(char const *filename);
 bool check_config(config_t *config);
 
@@ -188,11 +190,11 @@ bool write_config(config_t *config);
 void write_value(FILE *file, data_parsing_match_t match);
 void save_infos(FILE *file, config_t *config);
 void save_keys(FILE *file, config_t *config);
-bool write_character(character_t *character, char const *filename);
+bool write_character(game_t *game, char const *filename, unsigned int i);
 void save_characters_infos(FILE *file, character_t *characters);
 void save_characters_stats(FILE *file, character_t *character);
 void save_characters_inventory(FILE *file, character_t *character);
-void save_characters_positions(FILE *file, character_t *character);
+void save_characters_positions(FILE *file, character_t *character, game_t *game);
 
 // Navigations
 void go_to_creation(game_t *game);

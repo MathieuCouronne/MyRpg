@@ -39,7 +39,7 @@ void get_player_data(character_t *character, FILE *file, char **line)
         if (my_strcmp(*line, "## STATS") == 0)
             return;
         if (my_strcmp(array[0], "PLAYER_NAME") == 0)
-            character->name = array[0];
+            character->name = array[1];
         else
             update_character_data(character, array);
     }

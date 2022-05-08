@@ -49,7 +49,7 @@ void get_player_inventory(character_t *character, FILE *file, char **line)
         if (get_2d_array_length(array) != 4)
             continue;
         if (my_strcmp(array[0], "PLAYER_NAME") == 0)
-            character->name = array[0];
+            character->name = array[1];
         else
             update_character_inventory(character, array);
     }

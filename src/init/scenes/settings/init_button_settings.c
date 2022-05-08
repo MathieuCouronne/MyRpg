@@ -16,7 +16,6 @@ extern const char *KEYS[29];
 
 extern const sfKeyCode KEY_CODES[29];
 
-
 static void init_icons(button_t **icons)
 {
     float icons_pos = 1100 - 41 / 2;

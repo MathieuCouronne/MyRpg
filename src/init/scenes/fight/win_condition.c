@@ -10,7 +10,6 @@
 #include "structs.h"
 #include "macros.h"
 
-
 game_asset_t *init_victory(void)
 {
     game_asset_t *victory = malloc(sizeof(game_asset_t));

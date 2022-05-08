@@ -103,11 +103,8 @@ void destroy_npcs(npc_t **npcs);
 // Events
 void default_event_handling(game_t *game, button_t **buttons);
 void handle_arrow_keys(game_t *game);
-void handle_events(game_t *game, sfEvent *event);
-void handle_mouse_wheel(game_t *game, sfEvent *event);
 bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
-bool is_button_clicked(game_t *game, button_t *button);
 void handle_game_change_scenes(game_t *game);
 bool handle_quests_keys(game_t *game);
 
@@ -147,8 +144,6 @@ void transform_dialog(game_t *game);
 void finish_quest(game_t *game);
 
 // Fight
-char *string_info(fight_t *fight);
-char *string_info_enemy(fight_t *fight);
 void attack_player(character_t *player, enemy_t *enemy);
 void attack_enemy(game_t *game);
 enemy_t **create_enemies(void);

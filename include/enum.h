@@ -10,11 +10,11 @@
 
 typedef enum {
     MAIN_MENU, MAIN_GAME, FIGHT, CREATION, SETTINGS, SAVES, PAUSE,
-    INVENTORY, STATS
+    INVENTORY, STATS, CREDITS
 } scenes;
 
 typedef enum {
-    EMPTY = -1, FANG, BOOK, DRAGON_TAIL, TACOS
+    EMPTY = -1, FANG, BOOK, DRAGON_TAIL,
 } items;
 
 #endif // RPG_ENUM_H

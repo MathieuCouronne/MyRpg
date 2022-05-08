@@ -49,11 +49,11 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/fight/init_buttons.c \
 				$(SRC_DIR)init/scenes/fight/fight_text.c \
 				$(SRC_DIR)init/scenes/pause.c \
+				$(SRC_DIR)init/scenes/credits.c \
 				$(SRC_DIR)init/scenes/inventory/inventory.c \
 				$(SRC_DIR)init/scenes/inventory/inventory_icon.c \
 				$(SRC_DIR)init/scenes/game/game.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
-				$(SRC_DIR)init/scenes/game/chest.c \
 				$(SRC_DIR)init/scenes/game/chief.c \
 				$(SRC_DIR)init/scenes/fight/win_condition.c \
 				$(SRC_DIR)init/scenes/settings/init_button_settings.c \
@@ -80,10 +80,10 @@ SRC			+=	$(SRC_DIR)destroy/game.c \
 				$(SRC_DIR)destroy/player.c \
 				$(SRC_DIR)destroy/destroy_all.c \
 				$(SRC_DIR)destroy/fight.c \
-				$(SRC_DIR)destroy/chest.c \
 				$(SRC_DIR)destroy/inventory.c \
 				$(SRC_DIR)destroy/npcs.c \
-				$(SRC_DIR)destroy/settings.c
+				$(SRC_DIR)destroy/settings.c \
+				$(SRC_DIR)destroy/destroy_game_asset.c \
 
 SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/menus/main.c \
@@ -97,6 +97,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/creation/creation.c \
 				$(SRC_DIR)scenes/game/stats.c \
 				$(SRC_DIR)scenes/loader.c \
+				$(SRC_DIR)scenes/credits.c \
 
 SRC			+=	$(SRC_DIR)controllers/interactions/quests.c \
 

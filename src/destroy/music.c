@@ -11,12 +11,10 @@
 
 void destroy_sound(sounds_t *sounds)
 {
-    if (!sounds->menu || !sounds->chest || !sounds->clic)
+    if (!sounds->menu || !sounds->clic)
         return;
     if (sounds->menu)
         sfMusic_destroy(sounds->menu);
-    if (sounds->chest)
-        sfMusic_destroy(sounds->chest);
     if (sounds->clic)
         sfSound_destroy(sounds->clic);
     if (sounds->buffer)

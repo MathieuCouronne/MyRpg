@@ -70,7 +70,6 @@ main_game_t *init_main_game(game_t *game)
     if (!game)
         return NULL;
     main_game->map = init_map(game);
-    main_game->chest = init_chest();
     main_game->npc = malloc(sizeof(npc_t) * 3);
     main_game->lava = init_lava();
     if (!main_game->npc)
@@ -81,7 +80,7 @@ main_game_t *init_main_game(game_t *game)
     main_game->level_up = false;
     main_game->level_up_sprite = init_level_up();
     main_game->level_up_clock = NULL;
-    if (!main_game->map || !main_game->chest || !main_game->npc[0] ||
+    if (!main_game->map || !main_game->npc[0] ||
     !main_game->npc[1] || !main_game->level_up_sprite)
         return NULL;
     return main_game;

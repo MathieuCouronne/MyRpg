@@ -17,12 +17,11 @@ sounds_t *menu_music(config_t *config)
 
     if (!sounds)
         return NULL;
-    sounds->chest = sfMusic_createFromFile(OPEN_CHEST_PATH);
     sounds->clic = sfSound_create();
     sounds->buffer = sfSoundBuffer_createFromFile(CLIC_PATH);
     sfSound_setBuffer(sounds->clic, sounds->buffer);
     sounds->menu = sfMusic_createFromFile(MAIN_THEME_PATH);
-    if (!sounds->menu || !sounds->chest || !sounds->clic || !sounds->buffer)
+    if (!sounds->menu || !sounds->clic || !sounds->buffer)
         return NULL;
     sfMusic_play(sounds->menu);
     sfMusic_setVolume(sounds->menu, config->volume);

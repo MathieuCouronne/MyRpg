@@ -21,7 +21,8 @@ static scenes_t *init_scenes(game_t *game)
     !(scenes->saves = init_saves(game)) ||
     !(scenes->pause = init_pause()) ||
     !(scenes->creation_menu = init_creation()) ||
-    !(scenes->inventory = init_inventory()))
+    !(scenes->inventory = init_inventory()) ||
+    !(scenes->credits = init_credits()))
         return NULL;
     return scenes;
 }

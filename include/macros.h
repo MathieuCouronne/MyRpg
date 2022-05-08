@@ -57,6 +57,7 @@
     #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
     #define SAVES_EMPTY_PATH "./assets/images/saves/empty.png"
     #define SAVES_BACK_PATH "./assets/images/saves/back.png"
+    #define HELP_BG_PATH "./assets/images/help/background.jpg"
     #define CREATION_BG_PATH "./assets/images/creation/champ_select.jpg"
     #define CREATION_PLUS_PATH "./assets/images/creation/plus_buttons.png"
     #define CREATION_LESS_PATH "./assets/images/creation/less.png"

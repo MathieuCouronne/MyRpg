@@ -27,6 +27,8 @@ static bool check_enemy_hp(game_t *game)
         game->scenes->fight->enemy[game->enemy_id]->hp =
             game->scenes->fight->enemy[game->enemy_id]->max_hp;
         if (add_experience(game->saves[game->current], 40)) {
+            sfText_setString(game->scenes->stats->unspent_text,
+            itoa(game->saves[game->current]->unspent));
             game->scenes->game_scene->level_up = true;
             game->scenes->game_scene->level_up_clock = sfClock_create();
         }

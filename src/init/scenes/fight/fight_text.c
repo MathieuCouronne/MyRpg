@@ -20,7 +20,7 @@ sfText *init_text_player_hp(fight_t *text_fight)
     sfText_setFont(text_life, text_fight->font);
     sfText_setCharacterSize(text_life, 25);
     sfText_setColor(text_life, sfWhite);
-    sfText_setPosition(text_life, (sfVector2f) {210, 90});
+    sfText_setPosition(text_life, (sfVector2f) {210, 87});
     return text_life;
 }
 
@@ -33,6 +33,6 @@ sfText *init_text_enemy_hp(fight_t *text_enemy)
     sfText_setFont(text_life, text_enemy->font);
     sfText_setCharacterSize(text_life, 25);
     sfText_setColor(text_life, sfWhite);
-    sfText_setPosition(text_life, (sfVector2f) {1560, 90});
+    sfText_setPosition(text_life, (sfVector2f) {1560, 87});
     return text_life;
 }

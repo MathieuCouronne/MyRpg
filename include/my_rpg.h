@@ -86,6 +86,7 @@ bool check_all_characters(character_t **characters);
 game_asset_t *init_inventory_background(void);
 game_asset_t **init_inventory_items(void);
 char *get_text_input(game_t *game);
+credits_t *init_credits(void);
 
 // Destroy
 void destroy_game(game_t *game);

@@ -14,7 +14,7 @@ extern const sfKeyCode KEY_CODES[29];
 static bool is_key_valid(unsigned int value)
 {
     for (size_t i = 0; i < 29; i++) {
-        if (value == KEY_CODES[i])
+        if (value == (unsigned int) KEY_CODES[i])
             return true;
     }
     return false;

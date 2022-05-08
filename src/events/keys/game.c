@@ -39,7 +39,6 @@ static bool change_scenes(game_t *game)
     return true;
 }
 
-// open_chest(game);
 void handle_game_change_scenes(game_t *game)
 {
     if (game->event.type != sfEvtKeyPressed)

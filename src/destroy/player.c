@@ -14,7 +14,9 @@ void destroy_player(player_t *player)
 {
     if (!player)
         return;
-    sfSprite_destroy(player->sprite);
-    sfTexture_destroy(player->texture);
+    if (player->sprite)
+        sfSprite_destroy(player->sprite);
+    if (player->texture)
+        sfTexture_destroy(player->texture);
     free(player);
 }

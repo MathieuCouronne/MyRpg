@@ -12,7 +12,9 @@ void destroy_settings(game_asset_t *settings)
 {
     if (!settings)
         return;
-    sfSprite_destroy(settings->sprite);
-    sfTexture_destroy(settings->texture);
+    if (settings->sprite)
+        sfSprite_destroy(settings->sprite);
+    if (settings->texture)
+        sfTexture_destroy(settings->texture);
     free(settings);
 }

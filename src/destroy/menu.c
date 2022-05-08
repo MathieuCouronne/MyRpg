@@ -12,7 +12,9 @@ void destroy_menu(game_asset_t *menu)
 {
     if (!menu)
         return;
-    sfSprite_destroy(menu->sprite);
-    sfTexture_destroy(menu->texture);
+    if (menu->sprite)
+        sfSprite_destroy(menu->sprite);
+    if (menu->texture)
+        sfTexture_destroy(menu->texture);
     free(menu);
 }

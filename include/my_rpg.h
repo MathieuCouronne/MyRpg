@@ -100,6 +100,7 @@ void settings_destroy_icons(button_t **buttons);
 void settings_destroy_buttons(button_t **buttons);
 void destroy_inventory(inventory_sprite_t *inventory);
 void destroy_npcs(npc_t **npcs);
+void destroy_game_asset(game_asset_t *asset);
 
 // Events
 void default_event_handling(game_t *game, button_t **buttons);

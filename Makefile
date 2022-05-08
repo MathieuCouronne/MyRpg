@@ -54,6 +54,7 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
 				$(SRC_DIR)init/scenes/game/chest.c \
 				$(SRC_DIR)init/scenes/game/chief.c \
+				$(SRC_DIR)init/scenes/fight/win_condition.c \
 				$(SRC_DIR)init/scenes/settings/init_button_settings.c \
 				$(SRC_DIR)init/scenes/settings/settings.c \
 				$(SRC_DIR)init/scenes/loader.c \
@@ -88,6 +89,7 @@ SRC			+=	$(SRC_DIR)scenes/manager.c \
 				$(SRC_DIR)scenes/game/pause.c \
 				$(SRC_DIR)scenes/game/inventory.c \
 				$(SRC_DIR)scenes/fight/main_fight.c \
+				$(SRC_DIR)scenes/fight/display_win_defeat.c \
 				$(SRC_DIR)scenes/settings/main_settings.c \
 				$(SRC_DIR)scenes/creation/creation.c \
 				$(SRC_DIR)scenes/game/stats.c \

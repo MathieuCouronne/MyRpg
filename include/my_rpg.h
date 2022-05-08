@@ -79,6 +79,9 @@ button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
 game_asset_t **init_inventory_sprite(char const *filename);
 sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
+game_asset_t *init_victory(void);
+game_asset_t *init_defeat(void);
+void init_win_condition(fight_t *fight);
 
 // Destroy
 void destroy_game(game_t *game);
@@ -121,6 +124,8 @@ bool display_pause(game_t *game);
 bool display_saves(game_t *game);
 bool display_creation(game_t *game);
 bool display_stats(game_t *game);
+void display_victory(game_t *game);
+void display_defeat(game_t *game);
 
 // Inventory
 inventory_t *create_inventory(unsigned int width, unsigned int height);

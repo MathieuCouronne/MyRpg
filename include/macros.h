@@ -65,6 +65,8 @@
     #define LOADER_BAR_PATH "./assets/images/loader/bar.png"
     #define LOADER_FILL_PATH "./assets/images/loader/fill.png"
     #define LEVEL_UP_PATH "./assets/images/game/level_up.png"
+    #define VICTORY_PATH "./assets/images/fight/victory.png"
+    #define DEFEAT_PATH "./assets/images/fight/defeat.png"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

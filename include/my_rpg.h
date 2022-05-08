@@ -158,6 +158,7 @@ bool create_text_player(character_t *player, fight_t *fight);
 bool create_text_enemy(enemy_t *enemy, fight_t *fight);
 unsigned int get_dmg(unsigned int str);
 void escape_fight(game_t *game);
+void gamble_fight(game_t *game);
 
 // Character
 character_t *create_character(void);

@@ -163,6 +163,7 @@ SRC			+= 	$(SRC_DIR)fight/attack_player.c \
 				$(SRC_DIR)fight/create_texts.c \
 				$(SRC_DIR)fight/get_dmg.c \
 				$(SRC_DIR)fight/escape_fight.c \
+				$(SRC_DIR)fight/gamble_fight.c \
 
 OBJ			= $(SRC:.c=.o)
 

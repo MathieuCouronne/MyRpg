@@ -26,4 +26,9 @@ void finish_quest(game_t *game)
     add_experience(game->saves[game->current], current->xp);
     current->done = true;
     game->quests->current++;
+    if (game->quests->current == 3) {
+        sfRenderWindow_setView(game->window,
+            sfRenderWindow_getDefaultView(game->window));
+        game->scenes->current = CREDITS;
+    }
 }

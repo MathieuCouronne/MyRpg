@@ -77,6 +77,7 @@ bool display_main_game(game_t *game)
     sfRenderWindow_setView(window, game->view);
     sfRenderWindow_drawSprite(window, main_game->map->sprite, NULL);
     sfRenderWindow_drawSprite(window, main_game->chest->sprite, NULL);
+    draw_lava(game);
     for (unsigned int i = 0; main_game->npc[i]; i++)
         sfRenderWindow_drawSprite(window, main_game->npc[i]->sprite, NULL);
     sfRenderWindow_drawSprite(window, game->player->sprite, NULL);

@@ -42,6 +42,15 @@ static void open_loader_window(const int *total)
     free(loader);
 }
 
+static bool are_params_invalid(game_t *game)
+{
+    return (
+        !game->view || !game->sounds || !game->collisions || !game->saves ||
+        !game->characters || !game->stats || !game->player || !game->quests ||
+        !check_all_characters(game->saves)
+    );
+}
+
 game_t *init_game(void)
 {
     thread_params_t *params = malloc(sizeof(thread_params_t));
@@ -57,8 +66,7 @@ game_t *init_game(void)
     open_loader_window(params->loaded);
     sfThread_wait(thread);
     sfThread_destroy(thread);
-    if (!game->scenes || !game->config || !game->saves ||
-    !game->view || !game->collisions || !game->sounds)
+    if (are_params_invalid(game))
         return NULL;
     game->window = init_window();
     if (!game->window)

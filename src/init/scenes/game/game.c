@@ -41,6 +41,28 @@ static game_asset_t *init_level_up(void)
     return main_game;
 }
 
+sfCircleShape **init_lava(void)
+{
+    sfColor color = sfColor_fromRGB(255, 102, 0);
+    sfCircleShape **lava = malloc(sizeof(sfCircleShape *) * (LAVA_AMOUNT + 1));
+    sfVector2f pos = {0, 0};
+    float random = 0.f;
+
+    if (!lava)
+        return NULL;
+    for (unsigned int i = 0; i < LAVA_AMOUNT; i++) {
+        random = rand() % 5;
+        lava[i] = sfCircleShape_create();
+        pos.x = (float) (1815 + (rand() % 495));
+        pos.y = (float) (1022 + (rand() % 492));
+        sfCircleShape_setRadius(lava[i], random);
+        sfCircleShape_setPosition(lava[i], pos);
+        sfCircleShape_setFillColor(lava[i], color);
+    }
+    lava[LAVA_AMOUNT] = NULL;
+    return lava;
+}
+
 main_game_t *init_main_game(game_t *game)
 {
     main_game_t *main_game = malloc(sizeof(main_game_t));
@@ -50,6 +72,7 @@ main_game_t *init_main_game(game_t *game)
     main_game->map = init_map(game);
     main_game->chest = init_chest();
     main_game->npc = malloc(sizeof(npc_t) * 3);
+    main_game->lava = init_lava();
     if (!main_game->npc)
         return NULL;
     main_game->npc[0] = init_albert();

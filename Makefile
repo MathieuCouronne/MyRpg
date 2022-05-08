@@ -140,6 +140,7 @@ SRC			+=	$(SRC_DIR)controllers/storage/config/write.c \
 				$(SRC_DIR)controllers/storage/character/write.c \
 				$(SRC_DIR)controllers/storage/character/save_infos.c \
 				$(SRC_DIR)controllers/storage/character/save_stats.c \
+				$(SRC_DIR)controllers/storage/character/save_inventory.c \
 
 SRC			+=	$(SRC_DIR)scenes/saves/scene_saves.c
 

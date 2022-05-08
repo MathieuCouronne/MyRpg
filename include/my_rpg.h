@@ -122,7 +122,7 @@ bool display_creation(game_t *game);
 bool display_stats(game_t *game);
 
 // Inventory
-inventory_t *create_inventory(unsigned int height, unsigned int width);
+inventory_t *create_inventory(unsigned int width, unsigned int height);
 bool is_slot_in_inventory(inventory_t *inventory, slot_t *slot);
 bool is_quest_valid(inventory_t *inventory, slot_t **slot);
 inventory_t *add_to_inventory(inventory_t *inventory, unsigned int id,
@@ -190,6 +190,7 @@ void save_keys(FILE *file, config_t *config);
 bool write_character(character_t *character, char const *filename);
 void save_characters_infos(FILE *file, character_t *characters);
 void save_characters_stats(FILE *file, character_t *character);
+void save_characters_inventory(FILE *file, character_t *character);
 
 // Navigations
 void go_to_creation(game_t *game);

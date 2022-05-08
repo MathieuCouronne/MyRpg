@@ -47,7 +47,7 @@ static bool are_params_invalid(game_t *game)
     return (
         !game->view || !game->sounds || !game->collisions || !game->saves ||
         !game->characters || !game->stats || !game->player || !game->quests ||
-        !check_all_characters(game->saves)
+        !game->scenes || !check_all_characters(game->saves)
     );
 }
 
@@ -66,10 +66,14 @@ game_t *init_game(void)
     open_loader_window(params->loaded);
     sfThread_wait(thread);
     sfThread_destroy(thread);
-    if (are_params_invalid(game))
+    if (are_params_invalid(game)) {
+        destroy_sound(game->sounds);
         return NULL;
+    }
     game->window = init_window();
-    if (!game->window)
+    if (!game->window) {
+        destroy_sound(game->sounds);
         return NULL;
+    }
     return game;
 }

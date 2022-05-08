@@ -21,7 +21,6 @@ bool check_all_characters(character_t **characters)
 bool check_character_config(character_t *character)
 {
     if (!character) {
-        printf("ça passe\n");
         return true;
     }
     if (character->class > 2)

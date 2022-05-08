@@ -19,7 +19,6 @@ static void update_character_data(character_t *character, char **array)
         {"LEVEL", &character->level},
         {"EXP", &character->current_exp},
         {"HP", &character->hp},
-        {"MP", &character->mp},
         {NULL, NULL}
     };
 

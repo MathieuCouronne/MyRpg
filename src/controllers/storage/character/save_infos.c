@@ -15,7 +15,6 @@ void save_characters_infos(FILE *file, character_t *character)
         {"LEVEL", &character->level},
         {"EXP", &character->current_exp},
         {"HP", (unsigned int *) &character->hp},
-        {"MP", &character->mp},
         {NULL, NULL}
     };
 

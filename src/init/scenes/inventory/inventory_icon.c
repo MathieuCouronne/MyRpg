@@ -14,7 +14,7 @@
 
 extern const char *items_textures[];
 
-static sfIntRect *rect_chest(void)
+static sfIntRect *rect_icons(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
 
@@ -36,11 +36,9 @@ game_asset_t **init_inventory_items(void)
     for (size_t i = 0; i < 3; i++) {
         inventory[i] = malloc(sizeof(game_asset_t));
         inventory[i]->sprite = sfSprite_create();
-        inventory[i]->rect = rect_chest();
-        inventory[i]->texture = sfTexture_createFromFile(items_textures[i],
-            NULL);
-        if (!inventory[i]->sprite || !inventory[i]->rect ||
-            !inventory[i]->texture)
+        inventory[i]->rect = rect_icons();
+        inventory[i]->texture = sfTexture_createFromFile(items_textures[i], NULL);
+        if (!inventory[i]->sprite || !inventory[i]->rect || !inventory[i]->texture)
             return NULL;
         sfSprite_setTexture(inventory[i]->sprite, inventory[i]->texture,
             sfTrue);

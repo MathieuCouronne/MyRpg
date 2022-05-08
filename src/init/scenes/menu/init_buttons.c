@@ -9,6 +9,7 @@
 #include <SFML/Window.h>
 #include "structs.h"
 #include "my_rpg.h"
+#include "macros.h"
 
 button_t **init_buttons(void)
 {
@@ -27,5 +28,17 @@ button_t **init_buttons(void)
     buttons[3] = NULL;
     if (!buttons[0] || !buttons[1] || !buttons[2])
         return NULL;
+    return buttons;
+}
+
+button_t **how_to_play_icon(void)
+{
+    button_t **buttons = malloc(sizeof(button_t *) * 2);
+
+    if (!buttons)
+        return NULL;
+    buttons[0] = create_icon( (sfVector2f) {1830, 930},
+    HELP_PATH, window_help);
+    buttons[1] = NULL;
     return buttons;
 }

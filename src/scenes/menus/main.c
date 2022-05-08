@@ -13,6 +13,7 @@ static void event_handling(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window, &game->event)) {
         default_event_handling(game, game->scenes->main_menu->buttons);
+        default_event_handling(game, game->scenes->main_menu->icon);
     }
 }
 
@@ -36,5 +37,6 @@ bool display_main_menu(game_t *game)
     sfRenderWindow_drawText(window, buttons[1]->text, NULL);
     sfRenderWindow_drawSprite(window, buttons[2]->asset->sprite, NULL);
     sfRenderWindow_drawText(window, buttons[2]->text, NULL);
+    sfRenderWindow_drawSprite(window, menu->icon[0]->asset->sprite, NULL);
     return true;
 }

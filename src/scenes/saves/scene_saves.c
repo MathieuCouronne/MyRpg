@@ -16,8 +16,8 @@ static void event_handling(game_t *game)
     }
 }
 
-void display_saves_bis(game_t *game, button_t **buttons,
-                        scene_saves_t *saves, sfRenderWindow *window)
+void display_saves_bis(button_t **buttons, scene_saves_t *saves,
+                        sfRenderWindow *window)
 {
     for (size_t i = 0; buttons[i]; i++) {
         sfRenderWindow_drawSprite(window, buttons[i]->asset->sprite, NULL);
@@ -44,6 +44,6 @@ bool display_saves(game_t *game)
     saves = game->scenes->saves;
     buttons = saves->buttons;
     sfRenderWindow_drawSprite(window, saves->background->sprite, NULL);
-    display_saves_bis(game, buttons, saves, window);
+    display_saves_bis(buttons, saves, window);
     return true;
 }

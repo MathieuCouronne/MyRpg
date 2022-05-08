@@ -87,7 +87,7 @@ static void handle_input_events(input_t *input)
     if (event->type == sfEvtKeyPressed) {
         if (event->key.code == sfKeyBack && input->pos != 0) {
             input->string[--input->pos] = '\0';
-        } else if (input->pos != 1024 - 3 &&
+        } else if (input->pos != 10 - 3 &&
         (key = get_key(event->key.code)) != -1) {
             input->string[input->pos++] = key;
         }
@@ -98,11 +98,11 @@ static void handle_input_events(input_t *input)
 char *get_text_input(game_t *game)
 {
     input_t input = {init_input_window(), malloc(sizeof(sfEvent)),
-    init_input_text(), malloc(sizeof(char) * 1024), 0};
+    init_input_text(), malloc(sizeof(char) * 10), 0};
 
     if (!input.window || !input.text || !input.string)
         return "Error";
-    memset(input.string, '\0', 1024);
+    memset(input.string, '\0', 10);
     sfRenderWindow_setVisible(game->window, false);
     while (sfRenderWindow_isOpen(input.window)) {
         sfRenderWindow_clear(input.window, sfWhite);

@@ -25,5 +25,3 @@ vgcore.*
 new_assets/
 scenario.txt
 rects.txt
-config/*/*
-config/game.config

@@ -85,11 +85,7 @@ bool check_character_config(character_t *character);
 bool check_all_characters(character_t **characters);
 game_asset_t *init_inventory_background(void);
 game_asset_t **init_inventory_items(void);
-<<<<<<< HEAD
 char *get_text_input(game_t *game);
-=======
-credits_t *init_credits(void);
->>>>>>> 81c00b759616b17051efe0779c1022c97e17fc00
 
 // Destroy
 void destroy_game(game_t *game);

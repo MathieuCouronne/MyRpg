@@ -69,7 +69,7 @@
     #define LEVEL_UP_PATH "./assets/images/game/level_up.png"
     #define VICTORY_PATH "./assets/images/fight/victory.png"
     #define DEFEAT_PATH "./assets/images/fight/defeat.png"
-    #define CREDITS_BG_PATH "./assets/images/credits/background.png"
+    #define CREDITS_BG_PATH "./assets/images/credits/background.jpg"
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"

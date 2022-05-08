@@ -78,6 +78,7 @@ sfText **init_keybinds_text(game_t *game, sfFont *font);
 button_t **init_icons_settings(void);
 unsigned int check_bool(game_t *game);
 game_asset_t **init_inventory_sprite(char const *filename);
+sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt);
 
 // Destroy
 void destroy_game(game_t *game);

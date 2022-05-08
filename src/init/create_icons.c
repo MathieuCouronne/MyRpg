@@ -13,6 +13,18 @@
 #include "my_rpg.h"
 #include "macros.h"
 
+sfText *create_pseudo_txt(game_t *game, unsigned int i, button_t *butt)
+{
+    sfText *text = sfText_create();
+
+    sfText_setString(text, game->saves[i]->name);
+    sfText_setCharacterSize(text, 20);
+    sfText_setColor(text, sfWhite);
+    sfText_setPosition(text, (sfVector2f) {butt->asset->pos.x, butt->asset->pos.y});
+    sfText_setFont(text,butt->font);
+    return text;
+}
+
 button_t *create_icon(sfVector2f pos_sprite, char *path,
 void (*on_click) (game_t *game))
 {
@@ -45,8 +57,8 @@ void (*on_click) (game_t *game))
     if (!button)
         return NULL;
     button->asset = malloc(sizeof(game_asset_t));
-    button->text = sfText_create();
-    if (!button->asset || !button->text)
+    button->font = sfFont_createFromFile(ARIAL_FONT_PATH);
+    if (!button->asset)
         return NULL;
     button->asset->sprite = sfSprite_create();
     button->asset->texture = sfTexture_createFromFile(path, NULL);

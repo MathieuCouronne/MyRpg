@@ -54,7 +54,7 @@ bool display_fight(game_t *game)
     }
     if (fight->victory == true)
         display_victory(game);
-    if (fight->defeat == true)
+    else if (fight->defeat == true)
         display_defeat(game);
     else
         event_handling(game);

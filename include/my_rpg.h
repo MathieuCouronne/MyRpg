@@ -107,6 +107,8 @@ bool handle_buttons_clicks(game_t *game, button_t **buttons);
 bool handle_buttons_hover(game_t *game, button_t **buttons);
 void handle_game_change_scenes(game_t *game);
 bool handle_quests_keys(game_t *game);
+bool handle_slider_click(game_t *game);
+bool handle_slider_move(game_t *game);
 
 // Sounds
 sounds_t *menu_music(config_t *config);

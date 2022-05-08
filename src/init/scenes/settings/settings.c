@@ -23,7 +23,7 @@ unsigned int check_bool(game_t *game)
     return n;
 }
 
-game_asset_t *init_settings_background(void)
+static game_asset_t *init_settings_background(void)
 {
     game_asset_t *background = malloc(sizeof(game_asset_t));
 
@@ -37,7 +37,7 @@ game_asset_t *init_settings_background(void)
     return background;
 }
 
-button_t **init_buttons_settings(void)
+static button_t **init_buttons_settings(void)
 {
     button_t **buttons = malloc(sizeof(button_t *) * 2);
     float pos_x = 960 - 390 / 2;
@@ -52,6 +52,20 @@ button_t **init_buttons_settings(void)
     return buttons;
 }
 
+static sfCircleShape *init_sound_slider(void)
+{
+    sfCircleShape *slider = sfCircleShape_create();
+    sfColor color = sfColor_fromRGB(186, 145, 81);
+    sfVector2f pos = {(float) WINDOW_WIDTH / 2 - 20.f / 2, 255};
+
+    if (!slider)
+        return NULL;
+    sfCircleShape_setRadius(slider, 20);
+    sfCircleShape_setFillColor(slider, color);
+    sfCircleShape_setPosition(slider, pos);
+    return slider;
+}
+
 settings_t *init_settings(game_t *game)
 {
     settings_t *scene = malloc(sizeof(settings_t));
@@ -63,6 +77,8 @@ settings_t *init_settings(game_t *game)
     scene->buttons = init_buttons_settings();
     scene->icons = init_icons_settings();
     scene->keys = init_keybinds_text(game, scene->font);
+    scene->slider_selected = false;
+    scene->slider = init_sound_slider();
     if (!scene->background || !scene->buttons || !scene->icons)
         return NULL;
     return scene;

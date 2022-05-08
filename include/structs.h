@@ -195,6 +195,8 @@ struct settings_s {
     button_t **icons;
     sfText **keys;
     sfFont *font;
+    sfCircleShape *slider;
+    bool slider_selected;
     unsigned int current;
 };
 

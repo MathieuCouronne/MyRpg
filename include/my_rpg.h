@@ -30,7 +30,7 @@ player_t *init_player(void);
 chest_t *init_chest(void);
 button_t *create_button(char *str, sfVector2f pos_sprite,
 void (*on_click) (game_t *game), sfVector2f scale);
-int clock_time(sfClock *clock, float time_offset);
+bool clock_time(sfClock *clock, float time_offset);
 button_t *title_menu(char *str);
 main_menu_scenes_t *init_main_menu(void);
 main_game_t *init_main_game(game_t *game);

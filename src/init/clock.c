@@ -5,22 +5,19 @@
 ** Clock initializer
 */
 
-#include <SFML/Graphics.h>
 #include <SFML/Window.h>
-#include <stdlib.h>
-#include "menu.h"
-#include "structs.h"
-#include "my_rpg.h"
-#include "macros.h"
+#include <stdbool.h>
 
-int clock_time(sfClock *clock, float time_offset)
+bool clock_time(sfClock *clock, float time_offset)
 {
-    float seconds;
-    sfTime time = sfClock_getElapsedTime(clock);
+    sfTime time = {0};
+    float seconds = 0;
 
-    seconds = time.microseconds / 1000000.0;
-    if (seconds >= time_offset) {
-        return 1;
-    }
-    return 0;
+    if (!clock)
+        return false;
+    time = sfClock_getElapsedTime(clock);
+    seconds = sfTime_asSeconds(time);
+    if (seconds >= time_offset)
+        return true;
+    return false;
 }

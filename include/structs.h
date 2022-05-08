@@ -113,6 +113,7 @@ struct main_game_s {
     game_asset_t *map;
     npc_t **npc;
     chest_t *chest;
+    sfClock *level_up_clock;
     game_asset_t *level_up_sprite;
     bool level_up;
 };

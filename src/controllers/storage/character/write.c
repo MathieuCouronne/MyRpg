@@ -42,8 +42,6 @@ bool write_character(game_t *game, char const *filename, unsigned int i)
     save_characters_stats(file, character);
     write_separator(file, "## INVENTORY");
     save_characters_inventory(file, character);
-    write_separator(file, "## POSITIONS");
-    save_characters_positions(file, character, game);
     fclose(file);
     return true;
 }

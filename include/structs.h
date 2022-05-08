@@ -25,9 +25,7 @@ typedef struct button_s button_t;
 typedef struct main_menu_scenes_s main_menu_scenes_t;
 typedef struct chest_s chest_t;
 typedef struct player_s player_t;
-typedef struct game_scene_s game_scene_t;
 typedef struct main_game_s main_game_t;
-typedef struct menu_creation_s menu_creation_t;
 typedef struct main_creation_scenes_s main_creation_scenes_t;
 typedef struct fight_s fight_t;
 typedef struct enemy_s enemy_t;
@@ -39,10 +37,8 @@ typedef struct key_controller_s key_controller_t;
 typedef struct pause_s pause_t;
 typedef struct inventory_sprite_s inventory_sprite_t;
 typedef struct scene_saves_s scene_saves_t;
-typedef struct attack_s attack_t;
 typedef struct quest_s quest_t;
 typedef struct quests_s quests_t;
-typedef struct quest_messages_s quest_messages_t;
 typedef struct thread_params_s thread_params_t;
 typedef struct stats_scene_s stats_scene_t;
 
@@ -77,13 +73,11 @@ struct game_asset_s {
     sfTexture *texture;
     sfIntRect *rect;
     sfVector2f pos;
-    float scaling;
 };
 
 struct button_s {
     game_asset_t *asset;
     sfText *text;
-    button_state state;
     sfFont *font;
     void (*on_click) (game_t *game);
     bool hover;
@@ -192,7 +186,6 @@ struct fight_s {
     game_asset_t *defeat_prite;
     bool victory;
     bool defeat;
-    int *life;
 };
 
 struct settings_s {
@@ -246,12 +239,6 @@ struct scene_saves_s {
     game_asset_t *background;
     button_t **buttons;
     game_asset_t **character;
-    button_t **icons;
-};
-
-struct attack_s {
-    char const *name;
-    unsigned int dmg;
 };
 
 struct thread_params_s {
@@ -263,7 +250,6 @@ struct quests_s {
     unsigned int current;
     game_asset_t *asset;
     sfText *text;
-    sfClock *clock;
     quest_t **quests;
     bool speaking;
 };
@@ -277,7 +263,6 @@ struct quest_s {
     char *name;
     slot_t **required;
     slot_t **rewards;
-    sfText **texts;
     unsigned int step_index;
     unsigned int msg_index;
     const char ***messages;

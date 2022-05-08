@@ -20,6 +20,8 @@ static void change_player(game_t *game, unsigned int i)
     sfView_setCenter(game->view, character->camera);
     game->player->position->x = character->player.x;
     game->player->position->y = character->player.y;
+    game->player->relative_pos->x = 0;
+    game->player->relative_pos->y = 0;
     sfSprite_setPosition(game->player->sprite, *game->player->position);
 }
 

@@ -22,12 +22,13 @@ static sfRenderWindow *init_window(void)
     return window;
 }
 
-// TODO: destroy / free window
 static void open_loader_window(const int *total)
 {
     loader_t *loader = init_loader_window();
     sfColor background = sfColor_fromRGB(125, 125, 125);
 
+    if (!loader->window)
+        return;
     while (sfRenderWindow_isOpen(loader->window)) {
         sfRenderWindow_clear(loader->window, background);
         display_loader(loader, *total);
@@ -37,6 +38,8 @@ static void open_loader_window(const int *total)
             sfRenderWindow_close(loader->window);
         }
     }
+    sfRenderWindow_destroy(loader->window);
+    free(loader);
 }
 
 game_t *init_game(void)

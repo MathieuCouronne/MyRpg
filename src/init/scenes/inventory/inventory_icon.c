@@ -12,6 +12,8 @@
 #include "my_rpg.h"
 #include "macros.h"
 
+extern const char *items_textures[];
+
 static sfIntRect *rect_chest(void)
 {
     sfIntRect *rect = malloc(sizeof(sfIntRect));
@@ -25,7 +27,7 @@ static sfIntRect *rect_chest(void)
     return rect;
 }
 
-game_asset_t **init_inventory_sprite(char const *filename)
+game_asset_t **init_inventory_sprite(void)
 {
     game_asset_t **inventory = malloc(sizeof(game_asset_t *) * 4);
 
@@ -35,7 +37,7 @@ game_asset_t **init_inventory_sprite(char const *filename)
         inventory[i] = malloc(sizeof(game_asset_t));
         inventory[i]->sprite = sfSprite_create();
         inventory[i]->rect = rect_chest();
-        inventory[i]->texture = sfTexture_createFromFile(filename, NULL);
+        inventory[i]->texture = sfTexture_createFromFile(items_textures[i], NULL);
         if (!inventory[i]->sprite || !inventory[i]->rect || !inventory[i]->texture)
             return NULL;
         sfSprite_setTexture(inventory[i]->sprite, inventory[i]->texture, sfTrue);

@@ -33,7 +33,5 @@ bool display_inventory(game_t *game)
     inventory = game->scenes->inventory;
     event_handling(game);
     sfRenderWindow_drawSprite(window, inventory->background->sprite, NULL);
-    init_inventory_sprite(BOOK_PATH);
-    sfRenderWindow_drawSprite(window, inventory->loot[0]->sprite, NULL);
     return true;
 }

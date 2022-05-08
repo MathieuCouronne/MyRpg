@@ -17,7 +17,7 @@ static void event_handling(game_t *game)
     }
 }
 
-static void display_text(game_t *game, sfRenderWindow *window, fight_t *fight)
+static void display_text(sfRenderWindow *window, fight_t *fight)
 {
     sfRenderWindow_drawText(window, fight->text_player_hp, NULL);
     sfRenderWindow_drawText(window, fight->text_enemy_hp, NULL);
@@ -34,7 +34,7 @@ static void draw_sprites(sfRenderWindow *window,
     sfRenderWindow_drawSprite(window, fight->text_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->player_bar->sprite, NULL);
     sfRenderWindow_drawSprite(window, fight->enemy_bar->sprite, NULL);
-    display_text(game, window, fight);
+    display_text(window, fight);
 }
 
 bool display_fight(game_t *game)

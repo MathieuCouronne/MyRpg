@@ -33,8 +33,6 @@ inventory_sprite_t *init_inventory(void)
     if (!scene)
         return NULL;
     scene->background = init_inventory_background();
-    scene->loot = malloc(sizeof(game_asset_t));
-    scene->loot[0] = init_inventory_sprite(BOOK_PATH);
     if (!scene->background)
         return NULL;
     scene->pos.x = 650;

@@ -55,6 +55,7 @@ struct game_s {
     sfEvent event;
     sfImage *collisions;
     game_asset_t **characters;
+    game_asset_t **items;
     sfView *view;
     scenes_t *scenes;
     sounds_t *sounds;

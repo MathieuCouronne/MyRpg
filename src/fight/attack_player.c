@@ -29,9 +29,11 @@ static bool dodge(character_t *character)
 
 void attack_player(character_t *player, enemy_t *enemy)
 {
-    unsigned int dmg = (enemy->dps - player->stats->defense);
+    int dmg = (get_dmg(enemy->dps) - player->stats->defense);
 
     if (dodge(player))
         return;
+    if (dmg < 0)
+        dmg = 0;
     player->hp -= dmg;
 }

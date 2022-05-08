@@ -24,7 +24,7 @@ enemy_t *create_dragon(void)
     sfSprite_setScale(dragon->sprite, (sfVector2f) {8, 8});
     sfSprite_setPosition(dragon->sprite, dragon->position);
     dragon->name = "Dragon";
-    dragon->dps = 25;
+    dragon->dps = 40;
     dragon->hp = 500;
     dragon->max_hp = 500;
     return dragon;
@@ -45,7 +45,7 @@ enemy_t *create_ogre(void)
     sfSprite_setScale(ogre->sprite, (sfVector2f) {10, 10});
     sfSprite_setPosition(ogre->sprite, (sfVector2f) {1350, 240});
     ogre->name = "Ogre";
-    ogre->dps = 10;
+    ogre->dps = 25;
     ogre->hp = 150;
     ogre->max_hp = 150;
     return ogre;
@@ -65,7 +65,7 @@ enemy_t *create_troll(void)
     sfSprite_setScale(troll->sprite, (sfVector2f) {10, 10});
     sfSprite_setPosition(troll->sprite, troll->position);
     troll->name = "Troll";
-    troll->dps = 15;
+    troll->dps = 25;
     troll->hp = 100;
     troll->max_hp = 100;
     return troll;

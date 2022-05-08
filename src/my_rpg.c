@@ -26,8 +26,10 @@ int main(void)
 {
     game_t *game = init_game();
 
-    if (!game)
+    if (!game) {
+        write_config(init_config());
         return 84;
+    }
     while (sfRenderWindow_isOpen(game->window)) {
         sfRenderWindow_clear(game->window, sfBlack);
         scene_manager(game);

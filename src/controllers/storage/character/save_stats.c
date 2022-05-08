@@ -14,7 +14,7 @@ void save_characters_stats(FILE *file, character_t *character)
         {"DEF", &character->stats->defense},
         {"VIT", &character->stats->vitality},
         {"SPD", &character->stats->speed},
-        {"DEX", &character->stats->defense},
+        {"DEX", &character->stats->dexterity},
         {NULL, NULL}
     };
 

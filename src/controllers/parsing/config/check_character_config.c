@@ -25,11 +25,9 @@ bool check_character_config(character_t *character)
     }
     if (character->class > 2)
         return false;
-    if (character->hp == 0 || character->max_hp == 0
-    || character->stats->defense == 0
+    if (character->hp == 0 || character->stats->defense == 0
     || character->stats->dexterity == 0 || character->stats->speed == 0
-    || character->stats->strength == 0 || character->stats->vitality == 0) {
+    || character->stats->strength == 0 || character->stats->vitality == 0)
         return false;
-    }
     return true;
 }

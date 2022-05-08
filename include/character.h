@@ -55,9 +55,6 @@ typedef struct character_s {
     unsigned int current_exp;
     unsigned int exp_required;
     int hp;
-    unsigned int max_hp;
-    unsigned int mp;
-    unsigned int max_mp;
 } character_t;
 
 typedef struct data_parsing_match_s {

@@ -24,8 +24,10 @@ static bool check_enemy_hp(game_t *game)
     if (game->scenes->fight->enemy[game->enemy_id]->hp <= 0) {
         game->saves[game->current]->hp =
             game->saves[game->current]->stats->vitality;
-        if (add_experience(game->saves[game->current], 40))
+        if (add_experience(game->saves[game->current], 40)) {
             game->scenes->game_scene->level_up = true;
+            game->scenes->game_scene->level_up_clock = sfClock_create();
+        }
         game->scenes->current = MAIN_GAME;
         return true;
     }

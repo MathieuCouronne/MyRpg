@@ -57,6 +57,7 @@ main_game_t *init_main_game(game_t *game)
     main_game->npc[2] = NULL;
     main_game->level_up = false;
     main_game->level_up_sprite = init_level_up();
+    main_game->level_up_clock = NULL;
     if (!main_game->map || !main_game->chest || !main_game->npc[0] ||
     !main_game->npc[1] || !main_game->level_up_sprite)
         return NULL;

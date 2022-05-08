@@ -43,7 +43,6 @@
     #define SAVES_PATH "./assets/images/saves/save.png"
     #define BUTTON_PATH "./assets/images/main_menu/rectangle_button.png"
     #define HELP_PATH "./assets/images/main_menu/help.png"
-    #define CHEST_PATH "./assets/images/misc/chest.png"
     #define FIGHT_BG_PATH "./assets/images/fight/background.png"
     #define FIGHT_TOOLTIP_PATH "./assets/images/fight/tooltip.png"
     #define FIGHT_PLAYER_BAR_PATH "./assets/images/fight/player_bar.png"
@@ -57,6 +56,7 @@
     #define PAUSE_BG_PATH "./assets/images/pause/pause_scene.png"
     #define SAVES_EMPTY_PATH "./assets/images/saves/empty.png"
     #define SAVES_BACK_PATH "./assets/images/saves/back.png"
+    #define HELP_BG_PATH "./assets/images/help/background.jpg"
     #define CREATION_BG_PATH "./assets/images/creation/champ_select.jpg"
     #define CREATION_PLUS_PATH "./assets/images/creation/plus_buttons.png"
     #define CREATION_LESS_PATH "./assets/images/creation/less.png"
@@ -73,7 +73,6 @@
 
     // Sounds Pathes
     #define MAIN_THEME_PATH "./assets/sounds/hearthstone.ogg"
-    #define OPEN_CHEST_PATH "./assets/sounds/open_chest.ogg"
     #define WALK_PATH "./assets/sounds/Walk.ogg"
     #define CLIC_PATH "./assets/sounds/clic.ogg"
 

@@ -54,7 +54,6 @@ SRC			+=	$(SRC_DIR)init/scenes/menu/menu.c \
 				$(SRC_DIR)init/scenes/inventory/inventory_icon.c \
 				$(SRC_DIR)init/scenes/game/game.c \
 				$(SRC_DIR)init/scenes/game/albert.c \
-				$(SRC_DIR)init/scenes/game/chest.c \
 				$(SRC_DIR)init/scenes/game/chief.c \
 				$(SRC_DIR)init/scenes/fight/win_condition.c \
 				$(SRC_DIR)init/scenes/settings/init_button_settings.c \

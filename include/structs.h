@@ -23,7 +23,6 @@ typedef struct game_s game_t;
 typedef struct game_asset_s game_asset_t;
 typedef struct button_s button_t;
 typedef struct main_menu_scenes_s main_menu_scenes_t;
-typedef struct chest_s chest_t;
 typedef struct player_s player_t;
 typedef struct main_game_s main_game_t;
 typedef struct main_creation_scenes_s main_creation_scenes_t;
@@ -46,7 +45,6 @@ typedef struct credits_s credits_t;
 struct sounds_s {
     sfMusic *menu;
     sfMusic *main_theme;
-    sfMusic *chest;
     sfSound *clic;
     sfSoundBuffer *buffer;
 };
@@ -110,7 +108,6 @@ struct scenes_s {
 struct main_game_s {
     game_asset_t *map;
     npc_t **npc;
-    chest_t *chest;
     sfClock *level_up_clock;
     sfCircleShape **lava;
     game_asset_t *level_up_sprite;
@@ -122,14 +119,6 @@ struct player_s {
     sfIntRect *rect;
     sfVector2f *position;
     sfVector2f *relative_pos;
-    sfTexture *texture;
-    sfClock *clock;
-};
-
-struct chest_s {
-    sfSprite *sprite;
-    sfIntRect *rect;
-    sfVector2f position;
     sfTexture *texture;
     sfClock *clock;
 };

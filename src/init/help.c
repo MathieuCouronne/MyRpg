@@ -8,7 +8,6 @@
 #include <SFML/Audio.h>
 #include <stdlib.h>
 #include "structs.h"
-#include "menu.h"
 #include "my_rpg.h"
 #include "macros.h"
 
@@ -19,7 +18,7 @@ game_asset_t *init_help(void)
     if (!background)
         return NULL;
     background->sprite = sfSprite_create();
-    background->texture = sfTexture_createFromFile(CREATION_BG_PATH, NULL);
+    background->texture = sfTexture_createFromFile(HELP_BG_PATH, NULL);
     if (!background->sprite || !background->texture)
         return NULL;
     sfSprite_setTexture(background->sprite, background->texture, sfTrue);

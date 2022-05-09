@@ -23,7 +23,7 @@ void window_help(game_t *game)
     sfEvent event = {0};
 
     if (!game || !game->help)
-        return ;
+        return;
     help = game->help;
     sfRenderWindow_setVisible(game->window, false);
     while (sfRenderWindow_isOpen(window)) {
